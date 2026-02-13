@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veidahi Intimates | Delhi</title>
+  <meta name="description" content="Veidahi Intimates — Luxury lingerie & everyday western wear. Based in Delhi." />
+
+  <style>
+    :root{
+      --bg:#0b0b10;
+      --card:#12121a;
+      --card2:#171724;
+      --text:#f5f5ff;
+      --muted:#b8b8cc;
+      --brand:#ff2d7a;
+      --brand2:#ff6aa7;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 20px 60px rgba(0,0,0,.55);
+      --radius: 22px;
+      --radius2: 16px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 900px at 15% 0%, rgba(255,45,122,.14), transparent 55%),
+      radial-gradient(900px 800px at 95% 20%, rgba(255,106,167,.12), transparent 55%),
+      var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      scroll-behavior:smooth;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+
+    /* Top nav */
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(11,11,16,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      font-weight:800;letter-spacing:.2px;
+    }
+    .logo{
+      width:36px;height:36px;border-radius:12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 10px 30px rgba(255,45,122,.25);
+    }
+    .brand small{display:block;color:var(--muted);font-weight:600;letter-spacing:0}
+
+    .links{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    .links a{
+      padding:9px 12px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      color:var(--muted);
+      font-weight:650;
+      transition:.18s ease;
+    }
+    .links a:hover{transform: translateY(-1px); color:var(--text); border-color: rgba(255,45,122,.35)}
+
+    /* Hero */
+    .hero{padding:28px 0 10px}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .heroCard{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,45,122,.08), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .heroText{padding:26px 22px}
+    .kicker{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      background: rgba(255,45,122,.12);
+      border:1px solid rgba(255,45,122,.25);
+      color:#ffd0e2;
+      font-weight:700;
+      font-size:13px;
+    }
+    h1{margin:14px 0 10px;font-size:40px;line-height:1.05}
+    .sub{color:var(--muted);font-size:15.5px;line-height:1.6;max-width:55ch}
+
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:10px;
+      padding:12px 16px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:750;
+      transition:.18s ease;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(255,45,122,.35)}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border-color: rgba(255,45,122,.35);
+      box-shadow: 0 18px 50px rgba(255,45,122,.22);
+    }
+
+    .heroMedia{
+      display:grid;grid-template-rows: 1fr;
+      min-height: 380px;
+    }
+    .heroImg{
+      width:100%;height:100%;object-fit:cover;
+      filter: contrast(1.05) saturate(1.05);
+    }
+    .heroOverlay{
+      position:absolute;inset:auto 0 0 0;
+      padding:18px 18px 16px;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.65));
+      display:flex;align-items:flex-end;justify-content:space-between;
+      gap:14px;
+    }
+    .heroOverlay .mini{
+      color:#f7f7ff;
+      font-weight:750;
+      letter-spacing:.2px;
+    }
+    .heroOverlay .mini span{display:block;color:rgba(255,255,255,.75);font-weight:600;font-size:13px;margin-top:4px}
+
+    /* Sections */
+    section{padding:22px 0}
+    .sectionHead{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin:18px 0 12px}
+    .sectionHead h2{margin:0;font-size:22px}
+    .sectionHead p{margin:0;color:var(--muted);max-width:65ch;line-height:1.55;font-size:14px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border-radius: var(--radius2);
+      overflow:hidden;
+      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+      transition:.18s ease;
+    }
+    .card:hover{transform: translateY(-2px); border-color: rgba(255,45,122,.28)}
+
+    .card img{width:100%;height:320px;object-fit:cover;display:block}
+    .card .pad{padding:14px 14px 16px}
+    .title{font-weight:800;margin:0 0 6px;font-size:15px}
+    .meta{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+
+    .pillRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .pill{
+      font-size:12px;font-weight:750;color:#ffd0e2;
+      border:1px solid rgba(255,45,122,.25);
+      background: rgba(255,45,122,.10);
+      padding:7px 10px;border-radius:999px;
+    }
+
+    .twoCol{display:grid;grid-template-columns: 1fr 1fr; gap:14px}
+
+    .aboutCard{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,45,122,.06), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .aboutPad{padding:20px}
+    .aboutPad h3{margin:0 0 8px;font-size:18px}
+    .aboutPad p{margin:0;color:var(--muted);line-height:1.7}
+
+    .list{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+    .list li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);line-height:1.55}
+    .dot{width:10px;height:10px;border-radius:99px;background: linear-gradient(135deg, var(--brand), var(--brand2));margin-top:6px;flex:0 0 auto}
+
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+    }
+    .gallery img{width:100%;height:220px;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
+
+    /* Contact */
+    .contactCard{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      flex-wrap:wrap;
+    }
+    .contactCard h3{margin:0;font-size:18px}
+    .contactCard p{margin:6px 0 0;color:var(--muted);line-height:1.55}
+
+    footer{padding:26px 0 36px;color:rgba(255,255,255,.65);text-align:center}
+
+    /* Responsive */
+    @media (max-width: 950px){
+      .heroGrid{grid-template-columns: 1fr;}
+      .heroMedia{min-height: 360px}
+      h1{font-size:36px}
+      .grid{grid-template-columns: 1fr 1fr;}
+      .gallery{grid-template-columns: repeat(3, 1fr)}
+    }
+    @media (max-width: 560px){
+      h1{font-size:32px}
+      .links{display:none}
+      .grid{grid-template-columns: 1fr;}
+      .card img{height:340px}
+      .gallery{grid-template-columns: repeat(2, 1fr)}
+      .gallery img{height:200px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#top">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            Veidahi Intimates
+            <small>Delhi • Luxury + Everyday Wear</small>
+          </div>
+        </a>
+
+        <div class="links">
+          <a href="#products">Products</a>
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="top" class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="heroGrid">
+
+        <div class="heroCard">
+          <div class="heroText">
+            <div class="kicker">✨ Luxury Lingerie & Everyday Western Wear</div>
+            <h1>Comfort for everyday.<br>Luxury for special moments.</h1>
+            <p class="sub">
+              Veidahi Intimates brings premium lingerie and daily western essentials — designed to feel elegant, soft, and confident.
+            </p>
+
+            <div class="ctaRow">
+              <a class="btn primary" href="https://wa.me/918750020203" target="_blank" rel="noopener">WhatsApp Order</a>
+              <a class="btn" href="https://www.instagram.com/veidahiintimates" target="_blank" rel="noopener">Instagram</a>
+            </div>
+
+            <div class="pillRow">
+              <div class="pill">Premium Feel</div>
+              <div class="pill">Delhi Based</div>
+              <div class="pill">DM to Order</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroCard" aria-label="Hero image">
+          <!-- HERO IMAGE: Replace hero.jpg with your hero image file name -->
+          <img class="heroImg" src="images/hero.jpg" alt="Veidahi Intimates hero product" />
+          <div class="heroOverlay">
+            <div class="mini">
+              Featured Drop
+              <span>Wine Red Set • Soft fit • Premium look</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+      <div class="sectionHead">
+        <div>
+          <h2>Featured Products</h2>
+          <p>Our best picks — premium feel, everyday comfort, and a clean luxury look.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- Product 1 -->
+        <div class="card">
+          <img src="images/p1.jpg" alt="Product 1" />
+          <div class="pad">
+            <p class="title">Velvet Wine Set</p>
+            <p class="meta">DM to order • Premium comfort</p>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="card">
+          <img src="images/p2.jpg" alt="Product 2" />
+          <div class="pad">
+            <p class="title">Classic Black Lace</p>
+            <p class="meta">Elegant fit • Daily wear friendly</p>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="card">
+          <img src="images/p3.jpg" alt="Product 3" />
+          <div class="pad">
+            <p class="title">Soft Nude Essentials</p>
+            <p class="meta">Minimal look • Ultra comfort</p>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="card">
+          <img src="images/p4.jpg" alt="Product 4" />
+          <div class="pad">
+            <p class="title">Everyday Pink Set</p>
+            <p class="meta">Cute tone • Smooth finish</p>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="card">
+          <img src="images/p5.jpg" alt="Product 5" />
+          <div class="pad">
+            <p class="title">Luxury Lace Detail</p>
+            <p class="meta">Premium lace • Confident vibe</p>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="card">
+          <img src="images/p6.jpg" alt="Product 6" />
+          <div class="pad">
+            <p class="title">Minimal Daily Comfort</p>
+            <p class="meta">Simple • Soft • Elegant</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="twoCol">
+        <div class="aboutCard">
+          <div class="aboutPad">
+            <h3>About Veidahi Intimates</h3>
+            <p>
+              Veidahi Intimates is a Delhi-based brand bringing luxury lingerie and comfortable everyday essentials.
+              Our goal is simple — premium feel, clean style, and confidence in every outfit.
+            </p>
+
+            <ul class="list">
+              <li><span class="dot"></span>Luxury look, wearable daily</li>
+              <li><span class="dot"></span>Premium fabrics & clean finishing</li>
+              <li><span class="dot"></span>Easy ordering on WhatsApp / Instagram</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="aboutCard">
+          <!-- OPTIONAL ABOUT IMAGE: Replace about.jpg if you want -->
+          <img class="heroImg" src="images/about.jpg" alt="Veidahi Intimates" />
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="sectionHead">
+        <div>
+          <h2>Gallery</h2>
+          <p>A quick look at our latest styles and details.</p>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <img src="images/g1.jpg" alt="Gallery 1" />
+        <img src="images/g2.jpg" alt="Gallery 2" />
+        <img src="images/g3.jpg" alt="Gallery 3" />
+        <img src="images/g4.jpg" alt="Gallery 4" />
+        <img src="images/g5.jpg" alt="Gallery 5" />
+        <img src="images/g6.jpg" alt="Gallery 6" />
+        <img src="images/g7.jpg" alt="Gallery 7" />
+        <img src="images/g8.jpg" alt="Gallery 8" />
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="contactCard">
+        <div>
+          <h3>Order / Contact</h3>
+          <p>
+            Delhi • Luxury lingerie & everyday western wear.<br>
+            DM on Instagram or WhatsApp to place your order.
+          </p>
+        </div>
+        <div class="ctaRow" style="margin:0">
+          <a class="btn primary" href="https://wa.me/918750020203" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn" href="https://www.instagram.com/veidahiintimates" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Veidahi Intimates • Delhi
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+  </html>

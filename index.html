@@ -5,30 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Veidahi Intimates</title>
   <style>
+    /* General Styles */
     body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#222;}
     h1,h2 { font-family: 'Arial Black', sans-serif; color:#222; margin:0; }
     a { text-decoration:none; }
 
-    /* Hero Section */
+    /* Hero / Welcome Section */
     .hero {
-      position:relative; overflow:hidden; width:100%; height:100vh;
-      display:flex; flex-direction:column; justify-content:center; align-items:center;
-      text-align:center; color:#fff; background:#222;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(135deg, #ff3366, #ff6699);
     }
-    .hero h1 { font-size:50px; margin-bottom:15px; }
-    .hero p { font-size:20px; max-width:700px; line-height:1.4; }
-    .hero img { width:300px; max-width:90%; margin-top:30px; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.3); }
-
-    .floating-circle { position:absolute; border-radius:50%; pointer-events:none; }
+    .hero h1 { font-size: 50px; margin-bottom: 15px; }
+    .hero p { font-size: 20px; max-width: 700px; line-height: 1.4; }
+    .hero img {
+      width: 300px;
+      max-width: 90%;
+      margin-top: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .floating-circle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
     @keyframes float {
-      0%{transform:translateY(0) translateX(0);}
-      50%{transform:translateY(-30px) translateX(20px);}
-      100%{transform:translateY(0) translateX(0);}
+      0% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-30px) translateX(20px); }
+      100% { transform: translateY(0) translateX(0); }
     }
 
     /* Sections */
     .section { padding:60px 20px; text-align:center; }
-    .products h2, .gallery h2, .about h2 { font-size:36px; margin-bottom:30px; }
+    .section h2 { font-size:36px; margin-bottom:30px; }
 
     /* Products Section */
     .product-wrapper { position:relative; display:inline-block; margin:15px; }
@@ -49,79 +67,43 @@
     footer { background:#111; color:#fff; padding:40px 20px; text-align:center; font-size:14px; }
     footer p { margin:5px 0; color:#bbb; font-size:13px; }
 
-    /* Button Hover */
-    .product-wrapper span:hover { background:#ff3366; cursor:pointer; transition:0.3s; }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Hero / Welcome Section -->
   <div class="hero">
     <h1>Welcome to Veidahi Intimates</h1>
     <p>Luxury lingerie and chic western daily wear designed for confidence, style, and elegance.</p>
     <img src="style1.jpeg" alt="Our Style">
+    <!-- Floating Circles -->
     <div class="floating-circle" style="width:50px; height:50px; background:rgba(255,255,255,0.2); top:20%; left:10%; animation: float 10s linear infinite;"></div>
     <div class="floating-circle" style="width:70px; height:70px; background:rgba(255,255,255,0.15); top:40%; left:70%; animation: float 15s linear infinite;"></div>
     <div class="floating-circle" style="width:40px; height:40px; background:rgba(255,255,255,0.2); top:60%; left:30%; animation: float 12s linear infinite;"></div>
   </div>
 
   <!-- Products Section -->
- <!-- Products Section -->
-<div class="section products">
-  <h2>Our Products</h2>
+  <div class="section products">
+    <h2>Our Products</h2>
 
-  <!-- Product 1 -->
-  <div class="product-wrapper">
-    <a href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2" target="_blank">
-      <img src="product1.jpeg" alt="Product 1">
-      <span>Click for Details</span>
-    </a>
+    <!-- Example Product 1 -->
+    <div class="product-wrapper">
+      <a href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2" target="_blank">
+        <img src="product1.jpeg" alt="Product 1">
+        <span>Click for Details</span>
+      </a>
+    </div>
+
+    <!-- Example Product 2 -->
+    <div class="product-wrapper">
+      <a href="https://wa.me/918750020203" target="_blank">
+        <img src="product2.jpeg" alt="Product 2">
+        <span>Order Now</span>
+      </a>
+    </div>
+
+    <!-- Copy same structure for more products -->
   </div>
-
-  <!-- Product 2 -->
-  <div class="product-wrapper">
-    <a href="https://wa.me/918750020203" target="_blank">
-      <img src="product2.jpeg" alt="Product 2">
-      <span>Order Now</span>
-    </a>
-  </div>
-
-  <!-- Product 3 -->
-  <div class="product-wrapper">
-    <a href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2" target="_blank">
-      <img src="product3.jpeg" alt="Product 3">
-      <span>Click for Details</span>
-    </a>
-  </div>
-
-  <!-- Product 4 -->
-  <div class="product-wrapper">
-    <a href="https://wa.me/918750020203" target="_blank">
-      <img src="product4.jpeg" alt="Product 4">
-      <span>Order Now</span>
-    </a>
-  </div>
-
-  <!-- Product 5 -->
-  <div class="product-wrapper">
-    <a href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2" target="_blank">
-      <img src="product5.jpeg" alt="Product 5">
-      <span>Click for Details</span>
-    </a>
-  </div>
-
-  <!-- Agar aur products hai to same structure copy paste karo -->
-  <!-- Product 6 -->
-  <!--
-  <div class="product-wrapper">
-    <a href="WHATSAPP_OR_INSTAGRAM_LINK" target="_blank">
-      <img src="product6.jpeg" alt="Product 6">
-      <span>Order Now / Click for Details</span>
-    </a>
-  </div>
-  -->
-
-</div>
 
   <!-- Gallery Section -->
   <div class="section gallery">
@@ -137,7 +119,7 @@
   <div class="section about">
     <h2>About Veidahi Intimates</h2>
     <p>Veidahi Intimates is a premium brand offering luxury lingerie and chic western daily wear. Every piece is crafted to combine elegance, comfort, and modern style. Our collections are designed for confident, independent, and fashion-forward individuals.</p>
-    <p>Based in Delhi, we pride ourselves on delivering exceptional quality, timeless designs, and an elevated shopping experience. Explore our range and discover the luxury and style that defines Veidahi Intimates.</p>
+    <p>Based in Delhi, we pride ourselves on delivering exceptional quality, timeless designs, and an elevated shopping experience.</p>
   </div>
 
   <!-- Footer -->

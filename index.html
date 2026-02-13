@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,15 +7,38 @@
   <title>Veidahi Intimates</title>
   <style>
     body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#222;}
-    h2 { font-family: 'Arial Black', sans-serif; color:#222; }
-    .hero { width:100%; height:80vh; background:url('hero.jpeg') center/cover no-repeat; display:flex; align-items:center; justify-content:center; color:#fff; text-shadow: 2px 2px 6px #000; }
-    .hero h1 { font-size:48px; }
+    h1,h2 { font-family: 'Arial Black', sans-serif; color:#222; margin:0; }
+    a { text-decoration:none; }
+    
+    /* Hero / Welcome Section */
+    .hero {
+      width:100%; height:100vh;
+      background:url('hero.jpeg') center/cover no-repeat;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      color:#fff; text-shadow: 2px 2px 8px #000;
+      text-align:center;
+    }
+    .hero h1 { font-size:64px; margin-bottom:20px; }
+    .hero p { font-size:24px; max-width:600px; margin:0 auto; }
+
+    /* Sections */
     .section { padding:60px 20px; text-align:center; }
-    .products img { width:200px; height:auto; border-radius:8px; display:block; margin:10px auto; }
-    .product-wrapper { position:relative; display:inline-block; margin:10px; }
-    .product-wrapper span { position:absolute; bottom:10px; left:50%; transform:translateX(-50%); background:#222; color:#fff; padding:6px 12px; font-size:14px; border-radius:4px; }
+    .products h2, .gallery h2, .about h2 { font-size:36px; margin-bottom:30px; }
+
+    /* Products Section */
+    .product-wrapper { position:relative; display:inline-block; margin:15px; }
+    .product-wrapper img { width:200px; height:auto; border-radius:8px; display:block; }
+    .product-wrapper span { position:absolute; bottom:10px; left:50%; transform:translateX(-50%);
+                             background:#222; color:#fff; padding:6px 12px; font-size:14px; border-radius:4px; }
+
+    /* Gallery Section */
     .gallery img { width:180px; height:auto; border-radius:6px; margin:5px; }
+
+    /* About Section */
+    .about { background:#f8f8f8; }
     .about p { font-size:18px; max-width:750px; margin:20px auto; line-height:1.6; color:#555; }
+
+    /* Footer */
     footer { background:#111; color:#fff; padding:40px 20px; text-align:center; font-size:14px; }
     footer p { margin:5px 0; color:#bbb; font-size:13px; }
   </style>
@@ -24,6 +48,7 @@
   <!-- Hero / Welcome Section -->
   <div class="hero">
     <h1>Welcome to Veidahi Intimates</h1>
+    <p>Luxury lingerie and chic western daily wear designed for confidence, style, and elegance.</p>
   </div>
 
   <!-- Products Section -->
@@ -83,7 +108,7 @@
   </div>
 
   <!-- About Section -->
-  <div class="section about" style="background:#f8f8f8;">
+  <div class="section about">
     <h2>About Veidahi Intimates</h2>
     <p>Veidahi Intimates is a premium brand offering luxury lingerie and chic western daily wear. Every piece is crafted to combine elegance, comfort, and modern style. Our collections are designed for confident, independent, and fashion-forward individuals.</p>
     <p>Based in Delhi, we pride ourselves on delivering exceptional quality, timeless designs, and an elevated shopping experience.</p>

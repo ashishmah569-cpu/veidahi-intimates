@@ -4,739 +4,414 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Verification (DON'T REMOVE) -->
+  <!-- Google Verification (Same rakho) -->
   <meta name="google-site-verification" content="l7_RQiHbwX5IJ1ZePqIdHUIyPtA65Th0bBwgts8JKhU" />
 
-  <title>Veidahi Intimates | Luxury lingerie and westerns daily wear</title>
+  <title>Veidahi Intimates</title>
 
   <style>
-    :root{
-      --bg:#ffffff;
-      --text:#141414;
-      --muted:#6b6b6b;
-      --soft:#f6f6f7;
-      --border:#e9e9ee;
-      --brand:#111111;
-      --accent:#ff2d6d;
-      --accent2:#ff6aa2;
-      --accent3:#7c3aed;
-      --shadow: 0 14px 40px rgba(0,0,0,.10);
-      --radius: 18px;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Arial, sans-serif; background:#fff; color:#222; overflow-x:hidden; }
+    a { text-decoration:none; }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
-    a{ text-decoration:none; color:inherit; }
-    img{ max-width:100%; display:block; }
-
-    /* ---------- NAVBAR ---------- */
-    .nav{
-      position:sticky;
-      top:0;
-      z-index:999;
-      background: rgba(255,255,255,.86);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner{
-      max-width:1200px;
-      margin:auto;
-      padding:14px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-    }
-    .brand{
+    /* =========================
+       HERO SECTION
+    ========================== */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
       display:flex;
       flex-direction:column;
-      line-height:1.05;
-    }
-    .brand b{
-      font-size:18px;
-      letter-spacing:.4px;
-    }
-    .brand span{
-      font-size:12px;
-      color:var(--muted);
-      margin-top:2px;
-    }
-
-    .nav-links{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      font-size:14px;
-      color:#2b2b2b;
-    }
-    .nav-links a{
-      padding:8px 10px;
-      border-radius:10px;
-      transition:.2s;
-    }
-    .nav-links a:hover{
-      background:var(--soft);
-    }
-
-    .nav-cta{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
       justify-content:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background:#fff;
-      font-size:14px;
-      transition:.2s;
-      cursor:pointer;
-      white-space:nowrap;
-    }
-    .btn:hover{ transform: translateY(-1px); box-shadow:0 10px 22px rgba(0,0,0,.08); }
-
-    .btn-primary{
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border: none;
-      color:#fff;
-    }
-
-    /* ---------- SECTIONS ---------- */
-    .container{
-      max-width:1200px;
-      margin:auto;
-      padding: 0 18px;
-    }
-    section{
-      padding: 70px 0;
-    }
-    .title{
+      align-items:center;
       text-align:center;
-      margin-bottom:26px;
-    }
-    .title h2{
-      margin:0;
-      font-size:34px;
-      letter-spacing:.3px;
-    }
-    .title p{
-      margin:10px auto 0;
-      max-width:760px;
-      color:var(--muted);
-      line-height:1.6;
-      font-size:15px;
-    }
-
-    /* ---------- HERO (Premium Animated Background) ---------- */
-    .hero{
-      padding:0;
       color:#fff;
-      position:relative;
+      padding: 70px 20px;
       overflow:hidden;
-      background: #0d0d0f;
     }
 
-    /* animated gradient layer */
-    .hero::before{
+    /* Animated Gradient Background */
+    .hero::before {
       content:"";
       position:absolute;
       inset:0;
-      background: radial-gradient(circle at 20% 20%, rgba(255,45,109,.55), transparent 45%),
-                  radial-gradient(circle at 80% 30%, rgba(124,58,237,.50), transparent 50%),
-                  radial-gradient(circle at 40% 90%, rgba(255,106,162,.55), transparent 55%),
-                  linear-gradient(135deg, #0b0b0f, #121218);
-      animation: moveBg 10s ease-in-out infinite;
-      transform: scale(1.2);
+      background: linear-gradient(-45deg, #ff2f6d, #ff6aa2, #ffb86c, #7c3aed);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
       z-index:0;
     }
 
-    /* soft noise overlay */
-    .hero::after{
+    /* Soft Dark Overlay for readability */
+    .hero::after {
       content:"";
       position:absolute;
       inset:0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
-      opacity:.18;
-      mix-blend-mode: overlay;
+      background: rgba(0,0,0,0.25);
       z-index:0;
     }
 
-    @keyframes moveBg{
-      0%{ filter:hue-rotate(0deg); transform: scale(1.2) translate(0,0); }
-      50%{ filter:hue-rotate(20deg); transform: scale(1.25) translate(-20px, 10px); }
-      100%{ filter:hue-rotate(0deg); transform: scale(1.2) translate(0,0); }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    .hero-wrap{
-      position:relative;
-      z-index:2;
-      min-height: 92vh;
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:24px;
-      align-items:center;
-      padding: 36px 0;
-    }
-
-    .hero-left{
-      padding: 22px 0;
-    }
-    .badge{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding:8px 12px;
-      border-radius:999px;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.16);
-      font-size:13px;
-      color: rgba(255,255,255,.90);
-      backdrop-filter: blur(10px);
-    }
-    .hero h1{
-      margin:16px 0 12px;
-      font-size:54px;
-      line-height:1.05;
-      letter-spacing:.2px;
-      text-shadow: 0 20px 50px rgba(0,0,0,.35);
-    }
-    .hero p{
-      margin:0;
-      color: rgba(255,255,255,.86);
-      line-height:1.65;
-      font-size:16px;
-      max-width:620px;
-    }
-
-    .hero-actions{
-      margin-top:22px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .btn-dark{
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.20);
-      color:#fff;
-    }
-
-    .hero-right{
-      position:relative;
-    }
-
-    .slider{
-      position:relative;
-      border-radius: 24px;
-      overflow:hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(16,16,18,.55);
-      min-height: 520px;
-      backdrop-filter: blur(10px);
-    }
-    .slide{
+    /* Floating bubbles */
+    .bubble {
       position:absolute;
-      inset:0;
-      opacity:0;
-      transform: scale(1.03);
-      transition: opacity 1.2s ease, transform 1.2s ease;
-    }
-    .slide.active{
-      opacity:1;
-      transform: scale(1);
-    }
-    .slide img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      filter: contrast(1.03) saturate(1.08);
-    }
-
-    .slider-overlay{
-      position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.55));
-      pointer-events:none;
-    }
-
-    .hero-float{
-      position:absolute;
-      border-radius:999px;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.16);
-      padding: 10px 14px;
-      font-size:13px;
-      color: rgba(255,255,255,.92);
-      backdrop-filter: blur(10px);
-      animation: floaty 7s ease-in-out infinite;
-    }
-    .hero-float.one{ top: 18px; left: 18px; }
-    .hero-float.two{ bottom: 18px; right: 18px; animation-delay:1.4s; }
-
-    @keyframes floaty{
-      0%{ transform: translateY(0); }
-      50%{ transform: translateY(-10px); }
-      100%{ transform: translateY(0); }
-    }
-
-    /* extra floating glow bubbles */
-    .glow{
-      position:absolute;
-      width:220px;
-      height:220px;
       border-radius:50%;
-      background: radial-gradient(circle, rgba(255,45,109,.55), transparent 65%);
-      filter: blur(8px);
-      opacity:.75;
-      animation: glowMove 8s ease-in-out infinite;
+      background: rgba(255,255,255,0.12);
+      filter: blur(0px);
+      animation: floaty 10s ease-in-out infinite;
       z-index:1;
       pointer-events:none;
     }
-    .glow.g1{ top: -60px; left: -60px; }
-    .glow.g2{
-      width:260px; height:260px;
-      bottom: -90px; right: -70px;
-      background: radial-gradient(circle, rgba(124,58,237,.55), transparent 65%);
-      animation-delay: 1.8s;
-    }
-    .glow.g3{
-      width:180px; height:180px;
-      top: 55%; left: 45%;
-      background: radial-gradient(circle, rgba(255,106,162,.50), transparent 65%);
-      animation-delay: .9s;
-    }
-    @keyframes glowMove{
-      0%{ transform: translate(0,0) scale(1); }
-      50%{ transform: translate(20px,-18px) scale(1.08); }
-      100%{ transform: translate(0,0) scale(1); }
+
+    @keyframes floaty {
+      0% { transform: translateY(0) translateX(0) scale(1); }
+      50% { transform: translateY(-35px) translateX(20px) scale(1.05); }
+      100% { transform: translateY(0) translateX(0) scale(1); }
     }
 
-    /* ---------- CATEGORIES ---------- */
-    .cats{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-      margin-top: 18px;
-    }
-    .cat{
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.14);
-      padding: 18px;
-      text-align:left;
-      transition:.2s;
-      backdrop-filter: blur(10px);
-    }
-    .cat:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 18px 40px rgba(0,0,0,.20);
-    }
-    .cat b{ display:block; font-size:16px; color:#fff; }
-    .cat p{ margin:8px 0 0; color: rgba(255,255,255,.80); line-height:1.5; font-size:14px; }
-
-    /* ---------- PRODUCTS ---------- */
-    .products-grid{
-      display:grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap:14px;
-      margin-top: 26px;
+    .hero-content {
+      position:relative;
+      z-index:2;
+      max-width: 950px;
+      width: 100%;
     }
 
-    .p-card{
+    .hero h1 {
+      font-size: 48px;
+      font-family: "Arial Black", Arial, sans-serif;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    .hero img {
+      width: 320px;
+      max-width: 92%;
+      margin-top: 28px;
       border-radius: 18px;
-      overflow:hidden;
-      border: 1px solid var(--border);
-      background:#fff;
-      box-shadow: 0 10px 25px rgba(0,0,0,.06);
-      transition:.2s;
-      position:relative;
-    }
-    .p-card:hover{
-      transform: translateY(-3px);
-      box-shadow: 0 18px 45px rgba(0,0,0,.10);
-    }
-    .p-img{
-      width:100%;
-      height: 220px;
-      object-fit: cover;
-    }
-    .p-body{
-      padding: 12px 12px 14px;
-      text-align:left;
-    }
-    .p-body b{
-      display:block;
-      font-size:14px;
-      margin-bottom:6px;
-      letter-spacing:.2px;
-    }
-    .p-body span{
-      display:block;
-      font-size:12px;
-      color:var(--muted);
-      line-height:1.4;
-      margin-bottom:10px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+      border: 2px solid rgba(255,255,255,0.15);
     }
 
-    .p-actions{
+    .hero-buttons {
+      margin-top: 22px;
       display:flex;
-      gap:10px;
-    }
-    .p-actions a{
-      flex:1;
-      text-align:center;
-      font-size:13px;
-      padding:10px 10px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background:#fff;
-      transition:.2s;
-    }
-    .p-actions a:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 10px 18px rgba(0,0,0,.08);
-    }
-    .p-actions a.primary{
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border:none;
-      color:#fff;
-    }
-
-    /* ---------- GALLERY ---------- */
-    .gallery-grid{
-      display:grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap:10px;
-      margin-top: 26px;
-    }
-    .g-item{
-      border-radius: 16px;
-      overflow:hidden;
-      border:1px solid var(--border);
-      background:#fff;
-      box-shadow: 0 10px 25px rgba(0,0,0,.05);
-      transition:.2s;
-      position:relative;
-      cursor: zoom-in;
-    }
-    .g-item:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 18px 40px rgba(0,0,0,.10);
-    }
-    .g-item img{
-      width:100%;
-      height: 170px;
-      object-fit: cover;
-    }
-
-    /* ---------- LIGHTBOX ---------- */
-    .lightbox{
-      position:fixed;
-      inset:0;
-      background: rgba(0,0,0,.85);
-      display:none;
-      align-items:center;
       justify-content:center;
-      z-index:9999;
-      padding:20px;
-    }
-    .lightbox.active{ display:flex; }
-    .lightbox img{
-      max-width:95vw;
-      max-height:85vh;
-      border-radius:18px;
-      box-shadow: 0 30px 70px rgba(0,0,0,.35);
-    }
-    .lightbox span{
-      position:absolute;
-      top:18px;
-      right:18px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.18);
-      color:#fff;
-      padding:10px 14px;
-      border-radius:999px;
-      cursor:pointer;
-      font-size:14px;
-      backdrop-filter: blur(10px);
-    }
-
-    /* ---------- ABOUT ---------- */
-    .about-box{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:18px;
-      align-items:stretch;
-      margin-top: 26px;
-    }
-    .about-text{
-      border-radius: var(--radius);
-      border:1px solid var(--border);
-      background:#fff;
-      padding: 22px;
-      box-shadow: 0 14px 35px rgba(0,0,0,.06);
-      text-align:left;
-    }
-    .about-text h3{
-      margin:0 0 12px;
-      font-size:20px;
-      letter-spacing:.2px;
-    }
-    .about-text p{
-      margin: 0 0 12px;
-      color:#3c3c3c;
-      line-height:1.75;
-      font-size:15px;
-    }
-    .about-text p:last-child{ margin-bottom:0; }
-
-    .about-card{
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, #111, #1a1a1f);
-      color:#fff;
-      padding: 22px;
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
-    .about-card b{
-      font-size:18px;
-      letter-spacing:.3px;
-    }
-    .about-card p{
-      color: rgba(255,255,255,.78);
-      line-height:1.7;
-      margin: 10px 0 18px;
-      font-size:14px;
-    }
-    .about-card .mini{
-      display:flex;
-      gap:10px;
+      gap:12px;
       flex-wrap:wrap;
     }
 
-    /* ---------- FOOTER ---------- */
-    footer{
-      background:#0e0e10;
-      color:#fff;
-      padding: 48px 0;
-      margin-top: 30px;
+    .btn {
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      transition: 0.25s;
+      backdrop-filter: blur(8px);
     }
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1.3fr .7fr .7fr;
-      gap:18px;
-    }
-    footer p, footer a{
-      color: rgba(255,255,255,.75);
-      line-height:1.7;
-      font-size:14px;
-    }
-    footer a:hover{ color:#fff; }
 
-    .copy{
-      margin-top:22px;
-      padding-top:18px;
-      border-top: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.65);
-      font-size:13px;
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.20);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+    .section {
+      padding: 70px 18px;
       text-align:center;
     }
 
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 1050px){
-      .hero-wrap{ grid-template-columns: 1fr; }
-      .slider{ min-height: 460px; }
-      .products-grid{ grid-template-columns: repeat(3, 1fr); }
-      .gallery-grid{ grid-template-columns: repeat(3, 1fr); }
-      .cats{ grid-template-columns: 1fr; }
-      .about-box{ grid-template-columns: 1fr; }
-      .hero h1{ font-size:44px; }
+    .section h2 {
+      font-size: 34px;
+      margin-bottom: 30px;
+      font-family: "Arial Black", Arial, sans-serif;
+      color:#111;
     }
-    @media (max-width: 560px){
-      .nav-links{ display:none; }
-      .products-grid{ grid-template-columns: repeat(2, 1fr); }
-      .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
-      .hero h1{ font-size:38px; }
-      .slider{ min-height: 380px; }
+
+    /* =========================
+       PRODUCTS
+    ========================== */
+    .products-grid {
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      position: relative;
+      overflow:hidden;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: 0.25s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display:block;
+    }
+
+    .product-badge {
+      position:absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.72);
+      color:#fff;
+      padding: 7px 14px;
+      font-size: 13px;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+    }
+
+    /* =========================
+       GALLERY
+    ========================== */
+    .gallery-grid {
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid img {
+      width:100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: 0.25s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+    .about {
+      background: #fafafa;
+    }
+
+    .about p {
+      font-size: 17px;
+      max-width: 850px;
+      margin: 16px auto;
+      line-height: 1.7;
+      color:#444;
+    }
+
+    /* =========================
+       CONNECT / CONTACT
+    ========================== */
+    .connect {
+      background: #111;
+      color:#fff;
+    }
+
+    .connect h2 { color:#fff; }
+
+    .connect p {
+      max-width: 750px;
+      margin: 0 auto 20px auto;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .connect-buttons {
+      display:flex;
+      justify-content:center;
+      gap: 12px;
+      flex-wrap:wrap;
+      margin-top: 18px;
+    }
+
+    .connect a {
+      display:inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight:bold;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,0.25);
+      color:#fff;
+      background: rgba(255,255,255,0.08);
+      transition: 0.25s;
+    }
+
+    .connect a:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+    footer {
+      background:#000;
+      color:#bbb;
+      padding: 28px 18px;
+      text-align:center;
+      font-size: 13px;
+    }
+
+    footer p { margin: 6px 0; }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+    @media(max-width: 1100px){
+      .products-grid { grid-template-columns: repeat(3, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media(max-width: 700px){
+      .hero h1 { font-size: 36px; }
+      .hero p { font-size: 16px; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .product-card img { height: 220px; }
+      .gallery-grid img { height: 180px; }
+    }
+
+    @media(max-width: 420px){
+      .products-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <div class="nav">
-    <div class="nav-inner">
-      <div class="brand">
-        <b>Veidahi Intimates</b>
-        <span>Luxury lingerie and westerns daily wear</span>
-      </div>
-
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a href="#contact">Connect</a>
-      </div>
-
-      <div class="nav-cta">
-        <a class="btn btn-primary" target="_blank"
-           href="https://wa.me/918750020203?text=Hi%20Veidahi%20Intimates%2C%20I%20want%20to%20place%20an%20order.%20Please%20share%20available%20sizes%20and%20pricing.">
-           WhatsApp Order
-        </a>
-
-        <a class="btn" target="_blank"
-           href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2">
-           Instagram
-        </a>
-
-        <a class="btn" target="_blank"
-           href="https://www.fb.com/l/6lp1kJRRR">
-           Facebook
-        </a>
-      </div>
-    </div>
-  </div>
-
   <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="glow g1"></div>
-    <div class="glow g2"></div>
-    <div class="glow g3"></div>
+  <section class="hero">
+    <!-- Floating bubbles -->
+    <div class="bubble" style="width:80px; height:80px; top:12%; left:8%; animation-duration: 12s;"></div>
+    <div class="bubble" style="width:120px; height:120px; top:35%; left:75%; animation-duration: 16s;"></div>
+    <div class="bubble" style="width:55px; height:55px; top:68%; left:18%; animation-duration: 11s;"></div>
+    <div class="bubble" style="width:95px; height:95px; top:70%; left:82%; animation-duration: 14s;"></div>
 
-    <div class="container">
-      <div class="hero-wrap">
+    <div class="hero-content">
+      <h1>Veidahi Intimates</h1>
+      <p>Luxury lingerie and western daily wear designed for confidence, style, and elegance.</p>
 
-        <div class="hero-left">
-          <div class="badge">✨ Premium • Delhi Based • Trusted Quality</div>
-          <h1>Confidence begins with what you wear.</h1>
-          <p>
-            Veidahi Intimates brings you luxury lingerie and chic western daily wear designed for comfort, elegance,
-            and everyday confidence. Crafted with premium fabrics, flattering fits, and a modern aesthetic.
-          </p>
+      <img src="Hero.jpeg" alt="Hero Image">
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#products">Explore Products</a>
-
-            <a class="btn btn-dark" target="_blank"
-               href="https://wa.me/918750020203?text=Hi%20Veidahi%20Intimates%2C%20I%20want%20to%20place%20an%20order.%20Please%20share%20available%20sizes%20and%20pricing.">
-               Order on WhatsApp
-            </a>
-
-            <a class="btn btn-dark" target="_blank"
-               href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2">
-               View Instagram
-            </a>
-
-            <a class="btn btn-dark" target="_blank"
-               href="https://www.fb.com/l/6lp1kJRRR">
-               View Facebook
-            </a>
-          </div>
-
-          <div class="cats">
-            <div class="cat">
-              <b>Luxury Lingerie</b>
-              <p>Premium bras, sets, and essentials designed for elegance and comfort.</p>
-            </div>
-            <div class="cat">
-              <b>Chic Western Wear</b>
-              <p>Daily wear western styles made for modern confidence and simplicity.</p>
-            </div>
-            <div class="cat">
-              <b>Perfect Fit & Finish</b>
-              <p>Thoughtful stitching, soft fabrics, and a flattering silhouette.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="slider">
-            <div class="slide active">
-              <img src="Hero.jpeg" alt="Veidahi Hero">
-            </div>
-            <div class="slide">
-              <img src="Hero.jpeg" alt="Veidahi Style">
-            </div>
-            <div class="slide">
-              <img src="Hero.jpeg" alt="Veidahi Intimates">
-            </div>
-            <div class="slider-overlay"></div>
-          </div>
-
-          <div class="hero-float one">💎 Premium Look</div>
-          <div class="hero-float two">🖤 Luxury Feel</div>
-        </div>
-
+      <div class="hero-buttons">
+        <a class="btn" href="#products">Explore Products</a>
+        <a class="btn" href="#gallery">View Gallery</a>
+        <a class="btn" href="#connect">Connect</a>
       </div>
     </div>
   </section>
 
   <!-- PRODUCTS -->
-  <section id="products">
-    <div class="container">
-      <div class="title">
-        <h2>Featured Products</h2>
-        <p>
-          Explore our best-selling pieces. Tap any product to view details on Instagram or place an order instantly
-          on WhatsApp.
-        </p>
-      </div>
+  <section class="section" id="products">
+    <h2>Our Products</h2>
 
-      <div class="products-grid">
+    <div class="products-grid">
 
-        <div class="p-card">
-          <img class="p-img" src="product1.jpeg" alt="Product 1">
-          <div class="p-body">
-            <b>Veidahi Signature Style</b>
-            <span>Click for details or order directly.</span>
-            <div class="p-actions">
-              <a target="_blank" class="primary"
-                 href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2">Details</a>
-              <a target="_blank"
-                 href="https://wa.me/918750020203?text=Hi%20Veidahi%20Intimates%2C%20I%20want%20to%20order%20Product%201.%20Please%20share%20price%20and%20available%20sizes.">
-                 Order
-              </a>
-            </div>
-          </div>
-        </div>
+      <a class="product-card" href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2" target="_blank">
+        <img src="product1.jpeg" alt="Product 1">
+        <div class="product-badge">Click for Details</div>
+      </a>
 
-        <div class="p-card">
-          <img class="p-img" src="product2.jpeg" alt="Product 2">
-          <div class="p-body">
-            <b>Luxury Lingerie Collection</b>
-            <span>Designed for comfort and confidence.</span>
-            <div class="p-actions">
-              <a target="_blank" class="primary"
-                 href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2">Details</a>
-              <a target="_blank"
-                 href="https://wa.me/918750020203?text=Hi%20Veidahi%20Intimates%2C%20I%20want%20to%20order%20Product%202.%20Please%20share%20price%20and%20available%20sizes.">
-                 Order
-              </a>
-            </div>
-          </div>
-        </div>
+      <a class="product-card" href="https://wa.me/918750020203" target="_blank">
+        <img src="product2.jpeg" alt="Product 2">
+        <div class="product-badge">Order Now</div>
+      </a>
 
-        <div class="p-card">
-          <img class="p-img" src="product3.jpeg" alt="Product 3">
-          <div class="p-body">
-            <b>Chic Western Daily Wear</b>
-            <span>Minimal, modern, and premium.</span>
-            <div class="p-actions">
-              <a target="_blank" class="primary"
-                 href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2">Details</a>
+      <a class="product-card" href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2" target="_blank">
+        <img src="product3.jpeg" alt="Product 3">
+        <div class="product-badge">Click for Details</div>
+      </a>
+
+      <a class="product-card" href="https://wa.me/918750020203" target="_blank">
+        <img src="product4.jpeg" alt="Product 4">
+        <div class="product-badge">Order Now</div>
+      </a>
+
+      <a class="product-card" href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2" target="_blank">
+        <img src="product5.jpeg" alt="Product 5">
+        <div class="product-badge">Click for Details</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <h2>Gallery</h2>
+
+    <div class="gallery-grid">
+      <img src="gallery1.jpg" alt="Gallery 1">
+      <img src="gallery2.jpg" alt="Gallery 2">
+      <img src="gallery3.jpg" alt="Gallery 3">
+      <img src="gallery4.jpg" alt="Gallery 4">
+      <img src="gallery5.jpg" alt="Gallery 5">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <h2>About Veidahi Intimates</h2>
+    <p>
+      Veidahi Intimates is a premium brand offering luxury lingerie and chic western daily wear.
+      Every piece is crafted to combine elegance, comfort, and modern style.
+    </p>
+    <p>
+      Based in Delhi, we pride ourselves on delivering exceptional quality, timeless designs,
+      and an elevated shopping experience.
+    </p>
+  </section>
+
+  <!-- CONNECT -->
+  <section class="section connect" id="connect">
+    <h2>Connect With Us</h2>
+    <p>
+      For orders, queries, and new collection updates — connect with Veidahi Intimates directly.
+    </p>
+
+    <div class="connect-buttons">
+      <a href="https://wa.me/918750020203" target="_blank">WhatsApp Order</a>
+      <a href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2" target="_blank">Instagram</a>
+      <a href="https://www.fb.com/l/6lp1kJRRR" target="_blank">Facebook</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Veidahi Intimates, Delhi. All Rights Reserved.</p>
+    <p>Luxury • Style • Confidence</p>
+  </footer>
+
+</body>
+</html>

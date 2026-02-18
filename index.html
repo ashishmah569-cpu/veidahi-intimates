@@ -4,93 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Veidahi Intimates | Luxury Lingerie & Western Daily Wear</title>
-
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: Arial, sans-serif; background:#fff; color:#222; overflow-x:hidden; }
-    a { text-decoration:none; }
-
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Arial,sans-serif;background:#fff;color:#222;overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;}
+    
     /* HERO */
-    .hero {
-      position: relative;
-      width: 100%;
-      min-height: 80vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      color:#fff;
-      padding: 80px 20px;
-      background: url("Hero.jpeg") center/cover no-repeat;
+    .hero{
+      position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:80px 20px;background:url("Hero.jpeg") center/cover no-repeat;
     }
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,47,109,0.55),rgba(124,58,237,0.4),rgba(0,0,0,0.25));z-index:0;}
+    .hero-content{position:relative;z-index:2;max-width:980px;width:100%;}
+    .hero h1{font-size:52px;font-family:"Arial Black",Arial,sans-serif;margin-bottom:14px;letter-spacing:0.5px;text-shadow:0 8px 25px rgba(0,0,0,0.35);}
+    .hero p{font-size:18px;max-width:820px;margin:0 auto;line-height:1.6;opacity:0.98;text-shadow:0 8px 25px rgba(0,0,0,0.35);}
+    .hero-buttons{margin-top:20px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+    .btn{padding:12px 18px;border-radius:999px;font-weight:bold;font-size:14px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.14);color:#fff;transition:0.25s;backdrop-filter:blur(8px);}
+    .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,0.22);}
 
-    .hero::before {
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(
-        135deg,
-        rgba(255,47,109,0.55),
-        rgba(124,58,237,0.40),
-        rgba(0,0,0,0.25)
-      );
-      z-index:0;
-    }
+    /* SECTIONS */
+    .section{padding:75px 18px;text-align:center;}
+    .section h2{font-size:34px;margin-bottom:30px;font-family:"Arial Black",Arial,sans-serif;color:#111;}
 
-    .hero-content { position:relative; z-index:2; max-width: 980px; width: 100%; }
-    .hero h1 { font-size: 48px; font-family:"Arial Black", Arial, sans-serif; margin-bottom:14px; text-shadow:0 8px 25px rgba(0,0,0,0.35); }
-    .hero p { font-size:18px; max-width:820px; margin:0 auto; line-height:1.6; opacity:0.98; text-shadow:0 8px 25px rgba(0,0,0,0.35); }
-
-    /* PRODUCTS */
-    .products-grid {
-      display:grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 18px;
-      max-width: 1200px;
-      margin: 50px auto;
-    }
-    .product-card {
-      overflow:hidden;
-      border-radius:16px;
-      background:#fff;
-      box-shadow:0 10px 25px rgba(0,0,0,0.08);
-      text-align:left;
-      border:1px solid rgba(0,0,0,0.06);
-      transition:0.25s;
-    }
-    .product-card:hover { transform: translateY(-6px); box-shadow:0 16px 35px rgba(0,0,0,0.12); }
-    .product-card img { width:100%; height:270px; object-fit:cover; display:block; }
-    .product-info { padding:14px; }
-    .product-info h3 { font-size:15px; margin-bottom:8px; color:#111; font-weight:800; }
-    .product-info p { font-size:13px; color:#555; margin-bottom:12px; }
-    .product-actions { display:flex; gap:10px; flex-wrap:wrap; }
-    .pbtn { padding:10px 14px; border-radius:999px; font-weight:bold; font-size:13px; border:1px solid rgba(0,0,0,0.10); background:#111; color:#fff; }
-    .pbtn:hover { transform:translateY(-2px); opacity:0.92; }
-    .pbtn.outline { background:#fff; color:#111; }
+    /* PRODUCTS GRID */
+    .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1200px;margin:0 auto;}
+    .product-card{overflow:hidden;border-radius:16px;background:#fff;box-shadow:0 10px 25px rgba(0,0,0,0.08);transition:0.25s;text-align:left;border:1px solid rgba(0,0,0,0.06);}
+    .product-card:hover{transform:translateY(-6px);box-shadow:0 16px 35px rgba(0,0,0,0.12);}
+    .product-card img{width:100%;height:270px;object-fit:cover;display:block;}
+    .product-info{padding:14px;}
+    .product-info h3{font-size:15px;margin-bottom:8px;color:#111;font-weight:800;letter-spacing:0.2px;}
+    .product-info p{font-size:13px;color:#555;line-height:1.4;margin-bottom:8px;}
+    .price{font-weight:800;font-size:14px;margin-bottom:4px;color:#111;}
+    .offer{font-size:13px;color:#E91E63;font-weight:700;margin-bottom:8px;}
+    .product-actions{display:flex;gap:10px;flex-wrap:wrap;}
+    .pbtn{padding:10px 14px;border-radius:999px;font-weight:bold;font-size:13px;border:1px solid rgba(0,0,0,0.10);background:#111;color:#fff;transition:0.2s;}
+    .pbtn:hover{transform:translateY(-2px);opacity:0.92;}
+    .pbtn.outline{background:#fff;color:#111;}
 
     /* ABOUT */
-    .about { padding:60px 20px; background:#fafafa; text-align:center; }
-    .about h2 { font-size:32px; margin-bottom:20px; color:#111; }
-    .about p { font-size:16px; max-width:850px; margin:0 auto 10px auto; color:#444; line-height:1.6; }
+    .about{background:#fafafa;}
+    .about p{font-size:17px;max-width:850px;margin:16px auto;line-height:1.7;color:#444;}
 
     /* CONNECT */
-    .connect { padding:50px 20px; background:#111; color:#fff; text-align:center; }
-    .connect h2 { font-size:28px; margin-bottom:20px; }
-    .connect a {
-      display:inline-block; padding:12px 18px; border-radius:999px; font-weight:bold; font-size:14px;
-      border:1px solid rgba(255,255,255,0.25); color:#fff; background: rgba(255,255,255,0.08); margin:5px; transition:0.25s;
-    }
-    .connect a:hover { background: rgba(255,255,255,0.15); }
+    .connect{background:#111;color:#fff;}
+    .connect h2{color:#fff;}
+    .connect p{max-width:750px;margin:0 auto 20px auto;color:rgba(255,255,255,0.85);line-height:1.6;font-size:16px;}
+    .connect-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:18px;}
+    .connect a{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:bold;font-size:14px;border:1px solid rgba(255,255,255,0.25);color:#fff;background:rgba(255,255,255,0.08);transition:0.25s;}
+    .connect a:hover{transform:translateY(-2px);background:rgba(255,255,255,0.15);}
 
-    footer { padding:28px 20px; text-align:center; font-size:13px; color:#bbb; margin-top:30px; }
+    footer{background:#000;color:#bbb;padding:28px 18px;text-align:center;font-size:13px;}
+    footer p{margin:6px 0;}
 
-    /* GALLERY PAGE */
-    .gallery { display:grid; grid-template-columns: repeat(2,1fr); gap:12px; margin-top:20px; }
-    .gallery img { width:100%; height:320px; object-fit:cover; border-radius:16px; }
-
-    @media(max-width:700px){ .products-grid{grid-template-columns:1fr;} .gallery img{height:280px;} }
-    @media(max-width:420px){ .gallery{grid-template-columns:1fr;} }
+    /* RESPONSIVE */
+    @media(max-width:1100px){.products-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:700px){.hero h1{font-size:36px;}.hero p{font-size:16px;}.products-grid{grid-template-columns:repeat(2,1fr);}.product-card img{height:220px;}}
+    @media(max-width:420px){.products-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -99,95 +67,121 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Veidahi Intimates</h1>
-      <p>Luxury lingerie & western daily wear designed for confidence, style & elegance.</p>
+      <p>Luxury lingerie & western daily wear designed for confidence, style, and elegance.</p>
+      <div class="hero-buttons">
+        <a class="btn" href="#products">Explore Products</a>
+        <a class="btn" href="#about">About</a>
+        <a class="btn" href="#connect">Connect</a>
+      </div>
     </div>
   </section>
 
   <!-- PRODUCTS -->
-  <section class="products-grid">
-    <!-- Product 1 -->
-    <div class="product-card">
-      <a href="product1.html"><img src="p1-1.jpg" alt="Product 1"></a>
-      <div class="product-info">
-        <h3>Velvet Glow Lingerie Set</h3>
-        <p>Premium finish • Elegant fit • Daily comfort</p>
-        <div class="product-actions">
-          <a class="pbtn" href="product1.html">View Details</a>
-          <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
-        </div>
-      </div>
-    </div>
+  <section class="section" id="products">
+    <h2>Our Signature Collection</h2>
+    <div class="products-grid">
 
-    <!-- Product 2 -->
-    <div class="product-card">
-      <a href="product2.html"><img src="p2-1.jpg" alt="Product 2"></a>
-      <div class="product-info">
-        <h3>Rose Noir Lace Bra</h3>
-        <p>Soft lace • Sculpted look • Luxury feel</p>
-        <div class="product-actions">
-          <a class="pbtn" href="product2.html">View Details</a>
-          <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+      <!-- Product 1 -->
+      <div class="product-card">
+        <a href="product1.html"><img src="p1-1.jpg" alt="Product 1"></a>
+        <div class="product-info">
+          <h3>Velvet Glow Lingerie Set</h3>
+          <p>Premium finish • Elegant fit • Daily comfort</p>
+          <div class="price">₹1200</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product1.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Product 3 -->
-    <div class="product-card">
-      <a href="product3.html"><img src="p3-1.jpg" alt="Product 3"></a>
-      <div class="product-info">
-        <h3>Midnight Satin Comfort Set</h3>
-        <p>Smooth satin • Light support • Premium style</p>
-        <div class="product-actions">
-          <a class="pbtn" href="product3.html">View Details</a>
-          <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+      <!-- Product 2 -->
+      <div class="product-card">
+        <a href="product2.html"><img src="p2-1.jpg" alt="Product 2"></a>
+        <div class="product-info">
+          <h3>Rose Noir Lace Bra</h3>
+          <p>Soft lace • Sculpted look • Luxury feel</p>
+          <div class="price">₹1100</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product2.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Product 4 -->
-    <div class="product-card">
-      <a href="product4.html"><img src="p4-1.jpg" alt="Product 4"></a>
-      <div class="product-info">
-        <h3>Crystal Fit Push-Up Bra</h3>
-        <p>Lift & shape • Soft straps • Long wear</p>
-        <div class="product-actions">
-          <a class="pbtn" href="product4.html">View Details</a>
-          <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+      <!-- Product 3 -->
+      <div class="product-card">
+        <a href="product3.html"><img src="p3-1.jpg" alt="Product 3"></a>
+        <div class="product-info">
+          <h3>Midnight Satin Comfort Set</h3>
+          <p>Smooth satin • Light support • Premium style</p>
+          <div class="price">₹1300</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product3.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Product 5 -->
-    <div class="product-card">
-      <a href="product5.html"><img src="p5-1.jpg" alt="Product 5"></a>
-      <div class="product-info">
-        <h3>Everyday Luxe Wireless Bra</h3>
-        <p>Wire-free • Soft touch • Everyday elegance</p>
-        <div class="product-actions">
-          <a class="pbtn" href="product5.html">View Details</a>
-          <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+      <!-- Product 4 -->
+      <div class="product-card">
+        <a href="product4.html"><img src="p4-1.jpg" alt="Product 4"></a>
+        <div class="product-info">
+          <h3>Crystal Fit Push-Up Bra</h3>
+          <p>Lift & shape • Soft straps • Long wear</p>
+          <div class="price">₹1250</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product4.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
         </div>
       </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <a href="product5.html"><img src="p5-1.jpg" alt="Product 5"></a>
+        <div class="product-info">
+          <h3>Everyday Luxe Wireless Bra</h3>
+          <p>Wire-free • Soft touch • Everyday elegance</p>
+          <div class="price">₹1150</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product5.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products 6-12 -->
+      <!-- Add same structure, change href, img src, name, price -->
+
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="about">
+  <section class="section about" id="about">
     <h2>About Veidahi Intimates</h2>
-    <p>Veidahi Intimates is a premium lingerie & western daily wear brand based in Delhi. We offer luxury bras, panties, lingerie sets and stylish essentials designed for comfort, confidence and elegance. Every woman can find perfect fitting options with modern designs and premium fabrics. For new arrivals, orders and queries, connect with us on WhatsApp.</p>
+    <p>Veidahi Intimates is a premium lingerie & western daily wear brand based in Delhi. We offer luxury bras, panties, lingerie sets and stylish essentials designed for comfort, confidence and elegance. Our collection includes modern designs, premium fabrics and perfect fitting options for every woman. For new arrivals, orders and queries, connect with us on WhatsApp.</p>
   </section>
 
   <!-- CONNECT -->
-  <section class="connect">
+  <section class="section connect" id="connect">
     <h2>Connect With Us</h2>
-    <a href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
-    <a href="https://www.instagram.com/veidahiintimates" target="_blank">Instagram</a>
-    <a href="https://www.fb.com/l/6lp1kJRRR" target="_blank">Facebook</a>
+    <p>For orders, queries, and new collection updates — connect with Veidahi Intimates directly.</p>
+    <div class="connect-buttons">
+      <a href="https://wa.me/918750020203" target="_blank">WhatsApp Order</a>
+      <a href="https://www.instagram.com/veidahiintimates" target="_blank">Instagram</a>
+      <a href="https://www.fb.com/l/6lp1kJRRR" target="_blank">Facebook</a>
+    </div>
   </section>
 
   <footer>
-    &copy; 2026 Veidahi Intimates • Luxury • Style • Confidence
+    <p>&copy; 2026 Veidahi Intimates, Delhi. All Rights Reserved.</p>
+    <p>Luxury • Style • Confidence</p>
   </footer>
-
 </body>
 </html>

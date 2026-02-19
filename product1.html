@@ -64,10 +64,10 @@ select{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.
         </select>
 
         <select id="sizeSelect">
+          <option value="32">32</option>
           <option value="34">34</option>
           <option value="36">36</option>
           <option value="38">38</option>
-          <option value="40">40</option>
         </select>
       </div>
 
@@ -84,7 +84,6 @@ select{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.
 <script>
 const WHATSAPP_NUMBER = "8750020203";
 
-// Images per color
 const colorImages = {
   green: ["p1-green-1.jpg","p1-green-2.jpg","p1-green-3.jpg","p1-green-4.jpg"],
   burgundy: ["p1-burgundy-1.jpg","p1-burgundy-2.jpg","p1-burgundy-3.jpg","p1-burgundy-4.jpg"],
@@ -98,29 +97,29 @@ const sizeSelect = document.getElementById("sizeSelect");
 const pName = document.getElementById("pName").innerText;
 const pPrice = document.getElementById("pPrice").innerText;
 
-// Function to render thumbnails
+// Render thumbnails for selected color
 function renderThumbs(color){
+  const images = colorImages[color.toLowerCase()];
   thumbs.innerHTML = "";
-  const imgs = colorImages[color.toLowerCase()];
-  imgs.forEach((src,index)=>{
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = color+"-"+(index+1);
-    if(index===0) img.classList.add("active");
-    img.onclick = ()=>{
+  images.forEach((src,i)=>{
+    const t = document.createElement("img");
+    t.src = src;
+    t.alt = color+" "+(i+1);
+    if(i===0) t.classList.add("active");
+    t.onclick = ()=> {
       mainImage.src = src;
-      thumbs.querySelectorAll("img").forEach(t=>t.classList.remove("active"));
-      img.classList.add("active");
+      thumbs.querySelectorAll("img").forEach(img=>img.classList.remove("active"));
+      t.classList.add("active");
     };
-    thumbs.appendChild(img);
+    thumbs.appendChild(t);
   });
-  mainImage.src = imgs[0];
+  mainImage.src = images[0];
 }
 
 // Initial load
 renderThumbs(colorSelect.value);
 
-// Change color
+// Color change
 colorSelect.addEventListener("change", ()=>{
   renderThumbs(colorSelect.value);
 });
@@ -129,8 +128,8 @@ colorSelect.addEventListener("change", ()=>{
 document.getElementById("waBtn").addEventListener("click", ()=>{
   const color = colorSelect.value.charAt(0).toUpperCase() + colorSelect.value.slice(1);
   const size = sizeSelect.value;
-  const imgs = colorImages[colorSelect.value.toLowerCase()];
-  const imgUrl = new URL(imgs[0], window.location.href).href;
+  const images = colorImages[colorSelect.value.toLowerCase()];
+  const imgUrl = new URL(images[0], window.location.href).href;
   const pageUrl = window.location.href;
 
   const msg = `Hello Veidahi Intimates 👋

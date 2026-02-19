@@ -46,17 +46,16 @@
     height:520px;
     object-fit:cover;
     display:block;
-    cursor:zoom-in;
   }
 
+  /* thumbs */
   .thumbs{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
+    display:flex;
     gap:10px;
     margin-top:12px;
   }
   .thumbs img{
-    width:100%;
+    width:110px;
     height:90px;
     object-fit:cover;
     border-radius:14px;
@@ -65,7 +64,7 @@
     transition:0.2s;
   }
   .thumbs img.active{
-    border-color:#7A1230; /* Burgundy */
+    border-color:#7A1230;
   }
 
   /* Right info */
@@ -103,7 +102,7 @@
     font-weight:900;
     font-size:14px;
     cursor:pointer;
-    background:#7A1230; /* Burgundy */
+    background:#7A1230;
     color:#fff;
     transition:0.2s;
   }
@@ -148,6 +147,7 @@
       <h1 id="pName">Emerald Mist With Lace Bra</h1>
       <div class="price" id="pPrice">₹150</div>
       <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+
       <div class="desc">
         Premium lace • Daily comfort • Luxury feel.  
         Perfect for everyday + party wear.
@@ -182,10 +182,11 @@
 <script>
   const WHATSAPP_NUMBER = "918750020203";
 
+  // Sirf 1-1 image per color
   const colorImages = {
-    "Green": ["p1-green-1.jpg","p1-green-2.jpg","p1-green-3.jpg","p1-green-4.jpg"],
-    "Burgundy": ["p1-burgundy-1.jpg","p1-burgundy-2.jpg","p1-burgundy-3.jpg","p1-burgundy-4.jpg"],
-    "Red": ["p1-red-1.jpg","p1-red-2.jpg","p1-red-3.jpg","p1-red-4.jpg"]
+    Green: ["p1-green-1.jpg"],
+    Burgundy: ["p1-burgundy-1.jpg"],
+    Red: ["p1-red-1.jpg"]
   };
 
   const mainImage = document.getElementById("mainImage");
@@ -203,7 +204,6 @@
     imgs.forEach((src, index) => {
       const im = document.createElement("img");
       im.src = src;
-      im.alt = color + " " + (index+1);
 
       if(index === 0) im.classList.add("active");
 
@@ -222,7 +222,7 @@
   // first load
   renderThumbs(colorSelect.value);
 
-  // change color
+  // on color change
   colorSelect.addEventListener("change", () => {
     renderThumbs(colorSelect.value);
   });
@@ -232,9 +232,8 @@
     const color = colorSelect.value;
     const size = sizeSelect.value;
 
-    const baseUrl = window.location.href.replace("product1.html", "");
-    const imgUrl = baseUrl + colorImages[color][0];
     const pageUrl = window.location.href;
+    const imgUrl = new URL(colorImages[color][0], pageUrl).href;
 
     const msg =
 `Hello Veidahi Intimates 👋
@@ -252,5 +251,6 @@ Image: ${imgUrl}`;
     window.open(waLink, "_blank");
   });
 </script>
+
 </body>
 </html>

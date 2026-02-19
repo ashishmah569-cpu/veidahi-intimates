@@ -202,19 +202,16 @@
     <h1>Veidahi Intimates</h1>
     <p>Luxury lingerie & western daily wear designed for confidence, style, and elegance.</p>
 
-    <!-- SEARCH BAR -->
     <div class="searchWrap">
       <input id="searchInput" type="text" placeholder="Search bra, panty..." />
     </div>
 
-    <!-- HERO BUTTONS -->
     <div class="hero-buttons">
       <a class="btn" href="#products">Explore Products</a>
       <a class="btn" href="#about">About</a>
       <a class="btn" href="#connect">Connect</a>
     </div>
   </div>
-</section>
 
   <!-- PRODUCTS -->
   <section class="section" id="products">
@@ -225,16 +222,13 @@
    <!-- Product 1 -->
 <div class="product-card" data-type="bra">
   <a href="product1.html">
-    <img loading="lazy" src="p1-green-1.jpg" alt="Emerald Mist Bra">
+    <img src="p1-green-1.jpg" alt="Emerald Mist Bra">
   </a>
-
   <div class="product-info">
     <h3>Emerald Mist With Lace Bra</h3>
     <p>Premium lace • Daily comfort • Luxury feel</p>
-
     <div class="price">₹150</div>
     <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
-
     <div class="product-actions">
       <a class="pbtn" href="product1.html">View Details</a>
       <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
@@ -420,7 +414,7 @@
     <p>&copy; 2026 Veidahi Intimates, Delhi. All Rights Reserved.</p>
     <p>Luxury • Style • Confidence</p>
   </footer>
-  <script>
+ <script>
   const searchInput = document.getElementById("searchInput");
   const productCards = document.querySelectorAll(".product-card");
 
@@ -431,13 +425,11 @@
       const type = (card.getAttribute("data-type") || "").toLowerCase();
       const text = card.innerText.toLowerCase();
 
-      // Agar input blank hai → sab show
       if(value === ""){
         card.style.display = "flex";
         return;
       }
 
-      // bra/panty match kare to show
       if(type.includes(value) || text.includes(value)){
         card.style.display = "flex";
       } else {

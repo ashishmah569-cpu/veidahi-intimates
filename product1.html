@@ -3,69 +3,399 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>100% Cotton Bland With Lace Bra - Veidahi Intimates</title>
+  <title>100% Cotton Blend With Lace Bra - Veidahi Intimates</title>
+
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:Arial,sans-serif;background:#fff;color:#111;}
-    header{padding:16px;border-bottom:1px solid rgba(0,0,0,0.08);position:sticky;top:0;background:#fff;z-index:10;}
+
+    header{
+      padding:16px;
+      border-bottom:1px solid rgba(0,0,0,0.08);
+      position:sticky;
+      top:0;
+      background:#fff;
+      z-index:10;
+    }
     .brand{font-weight:900;font-size:18px;}
+
     .wrap{max-width:1200px;margin:0 auto;padding:24px 16px 60px;}
-    .back{display:inline-block;padding:10px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.12);text-decoration:none;color:#111;font-weight:800;font-size:13px;transition:0.2s;}
+
+    .back{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,0.12);
+      text-decoration:none;
+      color:#111;
+      font-weight:800;
+      font-size:13px;
+      transition:0.2s;
+    }
     .back:hover{transform:translateY(-2px);}
+
     h1{font-size:26px;font-family:"Arial Black",Arial,sans-serif;margin-bottom:8px;}
-    .sub{color:#555;font-size:14px;line-height:1.5;max-width:850px;margin-bottom:16px;}
-    .grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:18px;align-items:start;}
-    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
-    .gallery img{width:100%;height:320px;object-fit:cover;border-radius:18px;border:1px solid rgba(0,0,0,0.08);box-shadow:0 14px 28px rgba(0,0,0,0.06);}
-    .details{border-radius:22px;padding:18px 16px;border:1px solid rgba(0,0,0,0.08);box-shadow:0 14px 28px rgba(0,0,0,0.06);background:#fff;position:sticky;top:95px;}
+
+    .sub{
+      color:#555;
+      font-size:14px;
+      line-height:1.5;
+      max-width:850px;
+      margin-bottom:16px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+
+    .imgCard{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,0.08);
+      box-shadow:0 14px 28px rgba(0,0,0,0.06);
+      background:#fff;
+      cursor:zoom-in;
+      transition:0.2s;
+    }
+    .imgCard:hover{transform:translateY(-3px);}
+
+    .imgCard img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* Details */
+    .details{
+      border-radius:22px;
+      padding:18px 16px;
+      border:1px solid rgba(0,0,0,0.08);
+      box-shadow:0 14px 28px rgba(0,0,0,0.06);
+      background:#fff;
+      position:sticky;
+      top:95px;
+    }
+
     .box-title{font-weight:900;font-size:16px;margin-bottom:10px;}
-    .list{margin-top:10px;font-size:14px;color:#333;line-height:1.7;}
-    .list b{color:#111;}
     .price{font-size:20px;font-weight:900;color:#d2235b;margin:12px 0;}
-    .offer{background:#ffedf1;color:#d2235b;padding:8px 12px;border-radius:12px;font-weight:700;margin-bottom:12px;display:inline-block;}
+
+    .offer{
+      background:#ffedf1;
+      color:#d2235b;
+      padding:8px 12px;
+      border-radius:12px;
+      font-weight:700;
+      margin-bottom:12px;
+      display:inline-block;
+    }
+
+    .sectionTitle{
+      font-weight:900;
+      margin-top:14px;
+      margin-bottom:8px;
+      font-size:14px;
+      color:#111;
+    }
+
+    .desc{
+      font-size:14px;
+      color:#444;
+      line-height:1.7;
+    }
+
+    .highlights{
+      margin-top:10px;
+      display:grid;
+      gap:8px;
+      font-size:14px;
+      color:#333;
+      line-height:1.6;
+    }
+    .highlights div{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(0,0,0,0.06);
+      background:#fafafa;
+    }
+
+    /* Color options */
+    .colorsRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .colorBtn{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,0.12);
+      background:#fff;
+      cursor:pointer;
+      font-weight:900;
+      font-size:13px;
+      transition:0.2s;
+    }
+    .colorBtn:hover{transform:translateY(-2px);}
+    .colorBtn.active{
+      border:1px solid rgba(0,0,0,0.25);
+      box-shadow:0 10px 22px rgba(0,0,0,0.08);
+    }
+
+    .dot{
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      border:1px solid rgba(0,0,0,0.15);
+    }
+
     .btns{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;}
-    .btn{display:inline-block;padding:12px 16px;border-radius:999px;text-decoration:none;font-weight:900;font-size:13px;border:1px solid rgba(0,0,0,0.12);transition:0.2s;}
+    .btn{
+      display:inline-block;
+      padding:12px 16px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:900;
+      font-size:13px;
+      border:1px solid rgba(0,0,0,0.12);
+      transition:0.2s;
+    }
     .btn:hover{transform:translateY(-2px);}
     .btn.dark{background:#111;color:#fff;}
     .btn.light{background:#fff;color:#111;}
+
     footer{margin-top:50px;text-align:center;color:#777;font-size:13px;}
-    @media(max-width:980px){.grid{grid-template-columns:1fr;}.details{position:relative;top:0;}.gallery img{height:280px;}}
-    @media(max-width:520px){.gallery{grid-template-columns:1fr;}.gallery img{height:340px;}h1{font-size:22px;}}
+
+    /* Zoom Modal */
+    .zoomModal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.92);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      padding:18px;
+    }
+    .zoomModal.active{display:flex;}
+
+    .zoomModal img{
+      max-width:95vw;
+      max-height:85vh;
+      border-radius:14px;
+      box-shadow:0 18px 60px rgba(0,0,0,0.45);
+      cursor:zoom-out;
+    }
+
+    .closeZoom{
+      position:fixed;
+      top:16px;
+      right:16px;
+      background:rgba(255,255,255,0.12);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.25);
+      padding:12px 14px;
+      border-radius:999px;
+      font-weight:900;
+      cursor:pointer;
+      backdrop-filter: blur(10px);
+    }
+
+    @media(max-width:980px){
+      .grid{grid-template-columns:1fr;}
+      .details{position:relative;top:0;}
+      .imgCard img{height:280px;}
+    }
+
+    @media(max-width:520px){
+      .gallery{grid-template-columns:1fr;}
+      .imgCard img{height:340px;}
+      h1{font-size:22px;}
+    }
   </style>
 </head>
+
 <body>
+
   <header>
     <div class="brand">VEIDAHI INTIMATES</div>
   </header>
+
   <div class="wrap">
     <a class="back" href="index.html">← Back to Home</a>
-    <h1>100% Cotton Bland With Lace Bra</h1>
-    <div class="sub">Premium Bra designed for confidence, comfort and luxury feel.</div>
+
+    <h1>100% Cotton Blend With Lace Bra</h1>
+    <div class="sub">
+      A premium everyday bra designed for comfort, confidence and a luxury feel — perfect for daily wear and stylish looks.
+    </div>
+
     <div class="grid">
+
       <!-- Gallery -->
-      <div class="gallery">
-       <img src="p1-1.jpg"> Emerald Mist With Lace Bra 
-          <img src="p1-2.jpg"> Emerald Mist With Lace Bra 
-        <img src="p1-3.jpg"> Emerald Mist With Lace Bra 
-        <img src="p1-4.jpg"> Emerald Mist With Lace Bra 
+      <div class="gallery" id="gallery">
+        <!-- Images will auto load from JS -->
       </div>
+
       <!-- Details -->
       <div class="details">
+
         <div class="box-title">Product Details</div>
+
         <div class="price">₹150</div>
         <div class="offer">2 pieces → 5% off | 3 pieces → 10% off</div>
-        <div class="list">
-          <div><b>Fabric:</b> Premium lace + soft inner Bra</div>
-          <div><b>Style:</b> Luxury Bra</div>
+
+        <div class="sectionTitle">Choose Color</div>
+        <div class="colorsRow">
+          <button class="colorBtn active" data-color="Emerald Green">
+            <span class="dot" style="background:#0f766e;"></span> Emerald Green
+          </button>
+
+          <button class="colorBtn" data-color="Ruby red">
+            <span class="dot" style="background:#dc2626;"></span> Ruby Red
+          </button>
+
+          <button class="colorBtn" data-color="Burgundy">
+            <span class="dot" style="background:#111;"></span> Burgundy
+          </button>
+        </div>
+
+        <div class="sectionTitle">Description</div>
+        <div class="desc">
+          This bra is crafted with soft cotton blend fabric and premium lace detailing.
+          It gives a clean luxury look with breathable comfort — ideal for daily wear, long hours and a confident fit.
+        </div>
+
+        <div class="sectionTitle">Highlights</div>
+        <div class="highlights">
+          <div><b>Fabric:</b> Cotton blend + premium lace finish</div>
+          <div><b>Comfort:</b> Soft touch • breathable • skin friendly</div>
+          <div><b>Look:</b> Luxury daily wear style</div>
           <div><b>Dispatch:</b> 24-48 Hours</div>
         </div>
+
         <div class="btns">
           <a class="btn dark" href="https://wa.me/918750020203" target="_blank">Order on WhatsApp</a>
           <a class="btn light" href="https://www.instagram.com/veidahiintimates" target="_blank">View Instagram</a>
         </div>
+
       </div>
+
     </div>
+
     <footer>© 2026 Veidahi Intimates • Luxury • Style • Confidence</footer>
   </div>
+
+  <!-- Zoom Modal -->
+  <div class="zoomModal" id="zoomModal">
+    <button class="closeZoom" id="closeZoom">✕ Close</button>
+    <img id="zoomImg" src="" alt="Zoomed Image">
+  </div>
+
+  <script>
+    /* =========================
+       1) IMAGES FOR EACH COLOR
+       ========================= */
+
+    const productImages = {
+      Emerald Green: ["p1-1.jpg", "p1-2.jpg", "p1-3.jpg", "p1-4.jpg"],
+      Ruby Red:   ["p1-red-1.jpg", "p1-red-2.jpg", "p1-red-3.jpg", "p1-red-4.jpg"],
+      Burgundyk: ["p1-black-1.jpg", "p1-black-2.jpg", "p1-black-3.jpg", "p1-black-4.jpg"]
+    };
+
+    /* NOTE:
+      Aapko bas images rename karni hain.
+      Example:
+      red images ka naam: p1-red-1.jpg ... p1-red-4.jpg
+      black images ka naam: p1-black-1.jpg ... p1-black-4.jpg
+    */
+
+    const gallery = document.getElementById("gallery");
+
+    function loadGallery(color){
+      gallery.innerHTML = "";
+
+      productImages[color].forEach((src, index) => {
+        const card = document.createElement("div");
+        card.className = "imgCard zoomable";
+
+        card.innerHTML = `
+          <img src="${src}" alt="Product Image ${index+1}">
+        `;
+
+        gallery.appendChild(card);
+      });
+
+      enableZoom(); // zoom re-enable after change
+    }
+
+    /* =========================
+       2) ZOOM FEATURE
+       ========================= */
+
+    const zoomModal = document.getElementById("zoomModal");
+    const zoomImg = document.getElementById("zoomImg");
+    const closeZoom = document.getElementById("closeZoom");
+
+    function enableZoom(){
+      document.querySelectorAll(".zoomable img").forEach(img => {
+        img.addEventListener("click", () => {
+          zoomImg.src = img.src;
+          zoomModal.classList.add("active");
+          document.body.style.overflow = "hidden";
+        });
+      });
+    }
+
+    function closeZoomModal(){
+      zoomModal.classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+    closeZoom.addEventListener("click", closeZoomModal);
+
+    zoomModal.addEventListener("click", (e) => {
+      if(e.target === zoomModal || e.target === zoomImg){
+        closeZoomModal();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape"){
+        closeZoomModal();
+      }
+    });
+
+    /* =========================
+       3) COLOR BUTTON CLICK
+       ========================= */
+
+    document.querySelectorAll(".colorBtn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".colorBtn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const color = btn.getAttribute("data-color");
+        loadGallery(color);
+      });
+    });
+
+    /* DEFAULT LOAD */
+    loadGallery("green");
+  </script>
+
 </body>
 </html>

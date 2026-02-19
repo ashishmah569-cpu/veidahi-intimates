@@ -9,6 +9,9 @@
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:Arial,sans-serif;background:#fff;color:#222;overflow-x:hidden;}
     a{text-decoration:none;color:inherit;}
+    <div class="searchWrap">
+  <input id="searchInput" type="text" placeholder="Search bra, panty..." />
+</div>
 
     /* HERO */
     .hero{
@@ -199,6 +202,9 @@
       <h1>Veidahi Intimates</h1>
       <p>Luxury lingerie & western daily wear designed for confidence, style, and elegance.</p>
       <div class="hero-buttons">
+        <div class="searchWrap">
+  <input id="searchInput" type="text" placeholder="Search bra, panty..." />
+</div>
         <a class="btn" href="#products">Explore Products</a>
         <a class="btn" href="#about">About</a>
         <a class="btn" href="#connect">Connect</a>
@@ -213,7 +219,7 @@
     <div class="products-grid">
 
    <!-- Product 1 -->
-<div class="product-card">
+<div class="product-card" data-type="bra">
   <a href="product1.html">
     <img loading="lazy" src="p1-green-1.jpg" alt="Emerald Mist Bra">
   </a>
@@ -232,7 +238,7 @@
   </div>
 </div>
       <!-- Product 2 -->
-      <div class="product-card">
+   <div class="product-card" data-type="bra">
         <a href="product2.html"><img loading="lazy" src="p2-1.jpg" alt="Product 2"></a>
         <div class="product-info">
           <h3>Sports Bra</h3>
@@ -247,7 +253,7 @@
       </div>
 
       <!-- Product 3 -->
-      <div class="product-card">
+   <div class="product-card" data-type="bra">
         <a href="product3.html"><img loading="lazy" src="p3-1.jpg" alt="Product 3"></a>
         <div class="product-info">
           <h3>Premium Bra</h3>
@@ -262,7 +268,7 @@
       </div>
 
       <!-- Product 4 -->
-      <div class="product-card">
+  <div class="product-card" data-type="panty">
         <a href="product4.html"><img loading="lazy" src="p4-1.jpg" alt="Product 4"></a>
         <div class="product-info">
           <h3>Moon Panty</h3>
@@ -277,7 +283,7 @@
       </div>
 
       <!-- Product 5 -->
-      <div class="product-card">
+     <div class="product-card" data-type="panty">
         <a href="product5.html"><img loading="lazy" src="p5-1.jpg" alt="Product 5"></a>
         <div class="product-info">
           <h3>Crystal Panty</h3>
@@ -292,7 +298,7 @@
       </div>
 
       <!-- Product 6 -->
-      <div class="product-card">
+     <div class="product-card" data-type="panty">
         <a href="product6.html"><img loading="lazy" src="p6-1.jpg" alt="Product 6"></a>
         <div class="product-info">
           <h3>Mystic Panty</h3>
@@ -307,7 +313,7 @@
       </div>
 
       <!-- Product 7 -->
-      <div class="product-card">
+     <div class="product-card" data-type="panty">
         <a href="product7.html"><img loading="lazy" src="p7-1.jpg" alt="Product 7"></a>
         <div class="product-info">
           <h3>Cotton Candy Dream</h3>
@@ -322,7 +328,7 @@
       </div>
 
       <!-- Product 8 -->
-      <div class="product-card">
+    <div class="product-card" data-type="panty">
         <a href="product8.html"><img loading="lazy" src="p8-1.jpg" alt="Product 8"></a>
         <div class="product-info">
           <h3>Botanic Bliss Panty</h3>
@@ -337,7 +343,7 @@
       </div>
 
       <!-- Product 9 -->
-      <div class="product-card">
+     <div class="product-card" data-type="panty">
         <a href="product9.html"><img loading="lazy" src="p9-1.jpg" alt="Product 9"></a>
         <div class="product-info">
           <h3>Coastal Dream Panty</h3>
@@ -352,7 +358,7 @@
       </div>
 
       <!-- Product 10 -->
-      <div class="product-card">
+     <div class="product-card" data-type="panty">
         <a href="product10.html"><img loading="lazy" src="p10-1.jpg" alt="Product 10"></a>
         <div class="product-info">
           <h3>Cloud Kiss Panty</h3>
@@ -367,7 +373,7 @@
       </div>
 
       <!-- Product 11 -->
-      <div class="product-card">
+      <div class="product-card" data-type="panty">
         <a href="product11.html"><img loading="lazy" src="p11-1.jpg" alt="Product 11"></a>
         <div class="product-info">
           <h3>Pastel Forest Panty</h3>
@@ -410,6 +416,32 @@
     <p>&copy; 2026 Veidahi Intimates, Delhi. All Rights Reserved.</p>
     <p>Luxury • Style • Confidence</p>
   </footer>
+  <script>
+  const searchInput = document.getElementById("searchInput");
+  const productCards = document.querySelectorAll(".product-card");
+
+  searchInput.addEventListener("input", () => {
+    const value = searchInput.value.trim().toLowerCase();
+
+    productCards.forEach(card => {
+      const type = (card.getAttribute("data-type") || "").toLowerCase();
+      const text = card.innerText.toLowerCase();
+
+      // Agar input blank hai → sab show
+      if(value === ""){
+        card.style.display = "flex";
+        return;
+      }
+
+      // bra/panty match kare to show
+      if(type.includes(value) || text.includes(value)){
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+</script>
 
 </body>
 </html>

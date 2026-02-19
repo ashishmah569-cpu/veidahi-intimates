@@ -22,8 +22,7 @@
   text-align:center;
   color:#fff;
   padding:80px 20px;
-  background:url("Hero.jpeg") center/cover no-repeat;
-}
+  background:url("Hero.jpeg") center 20% / cover no-repeat;
 
 @media(min-width:900px){
   .hero{
@@ -56,13 +55,13 @@
     }
 
     /* SEARCH */
-   .searchWrap{
+  .searchWrap{
   position:absolute;
-  top:22px;
-  left:22px;
-  max-width:360px;
-  width:calc(100% - 44px);
-  z-index:5;
+  top:20px;
+  right:20px;
+  width:280px;
+  z-index:10;
+}
 }
    #searchInput{
   width:100%;
@@ -221,23 +220,25 @@
 <body>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Veidahi Intimates</h1>
-      <p>Luxury lingerie & western daily wear designed for confidence, style, and elegance.</p>
+<section class="hero">
+  <div class="searchWrap">
+    <input id="searchInput" type="text" placeholder="Search bra, panty..." />
+  </div>
 
-      <div class="searchWrap">
-        <input id="searchInput" type="text" placeholder="Search bra, panty..." />
-      </div>
+  <div class="hero-content">
+    <h1>Veidahi Intimates</h1>
+    <p>Luxury lingerie & western daily wear designed for confidence, style, and elegance.</p>
 
-      <div class="hero-buttons">
-        <a class="btn" href="#products">Explore Products</a>
-        <a class="btn" href="#about">About</a>
-        <a class="btn" href="#connect">Connect</a>
-      </div>
+    <div class="hero-buttons">
+      <a class="btn" href="#products">Explore Products</a>
+      <a class="btn" href="#about">About</a>
+      <a class="btn" href="#connect">Connect</a>
     </div>
-  </section>
+  </div>
+</section>
 
+<!-- PRODUCTS -->
+<section class="section" id="products">
   <!-- PRODUCTS -->
   <section class="section" id="products">
     <h2>Our Signature Collection</h2>

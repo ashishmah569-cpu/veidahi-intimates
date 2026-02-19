@@ -4,162 +4,36 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Emerald Mist With Lace Bra | Veidahi Intimates</title>
-
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:Arial,sans-serif;background:#fff;color:#111;}
-  a{text-decoration:none;color:inherit;}
-
-  .wrap{max-width:1100px;margin:0 auto;padding:18px;}
-  .topbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-    margin-bottom:14px;
-  }
-  .brand{font-weight:900;font-size:18px;}
-  .back{
-    padding:10px 14px;
-    border-radius:999px;
-    border:1px solid rgba(0,0,0,0.15);
-    font-weight:700;
-    font-size:13px;
-  }
-
-  .grid{
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:18px;
-    align-items:start;
-  }
-
-  /* Gallery */
-  .mainImg{
-    width:100%;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 14px 30px rgba(0,0,0,0.12);
-  }
-  .mainImg img{
-    width:100%;
-    height:520px;
-    object-fit:cover;
-    display:block;
-    cursor:zoom-in;
-  }
-
-  .thumbs{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-    margin-top:12px;
-  }
-  .thumbs img{
-    width:100%;
-    height:90px;
-    object-fit:cover;
-    border-radius:14px;
-    border:2px solid transparent;
-    cursor:pointer;
-    transition:0.2s;
-  }
-  .thumbs img.active{
-    border-color:#7A1230;
-  }
-
-  /* Right info */
-  .card{
-    border-radius:18px;
-    border:1px solid rgba(0,0,0,0.08);
-    padding:16px;
-    box-shadow:0 14px 30px rgba(0,0,0,0.06);
-  }
-  h1{font-size:22px;margin-bottom:8px;}
-  .price{font-size:18px;font-weight:900;margin-bottom:6px;}
-  .offer{color:#E91E63;font-weight:800;margin-bottom:12px;font-size:14px;}
-  .desc{color:#444;line-height:1.6;font-size:14px;margin-bottom:16px;}
-
-  .row{
-    display:flex;
-    gap:10px;
-    margin-bottom:12px;
-  }
-  select{
-    width:100%;
-    padding:12px 12px;
-    border-radius:12px;
-    border:1px solid rgba(0,0,0,0.15);
-    font-weight:700;
-    font-size:14px;
-    outline:none;
-  }
-
-  .btn{
-    width:100%;
-    padding:14px 16px;
-    border-radius:999px;
-    border:none;
-    font-weight:900;
-    font-size:14px;
-    cursor:pointer;
-    background:#7A1230;
-    color:#fff;
-    transition:0.2s;
-  }
-  .btn:hover{transform:translateY(-2px);opacity:0.95;}
-
-  .smallNote{
-    margin-top:10px;
-    font-size:12px;
-    color:#666;
-    line-height:1.5;
-  }
-
-  /* Zoom Modal */
-  .zoomModal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.92);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:9999;
-    padding:18px;
-  }
-  .zoomModal.active{display:flex;}
-  .zoomModal img{
-    max-width:95vw;
-    max-height:85vh;
-    border-radius:14px;
-    box-shadow:0 18px 60px rgba(0,0,0,0.45);
-    cursor:zoom-out;
-  }
-  .closeZoom{
-    position:fixed;
-    top:16px;
-    right:16px;
-    background:rgba(255,255,255,0.12);
-    color:#fff;
-    border:1px solid rgba(255,255,255,0.25);
-    padding:12px 14px;
-    border-radius:999px;
-    font-weight:900;
-    cursor:pointer;
-    backdrop-filter: blur(10px);
-  }
-
-  @media(max-width:900px){
-    .grid{grid-template-columns:1fr;}
-    .mainImg img{height:420px;}
-  }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:#fff;color:#111;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:1100px;margin:0 auto;padding:18px;}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;}
+.brand{font-weight:900;font-size:18px;}
+.back{padding:10px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.15);font-weight:700;font-size:13px;}
+.grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:18px;align-items:start;}
+.mainImg{width:100%;border-radius:18px;overflow:hidden;box-shadow:0 14px 30px rgba(0,0,0,0.12);}
+.mainImg img{width:100%;height:520px;object-fit:cover;display:block;cursor:zoom-in;}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px;}
+.thumbs img{width:100%;height:90px;object-fit:cover;border-radius:14px;border:2px solid transparent;cursor:pointer;transition:0.2s;}
+.thumbs img.active{border-color:#7A1230;}
+.card{border-radius:18px;border:1px solid rgba(0,0,0,0.08);padding:16px;box-shadow:0 14px 30px rgba(0,0,0,0.06);}
+h1{font-size:22px;margin-bottom:8px;}
+.price{font-size:18px;font-weight:900;margin-bottom:6px;}
+.offer{color:#E91E63;font-weight:800;margin-bottom:12px;font-size:14px;}
+.desc{color:#444;line-height:1.6;font-size:14px;margin-bottom:16px;}
+.row{display:flex;gap:10px;margin-bottom:12px;}
+select{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.15);font-weight:700;font-size:14px;outline:none;}
+.btn{width:100%;padding:14px 16px;border-radius:999px;border:none;font-weight:900;font-size:14px;cursor:pointer;background:#7A1230;color:#fff;transition:0.2s;}
+.btn:hover{transform:translateY(-2px);opacity:0.95;}
+.smallNote{margin-top:10px;font-size:12px;color:#666;line-height:1.5;}
+@media(max-width:900px){.grid{grid-template-columns:1fr;}.mainImg img{height:420px;}}
 </style>
 </head>
-
 <body>
 
 <div class="wrap">
-
   <div class="topbar">
     <div class="brand">Veidahi Intimates</div>
     <a class="back" href="index.html">← Back to Home</a>
@@ -172,7 +46,6 @@
       <div class="mainImg">
         <img id="mainImage" src="p1-green-1.jpg" alt="Emerald Mist Bra">
       </div>
-
       <div class="thumbs" id="thumbs"></div>
     </div>
 
@@ -181,11 +54,7 @@
       <h1 id="pName">Emerald Mist With Lace Bra</h1>
       <div class="price" id="pPrice">₹150</div>
       <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
-
-      <div class="desc">
-        Premium lace • Daily comfort • Luxury feel.  
-        Perfect for everyday + party wear.
-      </div>
+      <div class="desc">Premium lace • Daily comfort • Luxury feel. Perfect for everyday + party wear.</div>
 
       <div class="row">
         <select id="colorSelect">
@@ -205,119 +74,78 @@
       <button class="btn" id="waBtn">Order on WhatsApp</button>
 
       <div class="smallNote">
-        ✔ WhatsApp message me product details + size + color automatically jayega.  
-        ✔ Confusion zero.
+        ✔ WhatsApp me product details + size + color automatically jayega.<br>✔ Confusion zero.
       </div>
     </div>
 
   </div>
 </div>
 
-<!-- Zoom Modal -->
-<div class="zoomModal" id="zoomModal">
-  <button class="closeZoom" id="closeZoom">✕ Close</button>
-  <img id="zoomImg" src="" alt="Zoomed Image">
-</div>
-
 <script>
-  const WHATSAPP_NUMBER = "918750020203";
+const WHATSAPP_NUMBER = "918750020203";
 
-  const colorImages = {
-    green: ["p1-green-1.jpg","p1-green-2.jpg","p1-green-3.jpg","p1-green-4.jpg"],
-    burgundy: ["p1-burgundy-1.jpg","p1-burgundy-2.jpg","p1-burgundy-3.jpg","p1-burgundy-4.jpg"],
-    red: ["p1-red-1.jpg","p1-red-2.jpg","p1-red-3.jpg","p1-red-4.jpg"]
-  };
+const colorImages = {
+  green: ["p1-green-1.jpg","p1-green-2.jpg","p1-green-3.jpg","p1-green-4.jpg"],
+  burgundy: ["p1-burgundy-1.jpg","p1-burgundy-2.jpg","p1-burgundy-3.jpg","p1-burgundy-4.jpg"],
+  red: ["p1-red-1.jpg","p1-red-2.jpg","p1-red-3.jpg","p1-red-4.jpg"]
+};
 
-  const mainImage = document.getElementById("mainImage");
-  const thumbs = document.getElementById("thumbs");
-  const colorSelect = document.getElementById("colorSelect");
-  const sizeSelect = document.getElementById("sizeSelect");
+const mainImage = document.getElementById("mainImage");
+const thumbs = document.getElementById("thumbs");
+const colorSelect = document.getElementById("colorSelect");
+const sizeSelect = document.getElementById("sizeSelect");
+const pName = document.getElementById("pName").innerText;
+const pPrice = document.getElementById("pPrice").innerText;
 
-  const zoomModal = document.getElementById("zoomModal");
-  const zoomImg = document.getElementById("zoomImg");
-  const closeZoom = document.getElementById("closeZoom");
+// Render thumbnails for selected color
+function renderThumbs(color){
+  thumbs.innerHTML = "";
+  const imgs = colorImages[color];
+  imgs.forEach((src,index)=>{
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = color+"-"+(index+1);
+    if(index===0) img.classList.add("active");
 
-  const pName = document.getElementById("pName").innerText;
-  const pPrice = document.getElementById("pPrice").innerText;
-
-  function renderThumbs(color){
-    thumbs.innerHTML = "";
-    const imgs = colorImages[color];
-
-    imgs.forEach((src, index) => {
-      const im = document.createElement("img");
-      im.src = src;
-      im.alt = color + " " + (index+1);
-
-      if(index === 0) im.classList.add("active");
-
-      im.onclick = () => {
-        mainImage.src = src;
-        document.querySelectorAll("#thumbs img").forEach(t => t.classList.remove("active"));
-        im.classList.add("active");
-      };
-
-      thumbs.appendChild(im);
-    });
-
-    mainImage.src = imgs[0];
-  }
-
-  // Default load
-  renderThumbs("green");
-
-  // Color change
-  colorSelect.addEventListener("change", () => {
-    renderThumbs(colorSelect.value);
+    img.onclick = ()=>{
+      mainImage.src = src;
+      thumbs.querySelectorAll("img").forEach(t=>t.classList.remove("active"));
+      img.classList.add("active");
+    };
+    thumbs.appendChild(img);
   });
+  mainImage.src = imgs[0];
+}
 
-  // Zoom open
-  mainImage.addEventListener("click", () => {
-    zoomImg.src = mainImage.src;
-    zoomModal.classList.add("active");
-    document.body.style.overflow = "hidden";
-  });
+// Initial load
+renderThumbs(colorSelect.value);
 
-  function closeZoomModal(){
-    zoomModal.classList.remove("active");
-    document.body.style.overflow = "auto";
-  }
+// Change color
+colorSelect.addEventListener("change", ()=>{
+  renderThumbs(colorSelect.value);
+});
 
-  closeZoom.addEventListener("click", closeZoomModal);
+// WhatsApp Order
+document.getElementById("waBtn").addEventListener("click", ()=>{
+  const color = colorSelect.value;
+  const size = sizeSelect.value;
+  const pageUrl = window.location.href;
+  const imgUrl = new URL(colorImages[color][0], pageUrl).href;
 
-  zoomModal.addEventListener("click", (e) => {
-    if(e.target === zoomModal || e.target === zoomImg){
-      closeZoomModal();
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if(e.key === "Escape") closeZoomModal();
-  });
-
-  // WhatsApp order
-  document.getElementById("waBtn").addEventListener("click", () => {
-    const color = colorSelect.value;
-    const size = sizeSelect.value;
-
-    const pageUrl = window.location.href;
-    const imgUrl = new URL(colorImages[color][0], pageUrl).href;
-
-    const msg =
-`Hello Veidahi Intimates 👋
+  const msg = `Hello Veidahi Intimates 👋
 I want to order:
 
 Product: ${pName}
-Color: ${color.toUpperCase()}
+Color: ${color.charAt(0).toUpperCase()+color.slice(1)}
 Size: ${size}
 Price: ${pPrice}
 
 Product Link: ${pageUrl}
 Image: ${imgUrl}`;
 
-    const waLink = https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)};
-    window.open(waLink, "_blank");
-  });
+  const waLink = https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)};
+  window.open(waLink, "_blank");
+});
 </script>
 
 </body>

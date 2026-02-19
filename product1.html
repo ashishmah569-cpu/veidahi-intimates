@@ -219,8 +219,10 @@
     mainImage.src = imgs[0];
   }
 
+  // first load
   renderThumbs(colorSelect.value);
 
+  // change color
   colorSelect.addEventListener("change", () => {
     renderThumbs(colorSelect.value);
   });
@@ -230,8 +232,7 @@
     const color = colorSelect.value;
     const size = sizeSelect.value;
 
-    // Absolute image url banane ke liye:
-    const baseUrl = window.location.origin + window.location.pathname.replace("product1.html","");
+    const baseUrl = window.location.href.replace("product1.html", "");
     const imgUrl = baseUrl + colorImages[color][0];
     const pageUrl = window.location.href;
 
@@ -251,6 +252,5 @@ Image: ${imgUrl}`;
     window.open(waLink, "_blank");
   });
 </script>
-
 </body>
 </html>

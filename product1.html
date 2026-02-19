@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Emerald Mist With Lace Bra | Veidahi Intimates</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -14,7 +14,7 @@ a{text-decoration:none;color:inherit;}
 .back{padding:10px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.15);font-weight:700;font-size:13px;}
 .grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:18px;align-items:start;}
 .mainImg{width:100%;border-radius:18px;overflow:hidden;box-shadow:0 14px 30px rgba(0,0,0,0.12);}
-.mainImg img{width:100%;height:520px;object-fit:cover;display:block;cursor:zoom-in;}
+.mainImg img{width:100%;height:520px;object-fit:cover;display:block;cursor:pointer;}
 .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px;}
 .thumbs img{width:100%;height:90px;object-fit:cover;border-radius:14px;border:2px solid transparent;cursor:pointer;transition:0.2s;}
 .thumbs img.active{border-color:#7A1230;}
@@ -64,10 +64,10 @@ select{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.
         </select>
 
         <select id="sizeSelect">
-          <option value="32">32</option>
           <option value="34">34</option>
           <option value="36">36</option>
           <option value="38">38</option>
+          <option value="40">40</option>
         </select>
       </div>
 
@@ -82,8 +82,9 @@ select{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.
 </div>
 
 <script>
-const WHATSAPP_NUMBER = "918750020203";
+const WHATSAPP_NUMBER = "8750020203";
 
+// Images per color
 const colorImages = {
   green: ["p1-green-1.jpg","p1-green-2.jpg","p1-green-3.jpg","p1-green-4.jpg"],
   burgundy: ["p1-burgundy-1.jpg","p1-burgundy-2.jpg","p1-burgundy-3.jpg","p1-burgundy-4.jpg"],
@@ -97,16 +98,15 @@ const sizeSelect = document.getElementById("sizeSelect");
 const pName = document.getElementById("pName").innerText;
 const pPrice = document.getElementById("pPrice").innerText;
 
-// Render thumbnails for selected color
+// Function to render thumbnails
 function renderThumbs(color){
   thumbs.innerHTML = "";
-  const imgs = colorImages[color];
+  const imgs = colorImages[color.toLowerCase()];
   imgs.forEach((src,index)=>{
     const img = document.createElement("img");
     img.src = src;
     img.alt = color+"-"+(index+1);
     if(index===0) img.classList.add("active");
-
     img.onclick = ()=>{
       mainImage.src = src;
       thumbs.querySelectorAll("img").forEach(t=>t.classList.remove("active"));
@@ -125,18 +125,19 @@ colorSelect.addEventListener("change", ()=>{
   renderThumbs(colorSelect.value);
 });
 
-// WhatsApp Order
+// WhatsApp order
 document.getElementById("waBtn").addEventListener("click", ()=>{
-  const color = colorSelect.value;
+  const color = colorSelect.value.charAt(0).toUpperCase() + colorSelect.value.slice(1);
   const size = sizeSelect.value;
+  const imgs = colorImages[colorSelect.value.toLowerCase()];
+  const imgUrl = new URL(imgs[0], window.location.href).href;
   const pageUrl = window.location.href;
-  const imgUrl = new URL(colorImages[color][0], pageUrl).href;
 
   const msg = `Hello Veidahi Intimates 👋
 I want to order:
 
 Product: ${pName}
-Color: ${color.charAt(0).toUpperCase()+color.slice(1)}
+Color: ${color}
 Size: ${size}
 Price: ${pPrice}
 
@@ -144,7 +145,7 @@ Product Link: ${pageUrl}
 Image: ${imgUrl}`;
 
   const waLink = https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)};
-  window.open(waLink, "_blank");
+  window.open(waLink,"_blank");
 });
 </script>
 

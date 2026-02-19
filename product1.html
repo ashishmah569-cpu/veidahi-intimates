@@ -3,380 +3,409 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emerald Mist With Lace Bra - Veidahi Intimates</title>
+  <title>Veidahi Intimates | Luxury Lingerie & Western Daily Wear</title>
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:Arial,sans-serif;background:#fff;color:#111;}
+    body{font-family:Arial,sans-serif;background:#fff;color:#222;overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;}
 
-    header{
-      padding:16px;
-      border-bottom:1px solid rgba(0,0,0,0.08);
-      position:sticky;
-      top:0;
-      background:#fff;
-      z-index:10;
-    }
-    .brand{font-weight:900;font-size:18px;}
-
-    .wrap{max-width:1200px;margin:0 auto;padding:24px 16px 60px;}
-
-    .back{
-      display:inline-block;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(0,0,0,0.12);
-      text-decoration:none;
-      color:#111;
-      font-weight:800;
-      font-size:13px;
-      transition:0.2s;
-    }
-    .back:hover{transform:translateY(-2px);}
-
-    h1{font-size:26px;font-family:"Arial Black",Arial,sans-serif;margin-bottom:8px;}
-
-    .sub{
-      color:#555;
-      font-size:14px;
-      line-height:1.5;
-      max-width:850px;
-      margin-bottom:16px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:1.2fr 0.8fr;
-      gap:18px;
-      align-items:start;
-    }
-
-    /* Gallery */
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-    }
-
-    .imgCard{
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid rgba(0,0,0,0.08);
-      box-shadow:0 14px 28px rgba(0,0,0,0.06);
-      background:#fff;
-      cursor:zoom-in;
-      transition:0.2s;
-    }
-    .imgCard:hover{transform:translateY(-3px);}
-
-    .imgCard img{
+    /* HERO */
+    .hero{
+      position:relative;
       width:100%;
-      height:320px;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:#fff;
+      padding:80px 20px;
+      background:url("Hero.jpeg") center/cover no-repeat;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg,rgba(255,47,109,0.55),rgba(124,58,237,0.4),rgba(0,0,0,0.25));
+      z-index:0;
+    }
+    .hero-content{position:relative;z-index:2;max-width:980px;width:100%;}
+    .hero h1{
+      font-size:52px;
+      font-family:"Arial Black",Arial,sans-serif;
+      margin-bottom:14px;
+      letter-spacing:0.5px;
+      text-shadow:0 8px 25px rgba(0,0,0,0.35);
+    }
+    .hero p{
+      font-size:18px;
+      max-width:820px;
+      margin:0 auto;
+      line-height:1.6;
+      opacity:0.98;
+      text-shadow:0 8px 25px rgba(0,0,0,0.35);
+    }
+    .hero-buttons{margin-top:20px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+    .btn{
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:bold;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,0.25);
+      background:rgba(255,255,255,0.14);
+      color:#fff;
+      transition:0.25s;
+      backdrop-filter:blur(8px);
+    }
+    .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,0.22);}
+
+    /* SECTIONS */
+    .section{padding:75px 18px;text-align:center;}
+    .section h2{
+      font-size:34px;
+      margin-bottom:30px;
+      font-family:"Arial Black",Arial,sans-serif;
+      color:#111;
+    }
+
+    /* PRODUCTS GRID */
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    .product-card{
+      overflow:hidden;
+      border-radius:16px;
+      background:#fff;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      transition:0.25s;
+      text-align:left;
+      border:1px solid rgba(0,0,0,0.06);
+
+      /* NEW: equal height */
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+    .product-card:hover{transform:translateY(-6px);box-shadow:0 16px 35px rgba(0,0,0,0.12);}
+
+    .product-card img{
+      width:100%;
+      height:270px;
       object-fit:cover;
       display:block;
     }
 
-    /* Details */
-    .details{
-      border-radius:22px;
-      padding:18px 16px;
-      border:1px solid rgba(0,0,0,0.08);
-      box-shadow:0 14px 28px rgba(0,0,0,0.06);
-      background:#fff;
-      position:sticky;
-      top:95px;
+    .product-info{
+      padding:14px;
+
+      /* NEW: push buttons bottom */
+      display:flex;
+      flex-direction:column;
+      flex:1;
     }
 
-    .box-title{font-weight:900;font-size:16px;margin-bottom:10px;}
-    .price{font-size:20px;font-weight:900;color:#d2235b;margin:12px 0;}
-
-    .offer{
-      background:#ffedf1;
-      color:#d2235b;
-      padding:8px 12px;
-      border-radius:12px;
-      font-weight:700;
-      margin-bottom:12px;
-      display:inline-block;
-    }
-
-    .sectionTitle{
-      font-weight:900;
-      margin-top:14px;
+    .product-info h3{
+      font-size:15px;
       margin-bottom:8px;
-      font-size:14px;
       color:#111;
+      font-weight:800;
+      letter-spacing:0.2px;
+    }
+    .product-info p{
+      font-size:13px;
+      color:#555;
+      line-height:1.4;
+      margin-bottom:10px;
     }
 
-    .desc{
-      font-size:14px;
-      color:#444;
-      line-height:1.7;
-    }
+    .price{font-weight:800;font-size:14px;margin-bottom:4px;color:#111;}
+    .offer{font-size:13px;color:#E91E63;font-weight:700;margin-bottom:10px;}
 
-    .highlights{
-      margin-top:10px;
-      display:grid;
-      gap:8px;
-      font-size:14px;
-      color:#333;
-      line-height:1.6;
-    }
-    .highlights div{
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid rgba(0,0,0,0.06);
-      background:#fafafa;
-    }
-
-    /* Color options */
-    .colorsRow{
+    .product-actions{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top:10px;
+      margin-top:auto; /* NEW */
     }
 
-    .colorBtn{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 12px;
+    .pbtn{
+      padding:10px 14px;
       border-radius:999px;
-      border:1px solid rgba(0,0,0,0.12);
-      background:#fff;
-      cursor:pointer;
-      font-weight:900;
+      font-weight:bold;
       font-size:13px;
-      transition:0.2s;
-    }
-    .colorBtn:hover{transform:translateY(-2px);}
-    .colorBtn.active{
-      border:1px solid rgba(0,0,0,0.25);
-      box-shadow:0 10px 22px rgba(0,0,0,0.08);
-    }
-
-    .dot{
-      width:16px;
-      height:16px;
-      border-radius:50%;
-      border:1px solid rgba(0,0,0,0.15);
-    }
-
-    .btns{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;}
-    .btn{
-      display:inline-block;
-      padding:12px 16px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:900;
-      font-size:13px;
-      border:1px solid rgba(0,0,0,0.12);
-      transition:0.2s;
-    }
-    .btn:hover{transform:translateY(-2px);}
-    .btn.dark{background:#111;color:#fff;}
-    .btn.light{background:#fff;color:#111;}
-
-    footer{margin-top:50px;text-align:center;color:#777;font-size:13px;}
-
-    /* Zoom Modal */
-    .zoomModal{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.92);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
-      padding:18px;
-    }
-    .zoomModal.active{display:flex;}
-
-    .zoomModal img{
-      max-width:95vw;
-      max-height:85vh;
-      border-radius:14px;
-      box-shadow:0 18px 60px rgba(0,0,0,0.45);
-      cursor:zoom-out;
-    }
-
-    .closeZoom{
-      position:fixed;
-      top:16px;
-      right:16px;
-      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(0,0,0,0.10);
+      background:#111;
       color:#fff;
-      border:1px solid rgba(255,255,255,0.25);
-      padding:12px 14px;
-      border-radius:999px;
-      font-weight:900;
-      cursor:pointer;
-      backdrop-filter: blur(10px);
+      transition:0.2s;
     }
+    .pbtn:hover{transform:translateY(-2px);opacity:0.92;}
+    .pbtn.outline{background:#fff;color:#111;}
 
-    @media(max-width:980px){
-      .grid{grid-template-columns:1fr;}
-      .details{position:relative;top:0;}
-      .imgCard img{height:280px;}
+    /* ABOUT */
+    .about{background:#fafafa;}
+    .about p{font-size:17px;max-width:850px;margin:16px auto;line-height:1.7;color:#444;}
+
+    /* CONNECT */
+    .connect{background:#111;color:#fff;}
+    .connect h2{color:#fff;}
+    .connect p{
+      max-width:750px;
+      margin:0 auto 20px auto;
+      color:rgba(255,255,255,0.85);
+      line-height:1.6;
+      font-size:16px;
     }
-    @media(max-width:520px){
-      .gallery{grid-template-columns:1fr;}
-      .imgCard img{height:340px;}
-      h1{font-size:22px;}
+    .connect-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:18px;}
+    .connect a{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:bold;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,0.25);
+      color:#fff;
+      background:rgba(255,255,255,0.08);
+      transition:0.25s;
     }
+    .connect a:hover{transform:translateY(-2px);background:rgba(255,255,255,0.15);}
+
+    footer{background:#000;color:#bbb;padding:28px 18px;text-align:center;font-size:13px;}
+    footer p{margin:6px 0;}
+
+    /* RESPONSIVE */
+    @media(max-width:1100px){.products-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:700px){
+      .hero h1{font-size:36px;}
+      .hero p{font-size:16px;}
+      .products-grid{grid-template-columns:repeat(2,1fr);}
+      .product-card img{height:220px;}
+    }
+    @media(max-width:420px){.products-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="brand">VEIDAHI INTIMATES</div>
-  </header>
-
-  <div class="wrap">
-    <a class="back" href="index.html">← Back to Home</a>
-
-    <h1>Emerald Mist With Lace Bra</h1>
-    <div class="sub">
-      Premium everyday bra designed for comfort, confidence and luxury — perfect for daily wear and style.
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Veidahi Intimates</h1>
+      <p>Luxury lingerie & western daily wear designed for confidence, style, and elegance.</p>
+      <div class="hero-buttons">
+        <a class="btn" href="#products">Explore Products</a>
+        <a class="btn" href="#about">About</a>
+        <a class="btn" href="#connect">Connect</a>
+      </div>
     </div>
+  </section>
 
-    <div class="grid">
+  <!-- PRODUCTS -->
+  <section class="section" id="products">
+    <h2>Our Signature Collection</h2>
 
-      <!-- Gallery -->
-      <div class="gallery" id="gallery"></div>
+    <div class="products-grid">
 
-      <!-- Details -->
-      <div class="details">
-        <div class="box-title">Product Details</div>
-        <div class="price">₹150</div>
-        <div class="offer">2 pieces → 5% off | 3 pieces → 10% off</div>
-
-        <div class="sectionTitle">Choose Color</div>
-        <div class="colorsRow">
-          <button class="colorBtn active" data-color="green">
-            <span class="dot" style="background:#0f766e;"></span> Green
-          </button>
-
-          <button class="colorBtn" data-color="red">
-            <span class="dot" style="background:#dc2626;"></span> Red
-          </button>
-
-          <button class="colorBtn" data-color="burgundy">
-            <span class="dot" style="background:#4a0e1a;"></span> Burgundy
-          </button>
+      <!-- Product 1 -->
+      <div class="product-card">
+        <a href="product1.html"><img loading="lazy" src="p1-green-1.jpg," alt="Product 1"></a>
+        <div class="product-info">
+          <h3>Emerald Mist With Lace Bra</h3>
+          <p>Premium finish • Elegant fit • Daily comfort</p>
+          <div class="price">₹150</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product1.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
         </div>
+      </div>
 
-        <div class="sectionTitle">Description</div>
-        <div class="desc">
-          Soft cotton blend with premium lace finish. Breathable, skin-friendly and perfect luxury look for daily wear.
-          Ideal for long hours and confident fit.
+      <!-- Product 2 -->
+      <div class="product-card">
+        <a href="product2.html"><img loading="lazy" src="p2-1.jpg" alt="Product 2"></a>
+        <div class="product-info">
+          <h3>Sports Bra</h3>
+          <p>Soft lace • Sculpted look • Luxury feel</p>
+          <div class="price">₹100</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product2.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
         </div>
+      </div>
 
-        <div class="sectionTitle">Highlights</div>
-        <div class="highlights">
-          <div><b>Fabric:</b> Cotton blend + lace</div>
-          <div><b>Comfort:</b> Soft, breathable, skin friendly</div>
-          <div><b>Look:</b> Luxury daily wear style</div>
-          <div><b>Dispatch:</b> 24-48 Hours</div>
+      <!-- Product 3 -->
+      <div class="product-card">
+        <a href="product3.html"><img loading="lazy" src="p3-1.jpg" alt="Product 3"></a>
+        <div class="product-info">
+          <h3>Premium Bra</h3>
+          <p>Smooth satin • Light support • Premium style</p>
+          <div class="price">₹199</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product3.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
         </div>
+      </div>
 
-        <div class="btns">
-          <a class="btn dark" href="https://wa.me/918750020203" target="_blank">Order on WhatsApp</a>
-          <a class="btn light" href="https://www.instagram.com/veidahiintimates" target="_blank">View Instagram</a>
+      <!-- Product 4 -->
+      <div class="product-card">
+        <a href="product4.html"><img loading="lazy" src="p4-1.jpg" alt="Product 4"></a>
+        <div class="product-info">
+          <h3>Moon Panty</h3>
+          <p>Lift & shape • Soft straps • Long wear</p>
+          <div class="price">₹69</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product4.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <a href="product5.html"><img loading="lazy" src="p5-1.jpg" alt="Product 5"></a>
+        <div class="product-info">
+          <h3>Crystal Panty</h3>
+          <p>Wire-free • Soft touch • Everyday elegance</p>
+          <div class="price">₹79</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product5.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card">
+        <a href="product6.html"><img loading="lazy" src="p6-1.jpg" alt="Product 6"></a>
+        <div class="product-info">
+          <h3>Mystic Panty</h3>
+          <p>Soft fabric • Daily comfort • Premium look</p>
+          <div class="price">₹89</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product6.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="product-card">
+        <a href="product7.html"><img loading="lazy" src="p7-1.jpg" alt="Product 7"></a>
+        <div class="product-info">
+          <h3>Cotton Candy Dream</h3>
+          <p>Breathable • Soft fit • Everyday wear</p>
+          <div class="price">₹89</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product7.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="product-card">
+        <a href="product8.html"><img loading="lazy" src="p8-1.jpg" alt="Product 8"></a>
+        <div class="product-info">
+          <h3>Botanic Bliss Panty</h3>
+          <p>Fresh prints • Soft touch • Premium comfort</p>
+          <div class="price">₹89</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product8.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 9 -->
+      <div class="product-card">
+        <a href="product9.html"><img loading="lazy" src="p9-1.jpg" alt="Product 9"></a>
+        <div class="product-info">
+          <h3>Coastal Dream Panty</h3>
+          <p>Stretchy fit • Smooth feel • Daily luxury</p>
+          <div class="price">₹89</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product9.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 10 -->
+      <div class="product-card">
+        <a href="product10.html"><img loading="lazy" src="p10-1.jpg" alt="Product 10"></a>
+        <div class="product-info">
+          <h3>Cloud Kiss Panty</h3>
+          <p>Ultra soft • Light feel • Perfect finish</p>
+          <div class="price">₹89</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product10.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 11 -->
+      <div class="product-card">
+        <a href="product11.html"><img loading="lazy" src="p11-1.jpg" alt="Product 11"></a>
+        <div class="product-info">
+          <h3>Pastel Forest Panty</h3>
+          <p>Premium fabric • Soft fit • Stylish look</p>
+          <div class="price">₹89</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product11.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
         </div>
       </div>
 
     </div>
+  </section>
 
-    <footer>© 2026 Veidahi Intimates • Luxury • Style • Confidence</footer>
-  </div>
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <h2>About Veidahi Intimates</h2>
+    <p>
+      Veidahi Intimates is a premium lingerie & western daily wear brand based in Delhi.
+      We offer luxury bras, panties, lingerie sets and stylish essentials designed for comfort,
+      confidence and elegance. Our collection includes modern designs, premium fabrics and perfect fitting
+      options for every woman. For new arrivals, orders and queries, connect with us on WhatsApp.
+    </p>
+  </section>
 
-  <!-- Zoom Modal -->
-  <div class="zoomModal" id="zoomModal">
-    <button class="closeZoom" id="closeZoom">✕ Close</button>
-    <img id="zoomImg" src="" alt="Zoomed Image">
-  </div>
+  <!-- CONNECT -->
+  <section class="section connect" id="connect">
+    <h2>Connect With Us</h2>
+    <p>For orders, queries, and new collection updates — connect with Veidahi Intimates directly.</p>
+    <div class="connect-buttons">
+      <a href="https://wa.me/918750020203" target="_blank">WhatsApp Order</a>
+      <a href="https://www.instagram.com/veidahiintimates" target="_blank">Instagram</a>
+      <a href="https://www.fb.com/l/6lp1kJRRR" target="_blank">Facebook</a>
+    </div>
+  </section>
 
-  <script>
-    const productImages = {
-      green: [
-        "p1-green-1.jpg",
-        "p1-green-2.jpg",
-        "p1-green-3.jpg",
-        "p1-green-4.jpg"
-      ],
-      red: [
-        "p1-red-1.jpg",
-        "p1-red-2.jpg",
-        "p1-red-3.jpg",
-        "p1-red-4.jpg"
-      ],
-      burgundy: [
-        "p1-burgundy-1.jpg",
-        "p1-burgundy-2.jpg",
-        "p1-burgundy-3.jpg",
-        "p1-burgundy-4.jpg"
-      ]
-    };
-
-    const gallery = document.getElementById("gallery");
-    const zoomModal = document.getElementById("zoomModal");
-    const zoomImg = document.getElementById("zoomImg");
-    const closeZoom = document.getElementById("closeZoom");
-
-    function loadGallery(color) {
-      gallery.innerHTML = "";
-
-      productImages[color].forEach((src, index) => {
-        const card = document.createElement("div");
-        card.className = "imgCard";
-
-        card.innerHTML = `
-          <img src="${src}" alt="Product Image ${index + 1}">
-        `;
-
-        card.querySelector("img").addEventListener("click", () => {
-          zoomImg.src = src;
-          zoomModal.classList.add("active");
-          document.body.style.overflow = "hidden";
-        });
-
-        gallery.appendChild(card);
-      });
-    }
-
-    function closeZoomModal() {
-      zoomModal.classList.remove("active");
-      document.body.style.overflow = "auto";
-    }
-
-    closeZoom.addEventListener("click", closeZoomModal);
-
-    zoomModal.addEventListener("click", (e) => {
-      if (e.target === zoomModal || e.target === zoomImg) {
-        closeZoomModal();
-      }
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeZoomModal();
-    });
-
-    document.querySelectorAll(".colorBtn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".colorBtn").forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        const color = btn.getAttribute("data-color");
-        loadGallery(color);
-      });
-    });
-
-    // Default load
-    loadGallery("green");
-  </script>
+  <footer>
+    <p>&copy; 2026 Veidahi Intimates, Delhi. All Rights Reserved.</p>
+    <p>Luxury • Style • Confidence</p>
+  </footer>
 
 </body>
 </html>

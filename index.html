@@ -58,34 +58,44 @@
       text-align:center;
       color:#fff;
       padding:80px 20px;
+
       background:url("Hero.jpeg") center/cover no-repeat;
       overflow:hidden;
     }
 
-    /* overlay */
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(135deg,rgba(255,47,109,0.55),rgba(124,58,237,0.4),rgba(0,0,0,0.35));
-      z-index:0;
-    }
-
-    /* moving gradient animation */
+    /* ===== HERO SILK WAVES (Option B) ===== */
+    .hero::before,
     .hero::after{
       content:"";
       position:absolute;
-      inset:-50%;
-      background:radial-gradient(circle at 30% 30%, rgba(255,47,109,0.22), transparent 55%),
-                 radial-gradient(circle at 70% 70%, rgba(124,58,237,0.18), transparent 60%),
-                 radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06), transparent 60%);
-      animation: heroGlowMove 10s ease-in-out infinite alternate;
-      z-index:1;
+      inset:-40%;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.22), transparent 60%),
+        radial-gradient(circle at 70% 60%, rgba(255,255,255,0.14), transparent 55%),
+        linear-gradient(120deg, rgba(122,18,48,0.22), rgba(0,0,0,0.0));
+      filter: blur(18px);
+      transform: rotate(12deg);
+      animation: waveMove 10s ease-in-out infinite;
+      pointer-events: none;
+      z-index:0;
     }
 
-    @keyframes heroGlowMove{
-      0%{transform:translate(0,0) scale(1);}
-      100%{transform:translate(60px,-40px) scale(1.08);}
+    .hero::after{
+      opacity:0.7;
+      animation-duration:14s;
+      transform: rotate(-10deg);
+    }
+
+    @keyframes waveMove{
+      0%   { transform: translate(-2%, -2%) rotate(12deg); }
+      50%  { transform: translate(3%, 2%) rotate(8deg); }
+      100% { transform: translate(-2%, -2%) rotate(12deg); }
+    }
+
+    /* Make sure hero content stays above waves */
+    .hero *{
+      position:relative;
+      z-index:2;
     }
 
     /* floating bubbles */
@@ -93,7 +103,6 @@
       position:absolute;
       border-radius:50%;
       background:rgba(255,255,255,0.08);
-      filter: blur(0px);
       z-index:1;
       animation: floaty 9s ease-in-out infinite;
     }
@@ -108,8 +117,6 @@
     }
 
     .hero-content{
-      position:relative;
-      z-index:2;
       max-width:980px;
       width:100%;
     }
@@ -429,7 +436,7 @@
           <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
           <div class="product-actions">
             <a class="pbtn" href="product5.html">View Details</a>
-            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+            <a class="pbtn outline" href="product5.html">WhatsApp</a>
           </div>
         </div>
       </div>

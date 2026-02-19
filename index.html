@@ -11,33 +11,54 @@
     a{text-decoration:none;color:inherit;}
 
     /* HERO */
-   .hero{
-  position:relative;
-  width:100%;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:#fff;
-  padding:80px 20px;
-  background:url("Hero.jpeg") center 20% / cover no-repeat;
+    .hero{
+      position:relative;
+      width:100%;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:#fff;
+      padding:80px 20px;
+      background:url("Hero.jpeg") center 55% / cover no-repeat; /* chest focus */
+      overflow:hidden;
+    }
 
-@media(min-width:900px){
-  .hero{
-    background:url("Hero.jpeg") center/contain no-repeat;
-    background-color:#000;
-  }
-}
+    /* Animated Premium Overlay */
     .hero::before{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(135deg,rgba(255,47,109,0.55),rgba(124,58,237,0.4),rgba(0,0,0,0.25));
+      background:linear-gradient(135deg,rgba(255,47,109,0.55),rgba(124,58,237,0.4),rgba(0,0,0,0.35));
       z-index:0;
     }
-    .hero-content{position:relative;z-index:2;max-width:980px;width:100%;}
+
+    /* Animated Side Glow (blank area fix) */
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15), transparent 45%),
+                 radial-gradient(circle at 80% 70%, rgba(255,255,255,0.12), transparent 50%),
+                 radial-gradient(circle at 50% 50%, rgba(255,47,109,0.12), transparent 60%);
+      animation: floatGlow 6s ease-in-out infinite alternate;
+      z-index:1;
+    }
+
+    @keyframes floatGlow{
+      0%{transform:translate(-10px,-10px) scale(1);}
+      100%{transform:translate(10px,10px) scale(1.05);}
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:3;
+      max-width:980px;
+      width:100%;
+    }
+
     .hero h1{
       font-size:52px;
       font-family:"Arial Black",Arial,sans-serif;
@@ -45,6 +66,7 @@
       letter-spacing:0.5px;
       text-shadow:0 8px 25px rgba(0,0,0,0.35);
     }
+
     .hero p{
       font-size:18px;
       max-width:820px;
@@ -54,29 +76,14 @@
       text-shadow:0 8px 25px rgba(0,0,0,0.35);
     }
 
-    /* SEARCH */
-  .searchWrap{
-  position:absolute;
-  top:20px;
-  right:20px;
-  width:280px;
-  z-index:10;
-}
-}
-   #searchInput{
-  width:100%;
-  padding:14px 16px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,0.35);
-  background:rgba(0,0,0,0.35);
-  color:#fff;
-  font-size:14px;
-  outline:none;
-  backdrop-filter:blur(10px);
-}
-    #searchInput::placeholder{color:rgba(255,255,255,0.75);}
+    .hero-buttons{
+      margin-top:20px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
 
-    .hero-buttons{margin-top:20px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
     .btn{
       padding:12px 18px;
       border-radius:999px;
@@ -89,6 +96,29 @@
       backdrop-filter:blur(8px);
     }
     .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,0.22);}
+
+    /* SEARCH TOP RIGHT */
+    .searchWrap{
+      position:absolute;
+      top:18px;
+      right:18px;
+      width:300px;
+      z-index:5;
+    }
+    .searchWrap input{
+      width:100%;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.25);
+      outline:none;
+      font-size:14px;
+      background:rgba(0,0,0,0.35);
+      color:#fff;
+      backdrop-filter:blur(10px);
+    }
+    .searchWrap input::placeholder{
+      color:rgba(255,255,255,0.75);
+    }
 
     /* SECTIONS */
     .section{padding:75px 18px;text-align:center;}
@@ -169,7 +199,6 @@
       background:#111;
       color:#fff;
       transition:0.2s;
-      display:inline-block;
     }
     .pbtn:hover{transform:translateY(-2px);opacity:0.92;}
     .pbtn.outline{background:#fff;color:#111;}
@@ -212,33 +241,35 @@
       .hero p{font-size:16px;}
       .products-grid{grid-template-columns:repeat(2,1fr);}
       .product-card img{height:220px;}
+      .searchWrap{width:220px;}
     }
-    @media(max-width:420px){.products-grid{grid-template-columns:1fr;}}
+    @media(max-width:420px){
+      .products-grid{grid-template-columns:1fr;}
+      .searchWrap{width:200px;top:14px;right:14px;}
+    }
   </style>
 </head>
 
 <body>
 
   <!-- HERO -->
-<section class="hero">
-  <div class="searchWrap">
-    <input id="searchInput" type="text" placeholder="Search bra, panty..." />
-  </div>
-
-  <div class="hero-content">
-    <h1>Veidahi Intimates</h1>
-    <p>Luxury lingerie & western daily wear designed for confidence, style, and elegance.</p>
-
-    <div class="hero-buttons">
-      <a class="btn" href="#products">Explore Products</a>
-      <a class="btn" href="#about">About</a>
-      <a class="btn" href="#connect">Connect</a>
+  <section class="hero">
+    <div class="searchWrap">
+      <input id="searchInput" type="text" placeholder="Search bra, panty..." />
     </div>
-  </div>
-</section>
 
-<!-- PRODUCTS -->
-<section class="section" id="products">
+    <div class="hero-content">
+      <h1>Veidahi Intimates</h1>
+      <p>Luxury lingerie & western daily wear designed for confidence, style, and elegance.</p>
+
+      <div class="hero-buttons">
+        <a class="btn" href="#products">Explore Products</a>
+        <a class="btn" href="#about">About</a>
+        <a class="btn" href="#connect">Connect</a>
+      </div>
+    </div>
+  </section>
+
   <!-- PRODUCTS -->
   <section class="section" id="products">
     <h2>Our Signature Collection</h2>
@@ -248,7 +279,7 @@
       <!-- Product 1 -->
       <div class="product-card" data-type="bra">
         <a href="product1.html">
-          <img src="p1-green-1.jpg" alt="Emerald Mist Bra">
+          <img src="p1-green-1.jpg" alt="Emerald Mist With Lace Bra">
         </a>
         <div class="product-info">
           <h3>Emerald Mist With Lace Bra</h3>
@@ -264,7 +295,7 @@
 
       <!-- Product 2 -->
       <div class="product-card" data-type="bra">
-        <a href="product2.html"><img loading="lazy" src="p2-1.jpg" alt="Product 2"></a>
+        <a href="product2.html"><img loading="lazy" src="p2-1.jpg" alt="Sports Bra"></a>
         <div class="product-info">
           <h3>Sports Bra</h3>
           <p>Soft lace • Sculpted look • Luxury feel</p>
@@ -277,9 +308,24 @@
         </div>
       </div>
 
+      <!-- Product 3 -->
+      <div class="product-card" data-type="bra">
+        <a href="product3.html"><img loading="lazy" src="p3-1.jpg" alt="Premium Bra"></a>
+        <div class="product-info">
+          <h3>Premium Bra</h3>
+          <p>Smooth satin • Light support • Premium style</p>
+          <div class="price">₹199</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product3.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
       <!-- Product 4 -->
       <div class="product-card" data-type="panty">
-        <a href="product4.html"><img loading="lazy" src="p4-1.jpg" alt="Product 4"></a>
+        <a href="product4.html"><img loading="lazy" src="p4-1.jpg" alt="Moon Panty"></a>
         <div class="product-info">
           <h3>Moon Panty</h3>
           <p>Lift & shape • Soft straps • Long wear</p>
@@ -287,6 +333,111 @@
           <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
           <div class="product-actions">
             <a class="pbtn" href="product4.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card" data-type="panty">
+        <a href="product5.html"><img loading="lazy" src="p5-1.jpg" alt="Crystal Panty"></a>
+        <div class="product-info">
+          <h3>Crystal Panty</h3>
+          <p>Wire-free • Soft touch • Everyday elegance</p>
+          <div class="price">₹79</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product5.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card" data-type="panty">
+        <a href="product6.html"><img loading="lazy" src="p6-1.jpg" alt="Mystic Panty"></a>
+        <div class="product-info">
+          <h3>Mystic Panty</h3>
+          <p>Soft fabric • Daily comfort • Premium look</p>
+          <div class="price">₹89</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product6.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="product-card" data-type="panty">
+        <a href="product7.html"><img loading="lazy" src="p7-1.jpg" alt="Cotton Candy Dream"></a>
+        <div class="product-info">
+          <h3>Cotton Candy Dream</h3>
+          <p>Breathable • Soft fit • Everyday wear</p>
+          <div class="price">₹89</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product7.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="product-card" data-type="panty">
+        <a href="product8.html"><img loading="lazy" src="p8-1.jpg" alt="Botanic Bliss Panty"></a>
+        <div class="product-info">
+          <h3>Botanic Bliss Panty</h3>
+          <p>Fresh prints • Soft touch • Premium comfort</p>
+          <div class="price">₹89</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product8.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 9 -->
+      <div class="product-card" data-type="panty">
+        <a href="product9.html"><img loading="lazy" src="p9-1.jpg" alt="Coastal Dream Panty"></a>
+        <div class="product-info">
+          <h3>Coastal Dream Panty</h3>
+          <p>Stretchy fit • Smooth feel • Daily luxury</p>
+          <div class="price">₹89</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product9.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 10 -->
+      <div class="product-card" data-type="panty">
+        <a href="product10.html"><img loading="lazy" src="p10-1.jpg" alt="Cloud Kiss Panty"></a>
+        <div class="product-info">
+          <h3>Cloud Kiss Panty</h3>
+          <p>Ultra soft • Light feel • Perfect finish</p>
+          <div class="price">₹89</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product10.html">View Details</a>
+            <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 11 -->
+      <div class="product-card" data-type="panty">
+        <a href="product11.html"><img loading="lazy" src="p11-1.jpg" alt="Pastel Forest Panty"></a>
+        <div class="product-info">
+          <h3>Pastel Forest Panty</h3>
+          <p>Premium fabric • Soft fit • Stylish look</p>
+          <div class="price">₹89</div>
+          <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
+          <div class="product-actions">
+            <a class="pbtn" href="product11.html">View Details</a>
             <a class="pbtn outline" href="https://wa.me/918750020203" target="_blank">WhatsApp</a>
           </div>
         </div>

@@ -168,7 +168,7 @@
         card.className = "imgCard";
 
         // ✅ THIS WAS YOUR MAIN ERROR (backticks)
-        card.innerHTML = <img src="${src}" alt="Product Image ${index + 1}">;
+       card.innerHTML = <img src="${src}" alt="Product Image ${index + 1}">;
 
         // Zoom click
         card.querySelector("img").addEventListener("click", () => {

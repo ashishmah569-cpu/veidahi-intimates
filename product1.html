@@ -73,12 +73,13 @@ select{width:100%;padding:12px 12px;border-radius:12px;border:1px solid rgba(0,0
 <script>
 const WHATSAPP_NUMBER = "918750020203"; // full number with country code
 
-const colorImages = {
-  "Green":["p1-green-1.jpg","p1-green-2.jpg","p1-green-3.jpg","p1-green-4.jpg"],
-  "Burgundy":["p1-burgundy-1.jpg","p1-burgundy-2.jpg","p1-burgundy-3.jpg","p1-burgundy-4.jpg"],
-  "Red":["p1-red-1.jpg","p1-red-2.jpg","p1-red-3.jpg","p1-red-4.jpg"]
-};
+const baseURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/";
 
+const colorImages = {
+  "Green":[baseURL+"p1-green-1.jpg",baseURL+"p1-green-2.jpg",baseURL+"p1-green-3.jpg",baseURL+"p1-green-4.jpg"],
+  "Burgundy":[baseURL+"p1-burgundy-1.jpg",baseURL+"p1-burgundy-2.jpg",baseURL+"p1-burgundy-3.jpg",baseURL+"p1-burgundy-4.jpg"],
+  "Red":[baseURL+"p1-red-1.jpg",baseURL+"p1-red-2.jpg",baseURL+"p1-red-3.jpg",baseURL+"p1-red-4.jpg"]
+};
 const mainImage = document.getElementById("mainImage");
 const thumbs = document.getElementById("thumbs");
 const colorSelect = document.getElementById("colorSelect");

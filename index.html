@@ -7,35 +7,59 @@
 <style>
 body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family:Arial, sans-serif;
 }
 
-header{
+nav{
   background:black;
-  color:white;
   padding:15px;
-  text-align:center;
-  font-size:22px;
-  letter-spacing:1px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.banner{
-  text-align:center;
-  padding:40px 20px;
-  background:#f8f8f8;
-}
-
-.banner h1{
+nav h2{
+  color:white;
   margin:0;
 }
 
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+}
+
+.hero{
+  text-align:center;
+  padding:60px 20px;
+  background:#f8f8f8;
+}
+
+.hero h1{
+  margin:0;
+  font-size:36px;
+}
+
+.hero p{
+  margin-top:10px;
+  font-size:18px;
+}
+
 .products{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap:20px;
-  padding:40px;
+  padding:60px 20px;
   max-width:1200px;
   margin:auto;
+}
+
+.products h2{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
 }
 
 .card{
@@ -53,15 +77,8 @@ header{
   width:100%;
 }
 
-.card h3{
-  margin:10px 0 5px;
-}
-
-.card p{
-  margin:5px 0;
-}
-
 .card button{
+  margin-top:10px;
   padding:8px 15px;
   background:black;
   color:white;
@@ -69,56 +86,82 @@ header{
   cursor:pointer;
 }
 
-.card button:hover{
-  opacity:0.8;
+.section{
+  padding:60px 20px;
+  background:#f4f4f4;
+  text-align:center;
 }
 
 footer{
   text-align:center;
   padding:20px;
-  background:#f1f1f1;
+  background:black;
+  color:white;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  Veidahi Intimates
-</header>
+<nav>
+  <h2>Veidahi Intimates</h2>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-<div class="banner">
-  <h1>Premium Comfort Collection</h1>
-  <p>Discover elegance, comfort & confidence</p>
+<div class="hero" id="home">
+  <h1>Welcome to Veidahi Intimates</h1>
+  <p>Elegance • Comfort • Confidence</p>
 </div>
 
-<div class="products">
+<div class="products" id="products">
+  <h2>Our Collection</h2>
 
-  <!-- Product 1 -->
-  <div class="card">
-    <img src="p1-green-1.jpg">
-    <h3>Emerald Mist Lace Bra</h3>
-    <p>₹150</p>
-    <a href="p1.html">
-      <button>View Product</button>
-    </a>
+  <div class="grid">
+
+    <div class="card">
+      <img src="p1-green-1.jpg">
+      <h3>Emerald Mist Lace Bra</h3>
+      <p>₹150</p>
+      <a href="p1.html">
+        <button>View Product</button>
+      </a>
+    </div>
+
+    <div class="card">
+      <img src="p2-1.jpg">
+      <h3>Classic Comfort Bra</h3>
+      <p>₹180</p>
+      <button disabled>Coming Soon</button>
+    </div>
+
+    <div class="card">
+      <img src="p3-1.jpg">
+      <h3>Luxury Lace Collection</h3>
+      <p>₹220</p>
+      <button disabled>Coming Soon</button>
+    </div>
+
   </div>
+</div>
 
-  <!-- Future Product Example -->
-  <div class="card">
-    <img src="p2-1.jpg">
-    <h3>Classic Comfort Bra</h3>
-    <p>₹180</p>
-    <button disabled>Coming Soon</button>
-  </div>
+<div class="section" id="about">
+  <h2>About Us</h2>
+  <p>
+    Veidahi Intimates is dedicated to providing premium quality
+    innerwear that blends elegance with comfort.
+    Our mission is to empower women with confidence and style.
+  </p>
+</div>
 
-  <div class="card">
-    <img src="p3-1.jpg">
-    <h3>Luxury Lace Collection</h3>
-    <p>₹220</p>
-    <button disabled>Coming Soon</button>
-  </div>
-
+<div class="section" id="contact">
+  <h2>Contact Us</h2>
+  <p>WhatsApp: +91 8750020203</p>
+  <p>Email: support@veidahiintimates.com</p>
 </div>
 
 <footer>

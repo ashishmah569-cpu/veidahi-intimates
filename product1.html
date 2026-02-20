@@ -71,13 +71,12 @@ select{width:100%;padding:12px 12px;border-radius:12px;border:1px solid rgba(0,0
 </div>
 
 <script>
-const WHATSAPP_NUMBER = "918750020203"; // full country code
+const WHATSAPP_NUMBER = "918750020203"; // with country code
 
-// Color images
 const colorImages = {
-  "Green": ["p1-green-1.jpg","p1-green-2.jpg","p1-green-3.jpg","p1-green-4.jpg"],
-  "Burgundy": ["p1-burgundy-1.jpg","p1-burgundy-2.jpg","p1-burgundy-3.jpg","p1-burgundy-4.jpg"],
-  "Red": ["p1-red-1.jpg","p1-red-2.jpg","p1-red-3.jpg","p1-red-4.jpg"]
+  "Green":["p1-green-1.jpg","p1-green-2.jpg","p1-green-3.jpg","p1-green-4.jpg"],
+  "Burgundy":["p1-burgundy-1.jpg","p1-burgundy-2.jpg","p1-burgundy-3.jpg","p1-burgundy-4.jpg"],
+  "Red":["p1-red-1.jpg","p1-red-2.jpg","p1-red-3.jpg","p1-red-4.jpg"]
 };
 
 const mainImage = document.getElementById("mainImage");
@@ -87,14 +86,13 @@ const sizeSelect = document.getElementById("sizeSelect");
 const pName = document.getElementById("pName").innerText;
 const pPrice = document.getElementById("pPrice").innerText;
 
-// Render thumbnails & main image
-function renderThumbs(color) {
+function renderThumbs(color){
   thumbs.innerHTML = "";
   const imgs = colorImages[color];
   imgs.forEach((src,index)=>{
     const imgEl = document.createElement("img");
     imgEl.src = src;
-    imgEl.alt = color + " " + (index+1);
+    imgEl.alt = color+" "+(index+1);
     if(index===0) imgEl.classList.add("active");
     imgEl.onclick = ()=>{
       mainImage.src = src;
@@ -106,11 +104,9 @@ function renderThumbs(color) {
   mainImage.src = imgs[0];
 }
 
-// Initial render
 renderThumbs(colorSelect.value);
 
-// On color change
-colorSelect.addEventListener("change", ()=> renderThumbs(colorSelect.value));
+colorSelect.addEventListener("change",()=> renderThumbs(colorSelect.value));
 
 // WhatsApp order
 document.getElementById("waBtn").addEventListener("click", ()=>{

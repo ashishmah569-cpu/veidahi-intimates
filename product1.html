@@ -1,167 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emerald Mist With Lace Bra  - Veidahi Intimates</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:Arial,sans-serif;background:#fff;color:#111;}
-    a{text-decoration:none;color:inherit;}
- .wrap{max-width:1100px;margin:0 auto;padding:18px;}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;}
-.brand{font-weight:900;font-size:18px;}
-.back{padding:10px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.15);font-weight:700;font-size:13px;}
-.grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:18px;align-items:start;}
-.mainImg{width:100%;border-radius:18px;overflow:hidden;box-shadow:0 14px 30px rgba(0,0,0,0.12);}
-    .mainImg img{width:100%;height:520px;object-fit:cover;display:block;cursor:pointer;}
-.mainImg img{width:100%;height:520px;object-fit:cover;display:block;cursor:zoom-in;}
-.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px;}
-.thumbs img{width:100%;height:90px;object-fit:cover;border-radius:14px;border:2px solid transparent;cursor:pointer;transition:0.2s;}
-.thumbs img.active{border-color:#7A1230;}
-.card{border-radius:18px;border:1px solid rgba(0,0,0,0.08);padding:16px;box-shadow:0 14px 30px rgba(0,0,0,0.06);}
-h1{font-size:22px;margin-bottom:8px;}
-.price{font-size:18px;font-weight:900;margin-bottom:6px;}
-.offer{color:#E91E63;font-weight:800;margin-bottom:12px;font-size:14px;}
-.desc{color:#444;line-height:1.6;font-size:14px;margin-bottom:16px;}
-.row{display:flex;gap:10px;margin-bottom:12px;}
-select{width:100%;padding:12px 12px;border-radius:12px;border:1px solid rgba(0,0,0,0.15);font-weight:700;font-size:14px;outline:none;}
-.btn{width:100%;padding:14px 16px;border-radius:999px;border:none;font-weight:900;font-size:14px;cursor:pointer;background:#7A1230;color:#fff;transition:0.2s;}
-.btn:hover{transform:translateY(-2px);opacity:0.95;}
-.smallNote{margin-top:10px;font-size:12px;color:#666;line-height:1.5;}
-@media(max-width:900px){.grid{grid-template-columns:1fr;}.mainImg img{height:420px;}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veidahi Intimates - Product</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#f8f8f8;
+  padding:20px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  background:#fff;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.main-img img{
+  width:100%;
+  height:500px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+.thumbs{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+.thumbs img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  border:2px solid transparent;
+}
+
+.thumbs img.active{
+  border:2px solid #7A1230;
+}
+
+.product-info h1{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.price{
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.description{
+  font-size:14px;
+  color:#555;
+  margin-bottom:20px;
+  line-height:1.6;
+}
+
+select{
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#7A1230;
+  color:white;
+  border:none;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  opacity:0.9;
+}
+
+@media(max-width:768px){
+  .container{
+    grid-template-columns:1fr;
+  }
+  .main-img img{
+    height:400px;
+  }
+}
+</style>
 </head>
 <body>
-  <div class="wrap">
-  <div class="topbar">
-    <div class="brand">Veidahi Intimates</div>
-      <a class="back" href="index.html">← Back to Home</a>
-      </div>
-    
-      <div class="grid">
-        
-    <!-- LEFT: Gallery -->
-    <div>
-      
-      <div class="mainImg">
-       green: ["p1-green-1.jpg","p1-green-2.jpg","p1-green-3.jpg","p1-green-4.jpg"],
-  burgundy: ["p1-burgundy-1.jpg","p1-burgundy-2.jpg","p1-burgundy-3.jpg","p1-burgundy-4.jpg"],
-  red: ["p1-red-1.jpg","p1-red-2.jpg","p1-red-3.jpg","p1-red-4.jpg"]
-};
-   <div>     
-      <div class="thumbs" id="thumbs"></div>
-    </div>
-    <!-- RIGHT: Info -->
-    <div class="card">
-    <h1>Emerald Mist With Lace Bra</h1>
-          <div class="price" id="pPrice">₹150</div>
-      <div class="offer">Buy 2: 5% off | Buy 3: 10% off</div>
-<div class="desc">Premium lace • Daily comfort • Luxury feel. Perfect for everyday + party wear.</div>
-             <div class="row">
-        <select id="colorSelect">
-          <option value="Green">Green</option>
-          <option value="Burgundy">Burgundy</option>
-          <option value="Red">Red</option>
-        </select>
-        <select id="sizeSelect">
-          <option value="34">34</option>
-          <option value="36">36</option>
-          <option value="38">38</option>
-          <option value="40">40</option>
-        </select>
-      </div>
 
-      <button class="btn" id="waBtn">Order on WhatsApp</button>
+<div class="container">
 
-      <div class="smallNote">
-        ✔ WhatsApp message me product details + size + color automatically jayega. ✔ Confusion zero.</div>
+  <!-- LEFT SIDE IMAGES -->
+  <div>
+    <div class="main-img">
+      <img id="mainImage" src="p1-green-1.jpg">
     </div>
+
+    <div class="thumbs" id="thumbs"></div>
   </div>
-      
-</div>
+
+  <!-- RIGHT SIDE DETAILS -->
+  <div class="product-info">
+    <h1>Emerald Mist Lace Bra</h1>
+    <div class="price">₹150</div>
+
+    <div class="description">
+      Premium lace bra with soft padding and luxury finish.
+      Perfect for daily comfort and party wear.
+      Breathable fabric • Elegant look • Long lasting quality.
+    </div>
+
+    <!-- COLOR SELECT -->
+    <select id="colorSelect">
+      <option value="green">Green</option>
+      <option value="burgundy">Burgundy</option>
+      <option value="red">Red</option>
+    </select>
+
+    <!-- SIZE SELECT -->
+    <select id="sizeSelect">
+      <option value="34">34</option>
+      <option value="36">36</option>
+      <option value="38">38</option>
+      <option value="40">40</option>
+    </select>
+
+    <button onclick="orderWhatsApp()">Order on WhatsApp</button>
+  </div>
+
 </div>
 
 <script>
-const WHATSAPP_NUMBER = "+918750020203"; // full number with country code
 
-const baseURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/";
-
-const colorImages = {
-  "Green":[baseURL+"p1-green-1.jpg",baseURL+"p1-green-2.jpg",baseURL+"p1-green-3.jpg",baseURL+"p1-green-4.jpg"],
-  "Burgundy":[baseURL+"p1-burgundy-1.jpg",baseURL+"p1-burgundy-2.jpg",baseURL+"p1-burgundy-3.jpg",baseURL+"p1-burgundy-4.jpg"],
-  "Red":[baseURL+"p1-red-1.jpg",baseURL+"p1-red-2.jpg",baseURL+"p1-red-3.jpg",baseURL+"p1-red-4.jpg"]
+const images = {
+  green:[
+    "p1-green-1.jpg",
+    "p1-green-2.jpg",
+    "p1-green-3.jpg",
+    "p1-green-4.jpg"
+  ],
+  burgundy:[
+    "p1-burgundy-1.jpg",
+    "p1-burgundy-2.jpg",
+    "p1-burgundy-3.jpg",
+    "p1-burgundy-4.jpg"
+  ],
+  red:[
+    "p1-red-1.jpg",
+    "p1-red-2.jpg",
+    "p1-red-3.jpg",
+    "p1-red-4.jpg"
+  ]
 };
+
 const mainImage = document.getElementById("mainImage");
 const thumbs = document.getElementById("thumbs");
 const colorSelect = document.getElementById("colorSelect");
-const sizeSelect = document.getElementById("sizeSelect");
-const pName = document.getElementById("pName").innerText;
-const pPrice = document.getElementById("pPrice").innerText;
 
-// Render thumbnails for selected color
-function renderThumbs(color){
-  const image=colorImage[color.toLowerCase()];
-  thumbs.innerHTML = "";
-  image.forEach((src,i)=>{
-    const t=document.createElement("img");
-    
-  colorImages[color].forEach((src,index)=>{
-    const tImg = document.createElement("img");
-    tImg.src = src;
-    tImg.alt = color + " " + (index+1);
-    if(index===0) tImg.classList.add("active");
-    tImg.onclick = ()=>{
-      mainImage.src = src;
-      document.querySelectorAll("#thumbs img").forEach(i=>i.classList.remove("active"));
-      tImg.classList.add("active");
+function loadImages(color){
+  thumbs.innerHTML="";
+  images[color].forEach((img,index)=>{
+    const image = document.createElement("img");
+    image.src = img;
+
+    if(index===0){
+      image.classList.add("active");
+      mainImage.src = img;
+    }
+
+    image.onclick = function(){
+      mainImage.src = img;
+      document.querySelectorAll(".thumbs img").forEach(i=>i.classList.remove("active"));
+      image.classList.add("active");
     };
-    thumbs.appendChild(tImg);
+
+    thumbs.appendChild(image);
   });
-  mainImage.src = colorImages[color][0];
 }
 
-// initial render
-renderThumbs(colorSelect.value);
-
-// on color change
-colorSelect.addEventListener("change", ()=> renderThumbs(colorSelect.value));
-
-// WhatsApp order
-document.getElementById("waBtn").addEventListener("click", ()=>{
-  const color = colorSelect.value;
-  const size = sizeSelect.value;
-  const imgUrl = window.location.origin + "/" + colorImages[color][0];
-  const pageUrl = window.location.href;
-  const msg = `Hello Veidahi Intimates 👋
-I want to order:
-Product: ${pName}
-Color: ${color}
-Size: ${size}
-Price: ${pPrice}
-Product Link: ${pageUrl}
-Image: ${imgUrl}`;
-  const waLink = https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)};
-  window.open(waLink,"_blank");
+colorSelect.addEventListener("change",function(){
+  loadImages(this.value);
 });
 
-      <!-- Details -->
-      <div class="details">
-        <div class="box-title">Product Details</div>
-        <div class="price">₹150</div>
-        <div class="offer">2 pieces → 5% off | 3 pieces → 10% off</div>
-        <div class="list">
-          <div><b>Fabric:</b> Supima Cotton </div>
-          <div><b>Style:</b> Luxury bra with sculpted fit</div>
-          <div><b>Dispatch:</b> 24-48 Hours</div>
-        </div>
-        <div class="btns">
-          <a class="btn dark" href="https://wa.me/918750020203" target="_blank">Order on WhatsApp</a>
-          <a class="btn light" href="https://www.instagram.com/veidahiintimates" target="_blank">View Instagram</a>
-        </div>
-      </div>
-    </div>
-    <footer>© 2026 Veidahi Intimates • Luxury • Style • Confidence</footer>
-  </div>
+loadImages("green");
+
+function orderWhatsApp(){
+  const color = colorSelect.value;
+  const size = document.getElementById("sizeSelect").value;
+
+  const message = `Hello Veidahi Intimates 👋
+I want to order:
+
+Product: Emerald Mist Lace Bra
+Color: ${color}
+Size: ${size}
+Price: ₹150`;
+
+  const url = https://wa.me/918750020203?text=${encodeURIComponent(message)};
+  window.open(url,"_blank");
+}
+
+</script>
+
 </body>
 </html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Emerald Mist Lace Bra</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  padding:20px;
+}
+
+.container{
+  display:flex;
+  gap:40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.left{
+  width:50%;
+}
+
+.right{
+  width:50%;
+}
+
+#mainImage{
+  width:100%;
+  border:1px solid #ddd;
+}
+
+.thumbs{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+
+.thumbs img{
+  width:70px;
+  cursor:pointer;
+  border:2px solid transparent;
+}
+
+.thumbs img.active{
+  border:2px solid black;
+}
+
+select, button{
+  padding:8px;
+  margin-top:10px;
+  width:200px;
+}
+
+button{
+  background:black;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="left">
+  <img id="mainImage" src="">
+  <div class="thumbs" id="thumbs"></div>
+</div>
+
+<div class="right">
+  <h2>Emerald Mist Lace Bra</h2>
+  <p><b>Price:</b> ₹150</p>
+
+  <p>
+  Soft premium lace fabric.<br>
+  Comfortable everyday wear.<br>
+  Elegant design for perfect fit.
+  </p>
+
+  <label>Choose Color:</label><br>
+  <select id="colorSelect">
+    <option value="green">Green</option>
+    <option value="burgundy">Burgundy</option>
+    <option value="red">Red</option>
+  </select>
+
+  <br><br>
+
+  <label>Select Size:</label><br>
+  <select id="sizeSelect">
+    <option>34</option>
+    <option>36</option>
+    <option>38</option>
+    <option>40</option>
+  </select>
+
+  <br><br>
+
+  <button onclick="orderNow()">Order on WhatsApp</button>
+
+</div>
+
+</div>
+
+<script>
+
+const images = {
+  green:[
+    "p1-green-1.jpg",
+    "p1-green-2.jpg",
+    "p1-green-3.jpg",
+    "p1-green-4.jpg"
+  ],
+  burgundy:[
+    "p1-burgundy-1.jpg",
+    "p1-burgundy-2.jpg",
+    "p1-burgundy-3.jpg",
+    "p1-burgundy-4.jpg"
+  ],
+  red:[
+    "p1-red-1.jpg",
+    "p1-red-2.jpg",
+    "p1-red-3.jpg",
+    "p1-red-4.jpg"
+  ]
+};
+
+const mainImage = document.getElementById("mainImage");
+const thumbs = document.getElementById("thumbs");
+const colorSelect = document.getElementById("colorSelect");
+
+function loadImages(color){
+
+  thumbs.innerHTML="";
+
+  images[color].forEach(function(img,index){
+
+    if(index===0){
+      mainImage.src = img;
+    }
+
+    const t = document.createElement("img");
+    t.src = img;
+
+    t.onclick = function(){
+      mainImage.src = img;
+    };
+
+    thumbs.appendChild(t);
+  });
+}
+
+colorSelect.onchange = function(){
+  loadImages(this.value);
+};
+
+loadImages("green");
+
+function orderNow(){
+
+  const color = colorSelect.value;
+  const size = document.getElementById("sizeSelect").value;
+
+  const message =
+  "Hello Veidahi Intimates 👋%0A%0A"+
+  "Product: Emerald Mist Lace Bra%0A"+
+  "Color: "+color+"%0A"+
+  "Size: "+size+"%0A"+
+  "Price: ₹150";
+
+  window.open("https://wa.me/918750020203?text="+message);
+}
+
+</script>
+
+</body>
+</html>

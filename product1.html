@@ -71,50 +71,54 @@ select{width:100%;padding:12px 12px;border-radius:12px;border:1px solid rgba(0,0
 </div>
 
 <script>
-const WHATSAPP_NUMBER = "8750020203";
+const WHATSAPP_NUMBER = "918750020203"; // full country code
 
+// Color images
 const colorImages = {
-  "Green":["p1-green-1.jpg","p1-green-2.jpg","p1-green-3.jpg","p1-green-4.jpg"],
-  "Burgundy":["p1-burgundy-1.jpg","p1-burgundy-2.jpg","p1-burgundy-3.jpg","p1-burgundy-4.jpg"],
-  "Red":["p1-red-1.jpg","p1-red-2.jpg","p1-red-3.jpg","p1-red-4.jpg"]
+  "Green": ["p1-green-1.jpg","p1-green-2.jpg","p1-green-3.jpg","p1-green-4.jpg"],
+  "Burgundy": ["p1-burgundy-1.jpg","p1-burgundy-2.jpg","p1-burgundy-3.jpg","p1-burgundy-4.jpg"],
+  "Red": ["p1-red-1.jpg","p1-red-2.jpg","p1-red-3.jpg","p1-red-4.jpg"]
 };
 
 const mainImage = document.getElementById("mainImage");
 const thumbs = document.getElementById("thumbs");
 const colorSelect = document.getElementById("colorSelect");
 const sizeSelect = document.getElementById("sizeSelect");
-
 const pName = document.getElementById("pName").innerText;
 const pPrice = document.getElementById("pPrice").innerText;
 
-function renderThumbs(color){
-  thumbs.innerHTML="";
-  const imgs=colorImages[color];
+// Render thumbnails & main image
+function renderThumbs(color) {
+  thumbs.innerHTML = "";
+  const imgs = colorImages[color];
   imgs.forEach((src,index)=>{
-    const im=document.createElement("img");
-    im.src=src;
-    im.alt=color+" "+(index+1);
-    if(index===0) im.classList.add("active");
-    im.onclick=()=>{mainImage.src=src;document.querySelectorAll("#thumbs img").forEach(t=>t.classList.remove("active"));im.classList.add("active");};
-    thumbs.appendChild(im);
+    const imgEl = document.createElement("img");
+    imgEl.src = src;
+    imgEl.alt = color + " " + (index+1);
+    if(index===0) imgEl.classList.add("active");
+    imgEl.onclick = ()=>{
+      mainImage.src = src;
+      document.querySelectorAll("#thumbs img").forEach(t=>t.classList.remove("active"));
+      imgEl.classList.add("active");
+    };
+    thumbs.appendChild(imgEl);
   });
-  mainImage.src=imgs[0];
+  mainImage.src = imgs[0];
 }
 
+// Initial render
 renderThumbs(colorSelect.value);
 
-colorSelect.addEventListener("change",()=>{
-  renderThumbs(colorSelect.value);
-});
+// On color change
+colorSelect.addEventListener("change", ()=> renderThumbs(colorSelect.value));
 
 // WhatsApp order
-document.getElementById("waBtn").addEventListener("click",()=>{
-  const color=colorSelect.value;
-  const size=sizeSelect.value;
-  const imgs=colorImages[color];
-  const imgUrl=window.location.origin+"/"+imgs[0];
-  const pageUrl=window.location.href;
-  const msg=`Hello Veidahi Intimates 👋
+document.getElementById("waBtn").addEventListener("click", ()=>{
+  const color = colorSelect.value;
+  const size = sizeSelect.value;
+  const imgUrl = window.location.origin + "/" + colorImages[color][0];
+  const pageUrl = window.location.href;
+  const msg = `Hello Veidahi Intimates 👋
 I want to order:
 Product: ${pName}
 Color: ${color}
@@ -122,7 +126,7 @@ Size: ${size}
 Price: ${pPrice}
 Product Link: ${pageUrl}
 Image: ${imgUrl}`;
-  const waLink=https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)};
+  const waLink = https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)};
   window.open(waLink,"_blank");
 });
 </script>

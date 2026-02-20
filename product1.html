@@ -71,7 +71,7 @@ select{width:100%;padding:12px 12px;border-radius:12px;border:1px solid rgba(0,0
 </div>
 
 <script>
-const WHATSAPP_NUMBER = "918750020203"; // with country code
+const WHATSAPP_NUMBER = "918750020203"; // full number with country code
 
 const colorImages = {
   "Green":["p1-green-1.jpg","p1-green-2.jpg","p1-green-3.jpg","p1-green-4.jpg"],
@@ -86,27 +86,29 @@ const sizeSelect = document.getElementById("sizeSelect");
 const pName = document.getElementById("pName").innerText;
 const pPrice = document.getElementById("pPrice").innerText;
 
+// render thumbnails
 function renderThumbs(color){
   thumbs.innerHTML = "";
-  const imgs = colorImages[color];
-  imgs.forEach((src,index)=>{
-    const imgEl = document.createElement("img");
-    imgEl.src = src;
-    imgEl.alt = color+" "+(index+1);
-    if(index===0) imgEl.classList.add("active");
-    imgEl.onclick = ()=>{
+  colorImages[color].forEach((src,index)=>{
+    const tImg = document.createElement("img");
+    tImg.src = src;
+    tImg.alt = color + " " + (index+1);
+    if(index===0) tImg.classList.add("active");
+    tImg.onclick = ()=>{
       mainImage.src = src;
-      document.querySelectorAll("#thumbs img").forEach(t=>t.classList.remove("active"));
-      imgEl.classList.add("active");
+      document.querySelectorAll("#thumbs img").forEach(i=>i.classList.remove("active"));
+      tImg.classList.add("active");
     };
-    thumbs.appendChild(imgEl);
+    thumbs.appendChild(tImg);
   });
-  mainImage.src = imgs[0];
+  mainImage.src = colorImages[color][0];
 }
 
+// initial render
 renderThumbs(colorSelect.value);
 
-colorSelect.addEventListener("change",()=> renderThumbs(colorSelect.value));
+// on color change
+colorSelect.addEventListener("change", ()=> renderThumbs(colorSelect.value));
 
 // WhatsApp order
 document.getElementById("waBtn").addEventListener("click", ()=>{

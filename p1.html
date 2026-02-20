@@ -194,15 +194,25 @@ function orderNow(){
 
   const color = colorSelect.value;
   const size = document.getElementById("sizeSelect").value;
+  const imageURL = mainImage.src;
 
   const message =
-  "Hello Veidahi Intimates 👋%0A%0A"+
-  "Product: Emerald Mist Lace Bra%0A"+
-  "Color: "+color+"%0A"+
-  "Size: "+size+"%0A"+
-  "Price: ₹150";
+  "🛍️ NEW ORDER RECEIVED 🛍️%0A%0A"+
+  "━━━━━━━━━━━━━━%0A"+
+  "📌 Product: Emerald Mist Lace Bra%0A"+
+  "🎨 Color: "+color+"%0A"+
+  "📏 Size: "+size+"%0A"+
+  "💰 Price: ₹150%0A"+
+  "🖼️ Product Image: "+imageURL+"%0A"+
+  "━━━━━━━━━━━━━━%0A%0A"+
+  "👤 Customer Details: %0A"+
+  "Name: %0A"+
+  "Address: %0A"+
+  "Pincode: %0A"+
+  "Phone: %0A%0A"+
+  "Kindly confirm availability & delivery time. 😊";
 
-  window.open("https://wa.me/918750020203?text="+message);
+  window.open("https://wa.me/918750020203?text="+message,"_blank");
 }
 
 </script>

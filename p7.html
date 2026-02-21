@@ -8,45 +8,120 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:Arial,sans-serif;background:#fff;color:#111;}
-header{padding:16px;border-bottom:1px solid rgba(0,0,0,0.08);position:sticky;top:0;background:#fff;z-index:10;}
+
+header{
+padding:16px;
+border-bottom:1px solid rgba(0,0,0,0.08);
+position:sticky;
+top:0;
+background:#fff;
+z-index:10;
+}
+
 .brand{font-weight:900;font-size:18px;}
+
 .wrap{max-width:1200px;margin:0 auto;padding:24px 16px 60px;}
-.back{display:inline-block;padding:10px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.12);text-decoration:none;color:#111;font-weight:800;font-size:13px;}
-h1{font-size:26px;margin-bottom:8px;}
-.sub{color:#555;font-size:14px;margin-bottom:16px;}
-.grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:18px;align-items:start;}
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
-.gallery img{width:100%;height:320px;object-fit:cover;border-radius:18px;border:1px solid rgba(0,0,0,0.08);}
-.details{border-radius:22px;padding:18px;border:1px solid rgba(0,0,0,0.08);background:#fff;position:sticky;top:95px;}
-.price{font-size:20px;font-weight:900;color:#d2235b;margin:12px 0;}
-.offer{background:#ffedf1;color:#d2235b;padding:8px 12px;border-radius:12px;font-weight:700;margin-bottom:12px;display:inline-block;}
 
-input, select{
-  width:100%;
-  padding:10px;
-  margin-top:6px;
-  margin-bottom:12px;
-  border-radius:10px;
-  border:1px solid rgba(0,0,0,0.2);
+.back{
+display:inline-block;
+padding:10px 14px;
+border-radius:999px;
+border:1px solid rgba(0,0,0,0.12);
+text-decoration:none;
+color:#111;
+font-weight:800;
+font-size:13px;
 }
 
-.btn{
-  display:inline-block;
-  padding:12px 16px;
-  border-radius:999px;
-  font-weight:900;
-  font-size:13px;
-  border:none;
-  cursor:pointer;
+.grid{
+display:grid;
+grid-template-columns:1.2fr 0.8fr;
+gap:18px;
+align-items:start;
 }
 
-.btn.dark{background:#111;color:#fff;}
+.main-img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:18px;
+border:1px solid rgba(0,0,0,0.08);
+margin-bottom:12px;
+}
 
-footer{margin-top:50px;text-align:center;color:#777;font-size:13px;}
+.gallery{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+}
+
+.gallery img{
+width:100%;
+height:100px;
+object-fit:cover;
+border-radius:12px;
+cursor:pointer;
+border:1px solid rgba(0,0,0,0.08);
+}
+
+.color-container{
+display:flex;
+gap:12px;
+margin:10px 0 15px;
+}
+
+.color-dot{
+width:28px;
+height:28px;
+border-radius:50%;
+cursor:pointer;
+border:2px solid #ddd;
+}
+
+.color-dot.active{
+border:3px solid #000;
+transform:scale(1.2);
+}
+
+.details{
+border-radius:22px;
+padding:18px;
+border:1px solid rgba(0,0,0,0.08);
+background:#fff;
+position:sticky;
+top:95px;
+}
+
+.price{
+font-size:20px;
+font-weight:900;
+color:#d2235b;
+margin:12px 0;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin-bottom:12px;
+border-radius:10px;
+border:1px solid rgba(0,0,0,0.2);
+}
+
+button{
+padding:12px;
+width:100%;
+border:none;
+background:#111;
+color:#fff;
+border-radius:999px;
+font-weight:900;
+cursor:pointer;
+}
 
 @media(max-width:980px){
 .grid{grid-template-columns:1fr;}
 .details{position:relative;top:0;}
+.gallery{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
@@ -62,23 +137,20 @@ footer{margin-top:50px;text-align:center;color:#777;font-size:13px;}
 <a class="back" href="index.html">← Back to Home</a>
 
 <h1>Cotton Candy Dream</h1>
-<div class="sub">
-Smooth satin • Light support • Premium comfort for daily wear & special moments.
-</div>
 
 <div class="grid">
 
-<div class="gallery">
-<img src="p7-1.jpg">
-<img src="p7-2.jpg">
-<img src="p7-3.jpg">
-<img src="p7-4.jpg">
+<div>
+<img id="mainImage" class="main-img">
+<div class="gallery" id="thumbs"></div>
 </div>
 
 <div class="details">
 
 <div class="price">₹79</div>
-<div class="offer">2 pieces → 5% off | 3 pieces → 10% off</div>
+
+<label>Select Color</label>
+<div class="color-container" id="colorIcons"></div>
 
 <label>Select Size</label>
 <select id="sizeSelect">
@@ -89,54 +161,140 @@ Smooth satin • Light support • Premium comfort for daily wear & special mome
 </select>
 
 <label>Your Name</label>
-<input type="text" id="custName" placeholder="Enter your name">
+<input type="text" id="custName">
 
-<label>Phone Number</label>
-<input type="text" id="custPhone" placeholder="Enter phone number">
+<label>Phone</label>
+<input type="text" id="custPhone">
 
 <label>Address</label>
-<input type="text" id="custAddress" placeholder="Enter full address">
+<input type="text" id="custAddress">
 
-<button class="btn dark" onclick="orderNow()">Place Order</button>
+<button onclick="orderNow()">Place Order</button>
 
 </div>
 </div>
 
-<footer>© 2026 Veidahi Intimates • Luxury • Style • Confidence</footer>
+<footer style="margin-top:50px;text-align:center;color:#777;font-size:13px;">
+© 2026 Veidahi Intimates • Luxury • Style • Confidence
+</footer>
 
 </div>
 
 <script>
 
-function orderNow(){
+let currentColor = "chocolate";
 
-const name = document.getElementById("custName").value;
-const phone = document.getElementById("custPhone").value;
-const address = document.getElementById("custAddress").value;
-const size = document.getElementById("sizeSelect").value;
+const images = {
 
-if(name==="" || phone==="" || address===""){
-  alert("Please fill all details");
-  return;
+chocolate: [
+"p7-chocolate-1.jpg",
+"p7-chocolate-2.jpg",
+"p7-chocolate-3.jpg",
+"p7-chocolate-4.jpg"
+],
+
+grey: [
+"p7-grey-1.jpg",
+"p7-grey-2.jpg",
+"p7-grey-3.jpg",
+"p7-grey-4.jpg"
+],
+
+merhoon: [
+"p7-merhoon-1.jpg",
+"p7-merhoon-2.jpg",
+"p7-merhoon-3.jpg",
+"p7-merhoon-4.jpg"
+]
+
+};
+
+const mainImage=document.getElementById("mainImage");
+const thumbs=document.getElementById("thumbs");
+const colorIcons=document.getElementById("colorIcons");
+
+function loadImages(color){
+
+currentColor=color;
+thumbs.innerHTML="";
+
+images[color].forEach(function(img,index){
+
+if(index===0){
+mainImage.src=img;
 }
 
-const orderID = "VI" + Math.floor(Math.random()*100000);
+const t=document.createElement("img");
+t.src=img;
+t.onclick=function(){
+mainImage.src=img;
+};
+
+thumbs.appendChild(t);
+
+});
+
+highlightActive(color);
+}
+
+const colorMap={
+chocolate:"#5a3825",
+grey:"#808080",
+merhoon:"#800000"
+};
+
+Object.keys(images).forEach(function(color){
+
+const dot=document.createElement("div");
+dot.classList.add("color-dot");
+dot.style.background=colorMap[color];
+dot.setAttribute("data-color",color);
+
+dot.onclick=function(){
+loadImages(color);
+};
+
+colorIcons.appendChild(dot);
+
+});
+
+function highlightActive(active){
+
+document.querySelectorAll(".color-dot").forEach(function(d){
+d.classList.remove("active");
+});
+
+const activeDot=document.querySelector('.color-dot[data-color="'+active+'"]');
+if(activeDot){
+activeDot.classList.add("active");
+}
+
+}
+
+loadImages("chocolate");
+
+
+function orderNow(){
+
+const name=document.getElementById("custName").value;
+const phone=document.getElementById("custPhone").value;
+const address=document.getElementById("custAddress").value;
+const size=document.getElementById("sizeSelect").value;
+
+if(name===""||phone===""||address===""){
+alert("Please fill all details");
+return;
+}
 
 const message =
-"━━━━━━━━━━━━━━━━━━%0A"+
-"🧾 VEIDAHI INTIMATES %0A"+
-"━━━━━━━━━━━━━━━━━━%0A"+
-"Order ID: "+orderID+"%0A%0A"+
-"📌 Product: Cotton Candy Dream%0A"+
-"📏 Size: "+size+"%0A"+
-"💰 Price: ₹79%0A%0A"+
-"👤 Customer Details%0A"+
+"🛍 ORDER%0A"+
+"Product: Cotton Candy Dream%0A"+
+"Color: "+currentColor+"%0A"+
+"Size: "+size+"%0A"+
+"Price: ₹79%0A"+
 "Name: "+name+"%0A"+
 "Phone: "+phone+"%0A"+
-"Address: "+address+"%0A"+
-"━━━━━━━━━━━━━━━━━━%0A"+
-"Total Payable: ₹79%0A"+
-"━━━━━━━━━━━━━━━━━━";
+"Address: "+address;
 
 window.open("https://wa.me/918750020203?text="+message,"_blank");
 

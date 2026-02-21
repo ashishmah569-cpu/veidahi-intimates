@@ -40,32 +40,26 @@ gap:18px;
 align-items:start;
 }
 
-.slider-container{
-position:relative;
-}
-
-.main-img{
-width:100%;
-height:420px;
-object-fit:cover;
+/* SLIDER */
+.slider-wrapper{
+overflow:hidden;
 border-radius:18px;
 border:1px solid rgba(0,0,0,0.08);
 }
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,0.4);
-color:#fff;
-border:none;
-padding:8px 12px;
-cursor:pointer;
-border-radius:50%;
-font-size:18px;
+
+.slider-track{
+display:flex;
+transition:transform 0.4s ease;
 }
 
-{left:10px;}
-{right:10px;}
+.slide-img{
+width:100%;
+height:420px;
+object-fit:cover;
+flex-shrink:0;
+}
 
+/* COLOR */
 .color-container{
 display:flex;
 gap:12px;
@@ -85,6 +79,7 @@ border:3px solid #000;
 transform:scale(1.2);
 }
 
+/* DETAILS */
 .details{
 border-radius:22px;
 padding:18px;
@@ -141,25 +136,12 @@ cursor:pointer;
 
 <div class="grid">
 
-.slider-wrapper{
-overflow:hidden;
-border-radius:18px;
-border:1px solid rgba(0,0,0,0.08);
-}
-
-.slider-track{
-display:flex;
-transition:transform 0.4s ease;
-}
-
-.slide-img{
-width:100%;
-height:420px;
-object-fit:cover;
-flex-shrink:0;
-}
+<!-- SLIDER COLUMN -->
+<div class="slider-wrapper">
+    <div class="slider-track" id="sliderTrack"></div>
 </div>
 
+<!-- DETAILS COLUMN -->
 <div class="details">
 
 <div class="price">
@@ -222,13 +204,7 @@ teal:[
 const sliderTrack=document.getElementById("sliderTrack");
 const colorIcons=document.getElementById("colorIcons");
 
-function loadColor(color){
-currentColor=color;
-currentIndex=0;
-createSlides();
-highlightActive(color);
-}
-
+/* CREATE SLIDES */
 function createSlides(){
 sliderTrack.innerHTML="";
 images[currentColor].forEach(function(img){
@@ -244,7 +220,7 @@ function updateSlide(){
 sliderTrack.style.transform="translateX(-"+(currentIndex*100)+"%)";
 }
 
-/* Swipe Logic */
+/* SWIPE */
 let startX=0;
 
 sliderTrack.addEventListener("touchstart",e=>{
@@ -253,12 +229,8 @@ startX=e.touches[0].clientX;
 
 sliderTrack.addEventListener("touchend",e=>{
 let endX=e.changedTouches[0].clientX;
-if(startX-endX>50){
-nextSlide();
-}
-if(endX-startX>50){
-prevSlide();
-}
+if(startX-endX>50){nextSlide();}
+if(endX-startX>50){prevSlide();}
 });
 
 sliderTrack.addEventListener("mousedown",e=>{
@@ -267,34 +239,21 @@ startX=e.clientX;
 
 sliderTrack.addEventListener("mouseup",e=>{
 let endX=e.clientX;
-if(startX-endX>50){
-nextSlide();
-}
-if(endX-startX>50){
-prevSlide();
-}
+if(startX-endX>50){nextSlide();}
+if(endX-startX>50){prevSlide();}
 });
 
 function nextSlide(){
-if(currentIndex<images[currentColor].length-1){
-currentIndex++;
-}else{
-currentIndex=0;
-}
+currentIndex=(currentIndex+1)%images[currentColor].length;
 updateSlide();
 }
 
 function prevSlide(){
-if(currentIndex>0){
-currentIndex--;
-}else{
-currentIndex=images[currentColor].length-1;
-}
+currentIndex=(currentIndex-1+images[currentColor].length)%images[currentColor].length;
 updateSlide();
 }
 
-/* Color Dots */
-
+/* COLOR DOTS */
 const colorMap={
 beby:"#f8c8dc",
 moon:"#b11226",
@@ -306,7 +265,12 @@ const dot=document.createElement("div");
 dot.classList.add("color-dot");
 dot.style.background=colorMap[color];
 dot.setAttribute("data-color",color);
-dot.onclick=function(){loadColor(color);};
+dot.onclick=function(){
+currentColor=color;
+currentIndex=0;
+createSlides();
+highlightActive(color);
+};
 colorIcons.appendChild(dot);
 });
 
@@ -318,7 +282,34 @@ const activeDot=document.querySelector('.color-dot[data-color="'+active+'"]');
 if(activeDot){activeDot.classList.add("active");}
 }
 
-loadColor("beby");
+/* INIT */
+createSlides();
+highlightActive("beby");
+
+/* ORDER */
+function orderNow(){
+const name=document.getElementById("custName").value;
+const phone=document.getElementById("custPhone").value;
+const address=document.getElementById("custAddress").value;
+const size=document.getElementById("sizeSelect").value;
+
+if(name===""||phone===""||address===""){
+alert("Fill all details");
+return;
+}
+
+const message=
+"🛍 ORDER%0A"+
+"Product: Botanic Bliss Panty%0A"+
+"Color: "+currentColor+"%0A"+
+"Size: "+size+"%0A"+
+"Price: ₹149%0A"+
+"Name: "+name+"%0A"+
+"Phone: "+phone+"%0A"+
+"Address: "+address;
+
+window.open("https://wa.me/918750020203?text="+message,"_blank");
+}
 
 </script>
 

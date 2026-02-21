@@ -168,14 +168,15 @@ font-weight:900;
 
 <script>
 
-/* ✅ IMAGES (TUMHARE NAMES KE ACCORDING) */
+/* IMAGES */
 const images = {
-red:[
-"p3-1.jpg",
-"p3-2.jpg",
-"p3-3.jpg",
-"p3-4.jpg"
+forest:[
+"p3-forest green-1.jpg",
+"p3-forest green-2.jpg",
+"p3-forest green-3.jpg",
+"p3-forest green-4.jpg"
 ],
+
 indigo:[
 "p3-indigo-1.jpg",
 "p3-indigo-2.jpg",
@@ -184,32 +185,28 @@ indigo:[
 ]
 };
 
-const colorMap = {
-red:"#d10000",
-indigo:"#4b0082"
-};
+let currentColor = "forest";
 
-let currentColor="red";
+const mainImage = document.getElementById("mainImage");
+const thumbs = document.getElementById("thumbs");
+const colorIcons = document.getElementById("colorIcons");
 
-const mainImage=document.getElementById("mainImage");
-const thumbs=document.getElementById("thumbs");
-const colorIcons=document.getElementById("colorIcons");
-
-/* ✅ LOAD IMAGES */
+/* LOAD IMAGES */
 function loadImages(color){
 
-currentColor=color;
-thumbs.innerHTML="";
+currentColor = color;
+thumbs.innerHTML = "";
 
 images[color].forEach((img,index)=>{
 
-if(index===0){
-mainImage.src=img;
+if(index === 0){
+mainImage.src = img;
 }
 
-const t=document.createElement("img");
-t.src=img;
-t.onclick=()=>mainImage.src=img;
+const t = document.createElement("img");
+t.src = img;
+t.onclick = () => mainImage.src = img;
+
 thumbs.appendChild(t);
 
 });
@@ -217,15 +214,20 @@ thumbs.appendChild(t);
 highlightActive(color);
 }
 
-/* ✅ COLOR ICONS */
+/* COLOR ICONS */
+const colorMap = {
+forest:"#2e8b57",
+indigo:"#4b0082"
+};
+
 Object.keys(images).forEach(color=>{
 
-const dot=document.createElement("div");
+const dot = document.createElement("div");
 dot.classList.add("color-dot");
-dot.style.background=colorMap[color];
+dot.style.background = colorMap[color];
 dot.setAttribute("data-color",color);
 
-dot.onclick=()=>loadImages(color);
+dot.onclick = () => loadImages(color);
 
 colorIcons.appendChild(dot);
 
@@ -237,14 +239,17 @@ document.querySelectorAll(".color-dot").forEach(d=>{
 d.classList.remove("active");
 });
 
-const activeDot=document.querySelector(.color-dot[data-color="${active}"]);
-if(activeDot) activeDot.classList.add("active");
+const activeDot = document.querySelector(.color-dot[data-color="${active}"]);
+if(activeDot){
+activeDot.classList.add("active");
+}
 
 }
 
 /* INIT */
-loadImages("red");
+loadImages("forest");
 
+</script>
 /* WHATSAPP */
 function orderNow(){
 

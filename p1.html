@@ -192,16 +192,21 @@ highlightActive(color);
 }
 
 /* ✅ CREATE COLOR ICONS */
-function createColorIcons(){
 
-const colors = Object.keys(images);
+const colorMap = {
+green: "#2e8b57",
+burgundy: "#800020",
+red: "#d10000"
+};
 
-colors.forEach(color=>{
+Object.keys(images).forEach(color=>{
 
 const dot = document.createElement("div");
 
 dot.classList.add("color-dot");
-dot.style.background = color; // auto color
+dot.style.background = colorMap[color] || "#ccc";
+
+dot.setAttribute("data-color", color);
 
 dot.onclick = function(){
 loadImages(color);
@@ -213,18 +218,17 @@ colorIcons.appendChild(dot);
 
 highlightActive("green");
 }
-
 /* ✅ HIGHLIGHT ACTIVE COLOR */
 function highlightActive(activeColor){
 
-document.querySelectorAll(".color-dot").forEach((dot,index)=>{
-
+document.querySelectorAll(".color-dot").forEach(dot=>{
 dot.classList.remove("active");
+});
 
-if(Object.keys(images)[index] === activeColor){
-dot.classList.add("active");
+document.querySelector(.color-dot[data-color="${activeColor}"])
+?.classList.add("active");
+
 }
-
 });
 
 }

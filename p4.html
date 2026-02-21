@@ -40,28 +40,34 @@ gap:18px;
 align-items:start;
 }
 
+.slider-container{
+position:relative;
+}
+
 .main-img{
 width:100%;
 height:420px;
 object-fit:cover;
 border-radius:18px;
 border:1px solid rgba(0,0,0,0.08);
-margin-bottom:12px;
 }
 
-.gallery{
-display:flex;
-gap:10px;
-}
-
-.gallery img{
-width:100px;
-height:100px;
-object-fit:cover;
-border-radius:12px;
+.nav{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.4);
+color:#fff;
+border:none;
+padding:8px 12px;
 cursor:pointer;
-border:1px solid rgba(0,0,0,0.08);
+border-radius:50%;
+font-size:18px;
 }
+
+.prev{left:10px;}
+.next{right:10px;}
+
 .color-container{
 display:flex;
 gap:12px;
@@ -119,7 +125,6 @@ cursor:pointer;
 @media(max-width:980px){
 .grid{grid-template-columns:1fr;}
 .details{position:relative;top:0;}
-.gallery{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
@@ -139,13 +144,11 @@ cursor:pointer;
 <div class="grid">
 
 <div>
-    <img id="mainImage" class="main-img" src="p4-beby pink-1.jpg">
-
-    <div class="gallery">
-        <img src="p4-beby pink-1.jpg" onclick="changeImage(this.src)">
-        <img src="p4-moon red-1.jpg" onclick="changeImage(this.src)">
-        <img src="p4-teal-1.jpg" onclick="changeImage(this.src)">
-    </div>
+<div class="slider-container">
+<button class="nav prev" onclick="slideImage(-1)">❮</button>
+<img id="mainImage" class="main-img" src="p4-beby pink-1.jpg">
+<button class="nav next" onclick="slideImage(1)">❯</button>
+</div>
 </div>
 
 <div class="details">
@@ -183,59 +186,48 @@ cursor:pointer;
 
 <script>
 
-let currentColor = "beby";
+let currentColor="beby";
+let currentIndex=0;
 
-const images = {
-
-beby: [
+const images={
+beby:[
 "p4-beby pink-1.jpg",
 "p4-beby pink-2.jpg",
 "p4-beby pink-3.jpg",
 "p4-beby pink-4.jpg"
 ],
-
-moon: [
+moon:[
 "p4-moon red-1.jpg",
 "p4-moon red-2.jpg",
 "p4-moon red-3.jpg",
 "p4-moon red-4.jpg"
 ],
-
-teal: [
+teal:[
 "p4-teal-1.jpg",
 "p4-teal-2.jpg",
 "p4-teal-3.jpg",
 "p4-teal-4.jpg"
 ]
-
 };
 
 const mainImage=document.getElementById("mainImage");
-const thumbs=document.getElementById("thumbs");
 const colorIcons=document.getElementById("colorIcons");
 
-function loadImages(color){
-
+function loadColor(color){
 currentColor=color;
-thumbs.innerHTML="";
-
-images[color].forEach(function(img,index){
-
-if(index===0){
-mainImage.src=img;
+currentIndex=0;
+updateImage();
+highlightActive(color);
 }
 
-const t=document.createElement("img");
-t.src=img;
-t.onclick=function(){
-mainImage.src=img;
-};
+function slideImage(direction){
+let total=images[currentColor].length;
+currentIndex=(currentIndex+direction+total)%total;
+updateImage();
+}
 
-thumbs.appendChild(t);
-
-});
-
-highlightActive(color);
+function updateImage(){
+mainImage.src=images[currentColor][currentIndex];
 }
 
 const colorMap={
@@ -245,35 +237,23 @@ teal:"#008080"
 };
 
 Object.keys(images).forEach(function(color){
-
 const dot=document.createElement("div");
 dot.classList.add("color-dot");
 dot.style.background=colorMap[color];
 dot.setAttribute("data-color",color);
-
-dot.onclick=function(){
-loadImages(color);
-};
-
+dot.onclick=function(){loadColor(color);};
 colorIcons.appendChild(dot);
-
 });
 
 function highlightActive(active){
-
 document.querySelectorAll(".color-dot").forEach(function(d){
 d.classList.remove("active");
 });
-
 const activeDot=document.querySelector('.color-dot[data-color="'+active+'"]');
-if(activeDot){
-activeDot.classList.add("active");
+if(activeDot){activeDot.classList.add("active");}
 }
 
-}
-
-loadImages("beby");
-
+highlightActive("beby");
 
 function orderNow(){
 
@@ -289,22 +269,18 @@ return;
 
 const message=
 "🛍 ORDER%0A"+
-"Product: Moon Panty%0A"+
+"Product: Botanic Bliss Panty%0A"+
 "Color: "+currentColor+"%0A"+
 "Size: "+size+"%0A"+
-"Price: ₹89%0A"+
+"Price: ₹149 (3Pc Combo)%0A"+
 "Name: "+name+"%0A"+
 "Phone: "+phone+"%0A"+
 "Address: "+address;
 
 window.open("https://wa.me/918750020203?text="+message,"_blank");
-
 }
 
-<script>
-function changeImage(src){
-    document.getElementById("mainImage").src = src;
-}
 </script>
+
 </body>
 </html>

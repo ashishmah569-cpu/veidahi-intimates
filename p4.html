@@ -50,20 +50,18 @@ margin-bottom:12px;
 }
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(4,1fr);
+display:flex;
 gap:10px;
 }
 
 .gallery img{
-width:100%;
+width:100px;
 height:100px;
 object-fit:cover;
 border-radius:12px;
 cursor:pointer;
 border:1px solid rgba(0,0,0,0.08);
 }
-
 .color-container{
 display:flex;
 gap:12px;
@@ -141,13 +139,13 @@ cursor:pointer;
 <div class="grid">
 
 <div>
-<img id="mainImage" class="main-img">
+    <img id="mainImage" class="main-img" src="p4-beby pink-1.jpg">
 
-<div class="gallery">
-<img src="p4-beby pink-1.jpg">
-<img src="p4-moon red-1.jpg">
-<img src="p4-teal-1.jpg">
-</div>
+    <div class="gallery">
+        <img src="p4-beby pink-1.jpg" onclick="changeImage(this.src)">
+        <img src="p4-moon red-1.jpg" onclick="changeImage(this.src)">
+        <img src="p4-teal-1.jpg" onclick="changeImage(this.src)">
+    </div>
 </div>
 
 <div class="details">
@@ -303,7 +301,10 @@ window.open("https://wa.me/918750020203?text="+message,"_blank");
 
 }
 
+<script>
+function changeImage(src){
+    document.getElementById("mainImage").src = src;
+}
 </script>
-
 </body>
 </html>

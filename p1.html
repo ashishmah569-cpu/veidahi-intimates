@@ -139,6 +139,7 @@ button:hover{opacity:0.8;}
 
 <script>
 
+/* IMAGES */
 const images = {
 green:[
 "p1-green-1.jpg",
@@ -166,55 +167,43 @@ const colorIcons = document.getElementById("colorIcons");
 
 let currentColor = "green";
 
-/* =========================
-   LOAD IMAGES
-========================= */
+/* LOAD IMAGES */
 function loadImages(color){
 
 currentColor = color;
-
 thumbs.innerHTML = "";
-
-/* 🔥 SAFE CHECK */
-if(!images[color]) return;
 
 images[color].forEach(function(img,index){
 
-// set first image
-if(index === 0){
+if(index===0){
 mainImage.src = img;
 }
 
-const thumb = document.createElement("img");
-thumb.src = img;
-
-thumb.onclick = function(){
+const t = document.createElement("img");
+t.src = img;
+t.onclick = function(){
 mainImage.src = img;
 };
 
-thumbs.appendChild(thumb);
+thumbs.appendChild(t);
 
 });
 
 highlightActive(color);
 }
 
-/* =========================
-   CREATE COLOR ICONS
-========================= */
-
+/* COLOR ICONS */
 const colorMap = {
 green:"#2e8b57",
 burgundy:"#800020",
 red:"#d10000"
 };
 
-Object.keys(images).forEach(color=>{
+Object.keys(images).forEach(color => {
 
 const dot = document.createElement("div");
 dot.classList.add("color-dot");
-
-dot.style.background = colorMap[color] || "#ccc";
+dot.style.background = colorMap[color];
 dot.setAttribute("data-color", color);
 
 dot.onclick = function(){
@@ -225,49 +214,39 @@ colorIcons.appendChild(dot);
 
 });
 
-/* =========================
-   ACTIVE ICON
-========================= */
-
+/* HIGHLIGHT ACTIVE */
 function highlightActive(activeColor){
 
 document.querySelectorAll(".color-dot").forEach(dot=>{
 dot.classList.remove("active");
 });
 
-const active = document.querySelector(.color-dot[data-color="${activeColor}"]);
-
+const active = document.querySelector('.color-dot[data-color="'+activeColor+'"]');
 if(active){
 active.classList.add("active");
 }
 
 }
 
-/* =========================
-   INIT
-========================= */
-
+/* INIT */
 loadImages("green");
 
-/* =========================
-   WHATSAPP ORDER
-========================= */
-
+/* WHATSAPP ORDER */
 function orderNow(){
 
 const size = document.getElementById("sizeSelect").value;
-
-const imageURL =
-"https://ashishmah569-cpu.github.io/veidahi-intimates/" +
-images[currentColor][0];
+const imageURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/" + images[currentColor][0];
 
 const message =
-"🛍️ NEW ORDER 🛍️%0A%0A"+
+"🛍️ NEW ORDER RECEIVED 🛍️%0A%0A"+
+"━━━━━━━━━━━━━━%0A"+
 "📌 Product: Emerald Mist Lace Bra%0A"+
 "🎨 Color: "+currentColor+"%0A"+
 "📏 Size: "+size+"%0A"+
 "💰 Price: ₹150%0A"+
-"🖼️ Image: "+imageURL;
+"🖼️ Image: "+imageURL+"%0A"+
+"━━━━━━━━━━━━━━%0A%0A"+
+"Please confirm 😊";
 
 window.open("https://wa.me/918750020203?text="+message,"_blank");
 

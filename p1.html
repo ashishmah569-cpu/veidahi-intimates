@@ -166,33 +166,43 @@ const colorIcons = document.getElementById("colorIcons");
 
 let currentColor = "green";
 
-/* LOAD IMAGES */
+/* =========================
+   LOAD IMAGES
+========================= */
 function loadImages(color){
 
 currentColor = color;
-thumbs.innerHTML="";
+
+thumbs.innerHTML = "";
+
+/* 🔥 SAFE CHECK */
+if(!images[color]) return;
 
 images[color].forEach(function(img,index){
 
-if(index===0){
+// set first image
+if(index === 0){
 mainImage.src = img;
 }
 
-const t = document.createElement("img");
-t.src = img;
+const thumb = document.createElement("img");
+thumb.src = img;
 
-t.onclick = function(){
+thumb.onclick = function(){
 mainImage.src = img;
 };
 
-thumbs.appendChild(t);
+thumbs.appendChild(thumb);
 
 });
 
 highlightActive(color);
 }
 
-/* 🔵 CREATE ICONS */
+/* =========================
+   CREATE COLOR ICONS
+========================= */
+
 const colorMap = {
 green:"#2e8b57",
 burgundy:"#800020",
@@ -203,7 +213,8 @@ Object.keys(images).forEach(color=>{
 
 const dot = document.createElement("div");
 dot.classList.add("color-dot");
-dot.style.background = colorMap[color];
+
+dot.style.background = colorMap[color] || "#ccc";
 dot.setAttribute("data-color", color);
 
 dot.onclick = function(){
@@ -214,7 +225,10 @@ colorIcons.appendChild(dot);
 
 });
 
-/* ACTIVE ICON */
+/* =========================
+   ACTIVE ICON
+========================= */
+
 function highlightActive(activeColor){
 
 document.querySelectorAll(".color-dot").forEach(dot=>{
@@ -226,12 +240,19 @@ const active = document.querySelector(.color-dot[data-color="${activeColor}"]);
 if(active){
 active.classList.add("active");
 }
+
 }
 
-/* INIT */
+/* =========================
+   INIT
+========================= */
+
 loadImages("green");
 
-/* WHATSAPP */
+/* =========================
+   WHATSAPP ORDER
+========================= */
+
 function orderNow(){
 
 const size = document.getElementById("sizeSelect").value;
@@ -249,7 +270,10 @@ const message =
 "🖼️ Image: "+imageURL;
 
 window.open("https://wa.me/918750020203?text="+message,"_blank");
+
 }
+
+</script>
 
 </script>
 

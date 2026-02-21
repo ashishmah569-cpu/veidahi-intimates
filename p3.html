@@ -168,15 +168,18 @@ font-weight:900;
 
 <script>
 
+let currentColor = "forest";
+
+/* IMAGE PATHS (SPACE KE SAATH) */
 const images = {
-forest:[
-"p3-forest-green-1.jpg",
-"p3-forest-green-2.jpg",
-"p3-forest-green-3.jpg",
-"p3-forest-green-4.jpg"
+forest: [
+"p3-forest green-1.jpg",
+"p3-forest green-2.jpg",
+"p3-forest green-3.jpg",
+"p3-forest green-4.jpg"
 ],
 
-indigo:[
+indigo: [
 "p3-indigo-1.jpg",
 "p3-indigo-2.jpg",
 "p3-indigo-3.jpg",
@@ -184,26 +187,27 @@ indigo:[
 ]
 };
 
-let currentColor="forest";
+const mainImage = document.getElementById("mainImage");
+const thumbs = document.getElementById("thumbs");
+const colorIcons = document.getElementById("colorIcons");
 
-const mainImage=document.getElementById("mainImage");
-const thumbs=document.getElementById("thumbs");
-const colorIcons=document.getElementById("colorIcons");
-
+/* LOAD IMAGES */
 function loadImages(color){
 
-currentColor=color;
-thumbs.innerHTML="";
+currentColor = color;
+thumbs.innerHTML = "";
 
-images[color].forEach((img,index)=>{
+images[color].forEach(function(img,index){
 
-if(index===0){
-mainImage.src=img;
+if(index === 0){
+mainImage.src = img;
 }
 
-const t=document.createElement("img");
-t.src=img;
-t.onclick=()=>mainImage.src=img;
+const t = document.createElement("img");
+t.src = img;
+t.onclick = function(){
+mainImage.src = img;
+};
 
 thumbs.appendChild(t);
 
@@ -212,37 +216,70 @@ thumbs.appendChild(t);
 highlightActive(color);
 }
 
-const colorMap={
-forest:"#2e8b57",
-indigo:"#4b0082"
+/* COLOR DOTS */
+const colorMap = {
+forest: "#2e8b57",
+indigo: "#4b0082"
 };
 
-Object.keys(images).forEach(color=>{
+Object.keys(images).forEach(function(color){
 
-const dot=document.createElement("div");
+const dot = document.createElement("div");
 dot.classList.add("color-dot");
-dot.style.background=colorMap[color];
-dot.setAttribute("data-color",color);
-dot.onclick=()=>loadImages(color);
+dot.style.background = colorMap[color];
+dot.setAttribute("data-color", color);
+
+dot.onclick = function(){
+loadImages(color);
+};
 
 colorIcons.appendChild(dot);
 
 });
 
+/* ACTIVE BORDER */
 function highlightActive(active){
 
-document.querySelectorAll(".color-dot").forEach(d=>{
+document.querySelectorAll(".color-dot").forEach(function(d){
 d.classList.remove("active");
 });
 
-const activeDot=document.querySelector(.color-dot[data-color="${active}"]);
+const activeDot = document.querySelector('.color-dot[data-color="'+active+'"]');
 if(activeDot){
 activeDot.classList.add("active");
 }
 
 }
 
+/* INIT */
 loadImages("forest");
+
+
+/* WHATSAPP ORDER */
+function orderNow(){
+
+const name = document.getElementById("custName").value;
+const phone = document.getElementById("custPhone").value;
+const address = document.getElementById("custAddress").value;
+const size = document.getElementById("sizeSelect").value;
+
+if(name==="" || phone==="" || address===""){
+alert("Fill all details");
+return;
+}
+
+const message =
+"🛍 ORDER%0A"+
+"Product: Premium Bra%0A"+
+"Color: "+currentColor+"%0A"+
+"Size: "+size+"%0A"+
+"Name: "+name+"%0A"+
+"Phone: "+phone+"%0A"+
+"Address: "+address;
+
+window.open("https://wa.me/918750020203?text="+message,"_blank");
+
+}
 
 </script>
 /* WHATSAPP */

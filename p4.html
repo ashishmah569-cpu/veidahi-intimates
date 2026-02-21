@@ -51,8 +51,6 @@ object-fit:cover;
 border-radius:18px;
 border:1px solid rgba(0,0,0,0.08);
 }
-
-.nav{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
@@ -65,8 +63,8 @@ border-radius:50%;
 font-size:18px;
 }
 
-.prev{left:10px;}
-.next{right:10px;}
+{left:10px;}
+{right:10px;}
 
 .color-container{
 display:flex;
@@ -143,12 +141,23 @@ cursor:pointer;
 
 <div class="grid">
 
-<div>
-<div class="slider-container">
-<button class="nav prev" onclick="slideImage(-1)">❮</button>
-<img id="mainImage" class="main-img" src="p4-beby pink-1.jpg">
-<button class="nav next" onclick="slideImage(1)">❯</button>
-</div>
+.slider-wrapper{
+overflow:hidden;
+border-radius:18px;
+border:1px solid rgba(0,0,0,0.08);
+}
+
+.slider-track{
+display:flex;
+transition:transform 0.4s ease;
+}
+
+.slide-img{
+width:100%;
+height:420px;
+object-fit:cover;
+flex-shrink:0;
+}
 </div>
 
 <div class="details">
@@ -210,25 +219,81 @@ teal:[
 ]
 };
 
-const mainImage=document.getElementById("mainImage");
+const sliderTrack=document.getElementById("sliderTrack");
 const colorIcons=document.getElementById("colorIcons");
 
 function loadColor(color){
 currentColor=color;
 currentIndex=0;
-updateImage();
+createSlides();
 highlightActive(color);
 }
 
-function slideImage(direction){
-let total=images[currentColor].length;
-currentIndex=(currentIndex+direction+total)%total;
-updateImage();
+function createSlides(){
+sliderTrack.innerHTML="";
+images[currentColor].forEach(function(img){
+const image=document.createElement("img");
+image.src=img;
+image.classList.add("slide-img");
+sliderTrack.appendChild(image);
+});
+updateSlide();
 }
 
-function updateImage(){
-mainImage.src=images[currentColor][currentIndex];
+function updateSlide(){
+sliderTrack.style.transform="translateX(-"+(currentIndex*100)+"%)";
 }
+
+/* Swipe Logic */
+let startX=0;
+
+sliderTrack.addEventListener("touchstart",e=>{
+startX=e.touches[0].clientX;
+});
+
+sliderTrack.addEventListener("touchend",e=>{
+let endX=e.changedTouches[0].clientX;
+if(startX-endX>50){
+nextSlide();
+}
+if(endX-startX>50){
+prevSlide();
+}
+});
+
+sliderTrack.addEventListener("mousedown",e=>{
+startX=e.clientX;
+});
+
+sliderTrack.addEventListener("mouseup",e=>{
+let endX=e.clientX;
+if(startX-endX>50){
+nextSlide();
+}
+if(endX-startX>50){
+prevSlide();
+}
+});
+
+function nextSlide(){
+if(currentIndex<images[currentColor].length-1){
+currentIndex++;
+}else{
+currentIndex=0;
+}
+updateSlide();
+}
+
+function prevSlide(){
+if(currentIndex>0){
+currentIndex--;
+}else{
+currentIndex=images[currentColor].length-1;
+}
+updateSlide();
+}
+
+/* Color Dots */
 
 const colorMap={
 beby:"#f8c8dc",
@@ -253,32 +318,7 @@ const activeDot=document.querySelector('.color-dot[data-color="'+active+'"]');
 if(activeDot){activeDot.classList.add("active");}
 }
 
-highlightActive("beby");
-
-function orderNow(){
-
-const name=document.getElementById("custName").value;
-const phone=document.getElementById("custPhone").value;
-const address=document.getElementById("custAddress").value;
-const size=document.getElementById("sizeSelect").value;
-
-if(name===""||phone===""||address===""){
-alert("Fill all details");
-return;
-}
-
-const message=
-"🛍 ORDER%0A"+
-"Product: Botanic Bliss Panty%0A"+
-"Color: "+currentColor+"%0A"+
-"Size: "+size+"%0A"+
-"Price: ₹149 (3Pc Combo)%0A"+
-"Name: "+name+"%0A"+
-"Phone: "+phone+"%0A"+
-"Address: "+address;
-
-window.open("https://wa.me/918750020203?text="+message,"_blank");
-}
+loadColor("beby");
 
 </script>
 

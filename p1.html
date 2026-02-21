@@ -30,9 +30,11 @@ body{
   border-radius:8px;
   transition:0.4s;
 }
-#mainImage:hover{transform:scale(1.03);}
+#mainImage:hover{
+  transform:scale(1.03);
+}
 
-/* Thumbs */
+/* THUMBS */
 .thumbs{
   display:flex;
   gap:10px;
@@ -96,7 +98,10 @@ button{
   border-radius:5px;
   font-size:16px;
 }
-button:hover{opacity:0.8;}
+
+button:hover{
+  opacity:0.8;
+}
 </style>
 </head>
 
@@ -111,6 +116,7 @@ button:hover{opacity:0.8;}
 
 <div class="right">
 <h2>Emerald Mist Lace Bra</h2>
+
 <p class="price"><b>Price:</b> ₹150</p>
 
 <p>
@@ -175,7 +181,7 @@ thumbs.innerHTML = "";
 
 images[color].forEach(function(img,index){
 
-if(index===0){
+if(index === 0){
 mainImage.src = img;
 }
 
@@ -223,6 +229,7 @@ dot.classList.remove("active");
 });
 
 const active = document.querySelector(.color-dot[data-color="${activeColor}"]);
+
 if(active){
 active.classList.add("active");
 }
@@ -236,7 +243,8 @@ loadImages("green");
 function orderNow(){
 
 const size = document.getElementById("sizeSelect").value;
-const imageURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/" + images[currentColor][0];
+
+const imageURL = images[currentColor][0];
 
 const message =
 "🛍️ NEW ORDER RECEIVED 🛍️%0A%0A"+

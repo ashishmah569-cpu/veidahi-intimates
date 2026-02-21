@@ -22,24 +22,17 @@ body{
   border-radius:10px;
 }
 
-.left{
-  width:50%;
-}
-
-.right{
-  width:50%;
-}
+.left{width:50%;}
+.right{width:50%;}
 
 #mainImage{
   width:100%;
   border-radius:8px;
   transition:0.4s;
 }
+#mainImage:hover{transform:scale(1.03);}
 
-#mainImage:hover{
-  transform:scale(1.03);
-}
-
+/* Thumbnails */
 .thumbs{
   display:flex;
   gap:10px;
@@ -58,15 +51,30 @@ body{
   transform:scale(1.1);
 }
 
-.right h2{
-  margin-top:0;
+/* 🔵 COLOR ICONS */
+.color-container{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+  margin-bottom:10px;
 }
 
-.price{
-  font-size:20px;
-  margin:10px 0;
-  color:#444;
+.color-dot{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  cursor:pointer;
+  border:2px solid #ddd;
+  transition:0.3s;
 }
+
+.color-dot.active{
+  border:3px solid black;
+  transform:scale(1.15);
+}
+
+.right h2{margin-top:0;}
+.price{font-size:20px;margin:10px 0;color:#444;}
 
 select{
   padding:10px;
@@ -85,10 +93,7 @@ button{
   border-radius:5px;
   font-size:16px;
 }
-
-button:hover{
-  opacity:0.8;
-}
+button:hover{opacity:0.8;}
 </style>
 </head>
 
@@ -102,114 +107,152 @@ button:hover{
 </div>
 
 <div class="right">
-  <h2>Emerald Mist Lace Bra</h2>
-  <p class="price"><b>Price:</b> ₹150</p>
+<h2>Emerald Mist Lace Bra</h2>
+<p class="price"><b>Price:</b> ₹150</p>
 
-  <p>
-  Soft premium lace fabric.<br>
-  Comfortable everyday wear.<br>
-  Elegant design for perfect fit.<br>
-  Breathable & skin-friendly material.<br>
-  Perfect for daily and special occasions.
-  </p>
+<p>
+Soft premium lace fabric.<br>
+Comfortable everyday wear.<br>
+Elegant design for perfect fit.
+</p>
 
-  <label>Choose Color:</label><br>
-  <select id="colorSelect">
-    <option value="green">Green</option>
-    <option value="burgundy">Burgundy</option>
-    <option value="red">Red</option>
-  </select>
+<!-- 🔵 COLOR ICON SECTION -->
+<label><b>Choose Color:</b></label>
+<div class="color-container" id="colorIcons"></div>
 
-  <br><br>
+<br>
 
-  <label>Select Size:</label><br>
-  <select id="sizeSelect">
-    <option>34</option>
-    <option>36</option>
-    <option>38</option>
-    <option>40</option>
-  </select>
+<label>Select Size:</label><br>
+<select id="sizeSelect">
+<option>34</option>
+<option>36</option>
+<option>38</option>
+<option>40</option>
+</select>
 
-  <button onclick="orderNow()">Order on WhatsApp</button>
+<button onclick="orderNow()">Order on WhatsApp</button>
 
 </div>
-
 </div>
 
 <script>
 
 const images = {
-  green:[
-    "p1-green-1.jpg",
-    "p1-green-2.jpg",
-    "p1-green-3.jpg",
-    "p1-green-4.jpg"
-  ],
-  burgundy:[
-    "p1-burgundy-1.jpg",
-    "p1-burgundy-2.jpg",
-    "p1-burgundy-3.jpg",
-    "p1-burgundy-4.jpg"
-  ],
-  red:[
-    "p1-red-1.jpg",
-    "p1-red-2.jpg",
-    "p1-red-3.jpg",
-    "p1-red-4.jpg"
-  ]
+green:[
+"p1-green-1.jpg",
+"p1-green-2.jpg",
+"p1-green-3.jpg",
+"p1-green-4.jpg"
+],
+burgundy:[
+"p1-burgundy-1.jpg",
+"p1-burgundy-2.jpg",
+"p1-burgundy-3.jpg",
+"p1-burgundy-4.jpg"
+],
+red:[
+"p1-red-1.jpg",
+"p1-red-2.jpg",
+"p1-red-3.jpg",
+"p1-red-4.jpg"
+]
 };
 
 const mainImage = document.getElementById("mainImage");
 const thumbs = document.getElementById("thumbs");
-const colorSelect = document.getElementById("colorSelect");
+const colorIcons = document.getElementById("colorIcons");
 
+let currentColor = "green";
+
+/* ✅ LOAD IMAGES */
 function loadImages(color){
 
-  thumbs.innerHTML="";
+currentColor = color;
 
-  images[color].forEach(function(img,index){
+thumbs.innerHTML="";
 
-    if(index===0){
-      mainImage.src = img;
-    }
+images[color].forEach(function(img,index){
 
-    const t = document.createElement("img");
-    t.src = img;
-
-    t.onclick = function(){
-      mainImage.src = img;
-    };
-
-    thumbs.appendChild(t);
-  });
+if(index===0){
+mainImage.src = img;
 }
 
-colorSelect.onchange = function(){
-  loadImages(this.value);
+const t = document.createElement("img");
+t.src = img;
+
+t.onclick = function(){
+mainImage.src = img;
 };
 
-loadImages("green");
+thumbs.appendChild(t);
 
+});
+
+highlightActive(color);
+}
+
+/* ✅ CREATE COLOR ICONS */
+function createColorIcons(){
+
+const colors = Object.keys(images);
+
+colors.forEach(color=>{
+
+const dot = document.createElement("div");
+
+dot.classList.add("color-dot");
+dot.style.background = color; // auto color
+
+dot.onclick = function(){
+loadImages(color);
+};
+
+colorIcons.appendChild(dot);
+
+});
+
+highlightActive("green");
+}
+
+/* ✅ HIGHLIGHT ACTIVE COLOR */
+function highlightActive(activeColor){
+
+document.querySelectorAll(".color-dot").forEach((dot,index)=>{
+
+dot.classList.remove("active");
+
+if(Object.keys(images)[index] === activeColor){
+dot.classList.add("active");
+}
+
+});
+
+}
+
+/* INIT */
+loadImages("green");
+createColorIcons();
+
+/* ✅ WHATSAPP ORDER */
 function orderNow(){
 
-  const color = colorSelect.value;
-  const size = document.getElementById("sizeSelect").value;
+const size = document.getElementById("sizeSelect").value;
 
-  // Ye tumhara live GitHub link hoga
-  const imageURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/" + images[color][0];
+const imageURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/" + images[currentColor][0];
 
-  const message =
-  "🛍️ NEW ORDER RECEIVED 🛍️%0A%0A"+
-  "━━━━━━━━━━━━━━%0A"+
-  "📌 Product: Emerald Mist Lace Bra%0A"+
-  "🎨 Color: "+color+"%0A"+
-  "📏 Size: "+size+"%0A"+
-  "💰 Price: ₹150%0A"+
-  "🖼️ Product Image: "+imageURL+"%0A"+
-  "━━━━━━━━━━━━━━%0A%0A"+
-  "Kindly confirm availability & delivery time. 😊";
+const message =
+"🛍️ NEW ORDER RECEIVED 🛍️%0A%0A"+
+"━━━━━━━━━━━━━━%0A"+
+"📌 Product: Emerald Mist Lace Bra%0A"+
+"🎨 Color: "+currentColor+"%0A"+
+"📏 Size: "+size+"%0A"+
+"💰 Price: ₹150%0A"+
+"🖼️ Image: "+imageURL+"%0A"+
+"━━━━━━━━━━━━━━%0A%0A"+
+"Please confirm availability 😊";
 
-  window.open("https://wa.me/918750020203?text="+message,"_blank");
+window.open("https://wa.me/918750020203?text="+message,"_blank");
+
 }
 
 </script>

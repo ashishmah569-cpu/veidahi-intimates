@@ -105,6 +105,25 @@ font-weight:900;
 font-size:13px;
 }
 
+.color-container{
+display:flex;
+gap:15px;
+margin:10px 0;
+}
+
+.color-dot{
+width:30px;
+height:30px;
+border-radius:50%;
+cursor:pointer;
+border:2px solid #ddd;
+}
+
+.color-dot.active{
+border:3px solid black;
+transform:scale(1.2);
+}
+
 footer{
 margin-top:50px;
 text-align:center;
@@ -136,37 +155,10 @@ Supima Cotton • Premium Fit • Comfortable Everyday Wear
 
 <div class="grid">
 
-<div class="gallery">
-const images = {
-
-red:[
-"p2-new-red-1.jpg",
-"p2-new-red-2.jpg",
-"p2-new-red-3.jpg",
-"p2-new-red-4.jpg"
-],
-
-grey:[
-"p2-new-grey-1.jpg",
-"p2-new-grey-2.jpg",
-"p2-new-grey-3.jpg",
-"p2-new-grey-4.jpg"
-],
-
-brown:[
-"p2-new-brown-1.jpg",
-"p2-new-brown-2.jpg",
-"p2-new-brown-3.jpg",
-"p2-new-brown-4.jpg"
-]
-
-};
+<div>
+<img id="mainImage" width="100%" style="border-radius:18px;">
+<div class="gallery" id="thumbs"></div>
 </div>
-  const colorMap = {
-red:"#d10000",
-grey:"#b5b5b5",
-brown:"#6f4e37"
-};
 
 <div class="details">
 
@@ -176,8 +168,16 @@ brown:"#6f4e37"
 2 pieces → 5% off | 3 pieces → 10% off
 </div>
 
+<label>Choose Color</label>
+<div class="color-container" id="colorIcons"></div>
+
 <label>Select Size</label>
 <select id="sizeSelect">
+<option>32</option>
+<option>34</option>
+<option>36</option>
+<option>38</option>
+<option>40</option>
 </select>
 
 <label>Your Name</label>
@@ -202,6 +202,99 @@ brown:"#6f4e37"
 
 <script>
 
+/* IMAGES */
+const images = {
+red:[
+"p2-new-red-1.jpg",
+"p2-new-red-2.jpg",
+"p2-new-red-3.jpg",
+"p2-new-red-4.jpg"
+],
+grey:[
+"p2-new-grey-1.jpg",
+"p2-new-grey-2.jpg",
+"p2-new-grey-3.jpg",
+"p2-new-grey-4.jpg"
+],
+brown:[
+"p2-new-brown-1.jpg",
+"p2-new-brown-2.jpg",
+"p2-new-brown-3.jpg",
+"p2-new-brown-4.jpg"
+]
+};
+
+const mainImage = document.getElementById("mainImage");
+const thumbs = document.getElementById("thumbs");
+const colorIcons = document.getElementById("colorIcons");
+
+let currentColor = "red";
+
+/* LOAD IMAGES */
+function loadImages(color){
+
+currentColor = color;
+thumbs.innerHTML="";
+
+images[color].forEach(function(img,index){
+
+if(index===0){
+mainImage.src = img;
+}
+
+const t = document.createElement("img");
+t.src = img;
+t.onclick = function(){
+mainImage.src = img;
+};
+
+thumbs.appendChild(t);
+
+});
+
+highlightActive(color);
+}
+
+/* COLOR ICONS */
+const colorMap = {
+red:"#d10000",
+grey:"#b5b5b5",
+brown:"#6f4e37"
+};
+
+Object.keys(images).forEach(color=>{
+
+const dot = document.createElement("div");
+dot.classList.add("color-dot");
+dot.style.background = colorMap[color];
+dot.setAttribute("data-color",color);
+
+dot.onclick = function(){
+loadImages(color);
+};
+
+colorIcons.appendChild(dot);
+
+});
+
+/* ACTIVE COLOR */
+function highlightActive(activeColor){
+
+document.querySelectorAll(".color-dot").forEach(dot=>{
+dot.classList.remove("active");
+});
+
+const active = document.querySelector(.color-dot[data-color="${activeColor}"]);
+if(active){
+active.classList.add("active");
+}
+
+}
+
+/* INIT */
+loadImages("red");
+
+/* WHATSAPP ORDER */
 function orderNow(){
 
 const name = document.getElementById("custName").value;
@@ -219,10 +312,11 @@ const orderID = "VI" + Math.floor(Math.random()*100000);
 const message =
 "━━━━━━━━━━━━━━━━━━%0A"+
 "🧾 VEIDAHI INTIMATES%0A"+
-"Order ID: "+orderID+"%0A%0A"+
-"📌 Product: camisole%0A"+
+"Order ID: "+orderID+"%0A"+
+"📌 Product: Camisole%0A"+
+"🎨 Color: "+currentColor+"%0A"+
 "📏 Size: "+size+"%0A"+
-"💰 Price: ₹100%0A%0A"+
+"💰 Price: ₹199%0A%0A"+
 "👤 Customer Details%0A"+
 "Name: "+name+"%0A"+
 "Phone: "+phone+"%0A"+

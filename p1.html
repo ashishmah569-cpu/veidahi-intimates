@@ -32,7 +32,7 @@ body{
 }
 #mainImage:hover{transform:scale(1.03);}
 
-/* Thumbnails */
+/* Thumbs */
 .thumbs{
   display:flex;
   gap:10px;
@@ -51,7 +51,7 @@ body{
   transform:scale(1.1);
 }
 
-/* 🔵 COLOR ICONS */
+/* COLOR ICONS */
 .color-container{
   display:flex;
   gap:12px;
@@ -70,11 +70,14 @@ body{
 
 .color-dot.active{
   border:3px solid black;
-  transform:scale(1.15);
+  transform:scale(1.2);
 }
 
-.right h2{margin-top:0;}
-.price{font-size:20px;margin:10px 0;color:#444;}
+.price{
+  font-size:20px;
+  margin:10px 0;
+  color:#444;
+}
 
 select{
   padding:10px;
@@ -116,7 +119,6 @@ Comfortable everyday wear.<br>
 Elegant design for perfect fit.
 </p>
 
-<!-- 🔵 COLOR ICON SECTION -->
 <label><b>Choose Color:</b></label>
 <div class="color-container" id="colorIcons"></div>
 
@@ -137,6 +139,7 @@ Elegant design for perfect fit.
 
 <script>
 
+/* IMAGES */
 const images = {
 green:[
 "p1-green-1.jpg",
@@ -164,12 +167,11 @@ const colorIcons = document.getElementById("colorIcons");
 
 let currentColor = "green";
 
-/* ✅ LOAD IMAGES */
+/* LOAD IMAGES */
 function loadImages(color){
 
 currentColor = color;
-
-thumbs.innerHTML="";
+thumbs.innerHTML = "";
 
 images[color].forEach(function(img,index){
 
@@ -191,21 +193,18 @@ thumbs.appendChild(t);
 highlightActive(color);
 }
 
-/* ✅ CREATE COLOR ICONS */
-
+/* CREATE COLOR ICONS */
 const colorMap = {
-green: "#2e8b57",
-burgundy: "#800020",
-red: "#d10000"
+green:"#2e8b57",
+burgundy:"#800020",
+red:"#d10000"
 };
 
 Object.keys(images).forEach(color=>{
 
 const dot = document.createElement("div");
-
 dot.classList.add("color-dot");
-dot.style.background = colorMap[color] || "#ccc";
-
+dot.style.background = colorMap[color];
 dot.setAttribute("data-color", color);
 
 dot.onclick = function(){
@@ -216,32 +215,27 @@ colorIcons.appendChild(dot);
 
 });
 
-highlightActive("green");
-}
-/* ✅ HIGHLIGHT ACTIVE COLOR */
+/* HIGHLIGHT ACTIVE */
 function highlightActive(activeColor){
 
 document.querySelectorAll(".color-dot").forEach(dot=>{
 dot.classList.remove("active");
 });
 
-document.querySelector(.color-dot[data-color="${activeColor}"])
-?.classList.add("active");
-
+const active = document.querySelector(.color-dot[data-color="${activeColor}"]);
+if(active){
+active.classList.add("active");
 }
-});
 
 }
 
 /* INIT */
 loadImages("green");
-createColorIcons();
 
-/* ✅ WHATSAPP ORDER */
+/* WHATSAPP ORDER */
 function orderNow(){
 
 const size = document.getElementById("sizeSelect").value;
-
 const imageURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/" + images[currentColor][0];
 
 const message =

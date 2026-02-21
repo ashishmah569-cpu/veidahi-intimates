@@ -277,14 +277,17 @@ colorIcons.appendChild(dot);
 
 });
 
-/* ACTIVE COLOR */
+/* HIGHLIGHT ACTIVE */
 function highlightActive(activeColor){
 
 document.querySelectorAll(".color-dot").forEach(dot=>{
 dot.classList.remove("active");
 });
 
-const active = document.querySelector(.color-dot[data-color="${activeColor}"]);
+const active = document.querySelector(
+'.color-dot[data-color="'+activeColor+'"]'
+);
+
 if(active){
 active.classList.add("active");
 }
@@ -328,6 +331,5 @@ window.open("https://wa.me/918750020203?text="+message,"_blank");
 }
 
 </script>
-
 </body>
 </html>

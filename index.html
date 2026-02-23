@@ -35,7 +35,6 @@ nav a:hover{color:#ff4d88;}
   align-items:center;
   color:white;
   text-align:center;
-  padding:20px;
 }
 .hero h1{font-size:55px;}
 .hero button{
@@ -48,30 +47,34 @@ nav a:hover{color:#ff4d88;}
   cursor:pointer;
 }
 
-/* NEW ARRIVALS */
+/* NEW ARRIVALS SLIDER */
 .new-arrivals{
   padding:80px 20px;
   background:#fff0f5;
   text-align:center;
 }
-.arrival-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
+
+.slider{
+  overflow:hidden;
   max-width:1200px;
   margin:40px auto;
+  position:relative;
 }
+
+.slider-track{
+  display:flex;
+  transition:transform 0.6s ease-in-out;
+}
+
 .arrival-card{
+  min-width:280px;
+  margin-right:20px;
   border-radius:18px;
   overflow:hidden;
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
   background:#fff;
   text-align:center;
-  padding-bottom:20px;
-  transition:0.3s;
-}
-.arrival-card:hover{
-  transform:translateY(-6px);
+  cursor:pointer;
 }
 .arrival-card img{
   width:100%;
@@ -80,6 +83,7 @@ nav a:hover{color:#ff4d88;}
 }
 .arrival-card h3{margin:15px 0;}
 .arrival-card button{
+  margin-bottom:15px;
   padding:10px 20px;
   background:#000;
   color:white;
@@ -88,18 +92,6 @@ nav a:hover{color:#ff4d88;}
   cursor:pointer;
 }
 .arrival-card button:hover{background:#ff4d88;}
-
-/* TRUST STRIP */
-.trust-strip{
-  display:flex;
-  justify-content:center;
-  gap:50px;
-  padding:15px;
-  background:#fff0f5;
-  font-weight:600;
-  color:#ff4d88;
-  flex-wrap:wrap;
-}
 
 /* PRODUCTS */
 .products{
@@ -113,33 +105,6 @@ nav a:hover{color:#ff4d88;}
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:30px;
 }
-.card{
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  background:#fff;
-  text-align:center;
-  padding-bottom:20px;
-  transition:0.3s;
-}
-.card:hover{transform:translateY(-6px);}
-.card img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-}
-.card h3{margin:15px 0 5px;}
-.card p{color:#ff4d88;font-weight:bold;}
-.card button{
-  margin-top:10px;
-  padding:10px 20px;
-  background:#000;
-  color:white;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
-}
-.card button:hover{background:#ff4d88;}
 
 /* ABOUT */
 .section{
@@ -183,6 +148,34 @@ footer{
   background:black;
   color:white;
 }
+
+/* MODAL GALLERY */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:999;
+}
+.modal img{
+  max-width:90%;
+  max-height:70%;
+}
+.modal-controls{
+  margin-top:20px;
+}
+.modal button{
+  padding:10px 20px;
+  margin:5px;
+  border:none;
+  border-radius:20px;
+  background:#ff4d88;
+  color:white;
+  cursor:pointer;
+}
 </style>
 </head>
 
@@ -205,45 +198,47 @@ footer{
 <!-- NEW ARRIVALS -->
 <section class="new-arrivals">
   <h2>✨ New Arrivals</h2>
-  <div class="arrival-grid">
 
-    <div class="arrival-card">
-      <img src="na1-1.jpg">
-      <h3>Sports Bra</h3>
-      <button>View Product</button>
+  <div class="slider">
+    <div class="slider-track">
+
+      <div class="arrival-card" onclick="openGallery(['na1-1.jpg','na1-2.jpg'])">
+        <img src="na1-1.jpg">
+        <h3>Sports Bra</h3>
+        <button>View Product</button>
+      </div>
+
+      <div class="arrival-card" onclick="openGallery(['na2-1.jpg','na2-2.jpg'])">
+        <img src="na2-1.jpg">
+        <h3>Gymer Sports Bra</h3>
+        <button>View Product</button>
+      </div>
+
+      <div class="arrival-card" onclick="openGallery(['na3-1.jpg','na3-2.jpg'])">
+        <img src="na3-1.jpg">
+        <h3>Running Sports Bra</h3>
+        <button>View Product</button>
+      </div>
+
+      <div class="arrival-card" onclick="openGallery(['na4-1.jpg'])">
+        <img src="na4-1.jpg">
+        <h3>Bold Classic Look</h3>
+        <button>View Product</button>
+      </div>
+
+      <div class="arrival-card" onclick="openGallery(['na5-1.jpg'])">
+        <img src="na5-1.jpg">
+        <h3>Bold Classic Look</h3>
+        <button>View Product</button>
+      </div>
+
+      <div class="arrival-card" onclick="openGallery(['na6-1.jpg'])">
+        <img src="na6-1.jpg">
+        <h3>Classy & Elegant</h3>
+        <button>View Product</button>
+      </div>
+
     </div>
-
-    <div class="arrival-card">
-      <img src="na2-1.jpg">
-      <h3>Gymer Sports bra</h3>
-      <button>View Product</button>
-    </div>
-
-    <div class="arrival-card">
-      <img src="na3-1.jpg">
-      <h3>Runing Sports bra</h3>
-      <button>View Product</button>
-    </div>
-
-    <div class="arrival-card">
-      <img src="na4-1.jpg">
-      <h3>Bold classic Look</h3>
-      <button>View Product</button>
-    </div>
-
-     <div class="arrival-card">
-      <img src="na5-1.jpg">
-      <h3>Bold classic Look</h3>
-      <button>View Product</button>
-    </div>
-
-      <div class="arrival-card">
-      <img src="na6-1.jpg">
-      <h3>Classy & elegant</h3>
-      <button>View Product</button>
-    </div>
-
-
   </div>
 </section>
 
@@ -251,10 +246,7 @@ footer{
 <section class="products" id="products">
 <h2>Our Collection</h2>
 <div class="grid">
-
-<!-- Yaha aapke saare original products same rahenge -->
 <img src="p1-green-1.jpg" style="display:none">
-
 </div>
 </section>
 
@@ -281,6 +273,65 @@ Designed in Delhi, our collections blend sensual elegance with effortless comfor
 <footer>
 © 2026 Veidahi Intimates | All Rights Reserved
 </footer>
+
+<!-- MODAL -->
+<div class="modal" id="galleryModal">
+  <img id="galleryImage">
+  <div class="modal-controls">
+    <button onclick="prevImage()">Prev</button>
+    <button onclick="nextImage()">Next</button>
+    <button onclick="closeGallery()">Close</button>
+  </div>
+</div>
+
+<script>
+
+/* AUTO SLIDER */
+let sliderTrack = document.querySelector(".slider-track");
+let slideIndex = 0;
+
+setInterval(()=>{
+  let cards = document.querySelectorAll(".arrival-card");
+  slideIndex++;
+  if(slideIndex > cards.length - 3){
+    slideIndex = 0;
+  }
+  sliderTrack.style.transform = "translateX(-" + (slideIndex * 300) + "px)";
+},3000);
+
+
+/* GALLERY */
+let currentImages = [];
+let currentIndex = 0;
+
+function openGallery(images){
+  currentImages = images;
+  currentIndex = 0;
+  document.getElementById("galleryImage").src = currentImages[0];
+  document.getElementById("galleryModal").style.display="flex";
+}
+
+function closeGallery(){
+  document.getElementById("galleryModal").style.display="none";
+}
+
+function nextImage(){
+  currentIndex++;
+  if(currentIndex >= currentImages.length){
+    currentIndex = 0;
+  }
+  document.getElementById("galleryImage").src = currentImages[currentIndex];
+}
+
+function prevImage(){
+  currentIndex--;
+  if(currentIndex < 0){
+    currentIndex = currentImages.length - 1;
+  }
+  document.getElementById("galleryImage").src = currentImages[currentIndex];
+}
+
+</script>
 
 </body>
 </html>

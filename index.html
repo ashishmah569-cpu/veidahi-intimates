@@ -7,33 +7,18 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI', Arial, sans-serif;background:#fff;color:#111;}
 
-body{
-  font-family:'Segoe UI', Arial, sans-serif;
-  background:#fff;
-  color:#111;
-  scroll-behavior:smooth;
-}
-
-/* NAVIGATION */
+/* NAV */
 nav{
   background:#000;
   padding:18px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  position:sticky;
-  top:0;
-  z-index:1000;
 }
-nav h2{color:#fff;letter-spacing:1px;}
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:25px;
-  font-size:14px;
-  transition:0.3s;
-}
+nav h2{color:#fff;}
+nav a{color:white;text-decoration:none;margin-left:25px;font-size:14px;}
 nav a:hover{color:#ff4d88;}
 
 /* HERO */
@@ -48,12 +33,10 @@ nav a:hover{color:#ff4d88;}
   align-items:center;
   color:white;
   text-align:center;
-  padding:20px;
 }
-.hero h1{font-size:60px;letter-spacing:2px;}
-.hero p{margin-top:20px;font-size:20px;max-width:600px;}
+.hero h1{font-size:60px;}
 .hero button{
-  margin-top:35px;
+  margin-top:30px;
   padding:14px 35px;
   background:#ff4d88;
   color:white;
@@ -62,69 +45,59 @@ nav a:hover{color:#ff4d88;}
   cursor:pointer;
 }
 
-/* MULTI PRODUCT SLIDER */
-
-.arrival-slider {
-  max-width: 1200px;
-  margin: auto;
-  overflow: hidden;
-  position: relative;
+/* NEW ARRIVALS */
+.new-arrivals{
+  padding:80px 20px;
+  background:#fff0f5;
+  text-align:center;
 }
 
-.arrival-track {
-  display: flex;
-  gap: 30px;
-  transition: transform 0.8s ease-in-out;
+.arrival-slider{
+  max-width:1200px;
+  margin:40px auto;
+  overflow:hidden;
 }
 
-.arrival-card {
-  min-width: calc(33.33% - 20px);  /* 3 products ek saath */
-  background: #fff;
-  border-radius: 18px;
-  padding-bottom: 20px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  position: relative;
+.arrival-track{
+  display:flex;
+  gap:30px;
+  transition:transform 0.6s ease-in-out;
 }
 
-.arrival-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 18px 18px 0 0;
+.arrival-card{
+  min-width:calc(33.33% - 20px);
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  position:relative;
+  text-align:center;
 }
 
-.arrival-card h3 {
-  margin: 15px 0 10px;
-  font-size: 18px;
+.arrival-card img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
 }
 
-.arrival-card button {
-  padding: 8px 20px;
-  background: #000;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.3s;
+.arrival-card h3{
+  margin:15px 0;
 }
 
-.arrival-card button:hover {
-  background: #ff4d88;
+.arrival-card button{
+  margin-bottom:20px;
+  padding:8px 20px;
+  background:#000;
+  color:white;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
 }
 
-/* Responsive */
-@media(max-width:900px){
-  .arrival-card{
-    min-width: calc(50% - 15px); /* tablet pe 2 */
-  }
+.arrival-card button:hover{
+  background:#ff4d88;
 }
 
-@media(max-width:600px){
-  .arrival-card{
-    min-width: 100%; /* mobile pe 1 */
-  }
-}
 .badge{
   position:absolute;
   top:15px;
@@ -134,130 +107,15 @@ nav a:hover{color:#ff4d88;}
   padding:5px 12px;
   font-size:12px;
   border-radius:20px;
-  font-weight:bold;
 }
 
-.trust-strip{
-  display:flex;
-  justify-content:center;
-  gap:50px;
-  padding:15px 20px;
-  background:#fff0f5;
-  font-weight:600;
-  font-size:14px;
-  color:#ff4d88;
-  flex-wrap:wrap;
+/* Responsive */
+@media(max-width:900px){
+  .arrival-card{min-width:calc(50% - 15px);}
 }
 
-/* PRODUCTS */
-.products{
-  padding:80px 20px;
-  max-width:1200px;
-  margin:auto;
-}
-.products h2{text-align:center;margin-bottom:50px;font-size:28px;}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-}
-
-.card{
-  position:relative;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  transition:0.3s;
-  background:#fff;
-  text-align:center;
-  padding-bottom:20px;
-}
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 15px 35px rgba(0,0,0,0.15);
-}
-.card img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-}
-.card h3{margin:15px 0 5px;}
-.card p{color:#ff4d88;font-weight:bold;}
-.card button{
-  margin-top:10px;
-  padding:10px 20px;
-  background:#000;
-  color:white;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
-}
-.card button:hover{background:#ff4d88;}
-
-/* ABOUT */
-.section{
-  padding:80px 20px;
-  text-align:center;
-  background:#fafafa;
-}
-.section h2{margin-bottom:25px;font-size:26px;}
-.section p{
-  max-width:800px;
-  margin:10px auto;
-  line-height:1.7;
-  color:#444;
-}
-
-/* WHY */
-.why{
-  padding:80px 20px;
-  background:#fff0f5;
-  text-align:center;
-}
-.why h2{margin-bottom:50px;}
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:30px;
-  max-width:1000px;
-  margin:auto;
-}
-.why-box{
-  padding:30px;
-  background:white;
-  border-radius:15px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-.why-box h3{margin-bottom:10px;color:#ff4d88;}
-
-/* CONTACT */
-#contact{background:#fafafa;}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:25px;
-  background:black;
-  color:white;
-  font-size:14px;
-}
-
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25d366;
-  color:white;
-  border-radius:50%;
-  width:60px;
-  height:60px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:30px;
-  text-decoration:none;
+@media(max-width:600px){
+  .arrival-card{min-width:100%;}
 }
 </style>
 </head>
@@ -267,214 +125,89 @@ footer{
 <nav>
   <h2>VEIDAHI INTIMATES</h2>
   <div>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
   </div>
 </nav>
 
-<section class="hero" id="home">
+<section class="hero">
   <h1>Veidahi Intimates</h1>
-  <p>Luxury-inspired lingerie crafted for comfort, elegance and confidence.</p>
-  <a href="#products"><button>Explore Collection</button></a>
+  <button>Explore Collection</button>
 </section>
 
 <!-- NEW ARRIVALS -->
 <section class="new-arrivals">
-  <h2>✨ New Arrivals – Just Dropped</h2>
-  <p>Fresh designs. New colors. Limited stock.</p>
+  <h2>✨ New Arrivals</h2>
 
   <div class="arrival-slider">
     <div class="arrival-track">
 
-      <!-- Product 1 -->
       <div class="arrival-card">
         <span class="badge">NEW</span>
-        <img src="na1-1.jpg" alt="">
+        <img src="na1-1.jpg">
         <h3>Sports Bra</h3>
-        <a href="na1.html"><button>View Product</button></a>
+        <button>View Product</button>
       </div>
 
-      <!-- Product 2 -->
       <div class="arrival-card">
         <span class="badge">NEW</span>
-        <img src="na2-1.jpg" alt="">
+        <img src="na2-1.jpg">
         <h3>Gym Sports Wear</h3>
-        <a href="na2.html"><button>View Product</button></a>
+        <button>View Product</button>
       </div>
 
-      <!-- Product 3 -->
       <div class="arrival-card">
         <span class="badge">NEW</span>
-        <img src="na3-1.jpg" alt="">
-        <h3>Runing Sports Bra</h3>
-        <a href="na3.html"><button>View Product</button></a>
+        <img src="na3-1.jpg">
+        <h3>Running Sports Bra</h3>
+        <button>View Product</button>
       </div>
 
-      
-      <!-- Product 4 -->
       <div class="arrival-card">
         <span class="badge">NEW</span>
-        <img src="na4-1.jpg" alt="">
-        <h3>Bold Hippester</h3>
-        <a href="na1.html"><button>View Product</button></a>
+        <img src="na4-1.jpg">
+        <h3>Bold Hipster</h3>
+        <button>View Product</button>
       </div>
 
-      <!-- Aap yaha 4th, 5th, 6th product same format me add kar sakte ho -->
-
     </div>
   </div>
 </section>
-<div class="trust-strip">
-  <div>Premium Fabrics</div>
-  <div>Comfort Fit</div>
-  <div>Easy WhatsApp Order</div>
-  <div>Affordable Luxury</div>
-</div>
 
-<!-- PRODUCTS (ALL ORIGINAL KEPT) -->
-<section class="products" id="products">
-  <h2>Our Collection</h2>
-  <div class="grid">
-
-    <div class="card">
-      <img src="p1-green-1.jpg">
-      <h3>Emerald Mist Lace Bra</h3>
-      <p>₹150</p>
-      <a href="p1.html"><button>View Product</button></a>
-    </div>
-
-    <div class="card">
-      <img src="p2-new-red-1.jpg">
-      <h3>Camisole</h3>
-      <p>₹105</p>
-      <a href="p2.html"><button>View Product</button></a>
-    </div>
-
-    <div class="card">
-      <img src="p3-forest green-1.jpg">
-      <h3>Royal Embrace</h3>
-      <p>₹110</p>
-      <a href="p3.html"><button>View Product</button></a>
-    </div>
-
-    <div class="card">
-      <img src="p4-moon red-1.jpg">
-      <h3>Botanic Bliss Panty – 3 Pc Combo</h3>
-      <p>₹149</p>
-      <a href="p4.html"><button>View Product</button></a>
-    </div>
-
-    <div class="card">
-      <img src="p5-navy-1.jpg">
-      <h3>Blush Bloom</h3>
-      <p>₹149 (3 Pc)</p>
-      <a href="p5.html"><button>View Product</button></a>
-    </div>
-
-    <div class="card">
-      <img src="p6-red-1.jpg">
-      <h3>Teal Enchant</h3>
-      <p>₹119</p>
-      <a href="p6.html"><button>View Product</button></a>
-    </div>
-
-    <div class="card">
-      <img src="p7-merhoon-1.jpg">
-      <h3>Pink Aura</h3>
-      <p>₹149</p>
-      <a href="p7.html"><button>View Product</button></a>
-    </div>
-
-    <div class="card">
-      <img src="p8-merhoon-2.jpg">
-      <h3>Olive Bloom</h3>
-      <p>₹119</p>
-      <a href="p8.html"><button>View Product</button></a>
-    </div>
-
-    <div class="card">
-      <img src="p9-1.jpg">
-      <h3>Ocean Mist</h3>
-      <p>₹89</p>
-      <a href="p9.html"><button>View Product</button></a>
-    </div>
-
-    <div class="card">
-      <img src="p10-1.jpg">
-      <h3>Aqua Elegance</h3>
-      <p>₹79</p>
-      <a href="p10.html"><button>View Product</button></a>
-    </div>
-
-    <div class="card">
-      <img src="p11-1.jpg">
-      <h3>Sage Bloom</h3>
-      <p>₹89</p>
-      <a href="p11.html"><button>View Product</button></a>
-    </div>
-
-  </div>
-</section>
-<section class="section" id="about">
-  <h2>About Veidahi Intimates</h2>
-  <p>
-    Veidahi Intimates was born from a simple belief — luxury should be felt every single day.
-    Designed in Delhi, our collections combine sensual elegance with effortless comfort.
-  </p>
-  <p>
-    We focus on premium fabrics, flattering fits and timeless aesthetics while keeping pricing accessible.
-    At Veidahi, we don’t just sell lingerie — we create confidence wrapped in comfort.
-  </p>
-</section>
-
-<section class="why">
-  <h2>Why Choose Veidahi</h2>
-  <div class="why-grid">
-    <div class="why-box"><h3>Premium Fabric</h3><p>Soft, breathable and luxurious materials.</p></div>
-    <div class="why-box"><h3>Unique Designs</h3><p>Elegant and exclusive styles.</p></div>
-    <div class="why-box"><h3>Comfortable Fit</h3><p>Perfect for daily wear.</p></div>
-    <div class="why-box"><h3>Limited Editions</h3><p>Small-batch exclusive collections.</p></div>
-  </div>
-</section>
-
-<section class="section" id="contact">
-  <h2>Contact Us</h2>
-  <p>WhatsApp: +91 8750020203</p>
-  <p>Email: support@veidahiintimates.com</p>
-</section>
-
-<a href="https://wa.me/918750020203" class="whatsapp" target="_blank">📱</a>
-
-<footer>
-  © 2026 Veidahi Intimates | All Rights Reserved
-</footer>
 <script>
 const track = document.querySelector(".arrival-track");
 const cards = document.querySelectorAll(".arrival-card");
 
 let index = 0;
+let interval;
 
-function getVisibleCards() {
-  if (window.innerWidth <= 600) return 1;
-  if (window.innerWidth <= 900) return 2;
+function getVisibleCards(){
+  if(window.innerWidth <= 600) return 1;
+  if(window.innerWidth <= 900) return 2;
   return 3;
 }
 
-function moveSlide() {
-  const visibleCards = getVisibleCards();
-  const totalSlides = cards.length;
+function moveSlide(){
+  const visible = getVisibleCards();
+  const total = cards.length;
 
-  index++;
-  if (index > totalSlides - visibleCards) {
+  if(index >= total - visible){
     index = 0;
+  } else {
+    index++;
   }
 
-  track.style.transform = translateX(-${index * (100 / visibleCards)}%);
+  const cardWidth = cards[0].offsetWidth + 30;
+  track.style.transform = translateX(-${index * cardWidth}px);
 }
 
-setInterval(moveSlide, 3000);
+interval = setInterval(moveSlide, 3000);
+
+window.addEventListener("resize", ()=>{
+  index = 0;
+  track.style.transform = "translateX(0px)";
+});
 </script>
+
 </body>
 </html>

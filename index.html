@@ -175,39 +175,42 @@ nav a:hover{color:#ff4d88;}
 </section>
 
 <script>
-const track = document.querySelector(".arrival-track");
-const cards = document.querySelectorAll(".arrival-card");
+document.addEventListener("DOMContentLoaded", function () {
 
-let index = 0;
-let interval;
+  const track = document.querySelector(".arrival-track");
+  const cards = document.querySelectorAll(".arrival-card");
 
-function getVisibleCards(){
-  if(window.innerWidth <= 600) return 1;
-  if(window.innerWidth <= 900) return 2;
-  return 3;
-}
+  let index = 0;
+  let interval;
 
-function moveSlide(){
-  const visible = getVisibleCards();
-  const total = cards.length;
-
-  if(index >= total - visible){
-    index = 0;
-  } else {
-    index++;
+  function getVisibleCards() {
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 900) return 2;
+    return 3;
   }
 
-  const cardWidth = cards[0].offsetWidth + 30;
-  track.style.transform = translateX(-${index * cardWidth}px);
-}
+  function updateSlider() {
+    const visible = getVisibleCards();
+    const total = cards.length;
 
-interval = setInterval(moveSlide, 3000);
+    if (index >= total - visible) {
+      index = 0;
+    } else {
+      index++;
+    }
 
-window.addEventListener("resize", ()=>{
-  index = 0;
-  track.style.transform = "translateX(0px)";
+    const cardWidth = cards[0].offsetWidth + 30;
+    track.style.transform = "translateX(-" + (index * cardWidth) + "px)";
+  }
+
+  interval = setInterval(updateSlider, 3000);
+
+  window.addEventListener("resize", function () {
+    index = 0;
+    track.style.transform = "translateX(0px)";
+  });
+
 });
 </script>
-
 </body>
 </html>

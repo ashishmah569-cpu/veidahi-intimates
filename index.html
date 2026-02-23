@@ -462,19 +462,19 @@ function getVisibleCards() {
   return 3;
 }
 
-setInterval(() => {
+function moveSlide() {
   const visibleCards = getVisibleCards();
-  const total = cards.length;
+  const totalSlides = cards.length;
 
   index++;
-  if (index > total - visibleCards) {
+  if (index > totalSlides - visibleCards) {
     index = 0;
   }
 
-  const cardWidth = cards[0].offsetWidth + 30;
-  track.style.transform = translateX(-${index * cardWidth}px);
+  track.style.transform = translateX(-${index * (100 / visibleCards)}%);
+}
 
-}, 3000);
+setInterval(moveSlide, 3000);
 </script>
 </body>
 </html>

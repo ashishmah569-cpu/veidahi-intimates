@@ -455,15 +455,25 @@ const track = document.querySelector(".arrival-track");
 const cards = document.querySelectorAll(".arrival-card");
 
 let index = 0;
-const visibleCards = 3; 
-const total = cards.length;
+
+function getVisibleCards() {
+  if (window.innerWidth <= 600) return 1;
+  if (window.innerWidth <= 900) return 2;
+  return 3;
+}
 
 setInterval(() => {
+  const visibleCards = getVisibleCards();
+  const total = cards.length;
+
   index++;
-  if(index > total - visibleCards){
+  if (index > total - visibleCards) {
     index = 0;
   }
-  track.style.transform = translateX(-${index * (cards[0].offsetWidth + 30)}px);
+
+  const cardWidth = cards[0].offsetWidth + 30;
+  track.style.transform = translateX(-${index * cardWidth}px);
+
 }, 3000);
 </script>
 </body>

@@ -6,25 +6,52 @@
 <title>Veidahi Intimates</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Segoe UI', Arial, sans-serif;background:#fff;color:#111;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-/* NAV */
+body{
+  font-family:'Segoe UI', Arial, sans-serif;
+  background:#fff;
+  color:#111;
+  scroll-behavior:smooth;
+}
+
+/* NAVIGATION */
 nav{
   background:#000;
   padding:18px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
-nav h2{color:#fff;}
-nav a{color:white;text-decoration:none;margin-left:25px;font-size:14px;}
-nav a:hover{color:#ff4d88;}
 
-/* HERO */
+nav h2{
+  color:#fff;
+  letter-spacing:1px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  font-size:14px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#ff4d88;
+}
+
+/* HERO SECTION */
 .hero{
   height:100vh;
-  background:linear-gradient(rgba(255,77,136,0.2), rgba(0,0,0,0.5)), url("hero.jpg");
+  background:linear-gradient(rgba(255, 77, 136,0.2), rgba(0,0,0,0.5)), url("hero.jpg");
   background-size:cover;
   background-position:center;
   display:flex;
@@ -33,45 +60,267 @@ nav a:hover{color:#ff4d88;}
   align-items:center;
   color:white;
   text-align:center;
-}
-.hero h1{font-size:60px;}
-.hero button{
-  margin-top:30px;
-  padding:14px 35px;
-  background:#ff4d88;
-  color:white;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
-}
-
-/* NEW ARRIVALS */
-.new-arrivals{
-  padding:80px 20px;
-  background:#fff0f5;
-  text-align:center;
-}
-
-.arrival-slider{
-  max-width:1200px;
-  margin:40px auto;
+  padding:20px;
+  position:relative;
   overflow:hidden;
 }
 
-.arrival-track{
-  display:flex;
-  gap:30px;
-  transition:transform 0.6s ease-in-out;
+.hero::before{
+  content:"";
+  position:absolute;
+  top:0; left:0; width:100%; height:100%;
+  background:linear-gradient(rgba(255, 182, 193,0.2), rgba(0,0,0,0.2));
+  z-index:0;
 }
 
-.arrival-card{
-  min-width:calc(33.33% - 20px);
-  background:white;
+.hero h1, .hero p, .hero button{
+  position:relative;
+  z-index:1;
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 1s forwards;
+}
+
+.hero h1{animation-delay:0.3s; font-size:60px; letter-spacing:2px;}
+.hero p{animation-delay:0.7s; font-size:20px; margin-top:20px; max-width:600px;}
+.hero button{animation-delay:1.1s; margin-top:35px; padding:14px 35px; background:rgba(255,77,136,0.85); color:white; border:none; font-size:14px; border-radius:30px; cursor:pointer; transition:0.3s;}
+
+.hero button:hover{
+  background:#e6005c;
+  transform:translateY(-3px);
+}
+
+/* Fade Up Animation */
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Scroll Indicator */
+.scroll-down{
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:24px;
+  color:white;
+  animation:scrollArrow 1.5s infinite;
+}
+
+@keyframes scrollArrow{
+  0%,20%,50%,80%,100%{transform:translate(-50%,0);}
+  40%{transform:translate(-50%,10px);}
+  60%{transform:translate(-50%,5px);}
+}
+
+/* TRUST STRIP */
+.trust-strip{
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  padding:15px 20px;
+  background:#fff0f5;
+  text-align:center;
+  font-weight:600;
+  font-size:14px;
+  color:#ff4d88;
+  flex-wrap:wrap;
+}
+
+/* Floating WhatsApp */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:white;
+  border-radius:50%;
+  width:60px;
+  height:60px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:30px;
+  text-decoration:none;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+  z-index:100;
+  transition:0.3s;
+}
+
+.whatsapp:hover{
+  transform:scale(1.1);
+}
+
+  <!-- NEW ARRIVALS -->
+<section class="new-arrivals">
+  <h2>✨ New Arrivals</h2>
+
+  <div class="arrival-grid">
+
+    <div class="arrival-card">
+      <img src="na1-1.jpg">
+      <h3>New Arrival 1</h3>
+      <button>View Product</button>
+    </div>
+
+    <div class="arrival-card">
+      <img src="na2-1.jpg">
+      <h3>New Arrival 2</h3>
+      <button>View Product</button>
+    </div>
+
+    <div class="arrival-card">
+      <img src="na3-1.jpg">
+      <h3>New Arrival 3</h3>
+      <button>View Product</button>
+    </div>
+
+    <div class="arrival-card">
+      <img src="na4-1.jpg">
+      <h3>New Arrival 4</h3>
+      <button>View Product</button>
+    </div>
+
+  </div>
+  
+/* PRODUCTS */
+.products{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.products h2{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:28px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
   border-radius:18px;
   overflow:hidden;
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  position:relative;
+  transition:0.3s;
+  background:#fff;
   text-align:center;
+  padding-bottom:20px;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+}
+
+.card h3{
+  margin:15px 0 5px;
+}
+
+.card p{
+  color:#ff4d88;
+  font-weight:bold;
+}
+
+.card button{
+  margin-top:10px;
+  padding:10px 20px;
+  background:rgba(0,0,0,0.85);
+  color:white;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  transition:0.3s;
+  backdrop-filter:blur(4px);
+}
+
+.card button:hover{
+  background:#ff4d88;
+}
+
+/* ABOUT + CONTACT */
+.section{
+  padding:80px 20px;
+  text-align:center;
+  background:#fafafa;
+}
+
+.section h2{
+  margin-bottom:25px;
+  font-size:26px;
+}
+
+.section p{
+  max-width:800px;
+  margin:10px auto;
+  line-height:1.7;
+  color:#444;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  background:black;
+  color:white;
+  font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{
+    font-size:38px;
+  }
+  nav{
+    padding:15px 20px;
+  }
+}
+</style>
+  /* NEW ARRIVALS */
+.new-arrivals{
+  padding:80px 20px;
+  background:#fff0f5;
+  max-width:1200px;
+  margin:auto;
+}
+
+.new-arrivals h2{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:28px;
+}
+
+.arrival-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.arrival-card{
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+  background:#fff;
+  text-align:center;
+  padding-bottom:20px;
+}
+
+.arrival-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
 .arrival-card img{
@@ -81,43 +330,23 @@ nav a:hover{color:#ff4d88;}
 }
 
 .arrival-card h3{
-  margin:15px 0;
+  margin:15px 0 5px;
 }
 
 .arrival-card button{
-  margin-bottom:20px;
-  padding:8px 20px;
-  background:#000;
+  margin-top:10px;
+  padding:10px 20px;
+  background:rgba(0,0,0,0.85);
   color:white;
   border:none;
   border-radius:20px;
   cursor:pointer;
+  transition:0.3s;
 }
 
 .arrival-card button:hover{
   background:#ff4d88;
 }
-
-.badge{
-  position:absolute;
-  top:15px;
-  left:15px;
-  background:#ff4d88;
-  color:white;
-  padding:5px 12px;
-  font-size:12px;
-  border-radius:20px;
-}
-
-/* Responsive */
-@media(max-width:900px){
-  .arrival-card{min-width:calc(50% - 15px);}
-}
-
-@media(max-width:600px){
-  .arrival-card{min-width:100%;}
-}
-</style>
 </head>
 
 <body>
@@ -125,92 +354,143 @@ nav a:hover{color:#ff4d88;}
 <nav>
   <h2>VEIDAHI INTIMATES</h2>
   <div>
-    <a href="#">Home</a>
-    <a href="#">Products</a>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<section class="hero">
+<!-- HERO -->
+<section class="hero" id="home">
   <h1>Veidahi Intimates</h1>
-  <button>Explore Collection</button>
+  <p>Luxury-inspired lingerie crafted for comfort, elegance and confidence.</p>
+  <a href="#products">
+    <button>Explore Collection</button>
+  </a>
+  <div class="scroll-down">↓</div>
 </section>
 
-<!-- NEW ARRIVALS -->
-<section class="new-arrivals">
-  <h2>✨ New Arrivals</h2>
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div>Premium Fabrics</div>
+  <div>Comfort Fit</div>
+  <div>Easy WhatsApp Order</div>
+  <div>Affordable Luxury</div>
+</div>
 
-  <div class="arrival-slider">
-    <div class="arrival-track">
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <h2>Our Collection</h2>
+  <div class="grid">
 
-      <div class="arrival-card">
-        <span class="badge">NEW</span>
-        <img src="na1-1.jpg">
-        <h3>Sports Bra</h3>
-        <button>View Product</button>
-      </div>
-
-      <div class="arrival-card">
-        <span class="badge">NEW</span>
-        <img src="na2-1.jpg">
-        <h3>Gym Sports Wear</h3>
-        <button>View Product</button>
-      </div>
-
-      <div class="arrival-card">
-        <span class="badge">NEW</span>
-        <img src="na3-1.jpg">
-        <h3>Running Sports Bra</h3>
-        <button>View Product</button>
-      </div>
-
-      <div class="arrival-card">
-        <span class="badge">NEW</span>
-        <img src="na4-1.jpg">
-        <h3>Bold Hipster</h3>
-        <button>View Product</button>
-      </div>
-
+    <div class="card">
+      <img src="p1-green-1.jpg">
+      <h3>Emerald Mist Lace Bra</h3>
+      <p>₹150</p>
+      <a href="p1.html"><button>View Product</button></a>
     </div>
+
+    <div class="card">
+      <img src="p2-new-red-1.jpg">
+      <h3>camisole</h3>
+      <p>₹105</p>
+      <a href="p2.html"><button>View Product</button></a>
+    </div>
+
+    <div class="card">
+      <img src="p3-forest green-1.jpg">
+      <h3>Royal Embrace</h3>
+      <p>₹110</p>
+      <a href="p3.html"><button>View Product</button></a>
+    </div>
+
+    <div class="card">
+      <img src="p4-moon red-1.jpg">
+     <h3>Botanic Bliss Panty – 3 Pc Combo</h3>
+      <p>₹149</p>
+      <a href="p4.html"><button>View Product</button></a>
+    </div>
+
+    <div class="card">
+      <img src="p5-navy-1.jpg">
+      <h3>Blush Bloom</h3>
+      <p>₹149 (3 Pc)</p>
+      <a href="p5.html"><button>View Product</button></a>
+    </div>
+
+    <div class="card">
+      <img src="p6-red-1.jpg">
+      <h3>Teal Enchant</h3>
+      <p>₹119</p>
+      <a href="p6.html"><button>View Product</button></a>
+    </div>
+
+    <div class="card">
+      <img src="p7-merhoon-1.jpg">
+      <h3>Pink Aura</h3>
+      <p>₹149</p>
+      <a href="p7.html"><button>View Product</button></a>
+    </div>
+
+    <div class="card">
+      <img src="p8-merhoon-2.jpg">
+      <h3>Olive Bloom</h3>
+      <p>₹119</p>
+      <a href="p8.html"><button>View Product</button></a>
+    </div>
+
+    <div class="card">
+      <img src="p9-1.jpg">
+      <h3>Ocean Mist</h3>
+      <p>₹89</p>
+      <a href="p9.html"><button>View Product</button></a>
+    </div>
+
+    <div class="card">
+      <img src="p10-1.jpg">
+      <h3>Aqua Elegance</h3>
+      <p>₹79</p>
+      <a href="p10.html"><button>View Product</button></a>
+    </div>
+
+    <div class="card">
+      <img src="p11-1.jpg">
+      <h3>Sage Bloom</h3>
+      <p>₹89</p>
+      <a href="p11.html"><button>View Product</button></a>
+    </div>
+
   </div>
 </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+<!-- ABOUT -->
+<section class="section" id="about">
+  <h2>About Veidahi Intimates</h2>
+  <p>
+   Veidahi Intimates is born from a simple belief — luxury should be felt every day.
+Designed in Delhi, our collections blend sensual elegance with effortless comfort.
+We create lingerie and western daily wear that celebrates confidence, femininity, and individuality.
+Because true luxury isn’t just how it looks — it’s how it feels on you.
+  </p>
+  <p>
+    We blend premium fabrics with luxury-inspired design while keeping pricing affordable.
+  </p>
+</section>
 
-  const track = document.querySelector(".arrival-track");
-  const cards = document.querySelectorAll(".arrival-card");
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <h2>Contact Us</h2>
+  <p>WhatsApp: +91 8750020203</p>
+  <p>Email: support@veidahiintimates.com</p>
+</section>
 
-  let index = 0;
-  let interval;
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/918750020203" class="whatsapp" target="_blank">📱</a>
 
-  function getVisibleCards() {
-    if (window.innerWidth <= 600) return 1;
-    if (window.innerWidth <= 900) return 2;
-    return 3;
-  }
+<footer>
+  © 2026 Veidahi Intimates | All Rights Reserved
+</footer>
 
-  function updateSlider() {
-    const visible = getVisibleCards();
-    const total = cards.length;
-
-    if (index >= total - visible) {
-      index = 0;
-    } else {
-      index++;
-    }
-
-    const cardWidth = cards[0].offsetWidth + 30;
-    track.style.transform = "translateX(-" + (index * cardWidth) + "px)";
-  }
-
-  interval = setInterval(updateSlider, 3000);
-
-  window.addEventListener("resize", function () {
-    index = 0;
-    track.style.transform = "translateX(0px)";
-  });
-
-});
-</script>
 </body>
 </html>

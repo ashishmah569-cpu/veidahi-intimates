@@ -47,7 +47,8 @@ nav a:hover{color:#ff4d88;}
   cursor:pointer;
 }
 
-/* NEW ARRIVALS SLIDER */
+/* ================= NEW ARRIVALS SLIDER FIX ================= */
+
 .new-arrivals{
   padding:80px 20px;
   background:#fff0f5;
@@ -55,33 +56,39 @@ nav a:hover{color:#ff4d88;}
 }
 
 .slider{
-  overflow:hidden;
   max-width:1200px;
   margin:40px auto;
+  overflow:hidden;
   position:relative;
 }
 
 .slider-track{
   display:flex;
+  gap:20px;
   transition:transform 0.6s ease-in-out;
 }
 
 .arrival-card{
   min-width:280px;
-  margin-right:20px;
   border-radius:18px;
   overflow:hidden;
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
   background:#fff;
   text-align:center;
+  flex-shrink:0;
   cursor:pointer;
 }
+
 .arrival-card img{
   width:100%;
   height:300px;
   object-fit:cover;
 }
-.arrival-card h3{margin:15px 0;}
+
+.arrival-card h3{
+  margin:15px 0;
+}
+
 .arrival-card button{
   margin-bottom:15px;
   padding:10px 20px;
@@ -91,7 +98,10 @@ nav a:hover{color:#ff4d88;}
   border-radius:20px;
   cursor:pointer;
 }
-.arrival-card button:hover{background:#ff4d88;}
+
+.arrival-card button:hover{
+  background:#ff4d88;
+}
 
 /* PRODUCTS */
 .products{
@@ -99,11 +109,50 @@ nav a:hover{color:#ff4d88;}
   max-width:1200px;
   margin:auto;
 }
+
 .products h2{text-align:center;margin-bottom:50px;}
+
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:30px;
+}
+
+.card{
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  background:#fff;
+  text-align:center;
+  padding-bottom:20px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+}
+
+.card h3{margin:15px 0 5px;}
+.card p{color:#ff4d88;font-weight:bold;}
+
+.card button{
+  margin-top:10px;
+  padding:10px 20px;
+  background:#000;
+  color:white;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.card button:hover{
+  background:#ff4d88;
 }
 
 /* ABOUT */
@@ -149,7 +198,7 @@ footer{
   color:white;
 }
 
-/* MODAL GALLERY */
+/* MODAL */
 .modal{
   display:none;
   position:fixed;
@@ -182,64 +231,65 @@ footer{
 <body>
 
 <nav>
-  <h2>VEIDAHI INTIMATES</h2>
-  <div>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#about">About</a>
-  </div>
+<h2>VEIDAHI INTIMATES</h2>
+<div>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#about">About</a>
+</div>
 </nav>
 
 <section class="hero" id="home">
-  <h1>Veidahi Intimates</h1>
-  <a href="#products"><button>Explore Collection</button></a>
+<h1>Veidahi Intimates</h1>
+<a href="#products"><button>Explore Collection</button></a>
 </section>
 
-<!-- NEW ARRIVALS -->
+<!-- ================= NEW ARRIVALS ================= -->
+
 <section class="new-arrivals">
-  <h2>✨ New Arrivals</h2>
+<h2>✨ New Arrivals</h2>
 
-  <div class="slider">
-    <div class="slider-track">
+<div class="slider">
+<div class="slider-track">
 
-      <div class="arrival-card" onclick="openGallery(['na1-1.jpg','na1-2.jpg'])">
-        <img src="na1-1.jpg">
-        <h3>Sports Bra</h3>
-        <button>View Product</button>
-      </div>
+<div class="arrival-card" onclick="openGallery(['na1-1.jpg','na1-2.jpg'])">
+<img src="na1-1.jpg">
+<h3>Sports Bra</h3>
+<button>View Product</button>
+</div>
 
-      <div class="arrival-card" onclick="openGallery(['na2-1.jpg','na2-2.jpg'])">
-        <img src="na2-1.jpg">
-        <h3>Gymer Sports Bra</h3>
-        <button>View Product</button>
-      </div>
+<div class="arrival-card" onclick="openGallery(['na2-1.jpg','na2-2.jpg'])">
+<img src="na2-1.jpg">
+<h3>Gymer Sports Bra</h3>
+<button>View Product</button>
+</div>
 
-      <div class="arrival-card" onclick="openGallery(['na3-1.jpg','na3-2.jpg'])">
-        <img src="na3-1.jpg">
-        <h3>Running Sports Bra</h3>
-        <button>View Product</button>
-      </div>
+<div class="arrival-card" onclick="openGallery(['na3-1.jpg','na3-2.jpg'])">
+<img src="na3-1.jpg">
+<h3>Running Sports Bra</h3>
+<button>View Product</button>
+</div>
 
-      <div class="arrival-card" onclick="openGallery(['na4-1.jpg'])">
-        <img src="na4-1.jpg">
-        <h3>Bold Classic Look</h3>
-        <button>View Product</button>
-      </div>
+<div class="arrival-card" onclick="openGallery(['na4-1.jpg'])">
+<img src="na4-1.jpg">
+<h3>Bold Classic</h3>
+<button>View Product</button>
+</div>
 
-      <div class="arrival-card" onclick="openGallery(['na5-1.jpg'])">
-        <img src="na5-1.jpg">
-        <h3>Bold Classic Look</h3>
-        <button>View Product</button>
-      </div>
+<div class="arrival-card" onclick="openGallery(['na5-1.jpg'])">
+<img src="na5-1.jpg">
+<h3>Style 5</h3>
+<button>View Product</button>
+</div>
 
-      <div class="arrival-card" onclick="openGallery(['na6-1.jpg'])">
-        <img src="na6-1.jpg">
-        <h3>Classy & Elegant</h3>
-        <button>View Product</button>
-      </div>
+<div class="arrival-card" onclick="openGallery(['na6-1.jpg'])">
+<img src="na6-1.jpg">
+<h3>Style 6</h3>
+<button>View Product</button>
+</div>
 
-    </div>
-  </div>
+</div>
+</div>
 </section>
 
 <!-- PRODUCTS -->
@@ -248,77 +298,61 @@ footer{
 
 <div class="grid">
 
-  <div class="card">
-    <a href="p1.html">
-     <img src="./p1-burgundy-1.jpg">
-    </a>
-    <h3>Mystique</h3>
-    <p>₹150</p>
-    <a href="p1.html"><button>View Product</button></a>
-  </div>
+<div class="card">
+<a href="p1.html"><img src="./p1-burgundy-1.jpg"></a>
+<h3>Mystique</h3>
+<p>₹150</p>
+<a href="p1.html"><button>View Product</button></a>
+</div>
 
-  <div class="card">
-    <a href="p2.html">
-     <img src="./p2-new-brown-1.jpg">
-    </a>
-    <h3>Cemisol</h3>
-    <p>₹110</p>
-    <a href="p2.html"><button>View Product</button></a>
-  </div>
+<div class="card">
+<a href="p2.html"><img src="./p2-new-brown-1.jpg"></a>
+<h3>Cemisol</h3>
+<p>₹110</p>
+<a href="p2.html"><button>View Product</button></a>
+</div>
 
-  <div class="card">
-    <a href="p3.html">
-  <img src="./p3-forest green-1.jpg">
-    </a>
-    <h3>Linear Luxe</h3>
-    <p>₹129</p>
-    <a href="p3.html"><button>View Product</button></a>
-  </div>
+<div class="card">
+<a href="p3.html"><img src="./p3-forest green-1.jpg"></a>
+<h3>Linear Luxe</h3>
+<p>₹129</p>
+<a href="p3.html"><button>View Product</button></a>
+</div>
 
-  <div class="card">
-    <a href="p4.html">
-     <img src="./p4-beby pink-1.jpg">
-    </a>
-    <h3>Crimson Charm</h3>
-    <p>₹89</p>
-    <a href="p4.html"><button>View Product</button></a>
-  </div>
+<div class="card">
+<a href="p4.html"><img src="./p4-beby pink-1.jpg"></a>
+<h3>Crimson Charm</h3>
+<p>₹89</p>
+<a href="p4.html"><button>View Product</button></a>
+</div>
 
-  <div class="card">
-    <a href="p5.html">
-     <img src="./p5-navy-1.jpg">
-    </a>
-    <h3>Dotty Float</h3>
-    <p>₹89</p>
-    <a href="p5.html"><button>View Product</button></a>
-  </div>
+<div class="card">
+<a href="p5.html"><img src="./p5-navy-1.jpg"></a>
+<h3>Dotty Float</h3>
+<p>₹89</p>
+<a href="p5.html"><button>View Product</button></a>
+</div>
 
-  <div class="card">
-    <a href="p6.html">
-      <img src="./p6-aqua-1.jpg">
-    </a>
-    <h3>Bold Brick</h3>
-    <p>₹79</p>
-    <a href="p6.html"><button>View Product</button></a>
-  </div>
+<div class="card">
+<a href="p6.html"><img src="./p6-aqua-1.jpg"></a>
+<h3>Bold Brick</h3>
+<p>₹79</p>
+<a href="p6.html"><button>View Product</button></a>
+</div>
 
-  <div class="card">
-    <a href="p7.html">
-    <img src="./p7-chocolate-1.jpg">
-    </a>
-    <h3>Soft Sorbet</h3>
-    <p>₹89</p>
-    <a href="p7.html"><button>View Product</button></a>
-  </div>
+<div class="card">
+<a href="p7.html"><img src="./p7-chocolate-1.jpg"></a>
+<h3>Soft Sorbet</h3>
+<p>₹89</p>
+<a href="p7.html"><button>View Product</button></a>
+</div>
 
-  <div class="card">
-    <a href="p8.html">
-   <img src="./p8-deep sea-1.jpg">
-    </a>
-    <h3>Essential Earth</h3>
-    <p>₹79</p>
-    <a href="p8.html"><button>View Product</button></a>
-  </div>
+<div class="card">
+<a href="p8.html"><img src="./p8-deep sea-1.jpg"></a>
+<h3>Essential Earth</h3>
+<p>₹79</p>
+<a href="p8.html"><button>View Product</button></a>
+</div>
 
 </div>
 </section>
@@ -328,19 +362,7 @@ footer{
 <h2>About Veidahi Intimates</h2>
 <p>
 Veidahi Intimates is born from a simple belief — luxury should be felt every day.
-Designed in Delhi, our collections blend sensual elegance with effortless comfort.
 </p>
-</section>
-
-<!-- WHY -->
-<section class="why">
-<h2>Why Choose Veidahi</h2>
-<div class="why-grid">
-<div class="why-box"><h3>Premium Fabric</h3><p>Soft & breathable materials.</p></div>
-<div class="why-box"><h3>Unique Designs</h3><p>Elegant exclusive styles.</p></div>
-<div class="why-box"><h3>Comfortable Fit</h3><p>Perfect for daily wear.</p></div>
-<div class="why-box"><h3>Limited Editions</h3><p>Small-batch collections.</p></div>
-</div>
 </section>
 
 <footer>
@@ -349,33 +371,39 @@ Designed in Delhi, our collections blend sensual elegance with effortless comfor
 
 <!-- MODAL -->
 <div class="modal" id="galleryModal">
-  <img id="galleryImage">
-  <div class="modal-controls">
-    <button onclick="prevImage()">Prev</button>
-    <button onclick="nextImage()">Next</button>
-    <button onclick="closeGallery()">Close</button>
-  </div>
+<img id="galleryImage">
+<div class="modal-controls">
+<button onclick="prevImage()">Prev</button>
+<button onclick="nextImage()">Next</button>
+<button onclick="closeGallery()">Close</button>
+</div>
 </div>
 
 <script>
 
-/* AUTO SLIDER */
+/* AUTO SLIDER FIX */
 let sliderTrack = document.querySelector(".slider-track");
 let slideIndex = 0;
 
-setInterval(()=>{
+function autoSlide(){
   let cards = document.querySelectorAll(".arrival-card");
+  let cardWidth = cards[0].offsetWidth + 20;
+
   slideIndex++;
+
   if(slideIndex > cards.length - 3){
     slideIndex = 0;
   }
-  sliderTrack.style.transform = "translateX(-" + (slideIndex * 300) + "px)";
-},3000);
 
+  sliderTrack.style.transform =
+    "translateX(-" + (slideIndex * cardWidth) + "px)";
+}
+
+setInterval(autoSlide,3000);
 
 /* GALLERY */
-let currentImages = [];
-let currentIndex = 0;
+let currentImages=[];
+let currentIndex=0;
 
 function openGallery(images){
   currentImages = images;
@@ -389,19 +417,16 @@ function closeGallery(){
 }
 
 function nextImage(){
-  currentIndex++;
-  if(currentIndex >= currentImages.length){
-    currentIndex = 0;
-  }
-  document.getElementById("galleryImage").src = currentImages[currentIndex];
+  currentIndex = (currentIndex+1) % currentImages.length;
+  document.getElementById("galleryImage").src =
+    currentImages[currentIndex];
 }
 
 function prevImage(){
-  currentIndex--;
-  if(currentIndex < 0){
-    currentIndex = currentImages.length - 1;
-  }
-  document.getElementById("galleryImage").src = currentImages[currentIndex];
+  currentIndex =
+    (currentIndex-1+currentImages.length) % currentImages.length;
+  document.getElementById("galleryImage").src =
+    currentImages[currentIndex];
 }
 
 </script>

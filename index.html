@@ -392,7 +392,7 @@ let slideIndex = 0;
 
 function autoSlide(){
   let cards = document.querySelectorAll(".arrival-card");
-  let cardWidth = cards[0].offsetWidth + 20;
+let cardWidth = cards[0].getBoundingClientRect().width + 20
 
   slideIndex++;
 

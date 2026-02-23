@@ -62,60 +62,69 @@ nav a:hover{color:#ff4d88;}
   cursor:pointer;
 }
 
-/* PREMIUM NEW ARRIVAL SLIDER */
+/* MULTI PRODUCT SLIDER */
 
-.new-slider {
-  max-width: 1000px;
-  margin: 40px auto;
+.arrival-slider {
+  max-width: 1200px;
+  margin: auto;
   overflow: hidden;
   position: relative;
 }
 
-.new-slides {
+.arrival-track {
   display: flex;
+  gap: 30px;
   transition: transform 0.8s ease-in-out;
 }
 
-.new-card {
-  min-width: 100%;
-  padding: 30px;
-  box-sizing: border-box;
-  text-align: center;
+.arrival-card {
+  min-width: calc(33.33% - 20px);  /* 3 products ek saath */
   background: #fff;
-}
-
-.new-card img {
-  width: 320px;          /* FIXED CLEAN SIZE */
-  height: 380px;
-  object-fit: cover;     /* Professional crop */
   border-radius: 18px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+  padding-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  position: relative;
 }
 
-.new-card h3 {
-  margin-top: 20px;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+.arrival-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 18px 18px 0 0;
 }
 
-.new-card button {
-  margin-top: 15px;
-  padding: 10px 25px;
+.arrival-card h3 {
+  margin: 15px 0 10px;
+  font-size: 18px;
+}
+
+.arrival-card button {
+  padding: 8px 20px;
   background: #000;
   color: white;
   border: none;
-  border-radius: 25px;
+  border-radius: 20px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.new-card button:hover {
+.arrival-card button:hover {
   background: #ff4d88;
 }
-.new-arrivals h2{font-size:28px;margin-bottom:10px;}
-.new-arrivals p{color:#777;margin-bottom:40px;}
 
+/* Responsive */
+@media(max-width:900px){
+  .arrival-card{
+    min-width: calc(50% - 15px); /* tablet pe 2 */
+  }
+}
+
+@media(max-width:600px){
+  .arrival-card{
+    min-width: 100%; /* mobile pe 1 */
+  }
+}
 .badge{
   position:absolute;
   top:15px;
@@ -276,32 +285,38 @@ footer{
   <h2>✨ New Arrivals – Just Dropped</h2>
   <p>Fresh designs. New colors. Limited stock.</p>
 
-  <div class="new-slider">
-    <div class="new-slides">
+  <div class="arrival-slider">
+    <div class="arrival-track">
 
-      <div class="new-card">
+      <!-- Product 1 -->
+      <div class="arrival-card">
         <span class="badge">NEW</span>
         <img src="na1-1.jpg" alt="">
-        <h3>Fish cut sports bra</h3>
+        <h3>Sports Bra</h3>
         <a href="na1.html"><button>View Product</button></a>
       </div>
 
-      <div class="new-card">
+      <!-- Product 2 -->
+      <div class="arrival-card">
         <span class="badge">NEW</span>
         <img src="na2-1.jpg" alt="">
-        <h3>For Gym sports bra</h3>
+        <h3>Gym Sports Wear</h3>
         <a href="na2.html"><button>View Product</button></a>
       </div>
 
-      <div class="new-card">
+      <!-- Product 3 -->
+      <div class="arrival-card">
         <span class="badge">NEW</span>
         <img src="na3-1.jpg" alt="">
-        <h3>Runing sports bra</h3>
+        <h3>Runing Sports Bra</h3>
         <a href="na3.html"><button>View Product</button></a>
       </div>
 
+      <!-- Aap yaha 4th, 5th, 6th product same format me add kar sakte ho -->
+
     </div>
   </div>
+</section>
 <div class="trust-strip">
   <div>Premium Fabrics</div>
   <div>Comfort Fit</div>
@@ -426,6 +441,21 @@ footer{
 <footer>
   © 2026 Veidahi Intimates | All Rights Reserved
 </footer>
+<script>
+const track = document.querySelector(".arrival-track");
+const cards = document.querySelectorAll(".arrival-card");
 
+let index = 0;
+const visibleCards = 3; 
+const total = cards.length;
+
+setInterval(() => {
+  index++;
+  if(index > total - visibleCards){
+    index = 0;
+  }
+  track.style.transform = translateX(-${index * (cards[0].offsetWidth + 30)}px);
+}, 3000);
+</script>
 </body>
 </html>

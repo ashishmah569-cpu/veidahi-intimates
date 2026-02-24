@@ -329,33 +329,49 @@ font-size:35px;
 © 2026 Veidahi Intimates | Delhi
 </footer>
 
-<!-- ================= JS FIX ================= -->
+<!-- ================= JS ================= -->
 
 <script>
 
-/* AUTO SLIDER FOR NEW ARRIVALS */
+/* AUTO SLIDER */
 
 let slidesContainer = document.getElementById("newArrivalSlides");
 let slides = document.querySelectorAll("#newArrivalSlides .slide");
 let index = 0;
 
 function autoSlide(){
-    index = (index + 1) % slides.length;
-   
+
+if(slides.length === 0) return;
+
+index++;
+
+if(index >= slides.length){
+index = 0;
+}
+
+slidesContainer.style.transform = translateX(-${index * 100}%);
+}
+
 setInterval(autoSlide,3000);
 
 
-/* CLICK TO CHANGE IMAGE IN PRODUCT */
+/* CLICK TO CHANGE IMAGE */
 
 document.querySelectorAll('.product').forEach(product=>{
-    let images = product.querySelectorAll('img');
-    let i = 0;
 
-    product.addEventListener('click',()=>{
-        images[i].classList.remove('active');
-        i = (i + 1) % images.length;
-        images[i].classList.add('active');
-    });
+let images = product.querySelectorAll('img');
+let i = 0;
+
+product.addEventListener('click',()=>{
+
+if(images.length === 0) return;
+
+images[i].classList.remove('active');
+i = (i + 1) % images.length;
+images[i].classList.add('active');
+
+});
+
 });
 
 </script>

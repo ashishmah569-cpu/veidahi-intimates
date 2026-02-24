@@ -336,6 +336,8 @@ font-size:35px;
 
 /* SLIDER FIX */
 
+<script>
+
 /* AUTO SLIDER */
 
 let slidesContainer = document.querySelector('.slides');
@@ -343,8 +345,8 @@ let slides = document.querySelectorAll('.slide');
 let index = 0;
 
 function autoSlide(){
-index = (index + 1) % slides.length;
-slidesContainer.style.transform = translateX(-${index * 100}%);
+    index = (index + 1) % slides.length;
+    slidesContainer.style.transform = translateX(-${index * 100}%);
 }
 
 setInterval(autoSlide,3000);
@@ -353,14 +355,16 @@ setInterval(autoSlide,3000);
 /* CLICK TO CHANGE IMAGE INSIDE SLIDE */
 
 document.querySelectorAll('.slide').forEach(slide=>{
-let images = slide.querySelectorAll('img');
-let i = 0;
+    let images = slide.querySelectorAll('img');
+    let i = 0;
 
-slide.addEventListener('click',()=>{
-images[i].classList.remove('active');
-i = (i + 1) % images.length;
-images[i].classList.add('active');
+    slide.addEventListener('click',()=>{
+        images[i].classList.remove('active');
+        i = (i + 1) % images.length;
+        images[i].classList.add('active');
+    });
 });
+
 </script>
 
 </body>

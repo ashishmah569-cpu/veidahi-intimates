@@ -108,17 +108,17 @@ border-radius:15px;
 max-width:1200px;
 margin:auto;
 overflow:hidden;
+position:relative;
 }
 
 .slides{
 display:flex;
-transition:0.6s ease;
+width:100%;
+transition:transform 0.6s ease;
 }
 
 .slide{
 min-width:100%;
-text-align:center;
-cursor:pointer;
 }
 
 .slide img{
@@ -127,6 +127,10 @@ height:350px;
 object-fit:cover;
 border-radius:15px;
 display:none;
+}
+
+.slide img.active{
+display:block;
 }
 
 .slide img.active{
@@ -204,32 +208,32 @@ font-size:35px;
 <div class="slider">
 <div class="slides" id="newArrivalSlides">
 
-<div class="slide product">
+<div class="slide">
 <img src="na1-1.jpg" class="active">
 <img src="na1-2.jpg">
 </div>
 
-<div class="slide product">
+<div class="slide">
 <img src="na2-1.jpg" class="active">
 <img src="na2-2.jpg">
 </div>
 
-<div class="slide product">
+<div class="slide">
 <img src="na3-1.jpg" class="active">
 <img src="na3-2.jpg">
 </div>
 
-<div class="slide product">
+<div class="slide">
 <img src="na4-1.jpg" class="active">
 <img src="na4-2.jpg">
 </div>
 
-<div class="slide product">
+<div class="slide">
 <img src="na5-1.jpg" class="active">
 <img src="na5-2.jpg">
 </div>
 
-<div class="slide product">
+<div class="slide">
 <img src="na6-1.jpg" class="active">
 <img src="na6-2.jpg">
 </div>
@@ -333,15 +337,11 @@ font-size:35px;
 
 <script>
 
-/* AUTO SLIDER */
-
 let slidesContainer = document.getElementById("newArrivalSlides");
 let slides = document.querySelectorAll("#newArrivalSlides .slide");
 let index = 0;
 
 function autoSlide(){
-
-if(slides.length === 0) return;
 
 index++;
 
@@ -349,32 +349,26 @@ if(index >= slides.length){
 index = 0;
 }
 
-slidesContainer.style.transform = translateX(-${index * 100}%);
+slidesContainer.style.transform =
+"translateX(-" + (index * 100) + "%)";
 }
 
 setInterval(autoSlide,3000);
 
 
-/* CLICK TO CHANGE IMAGE */
+/* CLICK IMAGE CHANGE */
 
-document.querySelectorAll('.product').forEach(product=>{
-
-let images = product.querySelectorAll('img');
+document.querySelectorAll('.slide').forEach(slide=>{
+let images = slide.querySelectorAll('img');
 let i = 0;
 
-product.addEventListener('click',()=>{
-
-if(images.length === 0) return;
-
+slide.addEventListener('click',()=>{
 images[i].classList.remove('active');
 i = (i + 1) % images.length;
 images[i].classList.add('active');
-
 });
-
 });
 
 </script>
-
 </body>
 </html>

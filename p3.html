@@ -71,6 +71,27 @@ color:#d2235b;
 margin:12px 0;
 }
 
+/* ✨ FABRIC SECTION */
+.fabric-section{
+margin-top:15px;
+padding-top:12px;
+border-top:1px solid #eee;
+}
+
+.fabric-section h4{
+font-size:13px;
+letter-spacing:1px;
+margin-bottom:6px;
+color:#111;
+font-weight:900;
+}
+
+.fabric-section p{
+font-size:13px;
+color:#555;
+line-height:1.6;
+}
+
 .color-container{
 display:flex;
 gap:15px;
@@ -139,6 +160,14 @@ font-weight:900;
 
 <div class="price">₹89</div>
 
+<!-- ✅ FABRIC DETAILS ADDED -->
+<div class="fabric-section">
+<h4>FABRIC DETAILS</h4>
+<p>
+Crafted in our premium UltraSoft Hosiery Knit fabric, designed for breathable comfort and a flexible stretch that adapts naturally to your body. Lightweight, smooth and gentle on skin — perfect for all-day wear.
+</p>
+</div>
+
 <label>Select Color</label>
 <div class="color-container" id="colorIcons"></div>
 
@@ -170,7 +199,6 @@ font-weight:900;
 
 let currentColor = "forest";
 
-/* IMAGE PATHS (SPACE KE SAATH) */
 const images = {
 forest: [
 "p3-forest green-1.jpg",
@@ -178,7 +206,6 @@ forest: [
 "p3-forest green-3.jpg",
 "p3-forest green-4.jpg"
 ],
-
 indigo: [
 "p3-indigo-1.jpg",
 "p3-indigo-2.jpg",
@@ -191,71 +218,45 @@ const mainImage = document.getElementById("mainImage");
 const thumbs = document.getElementById("thumbs");
 const colorIcons = document.getElementById("colorIcons");
 
-/* LOAD IMAGES */
 function loadImages(color){
-
 currentColor = color;
 thumbs.innerHTML = "";
 
 images[color].forEach(function(img,index){
-
-if(index === 0){
-mainImage.src = img;
-}
-
+if(index === 0){ mainImage.src = img; }
 const t = document.createElement("img");
 t.src = img;
-t.onclick = function(){
-mainImage.src = img;
-};
-
+t.onclick = function(){ mainImage.src = img; };
 thumbs.appendChild(t);
-
 });
 
 highlightActive(color);
 }
 
-/* COLOR DOTS */
 const colorMap = {
 forest: "#2e8b57",
 indigo: "#4b0082"
 };
 
 Object.keys(images).forEach(function(color){
-
 const dot = document.createElement("div");
 dot.classList.add("color-dot");
 dot.style.background = colorMap[color];
 dot.setAttribute("data-color", color);
-
-dot.onclick = function(){
-loadImages(color);
-};
-
+dot.onclick = function(){ loadImages(color); };
 colorIcons.appendChild(dot);
-
 });
 
-/* ACTIVE BORDER */
 function highlightActive(active){
-
 document.querySelectorAll(".color-dot").forEach(function(d){
 d.classList.remove("active");
 });
-
 const activeDot = document.querySelector('.color-dot[data-color="'+active+'"]');
-if(activeDot){
-activeDot.classList.add("active");
+if(activeDot){ activeDot.classList.add("active"); }
 }
 
-}
-
-/* INIT */
 loadImages("forest");
 
-
-/* WHATSAPP ORDER */
 function orderNow(){
 
 const name = document.getElementById("custName").value;
@@ -279,32 +280,6 @@ const message =
 
 window.open("https://wa.me/918750020203?text="+message,"_blank");
 
-}
-
-</script>
-/* WHATSAPP */
-function orderNow(){
-
-const name=document.getElementById("custName").value;
-const phone=document.getElementById("custPhone").value;
-const address=document.getElementById("custAddress").value;
-const size=document.getElementById("sizeSelect").value;
-
-if(name===""||phone===""||address===""){
-alert("Fill all details");
-return;
-}
-
-const message=
-"🛍 ORDER%0A"+
-"Product: Premium Bra%0A"+
-"Color: "+currentColor+"%0A"+
-"Size: "+size+"%0A"+
-"Name: "+name+"%0A"+
-"Phone: "+phone+"%0A"+
-"Address: "+address;
-
-window.open("https://wa.me/918750020203?text="+message,"_blank");
 }
 
 </script>

@@ -118,6 +118,27 @@ font-weight:900;
 cursor:pointer;
 }
 
+/* FABRIC SECTION */
+.fabric-section{
+  margin-top:15px;
+  padding-top:12px;
+  border-top:1px solid #eee;
+}
+
+.fabric-section h4{
+  font-size:14px;
+  letter-spacing:1px;
+  margin-bottom:6px;
+  color:#333;
+  font-weight:700;
+}
+
+.fabric-section p{
+  font-size:13px;
+  color:#666;
+  line-height:1.6;
+}
+
 @media(max-width:980px){
 .grid{grid-template-columns:1fr;}
 .details{position:relative;top:0;}
@@ -168,6 +189,16 @@ cursor:pointer;
 
 <label>Address</label>
 <input type="text" id="custAddress">
+
+<!-- FABRIC DETAILS -->
+<div class="fabric-section">
+  <h4>Fabric Details</h4>
+  <p>
+    Designed in our premium SoftStretch Hosiery fabric, this panty delivers
+    breathable comfort with a smooth, lightweight feel. The flexible texture
+    adapts to your movement while maintaining shape and durability throughout the day.
+  </p>
+</div>
 
 <button onclick="orderNow()">Place Order</button>
 
@@ -273,7 +304,6 @@ activeDot.classList.add("active");
 
 loadImages("navy");
 
-
 function orderNow(){
 
 const name=document.getElementById("custName").value;
@@ -291,7 +321,7 @@ const message =
 "Product: Crystal Panty%0A"+
 "Color: "+currentColor+"%0A"+
 "Size: "+size+"%0A"+
-"Price: ₹149%0A"+
+"Price: ₹89%0A"+
 "Name: "+name+"%0A"+
 "Phone: "+phone+"%0A"+
 "Address: "+address;

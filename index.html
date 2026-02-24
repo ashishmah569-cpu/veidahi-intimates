@@ -174,34 +174,36 @@ max-width:1200px;
 margin:auto;
 }
 .grid{
+.features{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:35px;
+gap:30px;
+margin-top:40px;
 }
-.card{
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 15px 35px rgba(0,0,0,0.08);
-background:#fff;
-text-align:center;
-padding-bottom:25px;
+
+.feature-box{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
 transition:.3s;
+text-align:center;
 }
-.card:hover{
-transform:translateY(-8px);
+
+.feature-box:hover{
+transform:translateY(-6px);
 }
-.card img{
-width:100%;
-height:320px;
-object-fit:cover;
-}
-.card h3{
-margin:18px 0 6px;
-font-weight:600;
-}
-.card p{
+
+.feature-box h3{
+margin-bottom:10px;
 color:var(--primary);
-font-weight:700;
+font-size:18px;
+}
+
+.feature-box p{
+color:#555;
+font-size:14px;
+line-height:1.6;
 }
 .card button{
 margin-top:12px;
@@ -387,26 +389,47 @@ Designed in Delhi, our collections blend sensual elegance with effortless comfor
 We create lingerie and western daily wear that celebrates confidence, femininity, and individuality.
 Because true luxury isn’t just how it looks — it’s how it feels on you.
 </p>
-</section>
-<!-- REVIEWS -->
-<section class="reviews">
+  <!-- WHY CHOOSE VEIDAHI -->
+<section class="section reveal">
+<h2>Why Choose Veidahi</h2>
+
+<div class="features">
+
+<div class="feature-box">
+<h3>Premium Fabric</h3>
+<p>We use breathable, skin-friendly materials designed for everyday luxury comfort.</p>
+</div>
+
+<div class="feature-box">
+<h3>Perfect Fit</h3>
+<p>Crafted with flexible stretch and precision stitching for a flattering fit.</p>
+</div>
+
+<div class="feature-box">
+<h3>Elegant Designs</h3>
+<p>Minimal, classy and modern styles made for confident women.</p>
+</div>
+
+</div>
+</section><!-- REVIEWS -->
+<section class="reviews reveal">
 <h2>What Our Customers Say</h2>
 
 <div class="review-grid">
 
 <div class="review-card">
-<p>"The fabric quality is amazing. So soft and comfortable!"</p>
-<h4>— Riya, Delhi</h4>
+<p>“I ordered the hosiery bra and honestly I didn’t expect this level of comfort. The fabric feels extremely soft on skin and fitting is just perfect. Definitely ordering again.”</p>
+<h4>Riya Sharma <span>• Delhi</span></h4>
 </div>
 
 <div class="review-card">
-<p>"Premium feel at such affordable prices. Loved it!"</p>
-<h4>— Ananya, Mumbai</h4>
+<p>“The quality actually feels premium. Stitching is neat and stretch is very comfortable. I’ve washed it twice and it still looks new.”</p>
+<h4>Ananya Mehta <span>• Mumbai</span></h4>
 </div>
 
 <div class="review-card">
-<p>"Perfect fitting and elegant design. Highly recommended."</p>
-<h4>— Sneha, Jaipur</h4>
+<p>“Loved the minimal design and soft fabric. It’s breathable and doesn’t irritate the skin at all. Totally worth the price.”</p>
+<h4>Sneha Verma <span>• Jaipur</span></h4>
 </div>
 
 </div>

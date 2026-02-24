@@ -73,6 +73,29 @@ color:#d2235b;
 margin:12px 0;
 }
 
+/* ✨ PREMIUM FABRIC SECTION */
+.fabric-section{
+margin:16px 0;
+padding:14px;
+background:#fafafa;
+border-radius:14px;
+border:1px solid rgba(0,0,0,0.06);
+}
+
+.fabric-section h4{
+font-size:12px;
+letter-spacing:1.5px;
+margin-bottom:6px;
+color:#111;
+text-transform:uppercase;
+}
+
+.fabric-section p{
+font-size:13px;
+color:#555;
+line-height:1.6;
+}
+
 .offer{
 background:#ffedf1;
 color:#d2235b;
@@ -149,8 +172,9 @@ font-size:13px;
 <a class="back" href="index.html">← Back to Home</a>
 
 <h1>camisole</h1>
+
 <div class="sub">
-Made with fine-knit Hosiery Comfort Fabric that feels ultra-soft against the skin. Smooth texture, flexible fit and breathable structure ensure lasting comfort with a flattering finish.
+Soft, stretchable and designed for everyday comfort with a flattering fit.
 </div>
 
 <div class="grid">
@@ -163,6 +187,16 @@ Made with fine-knit Hosiery Comfort Fabric that feels ultra-soft against the ski
 <div class="details">
 
 <div class="price">₹110</div>
+
+<!-- ✅ FABRIC SECTION ADDED -->
+<div class="fabric-section">
+<h4>Fabric Details</h4>
+<p>
+Made with fine-knit Hosiery Comfort Fabric that feels ultra-soft against the skin.
+Smooth texture, breathable structure and flexible stretch ensure lasting comfort
+throughout the day.
+</p>
+</div>
 
 <div class="offer">
 2 pieces → 5% off | 3 pieces → 10% off
@@ -230,32 +264,21 @@ const colorIcons = document.getElementById("colorIcons");
 
 let currentColor = "red";
 
-/* LOAD IMAGES */
 function loadImages(color){
-
 currentColor = color;
 thumbs.innerHTML = "";
 
 images[color].forEach(function(img,index){
-
-if(index===0){
-mainImage.src = img;
-}
-
+if(index===0){ mainImage.src = img; }
 const t = document.createElement("img");
 t.src = img;
-t.onclick = function(){
-mainImage.src = img;
-};
-
+t.onclick = function(){ mainImage.src = img; };
 thumbs.appendChild(t);
-
 });
 
 highlightActive(color);
 }
 
-/* COLOR ICONS */
 const colorMap = {
 red:"#d10000",
 grey:"#b5b5b5",
@@ -263,41 +286,26 @@ brown:"#6f4e37"
 };
 
 Object.keys(images).forEach(color=>{
-
 const dot = document.createElement("div");
 dot.classList.add("color-dot");
 dot.style.background = colorMap[color];
 dot.setAttribute("data-color",color);
-
-dot.onclick = function(){
-loadImages(color);
-};
-
+dot.onclick = function(){ loadImages(color); };
 colorIcons.appendChild(dot);
-
 });
 
-/* HIGHLIGHT ACTIVE */
 function highlightActive(activeColor){
-
 document.querySelectorAll(".color-dot").forEach(dot=>{
 dot.classList.remove("active");
 });
-
 const active = document.querySelector(
 '.color-dot[data-color="'+activeColor+'"]'
 );
-
-if(active){
-active.classList.add("active");
+if(active){ active.classList.add("active"); }
 }
 
-}
-
-/* INIT */
 loadImages("red");
 
-/* WHATSAPP ORDER */
 function orderNow(){
 
 const name = document.getElementById("custName").value;
@@ -319,7 +327,7 @@ const message =
 "📌 Product: Camisole%0A"+
 "🎨 Color: "+currentColor+"%0A"+
 "📏 Size: "+size+"%0A"+
-"💰 Price: ₹199%0A%0A"+
+"💰 Price: ₹110%0A%0A"+
 "👤 Customer Details%0A"+
 "Name: "+name+"%0A"+
 "Phone: "+phone+"%0A"+
@@ -327,7 +335,6 @@ const message =
 "━━━━━━━━━━━━━━━━━━";
 
 window.open("https://wa.me/918750020203?text="+message,"_blank");
-
 }
 
 </script>

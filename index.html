@@ -126,15 +126,6 @@ width:100%;
 height:350px;
 object-fit:cover;
 border-radius:15px;
-display:none;
-}
-
-.slide img.active{
-display:block;
-}
-
-.slide img.active{
-display:block;
 }
 
 /* PRODUCT COLOR SWITCH */
@@ -209,40 +200,39 @@ font-size:35px;
 <div class="slides" id="newArrivalSlides">
 
 <div class="slide">
-<img src="na1-1.jpg" class="active">
-<img src="na1-2.jpg">
+<img src="na1-1.jpg">
+<img src="na1-2.jpg" class="second">
 </div>
 
 <div class="slide">
-<img src="na2-1.jpg" class="active">
-<img src="na2-2.jpg">
+<img src="na2-1.jpg">
+<img src="na2-2.jpg" class="second">
 </div>
 
 <div class="slide">
-<img src="na3-1.jpg" class="active">
-<img src="na3-2.jpg">
+<img src="na3-1.jpg">
+<img src="na3-2.jpg" class="second">
 </div>
 
 <div class="slide">
-<img src="na4-1.jpg" class="active">
-<img src="na4-2.jpg">
+<img src="na4-1.jpg">
+<img src="na4-2.jpg" class="second">
 </div>
 
 <div class="slide">
-<img src="na5-1.jpg" class="active">
-<img src="na5-2.jpg">
+<img src="na5-1.jpg">
+<img src="na5-2.jpg" class="second">
 </div>
 
 <div class="slide">
-<img src="na6-1.jpg" class="active">
-<img src="na6-2.jpg">
+<img src="na6-1.jpg">
+<img src="na6-2.jpg" class="second">
 </div>
 
 </div>
 </div>
 
 </section>
-
 <!-- ================= PRODUCTS ================= -->
 
 <section>
@@ -339,6 +329,7 @@ font-size:35px;
 
 let slidesContainer = document.getElementById("newArrivalSlides");
 let slides = document.querySelectorAll("#newArrivalSlides .slide");
+
 let index = 0;
 
 function autoSlide(){
@@ -355,6 +346,7 @@ slidesContainer.style.transform =
 
 setInterval(autoSlide,3000);
 
+</script>
 
 /* CLICK IMAGE CHANGE */
 

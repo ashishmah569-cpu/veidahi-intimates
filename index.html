@@ -131,14 +131,18 @@ flex-shrink:0;
 cursor:pointer;
 transition:.3s;
 }
-.arrival-card:hover{
-transform:translateY(-8px);
+.arrival-card:hover img,
+.card:hover img{
+transform:scale(1.08);
 }
-.arrival-card img{
+.arrival-card img,
+.card img{
 width:100%;
 height:320px;
 object-fit:cover;
+transition:transform .6s ease;
 }
+
 .arrival-card h3{
 margin:15px 0;
 font-weight:600;
@@ -250,7 +254,12 @@ font-size:14px;
 
 <section class="hero" id="home">
 <h1>Veidahi Intimates</h1>
-<a href="#products"><button>Explore Collection</button></a>
+<p class="hero-tagline">
+Luxury lingerie & western daily wear designed to celebrate confidence and comfort.
+</p>
+<a href="#products">
+<button class="hero-btn">Explore Collection</button>
+</a>
 </section>
 
 <!-- NEW ARRIVALS -->
@@ -379,7 +388,29 @@ We create lingerie and western daily wear that celebrates confidence, femininity
 Because true luxury isn’t just how it looks — it’s how it feels on you.
 </p>
 </section>
+<!-- REVIEWS -->
+<section class="reviews">
+<h2>What Our Customers Say</h2>
 
+<div class="review-grid">
+
+<div class="review-card">
+<p>"The fabric quality is amazing. So soft and comfortable!"</p>
+<h4>— Riya, Delhi</h4>
+</div>
+
+<div class="review-card">
+<p>"Premium feel at such affordable prices. Loved it!"</p>
+<h4>— Ananya, Mumbai</h4>
+</div>
+
+<div class="review-card">
+<p>"Perfect fitting and elegant design. Highly recommended."</p>
+<h4>— Sneha, Jaipur</h4>
+</div>
+
+</div>
+</section>
 <footer>
 © 2026 Veidahi Intimates | All Rights Reserved
 </footer>

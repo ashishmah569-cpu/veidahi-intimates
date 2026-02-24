@@ -199,43 +199,45 @@ font-size:35px;
 <section class="soft">
 <h2>New Arrivals</h2>
 
-<div class="slider">
-<div class="slides" id="newArrivalSlides">
+<div class="grid">
 
-<div class="slide">
-<img src="na1-1.jpg">
-<img src="na1-2.jpg" class="second">
+<!-- STYLE 1 -->
+<div class="card product" onclick="changeNA(this)">
+<img src="na1-1.jpg" class="active">
+<img src="na1-2.jpg">
 </div>
 
-<div class="slide">
-<img src="na2-1.jpg">
-<img src="na2-2.jpg" class="second">
+<!-- STYLE 2 -->
+<div class="card product" onclick="changeNA(this)">
+<img src="na2-1.jpg" class="active">
+<img src="na2-2.jpg">
 </div>
 
-<div class="slide">
-<img src="na3-1.jpg">
-<img src="na3-2.jpg" class="second">
+<!-- STYLE 3 -->
+<div class="card product" onclick="changeNA(this)">
+<img src="na3-1.jpg" class="active">
+<img src="na3-2.jpg">
 </div>
 
-<div class="slide">
-<img src="na4-1.jpg">
-<img src="na4-2.jpg" class="second">
+<!-- STYLE 4 -->
+<div class="card product" onclick="changeNA(this)">
+<img src="na4-1.jpg" class="active">
+<img src="na4-2.jpg">
 </div>
 
-<div class="slide">
-<img src="na5-1.jpg">
-<img src="na5-2.jpg" class="second">
+<!-- STYLE 5 -->
+<div class="card product" onclick="changeNA(this)">
+<img src="na5-1.jpg" class="active">
+<img src="na5-2.jpg">
 </div>
 
-<div class="slide">
-<img src="na6-1.jpg">
-<img src="na6-2.jpg" class="second">
+<!-- STYLE 6 -->
+<div class="card product" onclick="changeNA(this)">
+<img src="na6-1.jpg" class="active">
+<img src="na6-2.jpg">
 </div>
 
 </div>
-</div>
-
-</section>
 <!-- ================= PRODUCTS ================= -->
 
 <section>
@@ -330,13 +332,6 @@ font-size:35px;
 
 <script>
 
-let slidesContainer = document.getElementById("newArrivalSlides");
-let slides = document.querySelectorAll("#newArrivalSlides .slide");
-
-let index = 0;
-
-function autoSlide(){
-
 index++;
 
 if(index >= slides.length){
@@ -349,20 +344,24 @@ slidesContainer.style.transform =
 
 setInterval(autoSlide,3000);
 
-</script>
+<script>
 
-/* CLICK IMAGE CHANGE */
+/* CLICK TO SWITCH IMAGE IN NEW ARRIVALS */
 
-document.querySelectorAll('.slide').forEach(slide=>{
-let images = slide.querySelectorAll('img');
-let i = 0;
+function changeNA(card){
+  let images = card.querySelectorAll("img");
+  let activeIndex = 0;
 
-slide.addEventListener('click',()=>{
-images[i].classList.remove('active');
-i = (i + 1) % images.length;
-images[i].classList.add('active');
-});
-});
+  images.forEach((img,i)=>{
+    if(img.classList.contains("active")){
+      activeIndex = i;
+    }
+    img.classList.remove("active");
+  });
+
+  let nextIndex = (activeIndex + 1) % images.length;
+  images[nextIndex].classList.add("active");
+}
 
 </script>
 </body>

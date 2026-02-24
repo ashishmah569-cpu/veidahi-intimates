@@ -141,7 +141,13 @@ text-align:center;
 font-size:35px;
 }
 }
+.product img{
+display:none;
+}
 
+.product img.active{
+display:block;
+}
 </style>
 </head>
 
@@ -160,13 +166,33 @@ font-size:35px;
 
 <section class="soft">
 <h2>New Arrivals</h2>
-<div class="grid">
-<div class="card"><img src="na1-1.jpg"></div>
-<div class="card"><img src="na2-1.jpg"></div>
-<div class="card"><img src="na3-1.jpg"></div>
-<div class="card"><img src="na4-1.jpg"></div>
-<div class="card"><img src="na5-1.jpg"></div>
-<div class="card"><img src="na6-1.jpg"></div>
+
+<div class="slider">
+
+<div class="slide">
+<img src="na1-1.jpg">
+</div>
+
+<div class="slide">
+<img src="na2-1.jpg">
+</div>
+
+<div class="slide">
+<img src="na3-1.jpg">
+</div>
+
+<div class="slide">
+<img src="na4-1.jpg">
+</div>
+
+<div class="slide">
+<img src="na5-1.jpg">
+</div>
+
+<div class="slide">
+<img src="na6-1.jpg">
+</div>
+
 </div>
 </section>
 
@@ -176,21 +202,68 @@ font-size:35px;
 <h2>Our Collection</h2>
 <div class="grid">
 
-<div class="card"><img src="p1-burgundy-1.jpg"><img src="p1-green-1.jpg"><img src="p1-red-1.jpg"></div>
+<div class="card product">
 
-<div class="card"><img src="p2-new-brown-1.jpg"><img src="p2-new-grey-1.jpg"><img src="p2-new-red-1.jpg"></div>
+<img src="p1-burgundy-1.jpg" class="active">
 
-<div class="card"><img src="p3-forest green-1.jpg"><img src="p3-indigo-1.jpg"></div>
+<img src="p1-green-1.jpg">
+<img src="p1-red-1.jpg">
 
-<div class="card"><img src="p4-beby pink-1.jpg"><img src="p4-moon red-1.jpg"><img src="p4-teal-1.jpg"></div>
+</div>
 
-<div class="card"><img src="p5-navy-1.jpg"><img src="p5-olive-1.jpg"><img src="p5-sage-1.jpg"></div>
+<div class="card product">
+  
+  <img src="p2-new-brown-1.jpg" class="active">
+  
+  <img src="p2-new-grey-1.jpg">
+  <img src="p2-new-red-1.jpg">
 
-<div class="card"><img src="p6-aqua-1.jpg"><img src="p6-fuchsia-1.jpg"><img src="p6-red-1.jpg"></div>
+</div>
 
-<div class="card"><img src="p7-chocolate-1.jpg"><img src="p7-grey-1.jpg"><img src="p7-merhoon-1.jpg"></div>
+<div class="card product">
+  
+  <img src="p3-forest green-1.jpg" class="active">
+  
+  <img src="p3-indigo-1.jpg">
 
-<div class="card"><img src="p8-deep sea-1.jpg"><img src="p8-merhoon-1.jpg"><img src="p8-pink-1.jpg"></div>
+</div>
+
+<div class="card product">
+  
+  <img src="p4-beby pink-1.jpg" class="active">
+  
+  <img src="p4-moon red-1.jpg">
+  <img src="p4-teal-1.jpg">
+
+</div>
+
+<div class="card"><img src="p5-navy-1.jpg" class="active">
+  
+  <img src="p5-olive-1.jpg">
+  <img src="p5-sage-1.jpg">
+
+</div>
+
+<div class="card"><img src="p6-aqua-1.jpg" class="active">
+  
+  <img src="p6-fuchsia-1.jpg">
+  <img src="p6-red-1.jpg">
+
+</div>
+
+<div class="card"><img src="p7-chocolate-1.jpg" class="active">
+  
+  <img src="p7-grey-1.jpg">
+  <img src="p7-merhoon-1.jpg">
+
+</div>
+
+<div class="card"><img src="p8-deep sea-1.jpg" class="active">
+  
+  <img src="p8-merhoon-1.jpg">
+  <img src="p8-pink-1.jpg">
+
+</div>
 
 </div>
 </section>
@@ -227,6 +300,34 @@ font-size:35px;
 <footer>
 © 2026 Veidahi Intimates | Delhi
 </footer>
+<script>
 
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+function showSlide(){
+slides.forEach((slide,i)=>{
+slide.style.transform = translateX(-${index * 100}%);
+});
+
+index++;
+if(index >= slides.length){
+index = 0;
+}
+}
+
+setInterval(showSlide,3000);
+
+</script>
+  document.querySelectorAll('.product').forEach(product=>{
+let images = product.querySelectorAll('img');
+let i = 0;
+
+product.addEventListener('click',()=>{
+images[i].classList.remove('active');
+i = (i + 1) % images.length;
+images[i].classList.add('active');
+});
+});
 </body>
 </html>

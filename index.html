@@ -11,7 +11,6 @@
 
 :root{
 --primary:#b3003c;
---dark:#111;
 --soft:#fff5f8;
 }
 
@@ -85,6 +84,7 @@ padding:15px;
 border-radius:20px;
 box-shadow:0 12px 30px rgba(0,0,0,0.08);
 transition:.3s;
+cursor:pointer;
 }
 
 .card:hover{
@@ -98,9 +98,36 @@ object-fit:cover;
 border-radius:15px;
 }
 
-.card h3{
-margin-top:10px;
-font-size:16px;
+/* Slider */
+
+.slider{
+display:flex;
+overflow:hidden;
+max-width:1200px;
+margin:auto;
+position:relative;
+}
+
+.slide{
+min-width:100%;
+transition:0.6s ease;
+}
+
+.slide img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:15px;
+}
+
+/* Product color switch */
+
+.product img{
+display:none;
+}
+
+.product img.active{
+display:block;
 }
 
 .soft{
@@ -141,13 +168,7 @@ text-align:center;
 font-size:35px;
 }
 }
-.product img{
-display:none;
-}
 
-.product img.active{
-display:block;
-}
 </style>
 </head>
 
@@ -168,101 +189,67 @@ display:block;
 <h2>New Arrivals</h2>
 
 <div class="slider">
-
-<div class="slide">
-<img src="na1-1.jpg">
+<div class="slide"><img src="na1-1.jpg"></div>
+<div class="slide"><img src="na2-1.jpg"></div>
+<div class="slide"><img src="na3-1.jpg"></div>
+<div class="slide"><img src="na4-1.jpg"></div>
+<div class="slide"><img src="na5-1.jpg"></div>
+<div class="slide"><img src="na6-1.jpg"></div>
 </div>
 
-<div class="slide">
-<img src="na2-1.jpg">
-</div>
-
-<div class="slide">
-<img src="na3-1.jpg">
-</div>
-
-<div class="slide">
-<img src="na4-1.jpg">
-</div>
-
-<div class="slide">
-<img src="na5-1.jpg">
-</div>
-
-<div class="slide">
-<img src="na6-1.jpg">
-</div>
-
-</div>
 </section>
 
-<!-- PRODUCTS 1-8 -->
+<!-- PRODUCTS -->
 
 <section>
 <h2>Our Collection</h2>
 <div class="grid">
 
 <div class="card product">
-
 <img src="p1-burgundy-1.jpg" class="active">
-
 <img src="p1-green-1.jpg">
 <img src="p1-red-1.jpg">
-
 </div>
 
 <div class="card product">
-  
-  <img src="p2-new-brown-1.jpg" class="active">
-  
-  <img src="p2-new-grey-1.jpg">
-  <img src="p2-new-red-1.jpg">
-
+<img src="p2-new-brown-1.jpg" class="active">
+<img src="p2-new-grey-1.jpg">
+<img src="p2-new-red-1.jpg">
 </div>
 
 <div class="card product">
-  
-  <img src="p3-forest green-1.jpg" class="active">
-  
-  <img src="p3-indigo-1.jpg">
-
+<img src="p3-forest green-1.jpg" class="active">
+<img src="p3-indigo-1.jpg">
 </div>
 
 <div class="card product">
-  
-  <img src="p4-beby pink-1.jpg" class="active">
-  
-  <img src="p4-moon red-1.jpg">
-  <img src="p4-teal-1.jpg">
-
+<img src="p4-beby pink-1.jpg" class="active">
+<img src="p4-moon red-1.jpg">
+<img src="p4-teal-1.jpg">
 </div>
 
-<div class="card"><img src="p5-navy-1.jpg" class="active">
-  
-  <img src="p5-olive-1.jpg">
-  <img src="p5-sage-1.jpg">
-
+<div class="card product">
+<img src="p5-navy-1.jpg" class="active">
+<img src="p5-olive-1.jpg">
+<img src="p5-sage-1.jpg">
 </div>
 
-<div class="card"><img src="p6-aqua-1.jpg" class="active">
-  
-  <img src="p6-fuchsia-1.jpg">
-  <img src="p6-red-1.jpg">
-
+<div class="card product">
+<img src="p6-aqua-1.jpg" class="active">
+<img src="p6-fuchsia-1.jpg">
+<img src="p6-red-1.jpg">
 </div>
 
-<div class="card"><img src="p7-chocolate-1.jpg" class="active">
-  
-  <img src="p7-grey-1.jpg">
-  <img src="p7-merhoon-1.jpg">
-
+<div class="card product">
+<img src="p7-chocolate-1.jpg" class="active">
+<img src="p7-grey-1.jpg">
+<img src="p7-merhoon-1.jpg">
 </div>
 
-<div class="card"><img src="p8-deep sea-1.jpg" class="active">
-  
-  <img src="p8-merhoon-1.jpg">
-  <img src="p8-pink-1.jpg">
-
+<div class="card product">
+<img src="p8-deep sea-1.jpg" class="active">
+<img src="p8-merhoon-1.jpg">
+<img src="p8-pink-1.jpg">
 </div>
 
 </div>
@@ -273,9 +260,9 @@ display:block;
 <section class="soft">
 <h2>Why Choose Veidahi</h2>
 <div class="feature-box">
-<div class="feature"><h3>Premium Fabric</h3><p>High quality soft materials.</p></div>
+<div class="feature"><h3>Premium Fabric</h3><p>Ultra soft luxury feel.</p></div>
 <div class="feature"><h3>Perfect Fit</h3><p>Designed for comfort & elegance.</p></div>
-<div class="feature"><h3>Luxury Feel</h3><p>Affordable premium experience.</p></div>
+<div class="feature"><h3>Affordable Luxury</h3><p>Premium quality at smart pricing.</p></div>
 </div>
 </section>
 
@@ -300,26 +287,27 @@ display:block;
 <footer>
 © 2026 Veidahi Intimates | Delhi
 </footer>
+
 <script>
+
+/* Slider */
 
 let slides = document.querySelectorAll('.slide');
 let index = 0;
 
 function showSlide(){
-slides.forEach((slide,i)=>{
+slides.forEach((slide)=>{
 slide.style.transform = translateX(-${index * 100}%);
 });
-
-index++;
-if(index >= slides.length){
-index = 0;
-}
+index = (index + 1) % slides.length;
 }
 
 setInterval(showSlide,3000);
 
-</script>
-  document.querySelectorAll('.product').forEach(product=>{
+
+/* Product Color Switch */
+
+document.querySelectorAll('.product').forEach(product=>{
 let images = product.querySelectorAll('img');
 let i = 0;
 
@@ -329,5 +317,8 @@ i = (i + 1) % images.length;
 images[i].classList.add('active');
 });
 });
+
+</script>
+
 </body>
 </html>

@@ -5,231 +5,234 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Veidahi Intimates</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
 <style>
+:root{
+--primary:#d2235b;
+--dark:#111;
+--soft:#fff5f8;
+--light:#fafafa;
+}
+
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Segoe UI', Arial, sans-serif;background:#fff;color:#111;scroll-behavior:smooth;}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#fff;
+color:var(--dark);
+scroll-behavior:smooth;
+}
 
 /* NAV */
 nav{
-  background:#000;
-  padding:18px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
+background:#fff;
+padding:20px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 5px 25px rgba(0,0,0,0.05);
 }
-nav h2{color:#fff;}
-nav a{color:white;text-decoration:none;margin-left:25px;font-size:14px;}
-nav a:hover{color:#ff4d88;}
+nav h2{
+font-weight:800;
+letter-spacing:1px;
+}
+nav a{
+color:var(--dark);
+text-decoration:none;
+margin-left:30px;
+font-size:14px;
+font-weight:500;
+position:relative;
+}
+nav a::after{
+content:"";
+position:absolute;
+width:0;
+height:2px;
+background:var(--primary);
+bottom:-5px;
+left:0;
+transition:.3s;
+}
+nav a:hover::after{
+width:100%;
+}
 
 /* HERO */
 .hero{
-  height:100vh;
-  background:linear-gradient(rgba(255,77,136,0.2), rgba(0,0,0,0.5)), url("hero.jpg");
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  text-align:center;
+height:100vh;
+background:linear-gradient(rgba(210,35,91,0.25), rgba(0,0,0,0.6)), url("hero.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
 }
-.hero h1{font-size:55px;}
+.hero h1{
+font-size:60px;
+font-weight:800;
+letter-spacing:2px;
+}
 .hero button{
-  margin-top:30px;
-  padding:14px 35px;
-  background:#ff4d88;
-  color:white;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
+margin-top:30px;
+padding:16px 40px;
+background:var(--primary);
+color:white;
+border:none;
+border-radius:40px;
+cursor:pointer;
+font-weight:600;
+transition:.3s;
+}
+.hero button:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(210,35,91,0.4);
 }
 
-/* ================= NEW ARRIVALS SLIDER FIX ================= */
+/* SECTION TITLE */
+section h2{
+font-size:32px;
+font-weight:800;
+margin-bottom:20px;
+}
 
+/* NEW ARRIVALS */
 .new-arrivals{
-  padding:80px 20px;
-  background:#fff0f5;
-  text-align:center;
+padding:90px 20px;
+background:var(--soft);
+text-align:center;
 }
-
 .slider{
-  max-width:1200px;
-  margin:40px auto;
-  overflow:hidden;
-  position:relative;
+max-width:1200px;
+margin:40px auto;
+overflow:hidden;
+position:relative;
 }
-
 .slider-track{
-  display:flex;
-  gap:20px;
-  transition:transform 0.6s ease-in-out;
+display:flex;
+gap:20px;
+transition:transform 0.6s ease-in-out;
 }
-
 .arrival-card{
-  min-width:280px;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  background:#fff;
-  text-align:center;
-  flex-shrink:0;
-  cursor:pointer;
+min-width:280px;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+background:#fff;
+text-align:center;
+flex-shrink:0;
+cursor:pointer;
+transition:.3s;
 }
-
+.arrival-card:hover{
+transform:translateY(-8px);
+}
 .arrival-card img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
+width:100%;
+height:320px;
+object-fit:cover;
 }
-
 .arrival-card h3{
-  margin:15px 0;
+margin:15px 0;
+font-weight:600;
 }
-
 .arrival-card button{
-  margin-bottom:15px;
-  padding:10px 20px;
-  background:#000;
-  color:white;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
+margin-bottom:18px;
+padding:10px 25px;
+background:var(--dark);
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:.3s;
 }
-
 .arrival-card button:hover{
-  background:#ff4d88;
+background:var(--primary);
 }
-  @media(max-width:768px){
-  .arrival-card{
-    min-width:90%;
-    margin-right:10px;
-  }
+@media(max-width:768px){
+.arrival-card{
+min-width:90%;
+margin-right:10px;
+}
 }
 
 /* PRODUCTS */
 .products{
-  padding:80px 20px;
-  max-width:1200px;
-  margin:auto;
+padding:90px 20px;
+max-width:1200px;
+margin:auto;
 }
-
-.products h2{text-align:center;margin-bottom:50px;}
-
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:35px;
 }
-
 .card{
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  background:#fff;
-  text-align:center;
-  padding-bottom:20px;
-  transition:0.3s;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+background:#fff;
+text-align:center;
+padding-bottom:25px;
+transition:.3s;
 }
-
 .card:hover{
-  transform:translateY(-6px);
+transform:translateY(-8px);
 }
-
 .card img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
+width:100%;
+height:320px;
+object-fit:cover;
 }
-
-.card h3{margin:15px 0 5px;}
-.card p{color:#ff4d88;font-weight:bold;}
-
+.card h3{
+margin:18px 0 6px;
+font-weight:600;
+}
+.card p{
+color:var(--primary);
+font-weight:700;
+}
 .card button{
-  margin-top:10px;
-  padding:10px 20px;
-  background:#000;
-  color:white;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
+margin-top:12px;
+padding:10px 25px;
+background:var(--dark);
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:.3s;
 }
-
 .card button:hover{
-  background:#ff4d88;
+background:var(--primary);
 }
 
 /* ABOUT */
 .section{
-  padding:80px 20px;
-  text-align:center;
-  background:#fafafa;
+padding:90px 20px;
+text-align:center;
+background:var(--light);
 }
-.section h2{margin-bottom:25px;}
 .section p{
-  max-width:800px;
-  margin:10px auto;
-  line-height:1.7;
-  color:#444;
+max-width:850px;
+margin:15px auto;
+line-height:1.8;
+color:#444;
 }
-
-/* WHY */
-.why{
-  padding:80px 20px;
-  background:#fff0f5;
-  text-align:center;
-}
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:30px;
-  max-width:1000px;
-  margin:auto;
-}
-.why-box{
-  padding:30px;
-  background:white;
-  border-radius:15px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-.why-box h3{margin-bottom:10px;color:#ff4d88;}
 
 /* FOOTER */
 footer{
-  text-align:center;
-  padding:25px;
-  background:black;
-  color:white;
-}
-
-/* MODAL */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.9);
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  z-index:999;
-}
-.modal img{
-  max-width:90%;
-  max-height:70%;
-}
-.modal-controls{
-  margin-top:20px;
-}
-.modal button{
-  padding:10px 20px;
-  margin:5px;
-  border:none;
-  border-radius:20px;
-  background:#ff4d88;
-  color:white;
-  cursor:pointer;
+text-align:center;
+padding:30px;
+background:#111;
+color:white;
+font-size:14px;
 }
 </style>
 </head>
@@ -250,13 +253,14 @@ footer{
 <a href="#products"><button>Explore Collection</button></a>
 </section>
 
-<!-- ================= NEW ARRIVALS ================= -->
-
+<!-- NEW ARRIVALS -->
 <section class="new-arrivals">
 <h2>✨ New Arrivals</h2>
 
 <div class="slider">
 <div class="slider-track">
+
+<!-- SAME 6 CARDS SAFE -->
 
 <div class="arrival-card" onclick="openGallery(['na1-1.jpg','na1-2.jpg'])">
 <img src="na1-1.jpg">

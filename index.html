@@ -50,6 +50,8 @@ font-size:30px;
 margin-bottom:40px;
 }
 
+/* HERO */
+
 .hero{
 height:90vh;
 background:url("hero.jpg") center/cover no-repeat;
@@ -100,14 +102,12 @@ object-fit:cover;
 border-radius:15px;
 }
 
-/* SLIDER FIXED */
+/* NEW ARRIVAL SLIDER */
 
 .slider{
-width:100%;
 max-width:1200px;
 margin:auto;
 overflow:hidden;
-position:relative;
 }
 
 .slides{
@@ -117,6 +117,7 @@ transition:0.6s ease;
 
 .slide{
 min-width:100%;
+text-align:center;
 cursor:pointer;
 }
 
@@ -131,6 +132,7 @@ display:none;
 .slide img.active{
 display:block;
 }
+
 /* PRODUCT COLOR SWITCH */
 
 .product img{
@@ -172,7 +174,6 @@ background:#111;
 color:white;
 padding:25px;
 text-align:center;
-color:white;
 }
 
 @media(max-width:768px){
@@ -195,45 +196,39 @@ font-size:35px;
 <p>Confidence begins underneath</p>
 </section>
 
-<!-- NEW ARRIVALS -->
+<!-- ================= NEW ARRIVALS ================= -->
 
 <section class="soft">
 <h2>New Arrivals</h2>
 
 <div class="slider">
-<div class="slides">
+<div class="slides" id="newArrivalSlides">
 
-<!-- STYLE 1 -->
 <div class="slide product">
 <img src="na1-1.jpg" class="active">
 <img src="na1-2.jpg">
 </div>
 
-<!-- STYLE 2 -->
 <div class="slide product">
 <img src="na2-1.jpg" class="active">
 <img src="na2-2.jpg">
 </div>
 
-<!-- STYLE 3 -->
 <div class="slide product">
 <img src="na3-1.jpg" class="active">
 <img src="na3-2.jpg">
 </div>
 
-<!-- STYLE 4 -->
 <div class="slide product">
 <img src="na4-1.jpg" class="active">
 <img src="na4-2.jpg">
 </div>
 
-<!-- STYLE 5 -->
 <div class="slide product">
 <img src="na5-1.jpg" class="active">
 <img src="na5-2.jpg">
 </div>
 
-<!-- STYLE 6 -->
 <div class="slide product">
 <img src="na6-1.jpg" class="active">
 <img src="na6-2.jpg">
@@ -243,10 +238,12 @@ font-size:35px;
 </div>
 
 </section>
-<!-- PRODUCTS -->
+
+<!-- ================= PRODUCTS ================= -->
 
 <section>
 <h2>Our Collection</h2>
+
 <div class="grid">
 
 <div class="card product">
@@ -299,7 +296,7 @@ font-size:35px;
 </div>
 </section>
 
-<!-- WHY CHOOSE -->
+<!-- WHY -->
 
 <section class="soft">
 <h2>Why Choose Veidahi</h2>
@@ -314,7 +311,7 @@ font-size:35px;
 
 <section>
 <h2>About Us</h2>
-<p>Veidahi Intimates is a Delhi based luxury lingerie and western daily wear brand crafted for modern women.</p>
+<p>Veidahi Intimates is a Delhi based luxury lingerie brand crafted for modern women.</p>
 </section>
 
 <!-- REVIEWS -->
@@ -322,7 +319,7 @@ font-size:35px;
 <section class="soft">
 <h2>Customer Reviews</h2>
 <div class="grid">
-<div class="review"><p>"Fabric quality is amazing and so comfortable."</p><h4>Riya – Delhi</h4></div>
+<div class="review"><p>"Fabric quality is amazing."</p><h4>Riya – Delhi</h4></div>
 <div class="review"><p>"Premium feel at affordable price."</p><h4>Ananya – Mumbai</h4></div>
 <div class="review"><p>"Perfect fitting and elegant design."</p><h4>Sneha – Jaipur</h4></div>
 </div>
@@ -332,12 +329,14 @@ font-size:35px;
 © 2026 Veidahi Intimates | Delhi
 </footer>
 
+<!-- ================= JS FIX ================= -->
+
 <script>
 
-/* AUTO SLIDER */
+/* AUTO SLIDER FOR NEW ARRIVALS */
 
-let slidesContainer = document.querySelector('.slides');
-let slides = document.querySelectorAll('.slide');
+let slidesContainer = document.getElementById("newArrivalSlides");
+let slides = document.querySelectorAll("#newArrivalSlides .slide");
 let index = 0;
 
 function autoSlide(){
@@ -348,13 +347,13 @@ function autoSlide(){
 setInterval(autoSlide,3000);
 
 
-/* CLICK TO CHANGE IMAGE INSIDE EACH STYLE */
+/* CLICK TO CHANGE IMAGE IN PRODUCT */
 
-document.querySelectorAll('.slide').forEach(slide=>{
-    let images = slide.querySelectorAll('img');
+document.querySelectorAll('.product').forEach(product=>{
+    let images = product.querySelectorAll('img');
     let i = 0;
 
-    slide.addEventListener('click',()=>{
+    product.addEventListener('click',()=>{
         images[i].classList.remove('active');
         i = (i + 1) % images.length;
         images[i].classList.add('active');

@@ -135,6 +135,71 @@ color:white;
 padding:25px;
 text-align:center;
 }
+  /* POPUP DESIGN */
+
+.product-popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.popup-content{
+background:white;
+width:90%;
+max-width:500px;
+padding:25px;
+border-radius:20px;
+position:relative;
+text-align:center;
+}
+
+.popup-main-img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:15px;
+}
+
+.thumb-box img{
+width:60px;
+margin:5px;
+cursor:pointer;
+border-radius:8px;
+}
+
+.close-popup{
+position:absolute;
+top:10px;
+right:15px;
+font-size:22px;
+cursor:pointer;
+}
+
+.cart-btn, .whatsapp-btn{
+margin-top:10px;
+padding:10px;
+border:none;
+width:100%;
+border-radius:10px;
+cursor:pointer;
+}
+
+.cart-btn{
+background:black;
+color:white;
+}
+
+.whatsapp-btn{
+background:#25D366;
+color:white;
+}
 /* NEW ARRIVALS SLIDER */
 
 .arrival-slider{
@@ -453,7 +518,47 @@ text-align:center;
 <div class="review"><p>"Perfect fitting and elegant design."</p><h4>Sneha – Jaipur</h4></div>
 </div>
 </section>
+<!-- PRODUCT POPUP -->
 
+<div class="product-popup" id="productPopup">
+
+  <div class="popup-content">
+
+    <span class="close-popup" onclick="closePopup()">✖</span>
+
+    <!-- IMAGE SECTION -->
+    <img id="mainImage" src="" class="popup-main-img">
+
+    <div id="thumbContainer" class="thumb-box"></div>
+
+    <!-- PRODUCT INFO -->
+    <h2 id="popupName"></h2>
+    <p id="popupPrice"></p>
+    <p id="popupDesc"></p>
+
+    <!-- COLOR -->
+    <label>Color</label>
+    <select id="colorSelect"></select>
+
+    <!-- SIZE -->
+    <label>Size</label>
+    <select id="sizeSelect">
+      <option>S</option>
+      <option>M</option>
+      <option>L</option>
+      <option>XL</option>
+    </select>
+
+    <!-- BUTTONS -->
+    <button class="cart-btn">Add to Cart</button>
+
+    <a id="whatsappBtn" target="_blank">
+      <button class="whatsapp-btn">Order on WhatsApp</button>
+    </a>
+
+  </div>
+
+</div>
 <footer>
 © 2026 Veidahi Intimates | Delhi
 </footer>

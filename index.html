@@ -135,7 +135,23 @@ color:white;
 padding:25px;
 text-align:center;
 }
+/* NEW ARRIVALS MANUAL SLIDER */
 
+.arrival-slider{
+  overflow-x:auto;
+  scroll-behavior:smooth;
+}
+
+.arrival-track{
+  display:flex;
+  gap:20px;
+  padding:10px 0;
+}
+
+.arrival-track .card{
+  min-width:250px;
+  flex-shrink:0;
+}
 @media(max-width:768px){
 .hero h1{
 font-size:35px;
@@ -160,14 +176,19 @@ font-size:35px;
 
 <section class="soft">
 <h2>New Arrivals</h2>
-<div class="grid">
-<div class="card"><img src="na1-1.jpg"></div>
+  
+<div class="arrival-slider">
+<div class="arrival-track">
+
+  <div class="card"><img src="na1-1.jpg"></div>
 <div class="card"><img src="na2-1.jpg"></div>
 <div class="card"><img src="na3-1.jpg"></div>
 <div class="card"><img src="na4-1.jpg"></div>
 <div class="card"><img src="na5-1.jpg"></div>
 <div class="card"><img src="na6-1.jpg"></div>
 </div>
+  </div>
+  
 </section>
 
 <!-- PRODUCTS 1-8 -->

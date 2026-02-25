@@ -130,7 +130,8 @@ text-align:center;
 /* NEW ARRIVAL SLIDER */
 
 .slider{
-overflow:hidden;
+overflow-x:auto;
+scroll-behavior:smooth;
 max-width:1200px;
 margin:auto;
 }
@@ -138,18 +139,11 @@ margin:auto;
 .slides{
 display:flex;
 gap:20px;
-animation:slide 18s linear infinite;
-align-items:stretch;
 }
 
 .slides .card{
 min-width:250px;
 flex-shrink:0;
-}
-
-@keyframes slide{
-0%{transform:translateX(0);}
-100%{transform:translateX(-100%);}
 }
 /* POPUP */
 

@@ -176,7 +176,24 @@ color:white;
 padding:25px;
 text-align:center;
 }
+/* MOBILE FIX FOR NEW ARRIVALS */
 
+@media(max-width:768px){
+
+.slides{
+animation:slideMobile 10s linear infinite;
+}
+
+.slides .card{
+min-width:70%;
+}
+
+@keyframes slideMobile{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
+
+}
 </style>
 </head>
 

@@ -35,11 +35,6 @@ align-items:center;
 box-shadow:0 8px 25px rgba(0,0,0,0.05);
 }
 
-nav h2{
-font-weight:800;
-letter-spacing:2px;
-}
-
 section{
 padding:80px 20px;
 text-align:center;
@@ -65,11 +60,6 @@ text-shadow:0 5px 20px rgba(0,0,0,0.5);
 
 .hero h1{
 font-size:55px;
-font-weight:800;
-}
-
-.hero p{
-margin-top:10px;
 }
 
 /* GRID */
@@ -87,25 +77,21 @@ background:white;
 padding:15px;
 border-radius:20px;
 box-shadow:0 12px 30px rgba(0,0,0,0.08);
-transition:.3s;
 cursor:pointer;
 text-align:center;
 }
 
-.card:hover{
-transform:translateY(-8px);
-}
-
-/* IMAGE SWITCH FIX */
+/* PRODUCT IMAGE */
 
 .product{
 position:relative;
+height:320px;
 }
 
 .product img{
 position:absolute;
 width:100%;
-height:320px;
+height:100%;
 object-fit:cover;
 border-radius:15px;
 opacity:0;
@@ -114,37 +100,48 @@ transition:.4s ease;
 
 .product img.active{
 opacity:1;
-position:relative;
 }
 
-/* SECTION BG */
+/* PRICE + DESC */
 
-.soft{
-background:var(--soft);
+.price{
+font-weight:600;
+margin-top:15px;
 }
 
-/* FEATURES */
+.desc{
+font-size:14px;
+color:#666;
+margin-top:5px;
+}
 
-.feature-box{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-max-width:1000px;
+/* NEW ARRIVAL SLIDER */
+
+.slider{
+overflow:hidden;
+max-width:1200px;
 margin:auto;
 }
 
-.feature{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 8px 25px rgba(0,0,0,0.06);
+.slides{
+display:flex;
+gap:20px;
+animation:slide 30s linear infinite;
 }
 
-.review{
-background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 8px 25px rgba(0,0,0,0.06);
+@keyframes slide{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+.slides .card{
+min-width:250px;
+}
+
+/* BG */
+
+.soft{
+background:var(--soft);
 }
 
 footer{
@@ -152,12 +149,6 @@ background:#111;
 color:white;
 padding:25px;
 text-align:center;
-}
-
-@media(max-width:768px){
-.hero h1{
-font-size:35px;
-}
 }
 
 </style>
@@ -179,38 +170,70 @@ font-size:35px;
 <section class="soft">
 <h2>New Arrivals</h2>
 
-<div class="grid">
+<div class="slider">
+<div class="slides">
 
-<div class="card product">
+<div class="card">
+<div class="product">
 <img src="na1-1.jpg" class="active">
 <img src="na1-2.jpg">
 </div>
+<h3>Lace Charm</h3>
+<p class="price">₹1,899</p>
+<p class="desc">Soft premium lace lingerie set.</p>
+</div>
 
-<div class="card product">
+<div class="card">
+<div class="product">
 <img src="na2-1.jpg" class="active">
 <img src="na2-2.jpg">
 </div>
+<h3>Midnight Glow</h3>
+<p class="price">₹2,099</p>
+<p class="desc">Elegant satin finish with comfort fit.</p>
+</div>
 
-<div class="card product">
+<div class="card">
+<div class="product">
 <img src="na3-1.jpg" class="active">
 <img src="na3-2.jpg">
 </div>
+<h3>Royal Romance</h3>
+<p class="price">₹1,799</p>
+<p class="desc">Luxury lace design.</p>
+</div>
 
-<div class="card product">
+<div class="card">
+<div class="product">
 <img src="na4-1.jpg" class="active">
 <img src="na4-2.jpg">
 </div>
+<h3>Velvet Touch</h3>
+<p class="price">₹2,299</p>
+<p class="desc">Premium soft fabric.</p>
+</div>
 
-<div class="card product">
+<div class="card">
+<div class="product">
 <img src="na5-1.jpg" class="active">
 <img src="na5-2.jpg">
 </div>
+<h3>Scarlet Love</h3>
+<p class="price">₹1,999</p>
+<p class="desc">Bold red luxury set.</p>
+</div>
 
-<div class="card product">
+<div class="card">
+<div class="product">
 <img src="na6-1.jpg" class="active">
 <img src="na6-2.jpg">
 </div>
+<h3>Moonlight Bliss</h3>
+<p class="price">₹2,199</p>
+<p class="desc">Comfort + elegance.</p>
+</div>
 
+</div>
 </div>
 </section>
 
@@ -221,16 +244,26 @@ font-size:35px;
 
 <div class="grid">
 
-<div class="card product">
+<div class="card">
+<div class="product">
 <img src="p1-burgundy-1.jpg" class="active">
 <img src="p1-green-1.jpg">
 <img src="p1-red-1.jpg">
 </div>
+<h3>Luxury Set 1</h3>
+<p class="price">₹1,899</p>
+<p class="desc">Available in Burgundy, Green, Red.</p>
+</div>
 
-<div class="card product">
+<div class="card">
+<div class="product">
 <img src="p2-new-brown-1.jpg" class="active">
 <img src="p2-new-grey-1.jpg">
 <img src="p2-new-red-1.jpg">
+</div>
+<h3>Luxury Set 2</h3>
+<p class="price">₹2,099</p>
+<p class="desc">Available in Brown, Grey, Red.</p>
 </div>
 
 </div>
@@ -241,8 +274,6 @@ font-size:35px;
 </footer>
 
 <script>
-
-/* UNIVERSAL IMAGE SWITCH */
 
 document.querySelectorAll(".product").forEach(product=>{
 

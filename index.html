@@ -455,7 +455,68 @@ display:block;
 </div>
 </div>
 
-<footer>
+<footer> <script>
+
+const popup = document.getElementById("productPopup");
+const mainImage = document.getElementById("mainImage");
+const popupName = document.getElementById("popupName");
+const popupPrice = document.getElementById("popupPrice");
+const thumbContainer = document.getElementById("thumbContainer");
+const colorSelect = document.getElementById("colorSelect");
+const whatsappBtn = document.getElementById("whatsappBtn");
+
+document.querySelectorAll(".grid .card").forEach(card=>{
+
+card.addEventListener("click",()=>{
+
+let name = card.dataset.name;
+let price = card.dataset.price;
+let images = card.dataset.images.split(",");
+
+popupName.innerText = name;
+popupPrice.innerText = price;
+mainImage.src = images[0];
+
+thumbContainer.innerHTML = "";
+colorSelect.innerHTML = "";
+
+images.forEach((img,i)=>{
+
+let thumb = document.createElement("img");
+thumb.src = img;
+thumb.onclick = ()=> mainImage.src = img;
+thumbContainer.appendChild(thumb);
+
+let option = document.createElement("option");
+option.value = img;
+option.text = "Color " + (i+1);
+colorSelect.appendChild(option);
+
+});
+
+colorSelect.onchange = function(){
+mainImage.src = this.value;
+};
+
+whatsappBtn.href = "https://wa.me/91YOURNUMBER?text=I want to order " + name;
+
+popup.style.display = "flex";
+
+});
+
+});
+
+document.querySelector(".close").onclick = ()=>{
+popup.style.display = "none";
+};
+
+window.onclick = function(e){
+if(e.target == popup){
+popup.style.display = "none";
+}
+};
+
+</script>
 © 2026 Veidahi Intimates | Delhi
 </footer>
   /* POPUP STYLE */
@@ -504,5 +565,6 @@ background:#b3003c;
 color:white;
 cursor:pointer;
 }
+  
 </body>
 </html>

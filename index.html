@@ -6,15 +6,49 @@
 <title>Veidahi Intimates | Luxury Lingerie</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-.details{
+.popup{
 display:none;
-margin-top:10px;
-font-size:14px;
-color:#444;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+z-index:999;
 }
 
-.card.active .details{
-display:block;
+.popup-box{
+background:#fff;
+width:90%;
+max-width:900px;
+display:flex;
+padding:20px;
+gap:20px;
+}
+
+.popup-left img{
+width:300px;
+}
+
+.thumbs img{
+width:60px;
+margin:5px;
+cursor:pointer;
+}
+
+.popup-right{
+flex:1;
+}
+
+.buy-btn, .whatsapp-btn{
+margin-top:10px;
+padding:10px 15px;
+border:none;
+background:#b3003c;
+color:white;
+cursor:pointer;
 }
 <style>
 
@@ -287,14 +321,19 @@ display:block;
 
 <!-- 1️⃣ COMBO PACK -->
 <div class="card">
-<div class="product">
+  data-name="Classic Carek"
+  <p class="price">₹229</p>
 <img src="p1-burgundy-1.jpg" class="active">
 <img src="p1-green-1.jpg">
   <img src="p1-red-1.jpg">
+  
+<div class="product">
+  <img src="p1-burgundy-1.jpg"
+    class="active">
 </div>
 <h3>Classic Carek - 3 Set Combo</h3>
 <p class="price">₹229</p>
-
+  </div>
 <div class="details">
 <p><strong>Fabric:</strong> Crafted in our premium Hosiery Cotton-Nylon blend, designed for breathable comfort,
     soft touch feel and flexible stretch that moves with you all day.</p>
@@ -425,14 +464,41 @@ display:block;
 </section>
 <!-- POPUP -->
 
-<div class="product-popup" id="productPopup">
-  <div class="popup-content">
-    <span class="close-popup">&times;</span>
-    <img src="" id="popupImage">
-    <h2 id="popupTitle"></h2>
-    <p id="popupPrice"></p>
-    <p id="popupDesc"></p>
-  </div>
+<!-- PRODUCT POPUP -->
+
+<div class="popup" id="productPopup">
+<div class="popup-box">
+
+<span class="close">&times;</span>
+
+<div class="popup-left">
+<img id="mainImage" src="">
+<div class="thumbs" id="thumbContainer"></div>
+</div>
+
+<div class="popup-right">
+<h2 id="popupName"></h2>
+<p id="popupPrice"></p>
+
+<label>Color:</label>
+<select id="colorSelect"></select>
+
+<label>Size:</label>
+<select>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="buy-btn">Add to Cart</button>
+<a id="whatsappBtn" target="_blank">
+<button class="whatsapp-btn">Order on WhatsApp</button>
+</a>
+
+</div>
+
+</div>
 </div>
 
 <footer>
@@ -458,27 +524,52 @@ images[index].classList.add("active");
 });
 
 
-// POPUP
-const popup = document.getElementById("productPopup");
-const popupImage = document.getElementById("popupImage");
-const popupTitle = document.getElementById("popupTitle");
-const popupPrice = document.getElementById("popupPrice");
-const popupDesc = document.getElementById("popupDesc");
-const closePopup = document.querySelector(".close-popup");
+<script>
 
-document.querySelectorAll(".grid .card").forEach(card=>{
+const popup = document.getElementById("productPopup");
+const mainImage = document.getElementById("mainImage");
+const popupName = document.getElementById("popupName");
+const popupPrice = document.getElementById("popupPrice");
+const thumbContainer = document.getElementById("thumbContainer");
+const colorSelect = document.getElementById("colorSelect");
+const whatsappBtn = document.getElementById("whatsappBtn");
+
+document.querySelectorAll(".card").forEach(card=>{
 
 card.addEventListener("click",()=>{
 
-let img = card.querySelector(".product img.active").src;
-let title = card.querySelector("h3").innerText;
-let price = card.querySelector(".price")?.innerText || "";
-let desc = card.querySelector(".desc")?.innerText || "";
+let name = card.dataset.name;
+let price = card.dataset.price;
+let images = card.dataset.images.split(",");
 
-popupImage.src = img;
-popupTitle.innerText = title;
+popupName.innerText = name;
 popupPrice.innerText = price;
-popupDesc.innerText = desc;
+mainImage.src = images[0];
+
+thumbContainer.innerHTML = "";
+colorSelect.innerHTML = "";
+
+images.forEach((img,i)=>{
+
+// thumbnails
+let thumb = document.createElement("img");
+thumb.src = img;
+thumb.onclick = ()=> mainImage.src = img;
+thumbContainer.appendChild(thumb);
+
+// color option
+let option = document.createElement("option");
+option.value = img;
+option.text = "Color " + (i+1);
+colorSelect.appendChild(option);
+
+});
+
+colorSelect.onchange = function(){
+mainImage.src = this.value;
+};
+
+whatsappBtn.href = "https://wa.me/91YOURNUMBER?text=I want to order " + name;
 
 popup.style.display = "flex";
 
@@ -486,15 +577,15 @@ popup.style.display = "flex";
 
 });
 
-closePopup.addEventListener("click",()=>{
+document.querySelector(".close").onclick = ()=>{
 popup.style.display = "none";
-});
+};
 
-window.addEventListener("click",(e)=>{
-if(e.target === popup){
+window.onclick = function(e){
+if(e.target == popup){
 popup.style.display = "none";
 }
-});
+};
 
 </script>
 <script>

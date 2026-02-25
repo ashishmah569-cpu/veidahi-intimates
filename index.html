@@ -45,8 +45,6 @@ font-size:30px;
 margin-bottom:40px;
 }
 
-/* HERO */
-
 .hero{
 height:90vh;
 background:url("hero.jpg") center/cover no-repeat;
@@ -61,8 +59,6 @@ text-shadow:0 5px 20px rgba(0,0,0,0.5);
 .hero h1{
 font-size:55px;
 }
-
-/* GRID */
 
 .grid{
 display:grid;
@@ -80,8 +76,6 @@ box-shadow:0 12px 30px rgba(0,0,0,0.08);
 cursor:pointer;
 text-align:center;
 }
-
-/* PRODUCT IMAGE */
 
 .product{
 position:relative;
@@ -122,54 +116,6 @@ color:#666;
 margin-top:5px;
 }
 
-/* NEW ARRIVAL SLIDER */
-
-.slider{
-overflow:hidden;
-max-width:1200px;
-margin:auto;
-}
-
-.slides{
-display:flex;
-gap:20px;
-animation:slide 18s linear infinite;
-align-items:stretch;
-}
-
-.slides .card{
-min-width:250px;
-flex-shrink:0;
-}
-
-@keyframes slide{
-0%{transform:translateX(0);}
-100%{transform:translateX(-100%);}
-}
-
-/* MOBILE VERSION */
-
-@media(max-width:768px){
-
-.slides{
-animation:none;
-overflow-x:auto;
-scroll-snap-type:x mandatory;
-}
-
-.slides::-webkit-scrollbar{
-display:none;
-}
-
-.slides .card{
-min-width:75%;
-scroll-snap-align:center;
-}
-
-}
-
-/* BG */
-
 .soft{
 background:var(--soft);
 }
@@ -179,6 +125,45 @@ background:#111;
 color:white;
 padding:25px;
 text-align:center;
+}
+
+/* POPUP */
+
+.product-popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.popup-content{
+background:white;
+padding:30px;
+border-radius:20px;
+width:90%;
+max-width:400px;
+text-align:center;
+position:relative;
+}
+
+.popup-content img{
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+.close-popup{
+position:absolute;
+top:10px;
+right:15px;
+font-size:22px;
+cursor:pointer;
 }
 
 </style>
@@ -194,74 +179,6 @@ text-align:center;
 <h1>Luxury Lingerie</h1>
 <p>Confidence begins underneath</p>
 </section>
-
-<!-- NEW ARRIVALS -->
-
-<section class="soft">
-<h2>New Arrivals</h2>
-
-<div class="slider">
-<div class="slides">
-
-<div class="card">
-<div class="product">
-<img src="na1-1.jpg" class="active">
-<img src="na1-2.jpg">
-</div>
-<h3>Sports Bra</h3>
-<p class="desc">Soft premium Bra.</p>
-</div>
-
-<div class="card">
-<div class="product">
-<img src="na2-1.jpg" class="active">
-<img src="na2-2.jpg">
-</div>
-<h3>Gymer Bra</h3>
-<p class="desc">Elegant comfort fit.</p>
-</div>
-
-<div class="card">
-<div class="product">
-<img src="na3-1.jpg" class="active">
-<img src="na3-2.jpg">
-</div>
-<h3>Runing Sports Bra</h3>
-<p class="desc">Luxury Feel design.</p>
-</div>
-
-<div class="card">
-<div class="product">
-<img src="na4-1.jpg" class="active">
-<img src="na4-2.jpg">
-</div>
-<h3>Bold Classic Look</h3>
-<p class="desc">Premium soft fabric.</p>
-</div>
-
-<div class="card">
-<div class="product">
-<img src="na5-1.jpg" class="active">
-<img src="na5-2.jpg">
-</div>
-<h3>Bold Classic Look</h3>
-<p class="desc">Bold luxury.</p>
-</div>
-
-<div class="card">
-<div class="product">
-<img src="na6-1.jpg" class="active">
-<img src="na6-2.jpg">
-</div>
-<h3>Play with Naughty</h3>
-<p class="desc">Comfort + elegance.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- PRODUCTS -->
 
 <section>
 <h2>Our Collection</h2>
@@ -293,29 +210,72 @@ text-align:center;
 </div>
 </section>
 
+<!-- POPUP -->
+
+<div class="product-popup" id="productPopup">
+  <div class="popup-content">
+    <span class="close-popup">&times;</span>
+    <img src="" id="popupImage">
+    <h2 id="popupTitle"></h2>
+    <p id="popupPrice"></p>
+    <p id="popupDesc"></p>
+  </div>
+</div>
+
 <footer>
 © 2026 Veidahi Intimates | Delhi
 </footer>
 
 <script>
 
+// IMAGE SWITCH
 document.querySelectorAll(".card .product").forEach(product=>{
-
 let images = product.querySelectorAll("img");
 let index = 0;
 
 product.addEventListener("click",(e)=>{
-
 e.stopPropagation();
-
 images[index].classList.remove("active");
 index = (index + 1) % images.length;
 images[index].classList.add("active");
-
+});
 });
 
+// POPUP
+const popup = document.getElementById("productPopup");
+const popupImage = document.getElementById("popupImage");
+const popupTitle = document.getElementById("popupTitle");
+const popupPrice = document.getElementById("popupPrice");
+const popupDesc = document.getElementById("popupDesc");
+const closePopup = document.querySelector(".close-popup");
+
+document.querySelectorAll(".grid .card").forEach(card=>{
+card.addEventListener("click",()=>{
+let img = card.querySelector(".product img.active").src;
+let title = card.querySelector("h3").innerText;
+let price = card.querySelector(".price").innerText;
+let desc = card.querySelector(".desc").innerText;
+
+popupImage.src = img;
+popupTitle.innerText = title;
+popupPrice.innerText = price;
+popupDesc.innerText = desc;
+
+popup.style.display = "flex";
+});
+});
+
+closePopup.addEventListener("click",()=>{
+popup.style.display = "none";
+});
+
+window.addEventListener("click",(e)=>{
+if(e.target === popup){
+popup.style.display = "none";
+}
 });
 
 </script>
+
 </body>
 </html>

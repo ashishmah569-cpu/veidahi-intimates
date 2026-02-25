@@ -4,52 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Veidahi Intimates | Luxury Lingerie</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-.popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-justify-content:center;
-align-items:center;
-z-index:999;
-}
-
-.popup-box{
-background:#fff;
-width:90%;
-max-width:900px;
-display:flex;
-padding:20px;
-gap:20px;
-}
-
-.popup-left img{
-width:300px;
-}
-
-.thumbs img{
-width:60px;
-margin:5px;
-cursor:pointer;
-}
-
-.popup-right{
-flex:1;
-}
-
-.buy-btn, .whatsapp-btn{
-margin-top:10px;
-padding:10px 15px;
-border:none;
-background:#b3003c;
-color:white;
-cursor:pointer;
-}
 <style>
 
 :root{
@@ -321,8 +275,8 @@ display:block;
 
 <!-- 1️⃣ COMBO PACK -->
 <div class="card">
-  data-name="Classic Carek"
-  <p class="price">₹229</p>
+  data-name="Classic Carek - 3 set combo"
+  <p class="price">₹229"
 <img src="p1-burgundy-1.jpg" class="active">
 <img src="p1-green-1.jpg">
   <img src="p1-red-1.jpg">
@@ -504,27 +458,51 @@ display:block;
 <footer>
 © 2026 Veidahi Intimates | Delhi
 </footer>
-  <script>
+  /* POPUP STYLE */
 
-// IMAGE CHANGE
-document.querySelectorAll(".card .product").forEach(product=>{
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
 
-let images = product.querySelectorAll("img");
-let index = 0;
+.popup-box{
+background:#fff;
+width:90%;
+max-width:900px;
+display:flex;
+padding:20px;
+gap:20px;
+}
 
-product.addEventListener("click",(e)=>{
-e.stopPropagation();
+.popup-left img{
+width:300px;
+}
 
-images[index].classList.remove("active");
-index = (index + 1) % images.length;
-images[index].classList.add("active");
+.thumbs img{
+width:60px;
+margin:5px;
+cursor:pointer;
+}
 
-});
+.popup-right{
+flex:1;
+}
 
-});
-
-
-<script>
-
+.buy-btn, .whatsapp-btn{
+margin-top:10px;
+padding:10px 15px;
+border:none;
+background:#b3003c;
+color:white;
+cursor:pointer;
+}
 </body>
 </html>

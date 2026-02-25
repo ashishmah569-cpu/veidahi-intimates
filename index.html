@@ -6,7 +6,16 @@
 <title>Veidahi Intimates | Luxury Lingerie</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+.details{
+display:none;
+margin-top:10px;
+font-size:14px;
+color:#444;
+}
 
+.card.active .details{
+display:block;
+}
 <style>
 
 :root{
@@ -495,5 +504,20 @@ card.classList.toggle("active");
 });
 });
 </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function(){
+
+document.querySelectorAll(".card").forEach(function(card){
+card.addEventListener("click", function(e){
+
+// image click pe details na toggle ho
+if(e.target.tagName === "IMG") return;
+
+card.classList.toggle("active");
+
+});
+});
+
+});
 </body>
 </html>

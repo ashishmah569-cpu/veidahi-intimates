@@ -159,6 +159,23 @@ font-size:35px;
 }
 
 </style>
+  .mini-slider{
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+}
+
+.mini-track{
+  display:flex;
+}
+
+.mini-track img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:15px;
+  flex-shrink:0;
+  scroll-snap-align:start;
+}
 </head>
 
 <body>
@@ -180,15 +197,20 @@ font-size:35px;
 <div class="arrival-slider">
 <div class="arrival-track">
 
-  <!-- Product 1 -->
-  <div class="card">
-    <img id="na1" src="na1-1.jpg">
-    <h3>Velvet Romance Set</h3>
-    <div style="margin-top:8px;">
-      <button onclick="changeNA1('na1-1.jpg')">1</button>
-      <button onclick="changeNA1('na1-2.jpg')">2</button>
-      <button onclick="changeNA1('na1-3.jpg')">3</button>
+ <!-- Product 1 -->
+<div class="card">
+  
+  <div class="mini-slider">
+    <div class="mini-track">
+      <img src="na1-1.jpg">
+      <img src="na1-2.jpg">
+      <img src="na1-3.jpg">
     </div>
+  </div>
+
+  <h3>Velvet Romance Set</h3>
+
+</div>
   </div>
 
   <!-- Product 2 -->

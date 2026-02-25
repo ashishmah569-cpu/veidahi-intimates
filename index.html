@@ -146,7 +146,7 @@ margin:auto;
 .slides{
 display:flex;
 gap:20px;
-animation:slide 12s linear infinite;
+animation:slide 18s linear infinite;
 align-items:stretch;
 }
 
@@ -157,7 +157,7 @@ flex-shrink:0;
 
 @keyframes slide{
 0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+100%{transform:translateX(-100%);}
 }
 
 .slides .card{
@@ -175,24 +175,6 @@ background:#111;
 color:white;
 padding:25px;
 text-align:center;
-}
-/* MOBILE FIX FOR NEW ARRIVALS */
-
-@media(max-width:768px){
-
-.slides{
-animation:slideMobile 10s linear infinite;
-}
-
-.slides .card{
-min-width:70%;
-}
-
-@keyframes slideMobile{
-0%{transform:translateX(0);}
-100%{transform:translateX(-100%);}
-}
-
 }
 </style>
 </head>
@@ -216,8 +198,65 @@ min-width:70%;
 <div class="slider">
 <div class="slides">
 
+<!-- ORIGINAL 6 -->
+
 <div class="card">
-  
+<div class="product">
+<img src="na1-1.jpg" class="active">
+<img src="na1-2.jpg">
+</div>
+<h3>Sports Bra</h3>
+<p class="desc">Soft premium Bra.</p>
+</div>
+
+<div class="card">
+<div class="product">
+<img src="na2-1.jpg" class="active">
+<img src="na2-2.jpg">
+</div>
+<h3>Gymer Bra</h3>
+<p class="desc">Elegant comfort fit.</p>
+</div>
+
+<div class="card">
+<div class="product">
+<img src="na3-1.jpg" class="active">
+<img src="na3-2.jpg">
+</div>
+<h3>Runing Sports Bra</h3>
+<p class="desc">Luxury Feel design.</p>
+</div>
+
+<div class="card">
+<div class="product">
+<img src="na4-1.jpg" class="active">
+<img src="na4-2.jpg">
+</div>
+<h3>Bold Classic Look</h3>
+<p class="desc">Premium soft fabric.</p>
+</div>
+
+<div class="card">
+<div class="product">
+<img src="na5-1.jpg" class="active">
+<img src="na5-2.jpg">
+</div>
+<h3>Bold Classic Look</h3>
+<p class="desc">Bold luxury.</p>
+</div>
+
+<div class="card">
+<div class="product">
+<img src="na6-1.jpg" class="active">
+<img src="na6-2.jpg">
+</div>
+<h3>Play with Naughty</h3>
+<p class="desc">Comfort + elegance.</p>
+</div>
+
+<!-- DUPLICATE SAME 6 AGAIN FOR INFINITE EFFECT -->
+
+<div class="card">
 <div class="product">
 <img src="na1-1.jpg" class="active">
 <img src="na1-2.jpg">

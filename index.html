@@ -113,19 +113,6 @@ font-size:18px;
 
 .price{
 font-weight:600;
-margin-top:5px;
-}
-
-.desc{
-font-size:14px;
-color:#666;
-margin-top:5px;
-}
-
-/* PRICE + DESC */
-
-.price{
-font-weight:600;
 margin-top:15px;
 }
 
@@ -160,8 +147,25 @@ flex-shrink:0;
 100%{transform:translateX(-100%);}
 }
 
+/* MOBILE VERSION */
+
+@media(max-width:768px){
+
+.slides{
+animation:none;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+}
+
+.slides::-webkit-scrollbar{
+display:none;
+}
+
 .slides .card{
-min-width:250px;
+min-width:75%;
+scroll-snap-align:center;
+}
+
 }
 
 /* BG */
@@ -176,6 +180,7 @@ color:white;
 padding:25px;
 text-align:center;
 }
+
 </style>
 </head>
 
@@ -197,64 +202,6 @@ text-align:center;
 
 <div class="slider">
 <div class="slides">
-
-<!-- ORIGINAL 6 -->
-
-<div class="card">
-<div class="product">
-<img src="na1-1.jpg" class="active">
-<img src="na1-2.jpg">
-</div>
-<h3>Sports Bra</h3>
-<p class="desc">Soft premium Bra.</p>
-</div>
-
-<div class="card">
-<div class="product">
-<img src="na2-1.jpg" class="active">
-<img src="na2-2.jpg">
-</div>
-<h3>Gymer Bra</h3>
-<p class="desc">Elegant comfort fit.</p>
-</div>
-
-<div class="card">
-<div class="product">
-<img src="na3-1.jpg" class="active">
-<img src="na3-2.jpg">
-</div>
-<h3>Runing Sports Bra</h3>
-<p class="desc">Luxury Feel design.</p>
-</div>
-
-<div class="card">
-<div class="product">
-<img src="na4-1.jpg" class="active">
-<img src="na4-2.jpg">
-</div>
-<h3>Bold Classic Look</h3>
-<p class="desc">Premium soft fabric.</p>
-</div>
-
-<div class="card">
-<div class="product">
-<img src="na5-1.jpg" class="active">
-<img src="na5-2.jpg">
-</div>
-<h3>Bold Classic Look</h3>
-<p class="desc">Bold luxury.</p>
-</div>
-
-<div class="card">
-<div class="product">
-<img src="na6-1.jpg" class="active">
-<img src="na6-2.jpg">
-</div>
-<h3>Play with Naughty</h3>
-<p class="desc">Comfort + elegance.</p>
-</div>
-
-<!-- DUPLICATE SAME 6 AGAIN FOR INFINITE EFFECT -->
 
 <div class="card">
 <div class="product">

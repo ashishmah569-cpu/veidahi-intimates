@@ -85,21 +85,41 @@ text-align:center;
 
 .product{
 position:relative;
+width:100%;
 height:320px;
+overflow:hidden;
+border-radius:15px;
 }
 
 .product img{
-position:absolute;
 width:100%;
 height:100%;
 object-fit:cover;
-border-radius:15px;
+position:absolute;
+top:0;
+left:0;
 opacity:0;
-transition:.4s ease;
+transition:0.4s ease;
 }
 
 .product img.active{
 opacity:1;
+}
+
+.card h3{
+margin-top:15px;
+font-size:18px;
+}
+
+.price{
+font-weight:600;
+margin-top:5px;
+}
+
+.desc{
+font-size:14px;
+color:#666;
+margin-top:5px;
 }
 
 /* PRICE + DESC */
@@ -126,7 +146,13 @@ margin:auto;
 .slides{
 display:flex;
 gap:20px;
-animation:slide 8s linear infinite;
+animation:slide 12s linear infinite;
+align-items:stretch;
+}
+
+.slides .card{
+min-width:250px;
+flex-shrink:0;
 }
 
 @keyframes slide{
@@ -174,6 +200,7 @@ text-align:center;
 <div class="slides">
 
 <div class="card">
+  
 <div class="product">
 <img src="na1-1.jpg" class="active">
 <img src="na1-2.jpg">

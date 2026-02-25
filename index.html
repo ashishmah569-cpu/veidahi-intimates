@@ -149,17 +149,14 @@ text-align:center;
 }
 
 .arrival-track .card{
-  min-width:250px;
+  min-width:260px;
   flex-shrink:0;
 }
-@media(max-width:768px){
-.hero h1{
-font-size:35px;
-}
-}
 
-</style>
-  .mini-slider{
+/* MINI SLIDER INSIDE CARD */
+
+.mini-slider{
+  width:100%;
   overflow-x:auto;
   scroll-snap-type:x mandatory;
 }
@@ -169,14 +166,12 @@ font-size:35px;
 }
 
 .mini-track img{
-  width:100%;
+  min-width:100%;
   height:320px;
   object-fit:cover;
   border-radius:15px;
-  flex-shrink:0;
   scroll-snap-align:start;
-}
-</head>
+}</head>
 
 <body>
 
@@ -193,24 +188,20 @@ font-size:35px;
 
 <section class="soft">
 <h2>New Arrivals</h2>
-  
+
 <div class="arrival-slider">
 <div class="arrival-track">
 
- <!-- Product 1 -->
-<div class="card">
-  
-  <div class="mini-slider">
-    <div class="mini-track">
-      <img src="na1-1.jpg">
-      <img src="na1-2.jpg">
-      <img src="na1-3.jpg">
+  <!-- Product 1 -->
+  <div class="card">
+    <div class="mini-slider">
+      <div class="mini-track">
+        <img src="na1-1.jpg">
+        <img src="na1-2.jpg">
+        <img src="na1-3.jpg">
+      </div>
     </div>
-  </div>
-
-  <h3>Velvet Romance Set</h3>
-
-</div>
+    <h3>Velvet Romance Set</h3>
   </div>
 
   <!-- Product 2 -->
@@ -245,7 +236,7 @@ font-size:35px;
 
 </div>
 </div>
-  
+
 </section>
 
 <!-- PRODUCTS 1-8 -->
@@ -305,10 +296,6 @@ font-size:35px;
 <footer>
 © 2026 Veidahi Intimates | Delhi
 </footer>
-<script>
-function changeNA1(image){
-  document.getElementById("na1").src = image;
-}
-</script>
+
 </body>
 </html>

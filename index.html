@@ -324,23 +324,103 @@ text-align:center;
 
 <section>
 <h2>Our Collection</h2>
+
 <div class="grid">
 
-<div class="card"><img src="p1-burgundy-1.jpg"><img src="p1-green-1.jpg"><img src="p1-red-1.jpg"></div>
+<!-- PRODUCT 1 -->
+<div class="card" onclick="openProduct([
+'p1-burgundy-1.jpg',
+'p1-green-1.jpg',
+'p1-red-1.jpg'
+],'Luxury Set 1','₹1899','Available in Burgundy, Green, Red')">
 
-<div class="card"><img src="p2-new-brown-1.jpg"><img src="p2-new-grey-1.jpg"><img src="p2-new-red-1.jpg"></div>
+<img src="p1-burgundy-1.jpg">
+<h3>Luxury Set 1</h3>
+<p class="price">₹1,899</p>
+</div>
 
-<div class="card"><img src="p3-forest green-1.jpg"><img src="p3-indigo-1.jpg"></div>
+<!-- PRODUCT 2 -->
+<div class="card" onclick="openProduct([
+'p2-new-brown-1.jpg',
+'p2-new-grey-1.jpg',
+'p2-new-red-1.jpg'
+],'Luxury Set 2','₹2099','Available in Brown, Grey, Red')">
 
-<div class="card"><img src="p4-beby pink-1.jpg"><img src="p4-moon red-1.jpg"><img src="p4-teal-1.jpg"></div>
+<img src="p2-new-brown-1.jpg">
+<h3>Luxury Set 2</h3>
+<p class="price">₹2,099</p>
+</div>
 
-<div class="card"><img src="p5-navy-1.jpg"><img src="p5-olive-1.jpg"><img src="p5-sage-1.jpg"></div>
+<!-- PRODUCT 3 -->
+<div class="card" onclick="openProduct([
+'p3-forest green-1.jpg',
+'p3-indigo-1.jpg'
+],'Curve Set','₹1999','Premium Fabric')">
 
-<div class="card"><img src="p6-aqua-1.jpg"><img src="p6-fuchsia-1.jpg"><img src="p6-red-1.jpg"></div>
+<img src="p3-forest green-1.jpg">
+<h3>Curve Set</h3>
+<p class="price">₹1,999</p>
+</div>
 
-<div class="card"><img src="p7-chocolate-1.jpg"><img src="p7-grey-1.jpg"><img src="p7-merhoon-1.jpg"></div>
+<!-- PRODUCT 4 -->
+<div class="card" onclick="openProduct([
+'p4-beby pink-1.jpg',
+'p4-moon red-1.jpg',
+'p4-teal-1.jpg'
+],'Cloud Soft','₹1399','Soft & Comfortable')">
 
-<div class="card"><img src="p8-deep sea-1.jpg"><img src="p8-merhoon-1.jpg"><img src="p8-pink-1.jpg"></div>
+<img src="p4-beby pink-1.jpg">
+<h3>Cloud Soft</h3>
+<p class="price">₹1,399</p>
+</div>
+
+<!-- PRODUCT 5 -->
+<div class="card" onclick="openProduct([
+'p5-navy-1.jpg',
+'p5-olive-1.jpg',
+'p5-sage-1.jpg'
+],'Premium Style','₹1599','Daily Wear Luxury')">
+
+<img src="p5-navy-1.jpg">
+<h3>Premium Style</h3>
+<p class="price">₹1,599</p>
+</div>
+
+<!-- PRODUCT 6 -->
+<div class="card" onclick="openProduct([
+'p6-aqua-1.jpg',
+'p6-fuchsia-1.jpg',
+'p6-red-1.jpg'
+],'Soft Fit','₹1199','Best Comfort')">
+
+<img src="p6-aqua-1.jpg">
+<h3>Soft Fit</h3>
+<p class="price">₹1,199</p>
+</div>
+
+<!-- PRODUCT 7 -->
+<div class="card" onclick="openProduct([
+'p7-chocolate-1.jpg',
+'p7-grey-1.jpg',
+'p7-merhoon-1.jpg'
+],'Luxury Feel','₹1499','Premium Look')">
+
+<img src="p7-chocolate-1.jpg">
+<h3>Luxury Feel</h3>
+<p class="price">₹1,499</p>
+</div>
+
+<!-- PRODUCT 8 -->
+<div class="card" onclick="openProduct([
+'p8-deep sea-1.jpg',
+'p8-merhoon-1.jpg',
+'p8-pink-1.jpg'
+],'Pure Comfort','₹1299','Elegant Design')">
+
+<img src="p8-deep sea-1.jpg">
+<h3>Pure Comfort</h3>
+<p class="price">₹1,299</p>
+</div>
 
 </div>
 </section>
@@ -402,6 +482,36 @@ function openPopup(images){
 popup.addEventListener("click",()=>{
   popup.style.display = "none";
 });
+
+</script>
+  <script>
+
+function openProduct(images,name,price,desc){
+
+let popup = document.getElementById("productPopup");
+let mainImage = document.getElementById("mainImage");
+let title = document.getElementById("popupName");
+let popupPrice = document.getElementById("popupPrice");
+let popupDesc = document.getElementById("popupDesc");
+let thumbBox = document.getElementById("thumbContainer");
+
+title.innerText = name;
+popupPrice.innerText = price;
+popupDesc.innerText = desc;
+
+mainImage.src = images[0];
+
+thumbBox.innerHTML = "";
+
+images.forEach(img=>{
+let thumb = document.createElement("img");
+thumb.src = img;
+thumb.onclick = ()=> mainImage.src = img;
+thumbBox.appendChild(thumb);
+});
+
+popup.style.display = "flex";
+}
 
 </script>
 </body>

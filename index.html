@@ -126,7 +126,31 @@ color:white;
 padding:25px;
 text-align:center;
 }
+  
+/* NEW ARRIVAL SLIDER */
 
+.slider{
+overflow:hidden;
+max-width:1200px;
+margin:auto;
+}
+
+.slides{
+display:flex;
+gap:20px;
+animation:slide 18s linear infinite;
+align-items:stretch;
+}
+
+.slides .card{
+min-width:250px;
+flex-shrink:0;
+}
+
+@keyframes slide{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
 /* POPUP */
 
 .product-popup{
@@ -179,7 +203,71 @@ cursor:pointer;
 <h1>Luxury Lingerie</h1>
 <p>Confidence begins underneath</p>
 </section>
+<!-- NEW ARRIVALS -->
 
+<section class="soft">
+<h2>New Arrivals</h2>
+
+<div class="slider">
+<div class="slides">
+
+<div class="card">
+<div class="product">
+<img src="na1-1.jpg" class="active">
+<img src="na1-2.jpg">
+</div>
+<h3>Sports Bra</h3>
+<p class="desc">Soft premium Bra.</p>
+</div>
+
+<div class="card">
+<div class="product">
+<img src="na2-1.jpg" class="active">
+<img src="na2-2.jpg">
+</div>
+<h3>Gymer Bra</h3>
+<p class="desc">Elegant comfort fit.</p>
+</div>
+
+<div class="card">
+<div class="product">
+<img src="na3-1.jpg" class="active">
+<img src="na3-2.jpg">
+</div>
+<h3>Running Sports Bra</h3>
+<p class="desc">Luxury feel design.</p>
+</div>
+
+<div class="card">
+<div class="product">
+<img src="na4-1.jpg" class="active">
+<img src="na4-2.jpg">
+</div>
+<h3>Bold Classic Look</h3>
+<p class="desc">Premium soft fabric.</p>
+</div>
+
+<div class="card">
+<div class="product">
+<img src="na5-1.jpg" class="active">
+<img src="na5-2.jpg">
+</div>
+<h3>Bold Luxury Set</h3>
+<p class="desc">Bold luxury.</p>
+</div>
+
+<div class="card">
+<div class="product">
+<img src="na6-1.jpg" class="active">
+<img src="na6-2.jpg">
+</div>
+<h3>Play with Naughty</h3>
+<p class="desc">Comfort + elegance.</p>
+</div>
+
+</div>
+</div>
+</section>
 <section>
 <h2>Our Collection</h2>
 
@@ -225,21 +313,25 @@ cursor:pointer;
 <footer>
 © 2026 Veidahi Intimates | Delhi
 </footer>
+  <script>
 
-<script>
-
-// IMAGE SWITCH
+// IMAGE CHANGE
 document.querySelectorAll(".card .product").forEach(product=>{
+
 let images = product.querySelectorAll("img");
 let index = 0;
 
 product.addEventListener("click",(e)=>{
 e.stopPropagation();
+
 images[index].classList.remove("active");
 index = (index + 1) % images.length;
 images[index].classList.add("active");
+
 });
+
 });
+
 
 // POPUP
 const popup = document.getElementById("productPopup");
@@ -250,11 +342,13 @@ const popupDesc = document.getElementById("popupDesc");
 const closePopup = document.querySelector(".close-popup");
 
 document.querySelectorAll(".grid .card").forEach(card=>{
+
 card.addEventListener("click",()=>{
+
 let img = card.querySelector(".product img.active").src;
 let title = card.querySelector("h3").innerText;
-let price = card.querySelector(".price").innerText;
-let desc = card.querySelector(".desc").innerText;
+let price = card.querySelector(".price")?.innerText || "";
+let desc = card.querySelector(".desc")?.innerText || "";
 
 popupImage.src = img;
 popupTitle.innerText = title;
@@ -262,7 +356,9 @@ popupPrice.innerText = price;
 popupDesc.innerText = desc;
 
 popup.style.display = "flex";
+
 });
+
 });
 
 closePopup.addEventListener("click",()=>{

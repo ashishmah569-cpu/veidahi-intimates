@@ -89,61 +89,41 @@ border-radius:20px;
 box-shadow:0 12px 30px rgba(0,0,0,0.08);
 transition:.3s;
 cursor:pointer;
+text-align:center;
 }
 
 .card:hover{
 transform:translateY(-8px);
 }
 
-.card img{
+/* IMAGE SWITCH FIX */
+
+.product{
+position:relative;
+}
+
+.product img{
+position:absolute;
 width:100%;
 height:320px;
 object-fit:cover;
 border-radius:15px;
-}
-
-/* NEW ARRIVAL SLIDER */
-
-.slider{
-max-width:1200px;
-margin:auto;
-overflow:hidden;
-position:relative;
-}
-
-.slides{
-display:flex;
-width:100%;
-transition:0.6s ease;
-}
-
-.slide{
-min-width:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.slide img{
-width:100%;
-max-width:800px;
-height:400px;
-object-fit:cover;
-border-radius:20px;
-}
-/* PRODUCT COLOR SWITCH */
-
-.product img{
-display:none;
+opacity:0;
+transition:.4s ease;
 }
 
 .product img.active{
-display:block;
+opacity:1;
+position:relative;
 }
+
+/* SECTION BG */
 
 .soft{
 background:var(--soft);
 }
+
+/* FEATURES */
 
 .feature-box{
 display:grid;
@@ -194,51 +174,47 @@ font-size:35px;
 <p>Confidence begins underneath</p>
 </section>
 
-<!-- ================= NEW ARRIVALS ================= -->
+<!-- NEW ARRIVALS -->
 
 <section class="soft">
 <h2>New Arrivals</h2>
 
 <div class="grid">
 
-<!-- STYLE 1 -->
-<div class="card product" onclick="changeNA(this)">
+<div class="card product">
 <img src="na1-1.jpg" class="active">
 <img src="na1-2.jpg">
 </div>
 
-<!-- STYLE 2 -->
-<div class="card product" onclick="changeNA(this)">
+<div class="card product">
 <img src="na2-1.jpg" class="active">
 <img src="na2-2.jpg">
 </div>
 
-<!-- STYLE 3 -->
-<div class="card product" onclick="changeNA(this)">
+<div class="card product">
 <img src="na3-1.jpg" class="active">
 <img src="na3-2.jpg">
 </div>
 
-<!-- STYLE 4 -->
-<div class="card product" onclick="changeNA(this)">
+<div class="card product">
 <img src="na4-1.jpg" class="active">
 <img src="na4-2.jpg">
 </div>
 
-<!-- STYLE 5 -->
-<div class="card product" onclick="changeNA(this)">
+<div class="card product">
 <img src="na5-1.jpg" class="active">
 <img src="na5-2.jpg">
 </div>
 
-<!-- STYLE 6 -->
-<div class="card product" onclick="changeNA(this)">
+<div class="card product">
 <img src="na6-1.jpg" class="active">
 <img src="na6-2.jpg">
 </div>
 
 </div>
-<!-- ================= PRODUCTS ================= -->
+</section>
+
+<!-- PRODUCTS -->
 
 <section>
 <h2>Our Collection</h2>
@@ -257,70 +233,6 @@ font-size:35px;
 <img src="p2-new-red-1.jpg">
 </div>
 
-<div class="card product">
-<img src="p3-forest green-1.jpg" class="active">
-<img src="p3-indigo-1.jpg">
-</div>
-
-<div class="card product">
-<img src="p4-beby pink-1.jpg" class="active">
-<img src="p4-moon red-1.jpg">
-<img src="p4-teal-1.jpg">
-</div>
-
-<div class="card product">
-<img src="p5-navy-1.jpg" class="active">
-<img src="p5-olive-1.jpg">
-<img src="p5-sage-1.jpg">
-</div>
-
-<div class="card product">
-<img src="p6-aqua-1.jpg" class="active">
-<img src="p6-fuchsia-1.jpg">
-<img src="p6-red-1.jpg">
-</div>
-
-<div class="card product">
-<img src="p7-chocolate-1.jpg" class="active">
-<img src="p7-grey-1.jpg">
-<img src="p7-merhoon-1.jpg">
-</div>
-
-<div class="card product">
-<img src="p8-deep sea-1.jpg" class="active">
-<img src="p8-merhoon-1.jpg">
-<img src="p8-pink-1.jpg">
-</div>
-
-</div>
-</section>
-
-<!-- WHY -->
-
-<section class="soft">
-<h2>Why Choose Veidahi</h2>
-<div class="feature-box">
-<div class="feature"><h3>Premium Fabric</h3><p>Ultra soft luxury feel.</p></div>
-<div class="feature"><h3>Perfect Fit</h3><p>Designed for comfort & elegance.</p></div>
-<div class="feature"><h3>Affordable Luxury</h3><p>Premium quality at smart pricing.</p></div>
-</div>
-</section>
-
-<!-- ABOUT -->
-
-<section>
-<h2>About Us</h2>
-<p>Veidahi Intimates is a Delhi based luxury lingerie brand crafted for modern women.</p>
-</section>
-
-<!-- REVIEWS -->
-
-<section class="soft">
-<h2>Customer Reviews</h2>
-<div class="grid">
-<div class="review"><p>"Fabric quality is amazing."</p><h4>Riya – Delhi</h4></div>
-<div class="review"><p>"Premium feel at affordable price."</p><h4>Ananya – Mumbai</h4></div>
-<div class="review"><p>"Perfect fitting and elegant design."</p><h4>Sneha – Jaipur</h4></div>
 </div>
 </section>
 
@@ -328,41 +240,26 @@ font-size:35px;
 © 2026 Veidahi Intimates | Delhi
 </footer>
 
-<!-- ================= JS ================= -->
-
 <script>
 
-index++;
+/* UNIVERSAL IMAGE SWITCH */
 
-if(index >= slides.length){
-index = 0;
-}
+document.querySelectorAll(".product").forEach(product=>{
 
-slidesContainer.style.transform =
-"translateX(-" + (index * 100) + "%)";
-}
+let images = product.querySelectorAll("img");
+let index = 0;
 
-setInterval(autoSlide,3000);
+product.addEventListener("click",()=>{
 
-<script>
+images[index].classList.remove("active");
+index = (index + 1) % images.length;
+images[index].classList.add("active");
 
-/* CLICK TO SWITCH IMAGE IN NEW ARRIVALS */
+});
 
-function changeNA(card){
-  let images = card.querySelectorAll("img");
-  let activeIndex = 0;
-
-  images.forEach((img,i)=>{
-    if(img.classList.contains("active")){
-      activeIndex = i;
-    }
-    img.classList.remove("active");
-  });
-
-  let nextIndex = (activeIndex + 1) % images.length;
-  images[nextIndex].classList.add("active");
-}
+});
 
 </script>
+
 </body>
 </html>

@@ -385,13 +385,6 @@ color:white;
 </div>
 
 </section>
-<!-- PRODUCTS 1-8 -->
-
-<section>
-<h2>Our Collection</h2>
-
-<div class="grid">
-
 <!-- PRODUCT 1 -->
 <div class="card"
 onclick="openProduct(
@@ -404,6 +397,7 @@ onclick="openProduct(
 <h3>Luxury Set 1</h3>
 <p class="price">₹1,199</p>
 </div>
+
 
 <!-- PRODUCT 2 -->
 <div class="card"
@@ -418,31 +412,34 @@ onclick="openProduct(
 <p class="price">₹2,099</p>
 </div>
 
+
 <!-- PRODUCT 3 -->
 <div class="card"
 onclick="openProduct(
-['p3-forest green-1.jpg','p3-indigo-1.jpg'],
+['p3-forest-green-1.jpg','p3-indigo-1.jpg'],
 'Curve Set',
 '₹1,999',
 'Premium Fabric'
 )">
-<img src="p3-forest green-1.jpg">
+<img src="p3-forest-green-1.jpg">
 <h3>Curve Set</h3>
 <p class="price">₹1,999</p>
 </div>
 
+
 <!-- PRODUCT 4 -->
 <div class="card"
 onclick="openProduct(
-['p4-beby pink-1.jpg','p4-moon red-1.jpg','p4-teal-1.jpg'],
+['p4-beby-pink-1.jpg','p4-moon-red-1.jpg','p4-teal-1.jpg'],
 'Cloud Soft',
 '₹1,399',
 'Soft & Comfortable'
 )">
-<img src="p4-beby pink-1.jpg">
+<img src="p4-beby-pink-1.jpg">
 <h3>Cloud Soft</h3>
 <p class="price">₹1,399</p>
 </div>
+
 
 <!-- PRODUCT 5 -->
 <div class="card"
@@ -457,6 +454,7 @@ onclick="openProduct(
 <p class="price">₹1,599</p>
 </div>
 
+
 <!-- PRODUCT 6 -->
 <div class="card"
 onclick="openProduct(
@@ -469,6 +467,7 @@ onclick="openProduct(
 <h3>Soft Fit</h3>
 <p class="price">₹1,199</p>
 </div>
+
 
 <!-- PRODUCT 7 -->
 <div class="card"
@@ -483,19 +482,18 @@ onclick="openProduct(
 <p class="price">₹1,499</p>
 </div>
 
+
 <!-- PRODUCT 8 -->
 <div class="card"
 onclick="openProduct(
-['p8-deep sea-1.jpg','p8-merhoon-1.jpg','p8-pink-1.jpg'],
+['p8-deep-sea-1.jpg','p8-merhoon-1.jpg','p8-pink-1.jpg'],
 'Pure Comfort',
 '₹1,299',
 'Elegant Design'
 )">
-<img src="p8-deep sea-1.jpg">
+<img src="p8-deep-sea-1.jpg">
 <h3>Pure Comfort</h3>
 <p class="price">₹1,299</p>
-</div>
-
 </div>
 </section>
 <!-- WHY CHOOSE -->
@@ -596,75 +594,45 @@ popup.addEventListener("click",()=>{
 
 function openProduct(images,name,price,desc){
 
-let popup = document.getElementById("productPopup");
-let mainImage = document.getElementById("mainImage");
-let title = document.getElementById("popupName");
-let popupPrice = document.getElementById("popupPrice");
-let popupDesc = document.getElementById("popupDesc");
-let thumbBox = document.getElementById("thumbContainer");
-
-title.innerText = name;
-popupPrice.innerText = price;
-popupDesc.innerText = desc;
-
-mainImage.src = images[0];
-
-thumbBox.innerHTML = "";
-
-images.forEach(img=>{
-let thumb = document.createElement("img");
-thumb.src = img;
-thumb.onclick = ()=> mainImage.src = img;
-thumbBox.appendChild(thumb);
-});
-
-popup.style.display = "flex";
-}
-
-</script>
-  <script>
-
-let currentProductName = "";
-let currentProductPrice = "";
-let currentImages = [];
-
-function openProduct(images,name,price,desc){
-
 currentProductName = name;
 currentProductPrice = price;
-currentImages = images;
 
-document.getElementById("productPopup").style.display="flex";
-document.getElementById("popupName").innerText = name;
-document.getElementById("popupPrice").innerText = price;
-document.getElementById("popupDesc").innerText = desc;
-
+let popup = document.getElementById("productPopup");
 let mainImage = document.getElementById("mainImage");
 let thumbBox = document.getElementById("thumbContainer");
 let colorSelect = document.getElementById("colorSelect");
 
-mainImage.src = images[0];
+popup.style.display="flex";
+document.getElementById("popupName").innerText = name;
+document.getElementById("popupPrice").innerText = price;
+document.getElementById("popupDesc").innerText = desc;
+
 thumbBox.innerHTML="";
 colorSelect.innerHTML="";
 
-images.forEach(img=>{
+if(images.length === 0){
+return;
+}
 
-// thumbnail
+mainImage.src = images[0];
+
+images.forEach((img,index)=>{
+
+// ✅ Thumbnail
 let thumb = document.createElement("img");
 thumb.src = img;
 thumb.onclick = ()=> mainImage.src = img;
 thumbBox.appendChild(thumb);
 
-// color option
+// ✅ Color Option
 let option = document.createElement("option");
 option.value = img;
-option.innerText = img.split("-")[1] || "Color";
+option.text = "Color " + (index+1);
 colorSelect.appendChild(option);
 
 });
 
 }
-
 function changeColor(img){
 document.getElementById("mainImage").src = img;
 }

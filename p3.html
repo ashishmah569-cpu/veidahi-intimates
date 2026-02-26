@@ -170,11 +170,11 @@ button:hover{opacity:0.8;}
 
 /* IMAGES */
 const images = {
-forest green :[
-"p3-forest green-1.jpg",
-"p3-forest green-2.jpg",
-"p3-forest green-3.jpg",
-"p3-forest green-4.jpg"
+forestgreen:[
+"p3-forestgreen-1.jpg",
+"p3-forestgreen-2.jpg",
+"p3-forestgreen-3.jpg",
+"p3-forestgreen-4.jpg"
 ],
 indigo:[
 "p3-indigo-1.jpg",
@@ -188,10 +188,10 @@ const mainImage = document.getElementById("mainImage");
 const thumbs = document.getElementById("thumbs");
 const colorIcons = document.getElementById("colorIcons");
 
-let currentColor = "black";
+let currentColor = "forestgreen";
 
 /* LOAD IMAGES */
-function loadImages(color){
+loadImages("forestgreen");{
 
 currentColor = color;
 thumbs.innerHTML = "";
@@ -215,11 +215,9 @@ thumbs.appendChild(t);
 highlightActive(color);
 }
 
-/* COLOR MAP */
 const colorMap = {
-black:"#000",
-pink:"#ff69b4",
-blue:"#1e90ff"
+forestgreen:"#0b6623",
+indigo:"#4b0082"
 };
 
 Object.keys(images).forEach(color => {

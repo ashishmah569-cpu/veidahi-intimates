@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>camisole - Veidahi Intimates</title>
+<title>Camisole</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -73,27 +73,19 @@ color:#d2235b;
 margin:12px 0;
 }
 
-/* ✨ PREMIUM FABRIC SECTION */
-.fabric-section{
-margin:16px 0;
-padding:14px;
-background:#fafafa;
+/* COMBO BOX */
+.combo-box{
+margin-top:15px;
+padding:15px;
+background:#fff0f4;
 border-radius:14px;
-border:1px solid rgba(0,0,0,0.06);
+border:1px solid rgba(0,0,0,0.08);
+text-align:center;
 }
 
-.fabric-section h4{
-font-size:12px;
-letter-spacing:1.5px;
-margin-bottom:6px;
-color:#111;
-text-transform:uppercase;
-}
-
-.fabric-section p{
-font-size:13px;
-color:#555;
-line-height:1.6;
+.combo-box h3{
+margin-bottom:8px;
+color:#d2235b;
 }
 
 .offer{
@@ -147,13 +139,6 @@ border:3px solid black;
 transform:scale(1.2);
 }
 
-footer{
-margin-top:50px;
-text-align:center;
-color:#777;
-font-size:13px;
-}
-
 @media(max-width:980px){
 .grid{grid-template-columns:1fr;}
 .details{position:relative;top:0;}
@@ -171,7 +156,7 @@ font-size:13px;
 
 <a class="back" href="index.html">← Back to Home</a>
 
-<h1>camisole</h1>
+<h1>Camisole</h1>
 
 <div class="sub">
 Soft, stretchable and designed for everyday comfort with a flattering fit.
@@ -186,20 +171,17 @@ Soft, stretchable and designed for everyday comfort with a flattering fit.
 
 <div class="details">
 
-<div class="price">₹110</div>
+<p class="price">₹249</p>
 
-<!-- ✅ FABRIC SECTION ADDED -->
-<div class="fabric-section">
-<h4>Fabric Details</h4>
-<p>
-Made with fine-knit Hosiery Comfort Fabric that feels ultra-soft against the skin.
-Smooth texture, breathable structure and flexible stretch ensure lasting comfort
-throughout the day.
-</p>
+<div class="combo-box">
+<h3>2 Piece Combo Offer</h3>
+<p><del>₹498</del> ₹418</p>
+<p style="color:#d2235b;font-weight:700;">Save ₹80</p>
+<button class="btn" onclick="selectCombo()">Select Combo</button>
 </div>
 
 <div class="offer">
-2 pieces → 5% off | 3 pieces → 10% off
+Single → ₹249 | Combo → ₹418
 </div>
 
 <label>Choose Color</label>
@@ -228,34 +210,17 @@ throughout the day.
 </div>
 </div>
 
-<footer>
-© 2026 Veidahi Intimates • Luxury • Style • Confidence
-</footer>
-
 </div>
 
 <script>
 
+let isCombo = false;
+
 /* IMAGES */
 const images = {
-red:[
-"./p2-new-red-1.jpg",
-"./p2-new-red-2.jpg",
-"./p2-new-red-3.jpg",
-"./p2-new-red-4.jpg"
-],
-grey:[
-"./p2-new-grey-1.jpg",
-"./p2-new-grey-2.jpg",
-"./p2-new-grey-3.jpg",
-"./p2-new-grey-4.jpg"
-],
-brown:[
-"./p2-new-brown-1.jpg",
-"./p2-new-brown-2.jpg",
-"./p2-new-brown-3.jpg",
-"./p2-new-brown-4.jpg"
-]
+red:["./p2-new-red-1.jpg","./p2-new-red-2.jpg","./p2-new-red-3.jpg","./p2-new-red-4.jpg"],
+grey:["./p2-new-grey-1.jpg","./p2-new-grey-2.jpg","./p2-new-grey-3.jpg","./p2-new-grey-4.jpg"],
+brown:["./p2-new-brown-1.jpg","./p2-new-brown-2.jpg","./p2-new-brown-3.jpg","./p2-new-brown-4.jpg"]
 };
 
 const mainImage = document.getElementById("mainImage");
@@ -264,6 +229,7 @@ const colorIcons = document.getElementById("colorIcons");
 
 let currentColor = "red";
 
+/* LOAD IMAGES */
 function loadImages(color){
 currentColor = color;
 thumbs.innerHTML = "";
@@ -275,37 +241,17 @@ t.src = img;
 t.onclick = function(){ mainImage.src = img; };
 thumbs.appendChild(t);
 });
-
-highlightActive(color);
-}
-
-const colorMap = {
-red:"#d10000",
-grey:"#b5b5b5",
-brown:"#6f4e37"
-};
-
-Object.keys(images).forEach(color=>{
-const dot = document.createElement("div");
-dot.classList.add("color-dot");
-dot.style.background = colorMap[color];
-dot.setAttribute("data-color",color);
-dot.onclick = function(){ loadImages(color); };
-colorIcons.appendChild(dot);
-});
-
-function highlightActive(activeColor){
-document.querySelectorAll(".color-dot").forEach(dot=>{
-dot.classList.remove("active");
-});
-const active = document.querySelector(
-'.color-dot[data-color="'+activeColor+'"]'
-);
-if(active){ active.classList.add("active"); }
 }
 
 loadImages("red");
 
+/* SELECT COMBO */
+function selectCombo(){
+isCombo = true;
+alert("2 Piece Combo Selected ✅");
+}
+
+/* ORDER FUNCTION */
 function orderNow(){
 
 const name = document.getElementById("custName").value;
@@ -320,23 +266,25 @@ return;
 
 const orderID = "VI" + Math.floor(Math.random()*100000);
 
+let finalPrice = isCombo ? 418 : 249;
+let type = isCombo ? "2 Piece Combo" : "Single Piece";
+
 const message =
-"━━━━━━━━━━━━━━━━━━%0A"+
 "🧾 VEIDAHI INTIMATES%0A"+
 "Order ID: "+orderID+"%0A"+
-"📌 Product: Camisole%0A"+
-"🎨 Color: "+currentColor+"%0A"+
-"📏 Size: "+size+"%0A"+
-"💰 Price: ₹110%0A%0A"+
-"👤 Customer Details%0A"+
+"Product: Camisole%0A"+
+"Type: "+type+"%0A"+
+"Color: "+currentColor+"%0A"+
+"Size: "+size+"%0A"+
+"Price: ₹"+finalPrice+"%0A%0A"+
 "Name: "+name+"%0A"+
 "Phone: "+phone+"%0A"+
-"Address: "+address+"%0A"+
-"━━━━━━━━━━━━━━━━━━";
+"Address: "+address;
 
 window.open("https://wa.me/918750020203?text="+message,"_blank");
 }
 
 </script>
+
 </body>
 </html>

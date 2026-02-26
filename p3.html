@@ -49,7 +49,6 @@ body{
   transform:scale(1.1);
 }
 
-/* COLOR DOTS */
 .color-icons{
   display:flex;
   gap:12px;
@@ -76,7 +75,6 @@ body{
   color:#444;
 }
 
-/* COMBO BOX */
 .combo-box{
   background:#fff5f8;
   padding:20px;
@@ -96,13 +94,7 @@ body{
   margin-right:8px;
 }
 
-select{
-  padding:10px;
-  margin-top:10px;
-  width:220px;
-}
-
-input{
+select, input{
   padding:10px;
   margin-top:10px;
   width:220px;
@@ -133,14 +125,14 @@ button:hover{opacity:0.8;}
 </div>
 
 <div class="right">
-  <h2>Designer Lace Panty</h2>
+  <h2>High Coverage Bra</h2>
 
   <p class="price"><b>Price:</b> ₹150</p>
 
   <div class="combo-box">
     <h3>2 Set Combo Offer</h3>
-    <p><del>₹450</del> ₹250</p>
-    <p>Save ₹200</p>
+    <p><del>₹300</del> ₹250</p>
+    <p>Save ₹50</p>
   </div>
 
   <label><b>Choose Color:</b></label>
@@ -190,8 +182,8 @@ const colorIcons = document.getElementById("colorIcons");
 
 let currentColor = "forestgreen";
 
-/* LOAD IMAGES */
-loadImages("forestgreen");{
+/* LOAD IMAGES FUNCTION */
+function loadImages(color){
 
 currentColor = color;
 thumbs.innerHTML = "";
@@ -215,11 +207,13 @@ thumbs.appendChild(t);
 highlightActive(color);
 }
 
+/* COLOR MAP */
 const colorMap = {
 forestgreen:"#0b6623",
 indigo:"#4b0082"
 };
 
+/* CREATE COLOR DOTS */
 Object.keys(images).forEach(color => {
 
 const dot = document.createElement("div");
@@ -250,7 +244,7 @@ active.classList.add("active");
 }
 
 /* INIT */
-loadImages("black");
+loadImages("forestgreen");
 
 /* WHATSAPP ORDER */
 function orderNow(){
@@ -272,7 +266,7 @@ const message =
 "📌 Product: Designer Lace Panty%0A"+
 "🎨 Color: "+currentColor+"%0A"+
 "📏 Size: "+size+"%0A"+
-"💰 Price: ₹99%0A"+
+"💰 Price: ₹150%0A"+
 "🖼️ Image: "+imageURL+"%0A%0A"+
 "Name: "+name+"%0A"+
 "Phone: "+phone+"%0A"+

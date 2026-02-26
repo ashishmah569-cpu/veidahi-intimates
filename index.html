@@ -6,6 +6,8 @@
 <title>Veidahi Intimates | Luxury Lingerie</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
 /* ABOUT + WHY + CONTACT */
 
 .about-section,
@@ -54,8 +56,6 @@
   background:#111;
   color:white;
 }
-<style>
-
 :root{
 --primary:#b3003c;
 --soft:#fff5f8;
@@ -293,21 +293,53 @@ right:15px;
 font-size:22px;
 cursor:pointer;
 }
+  /* STICKY NAVBAR */
+
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  z-index:1000;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#b3003c;
+}
+
+.nav-links a{
+  margin-left:20px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+
+.nav-links a:hover{
+  color:#b3003c;
+}
+
+.whatsapp-btn{
+  background:#25D366;
+  color:white !important;
+  padding:8px 15px;
+  border-radius:20px;
+}
+
+/* Body ko niche push karega */
+body{
+  padding-top:80px;
+}
 </style>
 </head>
 
 <body>
-  <!-- NAVBAR -->
-<div class="navbar">
-  <div class="logo">Veidahi</div>
-  <div class="nav-links">
-    <a href="#">Home</a>
-    <a href="#new">New Arrivals</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="https://wa.me/918750020203" target="_blank" class="whatsapp-btn">WhatsApp</a>
-  </div>
-</div>
 
 <nav>
 <h2>VEIDAHI</h2>

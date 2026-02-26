@@ -27,7 +27,20 @@ box-sizing:border-box;
 body{
 font-family:'Poppins',sans-serif;
 color:#111;
-padding-top:80px; /* Sticky navbar ke liye */
+padding-top:80px;
+}
+
+/* ================= ANIMATION (✅ ADDED) ================= */
+
+@keyframes fadeUp {
+from { opacity:0; transform:translateY(30px); }
+to { opacity:1; transform:translateY(0); }
+}
+
+.product-card,
+.category-card,
+.arrival-card {
+animation: fadeUp 0.8s ease-in-out;
 }
 
 /* ================= NAVBAR ================= */
@@ -91,6 +104,25 @@ font-size:55px;
 margin-top:10px;
 }
 
+/* ✅ SHOP BUTTON (ADDED) */
+
+.hero button{
+margin-top:20px;
+padding:12px 25px;
+background:var(--primary);
+color:white;
+border:none;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero button:hover{
+background:#90002f;
+transform:scale(1.05);
+}
+
 /* ================= SECTION ================= */
 
 section{
@@ -141,48 +173,11 @@ padding:15px;
 font-size:16px;
 }
 
-/* ================= NEW ARRIVALS ================= */
+/* ================= PRODUCTS (ID ADDED) ================= */
 
-.arrival-slider{
-display:flex;
-gap:25px;
-overflow-x:auto;
-scroll-behavior:smooth;
-max-width:1200px;
-margin:auto;
-padding-bottom:10px;
+#products{
+scroll-margin-top:100px; /* Smooth scroll fix */
 }
-
-.arrival-slider::-webkit-scrollbar{
-display:none;
-}
-
-.arrival-card{
-min-width:260px;
-background:white;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-transition:0.3s ease;
-cursor:pointer;
-}
-
-.arrival-card:hover{
-transform:translateY(-6px);
-}
-
-.arrival-card img{
-width:100%;
-height:300px;
-object-fit:cover;
-}
-
-.arrival-card h3{
-padding:15px;
-font-size:15px;
-}
-
-/* ================= PRODUCTS ================= */
 
 .products-grid{
 display:grid;
@@ -257,6 +252,56 @@ border-radius:20px;
 box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="navbar">
+<div class="logo">VEIDAHI</div>
+<div class="nav-links">
+<a href="#products">Products</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Veidahi Intimates</h1>
+<p>Designed for Confidence. Styled for Every Occasion.</p>
+
+<!-- ✅ SHOP NOW BUTTON (ADDED) -->
+<button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+Shop Now
+</button>
+
+</section>
+
+<!-- CATEGORY -->
+<section class="soft">
+<h2>Shop By Category</h2>
+
+<div class="category-grid">
+
+<div class="category-card">
+<img src="cat-lingerie.jpg">
+<h3>Lingerie</h3>
+</div>
+
+<div class="category-card">
+<img src="cat-nightwear.jpg">
+<h3>Nightwear</h3>
+</div>
+
+<div class="category-card">
+<img src="cat-western.jpg">
+<h3>Western Wear</h3>
+</div>
+
+</div>
+</section>
 /* ================= ABOUT WHY CONTACT ================= */
 
 .about-section,
@@ -448,54 +493,56 @@ onclick="openArrival([
 
 <!-- PRODUCTS -->
 
-<section>
+<!-- PRODUCTS SECTION (✅ ID ADDED) -->
+<section id="products">
 <h2>Our Products</h2>
 
 <div class="products-grid">
-<!-- Same 8 product cards as before -->
-<div class="product-card" onclick="window.location='p1.html'">
+
+<div class="product-card">
 <img src="p1-burgundy-1.jpg">
 <h3>Bralette</h3>
 <p class="product-price">₹130</p>
 </div>
 
-<div class="product-card" onclick="window.location='p2.html'">
+<div class="product-card">
 <img src="p2-new-brown-1.jpg">
-<h3>ChicNest Cami</h3>
+<h3>Cami Set</h3>
 <p class="product-price">₹135</p>
 </div>
 
-<div class="product-card" onclick="window.location='p3.html'">
+
+<div class="product-card">
 <img src="p3-forestgreen-1.jpg">
 <h3>High Coverage Bra</h3>
 <p class="product-price">₹150</p>
 </div>
 
-<div class="product-card" onclick="window.location='p4.html'">
+<div class="product-card">
 <img src="p4-bebypink-1.jpg">
 <h3>UrbanBloom Brief</h3>
 <p class="product-price">₹90</p>
 </div>
 
-<div class="product-card" onclick="window.location='p5.html'">
+<div class="product-card">
 <img src="p5-navy-1.jpg">
 <h3>UrbanBloom Brief</h3>
 <p class="product-price">₹90</p>
 </div>
 
-<div class="product-card" onclick="window.location='p6.html'">
+<div class="product-card">
 <img src="p6-aqua-1.jpg">
 <h3>PureEase</h3>
 <p class="product-price">₹80</p>
 </div>
 
-<div class="product-card" onclick="window.location='p7.html'">
+<div class="product-card">
 <img src="p7-chocolate-1.jpg">
 <h3>UrbanBloom Brief</h3>
 <p class="product-price">₹90</p>
 </div>
 
-<div class="product-card" onclick="window.location='p8.html'">
+<div class="product-card">
 <img src="p8-deepsea-1.jpg">
 <h3>PureEase</h3>
 <p class="product-price">₹80</p>

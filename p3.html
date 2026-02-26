@@ -1,216 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Bra - Veidahi Intimates</title>
+<title>Designer Lace Panty</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:#fff;color:#111;}
-
-header{
-padding:16px;
-border-bottom:1px solid rgba(0,0,0,0.08);
-position:sticky;
-top:0;
-background:#fff;
-z-index:10;
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f5f5f5;
 }
 
-.brand{font-weight:900;font-size:18px;}
-
-.wrap{max-width:1200px;margin:auto;padding:24px 16px 60px;}
-
-.back{
-display:inline-block;
-padding:10px 14px;
-border-radius:999px;
-border:1px solid rgba(0,0,0,0.12);
-text-decoration:none;
-color:#111;
-font-weight:800;
-font-size:13px;
+.container{
+  display:flex;
+  gap:50px;
+  max-width:1100px;
+  margin:60px auto;
+  padding:30px;
+  background:white;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+  border-radius:10px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:1.2fr 0.8fr;
-gap:18px;
+.left{width:50%;}
+.right{width:50%;}
+
+#mainImage{
+  width:100%;
+  border-radius:8px;
+  transition:0.4s;
+}
+#mainImage:hover{transform:scale(1.03);}
+
+.thumbs{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-margin-top:15px;
+.thumbs img{
+  width:70px;
+  cursor:pointer;
+  border-radius:6px;
+  transition:0.3s;
 }
 
-.gallery img{
-width:100%;
-height:320px;
-object-fit:cover;
-border-radius:18px;
-border:1px solid rgba(0,0,0,0.08);
-cursor:pointer;
+.thumbs img:hover{
+  transform:scale(1.1);
 }
 
-.details{
-border-radius:22px;
-padding:18px;
-border:1px solid rgba(0,0,0,0.08);
-background:#fff;
-position:sticky;
-top:95px;
-}
-
-.price{
-font-size:20px;
-font-weight:900;
-color:#d2235b;
-margin:12px 0;
-}
-
-/* ✨ FABRIC SECTION */
-.fabric-section{
-margin-top:15px;
-padding-top:12px;
-border-top:1px solid #eee;
-}
-
-.fabric-section h4{
-font-size:13px;
-letter-spacing:1px;
-margin-bottom:6px;
-color:#111;
-font-weight:900;
-}
-
-.fabric-section p{
-font-size:13px;
-color:#555;
-line-height:1.6;
-}
-
-.color-container{
-display:flex;
-gap:15px;
-margin:10px 0;
+/* COLOR DOTS */
+.color-icons{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
 }
 
 .color-dot{
-width:30px;
-height:30px;
-border-radius:50%;
-cursor:pointer;
-border:2px solid #ddd;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  cursor:pointer;
+  border:2px solid #ddd;
+  transition:0.3s;
 }
 
 .color-dot.active{
-border:3px solid black;
-transform:scale(1.2);
+  border:3px solid black;
+  transform:scale(1.2);
 }
 
-input,select{
-width:100%;
-padding:10px;
-margin-bottom:12px;
-border-radius:10px;
-border:1px solid rgba(0,0,0,0.2);
+.price{
+  font-size:20px;
+  margin:10px 0;
+  color:#444;
+}
+
+/* COMBO BOX */
+.combo-box{
+  background:#fff5f8;
+  padding:20px;
+  border-radius:15px;
+  margin-top:20px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.combo-box h3{
+  margin-bottom:10px;
+  color:#b3003c;
+}
+
+.combo-box del{
+  color:gray;
+  margin-right:8px;
+}
+
+select{
+  padding:10px;
+  margin-top:10px;
+  width:220px;
+}
+
+input{
+  padding:10px;
+  margin-top:10px;
+  width:220px;
 }
 
 button{
-padding:12px;
-width:100%;
-border:none;
-background:black;
-color:white;
-border-radius:999px;
-cursor:pointer;
-font-weight:900;
+  margin-top:20px;
+  padding:12px;
+  width:220px;
+  background:black;
+  color:white;
+  border:none;
+  cursor:pointer;
+  border-radius:5px;
+  font-size:16px;
 }
-
-@media(max-width:980px){
-.grid{grid-template-columns:1fr;}
-.details{position:relative;top:0;}
-}
+button:hover{opacity:0.8;}
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="brand">VEIDAHI INTIMATES</div>
-</header>
+<div class="container">
 
-<div class="wrap">
-
-<a class="back" href="index.html">← Back</a>
-
-<h1>Premium Bra</h1>
-
-<div class="grid">
-
-<div>
-<img id="mainImage" width="100%" style="border-radius:18px;">
-<div class="gallery" id="thumbs"></div>
+<div class="left">
+  <img id="mainImage" src="">
+  <div class="thumbs" id="thumbs"></div>
 </div>
 
-<div class="details">
+<div class="right">
+  <h2>Designer Lace Panty</h2>
 
-<div class="price">₹89</div>
+  <p class="price"><b>Price:</b> ₹99</p>
 
-<!-- ✅ FABRIC DETAILS ADDED -->
-<div class="fabric-section">
-<h4>FABRIC DETAILS</h4>
-<p>
-Crafted in our premium UltraSoft Hosiery Knit fabric, designed for breathable comfort and a flexible stretch that adapts naturally to your body. Lightweight, smooth and gentle on skin — perfect for all-day wear.
-</p>
-</div>
+  <div class="combo-box">
+    <h3>3 Set Combo Offer</h3>
+    <p><del>₹297</del> ₹249</p>
+    <p>Save ₹48</p>
+  </div>
 
-<label>Select Color</label>
-<div class="color-container" id="colorIcons"></div>
+  <label><b>Choose Color:</b></label>
+  <div class="color-icons" id="colorIcons"></div>
 
-<label>Select Size</label>
-<select id="sizeSelect">
-<option>34</option>
-<option>36</option>
-<option>38</option>
-<option>40</option>
-</select>
+  <br>
 
-<label>Name</label>
-<input type="text" id="custName">
+  <label>Select Size:</label><br>
+  <select id="sizeSelect">
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+  </select>
 
-<label>Phone</label>
-<input type="text" id="custPhone">
+  <br>
+  <input type="text" id="custName" placeholder="Your Name">
+  <input type="text" id="custPhone" placeholder="Phone Number">
+  <input type="text" id="custAddress" placeholder="Address">
 
-<label>Address</label>
-<input type="text" id="custAddress">
-
-<button onclick="orderNow()">Place Order</button>
+  <button onclick="orderNow()">Order on WhatsApp</button>
 
 </div>
-</div>
-
 </div>
 
 <script>
 
-let currentColor = "forest";
-
+/* IMAGES */
 const images = {
-forest: [
-"p3-forest green-1.jpg",
-"p3-forest green-2.jpg",
-"p3-forest green-3.jpg",
-"p3-forest green-4.jpg"
+black:[
+"p3-black-1.jpg",
+"p3-black-2.jpg",
+"p3-black-3.jpg",
+"p3-black-4.jpg"
 ],
-indigo: [
-"p3-indigo-1.jpg",
-"p3-indigo-2.jpg",
-"p3-indigo-3.jpg",
-"p3-indigo-4.jpg"
+pink:[
+"p3-pink-1.jpg",
+"p3-pink-2.jpg",
+"p3-pink-3.jpg",
+"p3-pink-4.jpg"
+],
+blue:[
+"p3-blue-1.jpg",
+"p3-blue-2.jpg",
+"p3-blue-3.jpg",
+"p3-blue-4.jpg"
 ]
 };
 
@@ -218,45 +194,73 @@ const mainImage = document.getElementById("mainImage");
 const thumbs = document.getElementById("thumbs");
 const colorIcons = document.getElementById("colorIcons");
 
+let currentColor = "black";
+
+/* LOAD IMAGES */
 function loadImages(color){
+
 currentColor = color;
 thumbs.innerHTML = "";
 
 images[color].forEach(function(img,index){
-if(index === 0){ mainImage.src = img; }
+
+if(index===0){
+mainImage.src = img;
+}
+
 const t = document.createElement("img");
 t.src = img;
-t.onclick = function(){ mainImage.src = img; };
+t.onclick = function(){
+mainImage.src = img;
+};
+
 thumbs.appendChild(t);
+
 });
 
 highlightActive(color);
 }
 
+/* COLOR MAP */
 const colorMap = {
-forest: "#2e8b57",
-indigo: "#4b0082"
+black:"#000",
+pink:"#ff69b4",
+blue:"#1e90ff"
 };
 
-Object.keys(images).forEach(function(color){
+Object.keys(images).forEach(color => {
+
 const dot = document.createElement("div");
 dot.classList.add("color-dot");
 dot.style.background = colorMap[color];
 dot.setAttribute("data-color", color);
-dot.onclick = function(){ loadImages(color); };
+
+dot.onclick = function(){
+loadImages(color);
+};
+
 colorIcons.appendChild(dot);
+
 });
 
-function highlightActive(active){
-document.querySelectorAll(".color-dot").forEach(function(d){
-d.classList.remove("active");
+/* ACTIVE DOT */
+function highlightActive(activeColor){
+
+document.querySelectorAll(".color-dot").forEach(dot=>{
+dot.classList.remove("active");
 });
-const activeDot = document.querySelector('.color-dot[data-color="'+active+'"]');
-if(activeDot){ activeDot.classList.add("active"); }
+
+const active = document.querySelector('.color-dot[data-color="'+activeColor+'"]');
+if(active){
+active.classList.add("active");
 }
 
-loadImages("forest");
+}
 
+/* INIT */
+loadImages("black");
+
+/* WHATSAPP ORDER */
 function orderNow(){
 
 const name = document.getElementById("custName").value;
@@ -265,15 +269,19 @@ const address = document.getElementById("custAddress").value;
 const size = document.getElementById("sizeSelect").value;
 
 if(name==="" || phone==="" || address===""){
-alert("Fill all details");
+alert("Please fill all details");
 return;
 }
 
+const imageURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/" + images[currentColor][0];
+
 const message =
-"🛍 ORDER%0A"+
-"Product: Premium Bra%0A"+
-"Color: "+currentColor+"%0A"+
-"Size: "+size+"%0A"+
+"🛍️ NEW ORDER RECEIVED 🛍️%0A%0A"+
+"📌 Product: Designer Lace Panty%0A"+
+"🎨 Color: "+currentColor+"%0A"+
+"📏 Size: "+size+"%0A"+
+"💰 Price: ₹99%0A"+
+"🖼️ Image: "+imageURL+"%0A%0A"+
 "Name: "+name+"%0A"+
 "Phone: "+phone+"%0A"+
 "Address: "+address;

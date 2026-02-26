@@ -11,7 +11,6 @@
 
 :root{
 --primary:#b3003c;
---dark:#111;
 --soft:#fff5f8;
 }
 
@@ -23,7 +22,6 @@ box-sizing:border-box;
 
 body{
 font-family:'Poppins',sans-serif;
-background:#fff;
 color:#111;
 }
 
@@ -58,15 +56,13 @@ text-shadow:0 5px 20px rgba(0,0,0,0.5);
 
 .hero h1{
 font-size:55px;
-font-weight:800;
 }
 
 .hero p{
 margin-top:10px;
-font-size:18px;
 }
 
-/* SECTION COMMON */
+/* SECTION */
 
 section{
 padding:80px 20px;
@@ -82,7 +78,48 @@ margin-bottom:40px;
 background:var(--soft);
 }
 
-/* PRODUCTS GRID */
+/* NEW ARRIVALS */
+
+.arrival-slider{
+display:flex;
+gap:25px;
+overflow-x:auto;
+scroll-behavior:smooth;
+max-width:1200px;
+margin:auto;
+padding-bottom:10px;
+}
+
+.arrival-slider::-webkit-scrollbar{
+display:none;
+}
+
+.arrival-card{
+min-width:260px;
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+flex:0 0 auto;
+transition:0.3s ease;
+}
+
+.arrival-card:hover{
+transform:translateY(-6px);
+}
+
+.arrival-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.arrival-card h3{
+padding:15px;
+font-size:15px;
+}
+
+/* PRODUCTS */
 
 .products-grid{
 display:grid;
@@ -157,8 +194,6 @@ border-radius:20px;
 box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
-/* FOOTER */
-
 footer{
 background:#111;
 color:white;
@@ -168,63 +203,6 @@ margin-top:40px;
 }
 
 </style>
-
-  /* NEW ARRIVALS */
-
-.arrivals-section{
-background:var(--soft);
-}
-
-.arrival-slider{
-overflow:hidden;
-max-width:1200px;
-margin:auto;
-position:relative;
-}
-
-.arrival-track{
-display:flex;
-gap:25px;
-animation:scroll 25s linear infinite;
-}
-
-.arrival-card{
-min-width:250px;
-background:white;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-cursor:pointer;
-transition:0.3s ease;
-}
-
-.arrival-card:hover{
-transform:translateY(-6px);
-}
-
-.arrival-card img{
-width:100%;
-height:300px;
-object-fit:cover;
-}
-
-.arrival-card h3{
-padding:15px;
-font-size:15px;
-}
-
-/* Auto Scroll Animation */
-
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
-}
-
-/* Stop animation on hover */
-
-.arrival-slider:hover .arrival-track{
-animation-play-state:paused;
-}
 </head>
 
 <body>
@@ -238,12 +216,12 @@ animation-play-state:paused;
 <p>Confidence begins underneath</p>
 </section>
 
-<!-- PRODUCTS -->
-<section class="arrivals-section">
+<!-- NEW ARRIVALS -->
+
+<section class="soft">
 <h2>New Arrivals</h2>
 
 <div class="arrival-slider">
-<div class="arrival-track">
 
 <div class="arrival-card">
 <img src="na1-1.jpg">
@@ -275,46 +253,16 @@ animation-play-state:paused;
 <h3>Play With Naughty</h3>
 </div>
 
-<!-- Duplicate for smooth infinite scroll -->
-
-<div class="arrival-card">
-<img src="na1-1.jpg">
-<h3>Sports Bra</h3>
-</div>
-
-<div class="arrival-card">
-<img src="na2-1.jpg">
-<h3>Gym Bra</h3>
-</div>
-
-<div class="arrival-card">
-<img src="na3-1.jpg">
-<h3>Running Bra</h3>
-</div>
-
-<div class="arrival-card">
-<img src="na4-1.jpg">
-<h3>Bold Classic</h3>
-</div>
-
-<div class="arrival-card">
-<img src="na5-1.jpg">
-<h3>Bold Classic 0.2</h3>
-</div>
-
-<div class="arrival-card">
-<img src="na6-1.jpg">
-<h3>Play With Naughty</h3>
-</div>
-
-</div>
 </div>
 </section>
+
+<!-- PRODUCTS -->
+
 <section>
 <h2>Our Products</h2>
 
 <div class="products-grid">
-
+<!-- Same 8 product cards as before -->
 <div class="product-card" onclick="window.location='product1.html'">
 <img src="p1-burgundy-1.jpg">
 <h3>Luxury Set 1</h3>
@@ -363,50 +311,6 @@ animation-play-state:paused;
 <p class="product-price">₹1,299</p>
 </div>
 
-</div>
-</section>
-
-<!-- WHY CHOOSE -->
-
-<section class="soft">
-<h2>Why Choose Veidahi</h2>
-<div class="feature-box">
-<div class="feature">
-<h3>Premium Fabric</h3>
-<p>High quality soft materials crafted for comfort.</p>
-</div>
-
-<div class="feature">
-<h3>Perfect Fit</h3>
-<p>Designed for confidence and elegance.</p>
-</div>
-
-<div class="feature">
-<h3>Luxury Feel</h3>
-<p>Affordable premium experience for modern women.</p>
-</div>
-</div>
-</section>
-
-<!-- REVIEWS -->
-
-<section>
-<h2>Customer Reviews</h2>
-<div class="review-box">
-<div class="review">
-<p>"Fabric quality is amazing and so comfortable."</p>
-<h4>Riya – Delhi</h4>
-</div>
-
-<div class="review">
-<p>"Premium feel at affordable price."</p>
-<h4>Ananya – Mumbai</h4>
-</div>
-
-<div class="review">
-<p>"Perfect fitting and elegant design."</p>
-<h4>Sneha – Jaipur</h4>
-</div>
 </div>
 </section>
 

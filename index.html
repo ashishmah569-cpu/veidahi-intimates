@@ -109,6 +109,40 @@ font-size:55px;
 margin-top:10px;
 }
 
+  <!-- CATEGORY SECTION -->
+<section class="soft">
+<h2>Shop By Category</h2>
+
+<div class="category-grid">
+
+<div class="category-card">
+<img src="cat-lingerie.jpg">
+<h3>Lingerie</h3>
+</div>
+
+<div class="category-card">
+<img src="cat-nightwear.jpg">
+<h3>Nightwear</h3>
+</div>
+
+<div class="category-card">
+<img src="cat-western.jpg">
+<h3>Western Wear</h3>
+</div>
+
+<div class="category-card">
+<img src="cat-innerwear.jpg">
+<h3>Innerwear</h3>
+</div>
+
+<div class="category-card">
+<img src="cat-bottomwear.jpg">
+<h3>Bottomwear</h3>
+</div>
+
+</div>
+</section>
+  
 /* SECTION */
 
 section{
@@ -335,6 +369,39 @@ cursor:pointer;
 /* Body ko niche push karega */
 body{
   padding-top:80px;
+}
+  /* CATEGORY SECTION */
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.category-card{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.category-card:hover{
+  transform:translateY(-6px);
+}
+
+.category-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.category-card h3{
+  padding:15px;
+  font-size:16px;
 }
 </style>
 </head>

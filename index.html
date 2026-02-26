@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Veidahi Intimates | Luxury Veidahi Intimates</title>
+<title>Veidahi Intimates | Luxury Lingerie</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
@@ -27,13 +27,14 @@ background:#fff;
 color:#111;
 }
 
+/* NAV */
+
 nav{
-background:#fff;
 padding:20px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 8px 25px rgba(0,0,0,0.05);
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
 nav h2{
@@ -41,24 +42,58 @@ font-weight:800;
 letter-spacing:2px;
 }
 
-/* PRODUCTS SECTION */
+/* HERO */
 
-.products-section{
+.hero{
+height:85vh;
+background:url("hero.jpg") center/cover no-repeat;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+text-shadow:0 5px 20px rgba(0,0,0,0.5);
+}
+
+.hero h1{
+font-size:55px;
+font-weight:800;
+}
+
+.hero p{
+margin-top:10px;
+font-size:18px;
+}
+
+/* SECTION COMMON */
+
+section{
 padding:80px 20px;
 text-align:center;
 }
 
+section h2{
+font-size:30px;
+margin-bottom:40px;
+}
+
+.soft{
+background:var(--soft);
+}
+
+/* PRODUCTS GRID */
+
 .products-grid{
 display:grid;
-grid-template-columns:repeat(4, 280px);
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-justify-content:center;
-margin-top:40px;
+max-width:1200px;
+margin:auto;
 }
 
 .product-card{
-width:280px;
-background:#fff;
+background:white;
 border-radius:18px;
 overflow:hidden;
 box-shadow:0 8px 25px rgba(0,0,0,0.08);
@@ -75,116 +110,20 @@ box-shadow:0 12px 30px rgba(0,0,0,0.15);
 width:100%;
 height:320px;
 object-fit:cover;
-display:block;
 }
 
 .product-card h3{
-padding:12px 10px 5px;
+padding:15px 10px 5px;
 font-size:16px;
 }
 
 .product-price{
-padding:0 10px 15px;
+padding-bottom:15px;
 font-weight:600;
-color:#b3003c;
+color:var(--primary);
 }
 
-/* RESPONSIVE */
-
-@media(max-width:1200px){
-.products-grid{
-grid-template-columns:repeat(3, 280px);
-}
-}
-
-@media(max-width:900px){
-.products-grid{
-grid-template-columns:repeat(2, 280px);
-}
-}
-
-@media(max-width:600px){
-.products-grid{
-grid-template-columns:repeat(1, 280px);
-}
-}
-section h2{
-font-size:30px;
-margin-bottom:40px;
-}
-
-.hero{
-height:90vh;
-background:url("hero.jpg") center/cover no-repeat;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-color:white;
-text-shadow:0 5px 20px rgba(0,0,0,0.5);
-}
-
-.hero h1{
-font-size:55px;
-font-weight:800;
-}
-
-.hero p{
-margin-top:10px;
-}
-
-/* MAIN SECTION CONTROL */
-section{
-width:100%;
-display:flex;
-justify-content:center;
-}
-
-/* GRID SYSTEM */
-.grid{
-display:grid;
-grid-template-columns:repeat(4, 280px);
-gap:30px;
-justify-content:center;
-margin:50px 0;
-}
-
-/* CARD STYLE */
-.card{
-width:280px;
-background:#fff;
-border-radius:16px;
-overflow:hidden;
-box-shadow:0 6px 18px rgba(0,0,0,0.08);
-transition:0.3s ease;
-cursor:pointer;
-}
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-.card img{
-width:100%;
-height:320px;
-object-fit:cover;
-display:block;
-}
-
-.card h3{
-padding:10px;
-font-size:16px;
-}
-
-.price{
-padding:0 10px 15px;
-font-weight:600;
-color:#b3003c;
-}
-.soft{
-background:var(--soft);
-}
+/* FEATURES */
 
 .feature-box{
 display:grid;
@@ -201,6 +140,16 @@ border-radius:20px;
 box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
+/* REVIEWS */
+
+.review-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1000px;
+margin:auto;
+}
+
 .review{
 background:white;
 padding:25px;
@@ -208,165 +157,74 @@ border-radius:20px;
 box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
+/* FOOTER */
+
 footer{
 background:#111;
 color:white;
 padding:25px;
 text-align:center;
-}
-  /* POPUP DESIGN */
-
-.product-popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-justify-content:center;
-align-items:center;
-z-index:9999;
+margin-top:40px;
 }
 
-.popup-content{
-background:white;
-width:90%;
-max-width:500px;
-padding:25px;
-border-radius:20px;
-position:relative;
-text-align:center;
-}
+</style>
 
-.popup-main-img{
-width:100%;
-height:300px;
-object-fit:cover;
-border-radius:15px;
-}
+  /* NEW ARRIVALS */
 
-.thumb-box img{
-width:60px;
-margin:5px;
-cursor:pointer;
-border-radius:8px;
+.arrivals-section{
+background:var(--soft);
 }
-
-.close-popup{
-position:absolute;
-top:10px;
-right:15px;
-font-size:22px;
-cursor:pointer;
-}
-
-.cart-btn, .whatsapp-btn{
-margin-top:10px;
-padding:10px;
-border:none;
-width:100%;
-border-radius:10px;
-cursor:pointer;
-}
-
-.cart-btn{
-background:black;
-color:white;
-}
-
-.whatsapp-btn{
-background:#25D366;
-color:white;
-}
-/* NEW ARRIVALS SLIDER */
 
 .arrival-slider{
-  overflow-x:auto;
+overflow:hidden;
+max-width:1200px;
+margin:auto;
+position:relative;
 }
 
 .arrival-track{
-  display:flex;
-  gap:25px;
-  padding:10px 0;
+display:flex;
+gap:25px;
+animation:scroll 25s linear infinite;
 }
 
-.arrival-track .card{
-  min-width:280px;
-  max-width:280px;
-  flex:0 0 auto;
+.arrival-card{
+min-width:250px;
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:0.3s ease;
 }
 
-/* MINI SLIDER */
-
-.mini-slider{
-  width:100%;
-  overflow:hidden;
+.arrival-card:hover{
+transform:translateY(-6px);
 }
 
-.mini-track{
-  display:flex;
-  transition:0.4s ease;
+.arrival-card img{
+width:100%;
+height:300px;
+object-fit:cover;
 }
 
-.mini-track img{
-  width:100%;
-  flex:0 0 100%;
-  height:320px;
-  object-fit:cover;
-  border-radius:15px;
+.arrival-card h3{
+padding:15px;
+font-size:15px;
 }
 
-/* MINI SLIDER INSIDE CARD */
+/* Auto Scroll Animation */
 
-.mini-slider{
-  width:100%;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
 }
 
-.mini-track{
-  display:flex;
-}
+/* Stop animation on hover */
 
-.mini-track img{
-  min-width:100%;
-  height:320px;
-  object-fit:cover;
-  border-radius:15px;
-  scroll-snap-align:start;
+.arrival-slider:hover .arrival-track{
+animation-play-state:paused;
 }
-/* POPUP FULL SCREEN VIEW */
-
-.popup{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.85);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-
-.popup-content{
-  width:90%;
-  max-width:420px;
-}
-
-.popup-track{
-  display:flex;
-  overflow-x:auto;
-}
-
-.popup-track img{
-  width:100%;
-  flex:0 0 100%;
-  border-radius:15px;
-}
-</style>
 </head>
 
 <body>
@@ -380,90 +238,79 @@ color:white;
 <p>Confidence begins underneath</p>
 </section>
 
-<!-- NEW ARRIVALS -->
-
-<section class="soft">
+<!-- PRODUCTS -->
+<section class="arrivals-section">
 <h2>New Arrivals</h2>
 
 <div class="arrival-slider">
 <div class="arrival-track">
 
-  <!-- Product 1 -->
- <div class="card" onclick="openPopup(['na1-1.jpg','na1-2.jpg','na1-3.jpg'])">
-    <div class="mini-slider">
-      <div class="mini-track">
-        <img src="na1-1.jpg">
-        <img src="na1-2.jpg">
-        <img src="na1-3.jpg">
-      </div>
-    </div>
-    <h3>Sports Bra</h3>
-  </div>
+<div class="arrival-card">
+<img src="na1-1.jpg">
+<h3>Sports Bra</h3>
+</div>
 
-  <!-- Product 2 -->
-  <div class="card" onclick="openPopup(['na2-1.jpg','na2-2.jpg','na2-3.jpg'])">
-    <div class="mini-slider">
-      <div class="mini-track">
-        <img src="na2-1.jpg">
-        <img src="na2-2.jpg">
-        <img src="na2-3.jpg">
-      </div>
-    </div>
-    <h3>Gymer Bra</h3>
-  </div>
+<div class="arrival-card">
+<img src="na2-1.jpg">
+<h3>Gym Bra</h3>
+</div>
 
-  <!-- Product 3 -->
- <div class="card" onclick="openPopup(['na3-1.jpg','na3-2.jpg','na3-3.jpg'])">
-    <div class="mini-slider">
-      <div class="mini-track">
-        <img src="na3-1.jpg">
-        <img src="na3-2.jpg">
-        <img src="na3-3.jpg">
-      </div>
-    </div>
-    <h3>Runing Sports Bra</h3>
-  </div>
+<div class="arrival-card">
+<img src="na3-1.jpg">
+<h3>Running Bra</h3>
+</div>
 
-  <!-- Product 4 -->
- <div class="card" onclick="openPopup(['na4-1.jpg','na4-2.jpg','na4-3.jpg'])">
-    <div class="mini-slider">
-      <div class="mini-track">
-        <img src="na4-1.jpg">
-        <img src="na4-2.jpg">
-        <img src="na4-3.jpg">
-      </div>
-    </div>
-    <h3>Blod Classic</h3>
-  </div>
+<div class="arrival-card">
+<img src="na4-1.jpg">
+<h3>Bold Classic</h3>
+</div>
 
-  <!-- Product 5 -->
-  <div class="card" onclick="openPopup(['na5-1.jpg','na5-2.jpg','na5-3.jpg'])">
-    <div class="mini-slider">
-      <div class="mini-track">
-        <img src="na5-1.jpg">
-        <img src="na5-2.jpg">
-        <img src="na5-3.jpg">
-      </div>
-    </div>
-    <h3>Bold Classic 0.2</h3>
-  </div>
+<div class="arrival-card">
+<img src="na5-1.jpg">
+<h3>Bold Classic 0.2</h3>
+</div>
 
-  <!-- Product 6 -->
-  <div class="card" onclick="openPopup(['na6-1.jpg','na6-2.jpg','na6-3.jpg'])">
-    <div class="mini-slider">
-      <div class="mini-track">
-        <img src="na6-1.jpg">
-        <img src="na6-2.jpg">
-        <img src="na6-3.jpg">
-      </div>
-    </div>
-    <h3>Play With Naughty</h3>
-  </div>
+<div class="arrival-card">
+<img src="na6-1.jpg">
+<h3>Play With Naughty</h3>
+</div>
+
+<!-- Duplicate for smooth infinite scroll -->
+
+<div class="arrival-card">
+<img src="na1-1.jpg">
+<h3>Sports Bra</h3>
+</div>
+
+<div class="arrival-card">
+<img src="na2-1.jpg">
+<h3>Gym Bra</h3>
+</div>
+
+<div class="arrival-card">
+<img src="na3-1.jpg">
+<h3>Running Bra</h3>
+</div>
+
+<div class="arrival-card">
+<img src="na4-1.jpg">
+<h3>Bold Classic</h3>
+</div>
+
+<div class="arrival-card">
+<img src="na5-1.jpg">
+<h3>Bold Classic 0.2</h3>
+</div>
+
+<div class="arrival-card">
+<img src="na6-1.jpg">
+<h3>Play With Naughty</h3>
+</div>
 
 </div>
 </div>
-
-  <section class="products-section">
+</section>
+<section>
 <h2>Our Products</h2>
 
 <div class="products-grid">
@@ -519,284 +366,53 @@ color:white;
 </div>
 </section>
 
-</section>
-<!-- PRODUCT 1 -->
-<div class="card"
-onclick="openProduct(
-['p1-burgundy-1.jpg','p1-green-1.jpg','p1-red-1.jpg'],
-'Luxury Set 1',
-'₹1199',
-'Available in Burgundy, Green, Red'
-)">
-<img src="p1-burgundy-1.jpg">
-<h3>Luxury Set 1</h3>
-<p class="price">₹1,199</p>
-</div>
-
-
-<!-- PRODUCT 2 -->
-<div class="card"
-onclick="openProduct(
-['p2-new-brown-1.jpg','p2-new-grey-1.jpg','p2-new-red-1.jpg'],
-'Luxury Set 2',
-'₹2,099',
-'Available in Brown, Grey, Red'
-)">
-<img src="p2-new-brown-1.jpg">
-<h3>Luxury Set 2</h3>
-<p class="price">₹2,099</p>
-</div>
-
-
-<!-- PRODUCT 3 -->
-<div class="card"
-onclick="openProduct(
-['p3-forest-green-1.jpg','p3-indigo-1.jpg'],
-'Curve Set',
-'₹1,999',
-'Premium Fabric'
-)">
-<img src="p3-forest-green-1.jpg">
-<h3>Curve Set</h3>
-<p class="price">₹1,999</p>
-</div>
-
-
-<!-- PRODUCT 4 -->
-<div class="card"
-onclick="openProduct(
-['p4-beby-pink-1.jpg','p4-moon-red-1.jpg','p4-teal-1.jpg'],
-'Cloud Soft',
-'₹1,399',
-'Soft & Comfortable'
-)">
-<img src="p4-beby-pink-1.jpg">
-<h3>Cloud Soft</h3>
-<p class="price">₹1,399</p>
-</div>
-
-
-<!-- PRODUCT 5 -->
-<div class="card"
-onclick="openProduct(
-['p5-navy-1.jpg','p5-olive-1.jpg','p5-sage-1.jpg'],
-'Premium Style',
-'₹1,599',
-'Daily Wear Luxury'
-)">
-<img src="p5-navy-1.jpg">
-<h3>Premium Style</h3>
-<p class="price">₹1,599</p>
-</div>
-
-
-<!-- PRODUCT 6 -->
-<div class="card"
-onclick="openProduct(
-['p6-aqua-1.jpg','p6-fuchsia-1.jpg','p6-red-1.jpg'],
-'Soft Fit',
-'₹1,199',
-'Best Comfort'
-)">
-<img src="p6-aqua-1.jpg">
-<h3>Soft Fit</h3>
-<p class="price">₹1,199</p>
-</div>
-
-
-<!-- PRODUCT 7 -->
-<div class="card"
-onclick="openProduct(
-['p7-chocolate-1.jpg','p7-grey-1.jpg','p7-merhoon-1.jpg'],
-'Luxury Feel',
-'₹1,499',
-'Premium Look'
-)">
-<img src="p7-chocolate-1.jpg">
-<h3>Luxury Feel</h3>
-<p class="price">₹1,499</p>
-</div>
-
-
-<!-- PRODUCT 8 -->
-<div class="card"
-onclick="openProduct(
-['p8-deep-sea-1.jpg','p8-merhoon-1.jpg','p8-pink-1.jpg'],
-'Pure Comfort',
-'₹1,299',
-'Elegant Design'
-)">
-<img src="p8-deep-sea-1.jpg">
-<h3>Pure Comfort</h3>
-<p class="price">₹1,299</p>
-</div>
-</section>
 <!-- WHY CHOOSE -->
 
 <section class="soft">
 <h2>Why Choose Veidahi</h2>
 <div class="feature-box">
-<div class="feature"><h3>Premium Fabric</h3><p>High quality soft materials.</p></div>
-<div class="feature"><h3>Perfect Fit</h3><p>Designed for comfort & elegance.</p></div>
-<div class="feature"><h3>Luxury Feel</h3><p>Affordable premium experience.</p></div>
+<div class="feature">
+<h3>Premium Fabric</h3>
+<p>High quality soft materials crafted for comfort.</p>
 </div>
-</section>
 
-<!-- ABOUT -->
+<div class="feature">
+<h3>Perfect Fit</h3>
+<p>Designed for confidence and elegance.</p>
+</div>
 
-<section>
-<h2>About Us</h2>
-<p>Veidahi Intimates is a Delhi based luxury lingerie and western daily wear brand crafted for modern women.</p>
+<div class="feature">
+<h3>Luxury Feel</h3>
+<p>Affordable premium experience for modern women.</p>
+</div>
+</div>
 </section>
 
 <!-- REVIEWS -->
 
-<section class="soft">
+<section>
 <h2>Customer Reviews</h2>
-<div class="grid">
-<div class="review"><p>"Fabric quality is amazing and so comfortable."</p><h4>Riya – Delhi</h4></div>
-<div class="review"><p>"Premium feel at affordable price."</p><h4>Ananya – Mumbai</h4></div>
-<div class="review"><p>"Perfect fitting and elegant design."</p><h4>Sneha – Jaipur</h4></div>
+<div class="review-box">
+<div class="review">
+<p>"Fabric quality is amazing and so comfortable."</p>
+<h4>Riya – Delhi</h4>
+</div>
+
+<div class="review">
+<p>"Premium feel at affordable price."</p>
+<h4>Ananya – Mumbai</h4>
+</div>
+
+<div class="review">
+<p>"Perfect fitting and elegant design."</p>
+<h4>Sneha – Jaipur</h4>
+</div>
 </div>
 </section>
-<!-- PRODUCT POPUP -->
 
-<div class="product-popup" id="productPopup">
-<div class="popup-content">
-
-<span class="close-popup" onclick="closePopup()">✖</span>
-
-<img id="mainImage" class="popup-main-img">
-
-<div class="thumb-box" id="thumbContainer"></div>
-
-<h2 id="popupName"></h2>
-<p id="popupPrice"></p>
-<p id="popupDesc"></p>
-
-<!-- COLOR -->
-<label>Color</label>
-<select id="colorSelect" onchange="changeColor(this.value)"></select>
-
-<!-- SIZE -->
-<label>Size</label>
-<select id="sizeSelect">
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-</select>
-
-<button class="cart-btn" onclick="addToCart()">Add to Cart</button>
-
-<button class="whatsapp-btn" onclick="orderWhatsApp()">
-Order on WhatsApp
-</button>
-
-</div>
-</div>
 <footer>
 © 2026 Veidahi Intimates | Delhi
 </footer>
-  <!-- POPUP -->
 
-<div class="popup" id="popup">
-  <div class="popup-content">
-    <div class="popup-track" id="popupTrack"></div>
-  </div>
-</div>
-<script>
-
-const popup = document.getElementById("popup");
-const popupTrack = document.getElementById("popupTrack");
-
-function openPopup(images){
-  popupTrack.innerHTML = "";
-  images.forEach(img=>{
-    const image = document.createElement("img");
-    image.src = img;
-    popupTrack.appendChild(image);
-  });
-  popup.style.display = "flex";
-}
-
-popup.addEventListener("click",()=>{
-  popup.style.display = "none";
-});
-
-</script>
-  <script>
-
-function openProduct(images,name,price,desc){
-
-currentProductName = name;
-currentProductPrice = price;
-
-let popup = document.getElementById("productPopup");
-let mainImage = document.getElementById("mainImage");
-let thumbBox = document.getElementById("thumbContainer");
-let colorSelect = document.getElementById("colorSelect");
-
-popup.style.display="flex";
-document.getElementById("popupName").innerText = name;
-document.getElementById("popupPrice").innerText = price;
-document.getElementById("popupDesc").innerText = desc;
-
-thumbBox.innerHTML="";
-colorSelect.innerHTML="";
-
-if(images.length === 0){
-return;
-}
-
-mainImage.src = images[0];
-
-images.forEach((img,index)=>{
-
-// ✅ Thumbnail
-let thumb = document.createElement("img");
-thumb.src = img;
-thumb.onclick = ()=> mainImage.src = img;
-thumbBox.appendChild(thumb);
-
-// ✅ Color Option
-let option = document.createElement("option");
-option.value = img;
-option.text = "Color " + (index+1);
-colorSelect.appendChild(option);
-
-});
-
-}
-function changeColor(img){
-document.getElementById("mainImage").src = img;
-}
-
-function closePopup(){
-document.getElementById("productPopup").style.display="none";
-}
-
-function addToCart(){
-alert("Added to Cart ✅");
-}
-
-function orderWhatsApp(){
-
-let size = document.getElementById("sizeSelect").value;
-let color = document.getElementById("colorSelect").value;
-
-let message = `Hello I want to order:
-
-Product: ${currentProductName}
-Price: ${currentProductPrice}
-Color Image: ${color}
-Size: ${size}
-`;
-
-let number = "918750020203";
-window.open("https://wa.me/"+number+"?text="+encodeURIComponent(message));
-}
-
-</script>
 </body>
 </html>

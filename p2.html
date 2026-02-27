@@ -168,11 +168,7 @@ Lightweight stretch fabric with breathable support — perfect for daily luxury 
     <h3>3 Set Combo Offer</h3>
     <p><del>₹405</del> ₹299</p>
     <p>Save ₹106</p>
-    <div class="combo-box">
-<h3>3 Set Combo Offer</h3>
-<p><del>₹390</del> ₹249</p>
-<p>Save ₹141</p>
-<button onclick="orderNow()">Buy 3 Set Combo</button>
+    <button onclick="orderNow()">Buy 3 Set Combo</button>
 </div>
   </div>
 
@@ -309,21 +305,21 @@ return;
 
 const imageURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/" + images[currentColor][0];
 
-function orderNow(){
-
-const size = document.getElementById("sizeSelect").value;
-
 const message =
 "🛍️ NEW ORDER RECEIVED 🛍️%0A%0A"+
 "━━━━━━━━━━━━━━%0A"+
-"📌 Product: Bralette%0A"+
+"📌 Product: Premium Camisole%0A"+
+"🎨 Color: "+currentColor+"%0A"+
 "📏 Size: "+size+"%0A"+
-"💰 Price: ₹130%0A"+
+"👤 Name: "+name+"%0A"+
+"📞 Phone: "+phone+"%0A"+
+"🏠 Address: "+address+"%0A"+
+"💰 Price: ₹135%0A"+
+"🖼️ Image: "+imageURL+"%0A"+
 "━━━━━━━━━━━━━━%0A%0A"+
 "Please confirm 😊";
 
 window.open("https://wa.me/918750020203?text="+message,"_blank");
-
 }
 /* WISHLIST TOGGLE */
 function toggleWishlist(){

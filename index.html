@@ -243,7 +243,47 @@ box-shadow:0 8px 25px rgba(0,0,0,0.06);
 </head>
 
 <body>
+/* ================= ARRIVAL SLIDER ================= */
 
+.arrival-slider{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px 20px;
+scroll-behavior:smooth;
+}
+
+.arrival-slider::-webkit-scrollbar{
+display:none;
+}
+
+.arrival-card{
+min-width:250px;
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:0.3s;
+}
+
+.arrival-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.arrival-card h3{
+padding:15px;
+font-size:15px;
+}
+
+/* MOBILE FIX */
+@media(max-width:768px){
+.arrival-card{
+min-width:85%;
+}
+}
 <!-- NAV -->
 <div class="navbar">
 <div class="logo">VEIDAHI</div>
@@ -295,31 +335,6 @@ Shop Now
 <div class="category-card">
 <img src="cat-bottomwear.jpg">
 <h3>Bottomwear</h3>
-</div>
-
-</div>
-
-</style>
-</head>
-<body>
-
-<!-- NAV -->
-<div class="navbar">
-<div class="logo">VEIDAHI</div>
-<div class="nav-links">
-<a href="#">Home</a>
-<a href="#new">New</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-<a href="https://wa.me/918750020203" target="_blank" class="whatsapp-btn">WhatsApp</a>
-</div>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-<h1>Veidahi Intimates & Women’s Wear</h1>
-<p>Designed for Confidence. Styled for Every Occasion.</p>
-</section>
 
 <!-- ================= CATEGORY SECTION ================= -->
 

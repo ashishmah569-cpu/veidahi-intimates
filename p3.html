@@ -142,8 +142,7 @@ Soft breathable fabric for daily luxury wear.
 <h3>2 Set Combo Offer</h3>
 <p><del>₹300</del> ₹250</p>
 <p>Save ₹50</p>
-<button onclick="orderNow()">Buy 2 Set Combo</button>
-</div>
+<button onclick="orderCombo()">Buy 2 Set Combo</button>
 
 <label><b>Choose Color:</b></label>
 <div class="color-icons" id="colorIcons"></div>
@@ -157,7 +156,14 @@ Soft breathable fabric for daily luxury wear.
 <option>38</option>
 <option>40</option>
 </select>
+<br><br>
 
+<label><b>Quantity:</b></label><br>
+<input type="number" id="quantity" value="1" min="1" onchange="updateTotal()">
+
+<p id="totalPrice" style="font-weight:bold;margin-top:10px;">
+Total: ₹150
+</p>
 <br>
 
 <input type="text" id="custName" placeholder="Your Name">
@@ -221,39 +227,72 @@ if(active){ active.classList.add("active"); }
 }
 
 loadImages("forestgreen");
+const singlePriceValue = 150;
+const comboPriceValue = 250;
 
+function updateTotal(){
+const qty = document.getElementById("quantity").value;
+const total = singlePriceValue * qty;
+document.getElementById("totalPrice").innerText = "Total: ₹" + total;
+}
 /* ===== ORDER FUNCTION ===== */
 
 function orderNow(){
+function orderCombo(){
 
 const name = document.getElementById("custName").value.trim();
 const phone = document.getElementById("custPhone").value.trim();
 const address = document.getElementById("custAddress").value.trim();
 const size = document.getElementById("sizeSelect").value;
 
-if(name === "" || phone === "" || address === ""){
+if(name==="" || phone==="" || address===""){
 alert("Please fill all details");
 return;
 }
 
 const productName = document.querySelector("h2").innerText;
-const singlePrice = "₹150";
-const comboPrice = "₹250";
+
+const message =
+"🛍️ COMBO ORDER 🛍️\n\n"+
+"📌 Product: "+productName+"\n"+
+"🎨 Color: "+currentColor+"\n"+
+"📏 Size: "+size+"\n"+
+"🛍️ Quantity: 2\n"+
+"💰 Total Price: ₹"+comboPriceValue+"\n\n"+
+"👤 Name: "+name+"\n"+
+"📞 Phone: "+phone+"\n"+
+"📍 Address: "+address;
+
+const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
+window.open(url,"_blank");
+}
+const name = document.getElementById("custName").value.trim();
+const phone = document.getElementById("custPhone").value.trim();
+const address = document.getElementById("custAddress").value.trim();
+const size = document.getElementById("sizeSelect").value;
+const qty = document.getElementById("quantity").value;
+const total = singlePriceValue * qty;
+
+if(name==="" || phone==="" || address===""){
+alert("Please fill all details");
+return;
+}
+
+const productName = document.querySelector("h2").innerText;
 
 const message =
 "🛍️ NEW ORDER 🛍️\n\n"+
-"📌 Product: " + productName + "\n"+
-"🎨 Color: " + currentColor + "\n"+
-"📏 Size: " + size + "\n"+
-"💰 Single Price: " + singlePrice + "\n"+
-"🔥 Combo Price: " + comboPrice + "\n\n"+
-"👤 Name: " + name + "\n"+
-"📞 Phone: " + phone + "\n"+
-"📍 Address: " + address;
+"📌 Product: "+productName+"\n"+
+"🎨 Color: "+currentColor+"\n"+
+"📏 Size: "+size+"\n"+
+"🛍️ Quantity: "+qty+"\n"+
+"💰 Total Price: ₹"+total+"\n\n"+
+"👤 Name: "+name+"\n"+
+"📞 Phone: "+phone+"\n"+
+"📍 Address: "+address;
 
 const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
-
-window.open(url, "_blank");
+window.open(url,"_blank");
 }
 
 /* ===== WISHLIST ===== */

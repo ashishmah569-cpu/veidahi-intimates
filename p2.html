@@ -158,7 +158,14 @@ Elegant stretch camisole for daily comfort and smooth fit.
 <option>38</option>
 <option>40</option>
 </select>
+<br><br>
 
+<label><b>Quantity:</b></label><br>
+<input type="number" id="quantity" value="1" min="1" onchange="updateTotal()">
+
+<p id="totalPrice" style="font-weight:bold; margin-top:10px;">
+Total: ₹135
+</p>
 <br>
 
 <input type="text" id="custName" placeholder="Your Name">
@@ -220,7 +227,13 @@ if(active){ active.classList.add("active"); }
 }
 
 loadImages("red");
+const singlePriceValue = 135;
 
+function updateTotal(){
+const qty = document.getElementById("quantity").value;
+const total = singlePriceValue * qty;
+document.getElementById("totalPrice").innerText = "Total: ₹" + total;
+}
 /* ===== ORDER FUNCTION ===== */
 
 function orderNow(){
@@ -229,30 +242,30 @@ const name = document.getElementById("custName").value.trim();
 const phone = document.getElementById("custPhone").value.trim();
 const address = document.getElementById("custAddress").value.trim();
 const size = document.getElementById("sizeSelect").value;
+const qty = document.getElementById("quantity").value;
+const total = singlePriceValue * qty;
 
-if(name === "" || phone === "" || address === ""){
+if(name==="" || phone==="" || address===""){
 alert("Please fill all details");
 return;
 }
 
 const productName = document.querySelector("h2").innerText;
-const singlePrice = "₹135";
-const comboPrice = "₹299";
 
 const message =
 "🛍️ NEW ORDER 🛍️\n\n"+
-"📌 Product: " + productName + "\n"+
-"🎨 Color: " + currentColor + "\n"+
-"📏 Size: " + size + "\n"+
-"💰 Single Price: " + singlePrice + "\n"+
-"🔥 Combo Price: " + comboPrice + "\n\n"+
-"👤 Name: " + name + "\n"+
-"📞 Phone: " + phone + "\n"+
-"📍 Address: " + address;
+"📌 Product: "+productName+"\n"+
+"🎨 Color: "+currentColor+"\n"+
+"📏 Size: "+size+"\n"+
+"🛍️ Quantity: "+qty+"\n"+
+"💰 Total Price: ₹"+total+"\n"+
+"🔥 3 Set Combo: ₹299\n\n"+
+"👤 Name: "+name+"\n"+
+"📞 Phone: "+phone+"\n"+
+"📍 Address: "+address;
 
 const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
-
-window.open(url, "_blank");
+window.open(url,"_blank");
 }
 
 /* ===== WISHLIST ===== */
@@ -274,13 +287,13 @@ const size = document.getElementById("sizeSelect").value;
 const message =
 "🛍️ COMBO ORDER 🛍️\n\n"+
 "📌 Product: Premium Camisole\n"+
-"🎨 Color: " + currentColor + "\n"+
-"📏 Size: " + size + "\n"+
-"🔥 Combo Price: ₹299";
+"🎨 Color: "+currentColor+"\n"+
+"📏 Size: "+size+"\n"+
+"🛍️ Quantity: 3\n"+
+"💰 Total Price: ₹299";
 
 const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
-
-window.open(url, "_blank");
+window.open(url,"_blank");
 
 }
 </script>

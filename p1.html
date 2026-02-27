@@ -245,24 +245,16 @@ let currentColor = "green";
 
 /* LOAD IMAGES */
 function loadImages(color){
-
 currentColor = color;
 thumbs.innerHTML = "";
 
 images[color].forEach(function(img,index){
-
-if(index===0){
-mainImage.src = img;
-}
+if(index===0){ mainImage.src = img; }
 
 const t = document.createElement("img");
 t.src = img;
-t.onclick = function(){
-mainImage.src = img;
-};
-
+t.onclick = function(){ mainImage.src = img; };
 thumbs.appendChild(t);
-
 });
 
 highlightActive(color);
@@ -275,89 +267,53 @@ burgundy:"#800020",
 red:"#d10000"
 };
 
-Object.keys(images).forEach(color => {
-
+Object.keys(images).forEach(color=>{
 const dot = document.createElement("div");
 dot.classList.add("color-dot");
 dot.style.background = colorMap[color];
-dot.setAttribute("data-color", color);
-
-dot.onclick = function(){
-loadImages(color);
-};
-
+dot.onclick = function(){ loadImages(color); };
 colorIcons.appendChild(dot);
-
 });
 
-/* HIGHLIGHT ACTIVE */
 function highlightActive(activeColor){
-
 document.querySelectorAll(".color-dot").forEach(dot=>{
 dot.classList.remove("active");
 });
-
-const active = document.querySelector('.color-dot[data-color="'+activeColor+'"]');
-if(active){
-active.classList.add("active");
-}
-
 }
 
 /* INIT */
 loadImages("green");
 
-/* WHATSAPP ORDER */
-<script>
-
+/* WHATSAPP */
 function orderNow(){
 
-const name = document.getElementById("custName").value.trim();
-const phone = document.getElementById("custPhone").value.trim();
-const address = document.getElementById("custAddress").value.trim();
 const size = document.getElementById("sizeSelect").value;
-
-if(name === "" || phone === "" || address === ""){
-alert("Please fill all details");
-return;
-}
-
-/* ===== CHANGE THESE 3 VALUES PER PRODUCT ===== */
-const productName = document.querySelector("h2").innerText;
-const singlePrice = document.querySelector(".price").innerText.replace("Price: ","");
-const comboPrice = document.querySelector(".combo-box p del").nextSibling.textContent.trim();
-/* ============================================= */
 
 const message =
 "🛍️ NEW ORDER 🛍️\n\n"+
-"📌 Product: " + productName + "\n"+
-"📏 Size: " + size + "\n"+
-"💰 Single Price: " + singlePrice + "\n"+
-"🔥 Combo Price: " + comboPrice + "\n\n"+
-"👤 Name: " + name + "\n"+
-"📞 Phone: " + phone + "\n"+
-"📍 Address: " + address;
+"📌 Product: Bralette\n"+
+"🎨 Color: "+currentColor+"\n"+
+"📏 Size: "+size+"\n"+
+"💰 Single Price: ₹130\n"+
+"🔥 3 Set Combo: ₹249";
 
 const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
-
-window.open(url, "_blank");
-
+window.open(url,"_blank");
 }
 
-</script>
-  /* WISHLIST TOGGLE */
+/* WISHLIST */
 function toggleWishlist(){
 const btn = document.getElementById("wishBtn");
-
 if(btn.innerHTML.includes("♡")){
 btn.innerHTML = "♥ Added to Wishlist";
 btn.style.color = "red";
-} else {
+}else{
 btn.innerHTML = "♡ Add to Wishlist";
 btn.style.color = "black";
 }
 }
 
+</script>
 /* STOCK AUTO CHECK (Optional Demo) */
 function checkStock(){
 const stock = Math.floor(Math.random()*5);

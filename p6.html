@@ -128,7 +128,33 @@ button:hover{opacity:0.8;}
   <h2>PureEase</h2>
 
   <p class="price"><b>Price:</b> ₹80</p>
+<!-- ⭐ Rating -->
+<div style="margin:8px 0; font-size:14px;">
+★★★★★ <span style="color:#777;">(4.8/5 • 124 Reviews)</span>
+</div>
 
+<!-- 📦 Stock Status -->
+<p id="stockStatus" style="color:green; font-weight:bold;">
+✔ In Stock
+</p>
+
+<!-- 🚚 Delivery Info -->
+<p style="font-size:13px; color:#555;">
+🚚 Free Delivery in 3-5 Days | Easy Returns
+</p>
+
+<!-- 💖 Wishlist -->
+<button onclick="toggleWishlist()" id="wishBtn" 
+style="background:#fff; color:black; border:1px solid #ccc;">
+♡ Add to Wishlist
+</button>
+
+<!-- 📝 Short Description -->
+<div style="margin-top:20px; font-size:14px; color:#444; line-height:1.6;">
+<b>Product Description:</b><br>
+Elegant everyday bralette crafted for comfort and confidence.
+Lightweight stretch fabric with breathable support — perfect for daily luxury wear.
+</div>
   <div class="combo-box">
     <h3>3 Set Combo Offer</h3>
     <p><del>₹240</del> ₹130</p>
@@ -282,7 +308,30 @@ const message =
 window.open("https://wa.me/918750020203?text="+message,"_blank");
 
 }
+/* WISHLIST TOGGLE */
+function toggleWishlist(){
+const btn = document.getElementById("wishBtn");
 
+if(btn.innerHTML.includes("♡")){
+btn.innerHTML = "♥ Added to Wishlist";
+btn.style.color = "red";
+} else {
+btn.innerHTML = "♡ Add to Wishlist";
+btn.style.color = "black";
+}
+}
+
+/* STOCK AUTO CHECK (Optional Demo) */
+function checkStock(){
+const stock = Math.floor(Math.random()*5);
+
+if(stock < 1){
+document.getElementById("stockStatus").innerHTML = "✖ Out of Stock";
+document.getElementById("stockStatus").style.color = "red";
+}
+}
+
+checkStock();
 </script>
 
 </body>

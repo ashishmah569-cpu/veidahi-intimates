@@ -221,34 +221,43 @@ if(active){ active.classList.add("active"); }
 
 loadImages("red");
 
+<script>
+
 function orderNow(){
 
-const name = document.getElementById("custName").value;
-const phone = document.getElementById("custPhone").value;
-const address = document.getElementById("custAddress").value;
+const name = document.getElementById("custName").value.trim();
+const phone = document.getElementById("custPhone").value.trim();
+const address = document.getElementById("custAddress").value.trim();
 const size = document.getElementById("sizeSelect").value;
 
-if(name==="" || phone==="" || address===""){
+if(name === "" || phone === "" || address === ""){
 alert("Please fill all details");
 return;
 }
 
-const imageURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/" + images[currentColor][0];
+/* ===== CHANGE THESE 3 VALUES PER PRODUCT ===== */
+const productName = document.querySelector("h2").innerText;
+const singlePrice = document.querySelector(".price").innerText.replace("Price: ","");
+const comboPrice = document.querySelector(".combo-box p del").nextSibling.textContent.trim();
+/* ============================================= */
 
 const message =
-"🛍️ NEW ORDER RECEIVED 🛍️%0A%0A"+
-"📌 Product: Premium Camisole%0A"+
-"🎨 Color: "+currentColor+"%0A"+
-"📏 Size: "+size+"%0A"+
-"👤 Name: "+name+"%0A"+
-"📞 Phone: "+phone+"%0A"+
-"🏠 Address: "+address+"%0A"+
-"💰 Price: ₹135%0A"+
-"🖼️ Image: "+imageURL;
+"🛍️ NEW ORDER 🛍️\n\n"+
+"📌 Product: " + productName + "\n"+
+"📏 Size: " + size + "\n"+
+"💰 Single Price: " + singlePrice + "\n"+
+"🔥 Combo Price: " + comboPrice + "\n\n"+
+"👤 Name: " + name + "\n"+
+"📞 Phone: " + phone + "\n"+
+"📍 Address: " + address;
 
-window.open("https://wa.me/918750020203?text="+message,"_blank");
+const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank");
+
 }
 
+</script>
 function toggleWishlist(){
 const btn = document.getElementById("wishBtn");
 if(btn.innerHTML.includes("♡")){

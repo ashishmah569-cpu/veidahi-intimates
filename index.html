@@ -79,93 +79,87 @@ color:var(--primary);
 /* ================= HERO ================= */
 .hero {
   position: relative;
-  text-align: center;
-  color: white;
-}
-
-.hero img {
   width: 100%;
-  display: block;
+  height: 90vh;
+  overflow: hidden;
 }
 
-.hero-overlay {
+.hero picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ✅ Image full cover rahegi */
+  display: block;
+  filter: brightness(65%); /* ✅ Text clear dikhe */
+}
+
+.hero-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  text-align: center;
+  color: white;
+  width: 90%;
 }
 
-.hero-overlay h1 {
-  font-size: 48px;
+.hero-content h1 {
+  font-size: 50px;
   font-weight: 900;
   letter-spacing: 3px;
-  margin: 0;
 }
 
-.hero-overlay p {
+.hero-content p {
   font-size: 18px;
   margin-top: 10px;
 }
 
+/* ✅ Slow Running Text */
 .running-text {
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: 16px;
   white-space: nowrap;
   overflow: hidden;
-  box-sizing: border-box;
 }
 
 .running-text span {
   display: inline-block;
   padding-left: 100%;
-  animation: runText 10s linear infinite;
+  animation: runSlow 18s linear infinite; /* ✅ SLOW KAR DIYA */
 }
 
-@keyframes runText {
+@keyframes runSlow {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
 
-/* Mobile Responsive */
+/* ✅ Button Styling */
+.hero-btn {
+  margin-top: 25px;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: black;
+  color: white;
+}
+
+/* ✅ Mobile Fix */
 @media(max-width:768px){
-  .hero-overlay h1{
-    font-size:28px;
+  .hero {
+    height: 70vh;
   }
-}
-.hero{
-height:85vh;
-background:url("hero.jpg") center/cover no-repeat;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-color:white;
-text-align:center;
-text-shadow:0 5px 20px rgba(0,0,0,0.5);
-}
 
-.hero h1{
-font-size:55px;
-}
-
-.hero p{
-margin-top:10px;
-}
-
-.hero button{
-margin-top:20px;
-padding:12px 25px;
-background:var(--primary);
-color:white;
-border:none;
-border-radius:30px;
-font-size:16px;
-cursor:pointer;
-}
-
-.hero button:hover{
-background:#90002f;
+  .hero-content h1 {
+    font-size: 28px;
+  }
 }
 
 /* ================= SECTION ================= */
@@ -436,25 +430,30 @@ border-radius:15px;
 
 <section class="hero">
 
-  <picture>
-    <source media="(max-width: 768px)" srcset="hero-mobile.jpg">
-    <source media="(min-width: 769px)" srcset="hero-desktop.jpg">
-    <img src="hero-desktop.jpg">
-  </picture>
+<picture>
+  <source media="(max-width: 768px)" srcset="hero-mobile.jpg">
+  <source media="(min-width: 769px)" srcset="hero-desktop.jpg">
+  <img src="hero-desktop.jpg">
+</picture>
 
-  <div class="hero-overlay">
-    <h1>VEIDAHI INTIMATES</h1>
-    <p>Designed for Confidence. Styled for Every Occasion.</p>
+<div class="hero-content">
 
-    <div class="running-text">
-      <span>Luxury Lingerie | New Arrivals | Premium Quality | Exclusive Designs | Delhi Based Brand</span>
-    </div>
+  <h1>VEIDAHI INTIMATES</h1>
 
-    <br>
-    <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-      Shop Now
-    </button>
+  <p>Designed for Confidence. Styled for Every Occasion.</p>
+
+  <div class="running-text">
+    <span>
+      Luxury Lingerie ✦ New Arrivals ✦ Premium Quality ✦ Exclusive Designs ✦ Made for You
+    </span>
   </div>
+
+  <button class="hero-btn"
+  onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+  Shop Now
+  </button>
+
+</div>
 
 </section>
   

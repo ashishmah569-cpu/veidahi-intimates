@@ -178,12 +178,12 @@ style="background:#fff; color:black; border:1px solid #ccc;">
 <b>Product Description:</b><br>
 Elegant everyday bralette crafted for comfort and confidence.
 Lightweight stretch fabric with breathable support — perfect for daily luxury wear.
-</div>v
+</div>
   <div class="combo-box">
 <h3>3 Set Combo Offer</h3>
 <p><del>₹390</del> ₹249</p>
 <p>Save ₹141</p>
-<button>Buy 3 Set Combo</button>
+<button onclick="orderCombo()">Buy 3 Set Combo</button>
 </div>
 
   <div class="fabric-section">
@@ -212,9 +212,8 @@ Lightweight stretch fabric with breathable support — perfect for daily luxury 
 
 </div>
 </div>
-
-<script>
-
+</script>
+  
 /* IMAGES */
 const images = {
 green:[
@@ -312,8 +311,24 @@ btn.innerHTML = "♡ Add to Wishlist";
 btn.style.color = "black";
 }
 }
+function orderCombo(){
 
-</script>
+const size = document.getElementById("sizeSelect").value;
+const productName = document.querySelector("h2").innerText;
+const comboPrice = document.querySelector(".combo-box p").innerText;
+
+const message =
+"🛍️ COMBO ORDER 🛍️\n\n"+
+"📌 Product: " + productName + "\n"+
+"📏 Size: " + size + "\n"+
+"🔥 Offer: " + comboPrice;
+
+const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank");
+
+}
+
 /* STOCK AUTO CHECK (Optional Demo) */
 function checkStock(){
 const stock = Math.floor(Math.random()*5);
@@ -325,6 +340,7 @@ document.getElementById("stockStatus").style.color = "red";
 }
 
 checkStock();
-
+  
+</script>
 </body>
 </html>

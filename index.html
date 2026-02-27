@@ -368,8 +368,9 @@ max-width:300px;
 border-radius:15px;
 } 
 </style>
+  </head>
   
-</head>
+  <body>
   
   <div class="arrival-popup" id="arrivalPopup">
 <div class="arrival-popup-content">
@@ -377,9 +378,13 @@ border-radius:15px;
 <div class="arrival-popup-track" id="arrivalTrack"></div>
 </div>
 </div>
-  
-<body>
 
+<picture>
+  <source media="(max-width: 768px)" srcset="hero-mobile.jpg">
+  <source media="(min-width: 769px)" srcset="hero-desktop.jpg">
+  <img src="hero-desktop.jpg" style="width:100%; display:block;">
+</picture>
+  
 <!-- NAV -->
 <div class="navbar">
 <div class="logo">VEIDAHI</div>

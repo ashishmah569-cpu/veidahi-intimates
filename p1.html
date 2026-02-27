@@ -285,11 +285,18 @@ function highlightActive(activeColor){
 document.querySelectorAll(".color-dot").forEach(dot=>{
 dot.classList.remove("active");
 });
+
+const dots = document.querySelectorAll(".color-dot");
+dots.forEach(dot=>{
+if(dot.style.background === colorMap[activeColor]){
+dot.classList.add("active");
+}
+});
 }
 
 /* INIT */
 loadImages("green");
-const singlePriceValue = 80; // apne product ka original price yaha likho
+const singlePriceValue = 130; // apne product ka original price yaha likho
 
 function updateTotal(){
 const qty = document.getElementById("quantity").value;
@@ -300,23 +307,22 @@ document.getElementById("totalPrice").innerText = "Total: ₹" + total;
 function orderNow(){
 
 const size = document.getElementById("sizeSelect").value;
+const qty = document.getElementById("quantity").value;
+const total = singlePriceValue * qty;
 
 const message =
 "🛍️ NEW ORDER 🛍️\n\n"+
 "📌 Product: Bralette\n"+
 "🎨 Color: "+currentColor+"\n"+
 "📏 Size: "+size+"\n"+
-const qty = document.getElementById("quantity").value;
-const total = singlePriceValue * qty;
-
 "🛍️ Quantity: "+qty+"\n"+
 "💰 Total Price: ₹"+total+"\n\n"+
 "🔥 3 Set Combo: ₹249";
 
 const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
 window.open(url,"_blank");
-}
 
+}
 /* WISHLIST */
 function toggleWishlist(){
 const btn = document.getElementById("wishBtn");

@@ -186,6 +186,8 @@ Lightweight stretch fabric with breathable support — perfect for daily luxury 
 
 <script>
 
+<script>
+
 /* IMAGES */
 const images = {
 aqua:[
@@ -282,9 +284,9 @@ loadImages("aqua");
 /* WHATSAPP ORDER */
 function orderNow(){
 
-const name = document.getElementById("custName").value;
-const phone = document.getElementById("custPhone").value;
-const address = document.getElementById("custAddress").value;
+const name = document.getElementById("custName").value.trim();
+const phone = document.getElementById("custPhone").value.trim();
+const address = document.getElementById("custAddress").value.trim();
 const size = document.getElementById("sizeSelect").value;
 
 if(name==="" || phone==="" || address===""){
@@ -295,20 +297,24 @@ return;
 const imageURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/" + images[currentColor][0];
 
 const message =
-"🛍️ NEW ORDER RECEIVED 🛍️%0A%0A"+
-"📌 Product: Premium Lace Bra Set%0A"+
-"🎨 Color: "+currentColor+"%0A"+
-"📏 Size: "+size+"%0A"+
-"💰 Price: ₹229%0A"+
-"🖼️ Image: "+imageURL+"%0A%0A"+
-"Name: "+name+"%0A"+
-"Phone: "+phone+"%0A"+
-"Address: "+address;
+"🛍️ NEW ORDER RECEIVED 🛍️\n\n"+
+"📌 Product: PureEase\n"+
+"🎨 Color: "+currentColor+"\n"+
+"📏 Size: "+size+"\n"+
+"💰 Single Price: ₹80\n"+
+"🔥 3 Set Combo Price: ₹130\n\n"+
+"🖼️ Image: "+imageURL+"\n\n"+
+"👤 Name: "+name+"\n"+
+"📞 Phone: "+phone+"\n"+
+"📍 Address: "+address;
 
-window.open("https://wa.me/918750020203?text="+message,"_blank");
+const whatsappURL = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
+
+window.open(whatsappURL,"_blank");
 
 }
-/* WISHLIST TOGGLE */
+
+/* WISHLIST */
 function toggleWishlist(){
 const btn = document.getElementById("wishBtn");
 
@@ -321,7 +327,7 @@ btn.style.color = "black";
 }
 }
 
-/* STOCK AUTO CHECK (Optional Demo) */
+/* STOCK CHECK */
 function checkStock(){
 const stock = Math.floor(Math.random()*5);
 
@@ -332,7 +338,7 @@ document.getElementById("stockStatus").style.color = "red";
 }
 
 checkStock();
-</script>
 
+</script>
 </body>
 </html>

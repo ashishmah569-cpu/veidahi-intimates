@@ -207,7 +207,14 @@ Lightweight stretch fabric with breathable support — perfect for daily luxury 
     <option>38</option>
     <option>40</option>
   </select>
+<br><br>
 
+<label><b>Quantity:</b></label><br>
+<input type="number" id="quantity" value="1" min="1" onchange="updateTotal()">
+
+<p id="totalPrice" style="font-weight:bold; margin-top:10px;">
+Total: ₹130
+</p>
   <button onclick="orderNow()">Order on WhatsApp</button>
 
 </div>
@@ -282,7 +289,13 @@ dot.classList.remove("active");
 
 /* INIT */
 loadImages("green");
+const singlePriceValue = 80; // apne product ka original price yaha likho
 
+function updateTotal(){
+const qty = document.getElementById("quantity").value;
+const total = singlePriceValue * qty;
+document.getElementById("totalPrice").innerText = "Total: ₹" + total;
+}
 /* WHATSAPP */
 function orderNow(){
 
@@ -293,7 +306,11 @@ const message =
 "📌 Product: Bralette\n"+
 "🎨 Color: "+currentColor+"\n"+
 "📏 Size: "+size+"\n"+
-"💰 Single Price: ₹130\n"+
+const qty = document.getElementById("quantity").value;
+const total = singlePriceValue * qty;
+
+"🛍️ Quantity: "+qty+"\n"+
+"💰 Total Price: ₹"+total+"\n\n"+
 "🔥 3 Set Combo: ₹249";
 
 const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);

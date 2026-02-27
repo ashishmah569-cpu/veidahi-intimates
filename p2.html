@@ -221,7 +221,7 @@ if(active){ active.classList.add("active"); }
 
 loadImages("red");
 
-<script>
+/* ===== ORDER FUNCTION ===== */
 
 function orderNow(){
 
@@ -235,15 +235,14 @@ alert("Please fill all details");
 return;
 }
 
-/* ===== CHANGE THESE 3 VALUES PER PRODUCT ===== */
 const productName = document.querySelector("h2").innerText;
-const singlePrice = document.querySelector(".price").innerText.replace("Price: ","");
-const comboPrice = document.querySelector(".combo-box p del").nextSibling.textContent.trim();
-/* ============================================= */
+const singlePrice = "₹135";
+const comboPrice = "₹299";
 
 const message =
 "🛍️ NEW ORDER 🛍️\n\n"+
 "📌 Product: " + productName + "\n"+
+"🎨 Color: " + currentColor + "\n"+
 "📏 Size: " + size + "\n"+
 "💰 Single Price: " + singlePrice + "\n"+
 "🔥 Combo Price: " + comboPrice + "\n\n"+
@@ -254,10 +253,10 @@ const message =
 const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
 
 window.open(url, "_blank");
-
 }
 
-</script>
+/* ===== WISHLIST ===== */
+
 function toggleWishlist(){
 const btn = document.getElementById("wishBtn");
 if(btn.innerHTML.includes("♡")){
@@ -270,6 +269,5 @@ btn.style.color="black";
 }
 
 </script>
-
 </body>
 </html>

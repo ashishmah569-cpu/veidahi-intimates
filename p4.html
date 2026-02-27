@@ -166,26 +166,10 @@ button{
 
 <script>
 
-/* IMAGES */
 const images = {
-bebypink:[
-"p4-bebypink-1.jpg",
-"p4-bebypink-2.jpg",
-"p4-bebypink-3.jpg",
-"p4-bebypink-4.jpg"
-],
-moonred:[
-"p4-moonred-1.jpg",
-"p4-moonred-2.jpg",
-"p4-moonred-3.jpg",
-"p4-moonred-4.jpg"
-],
-teal:[
-"p4-teal-1.jpg",
-"p4-teal-2.jpg",
-"p4-teal-3.jpg",
-"p4-teal-4.jpg"
-]
+bebypink:["p4-bebypink-1.jpg","p4-bebypink-2.jpg","p4-bebypink-3.jpg","p4-bebypink-4.jpg"],
+moonred:["p4-moonred-1.jpg","p4-moonred-2.jpg","p4-moonred-3.jpg","p4-moonred-4.jpg"],
+teal:["p4-teal-1.jpg","p4-teal-2.jpg","p4-teal-3.jpg","p4-teal-4.jpg"]
 };
 
 const mainImage = document.getElementById("mainImage");
@@ -194,62 +178,48 @@ const colorIcons = document.getElementById("colorIcons");
 
 let currentColor = "bebypink";
 
-/* LOAD IMAGES */
 function loadImages(color){
 currentColor = color;
 thumbs.innerHTML = "";
 
 images[color].forEach(function(img,index){
-if(index===0){
-mainImage.src = img;
-}
+if(index===0){ mainImage.src = img; }
 
 const t = document.createElement("img");
 t.src = img;
-t.onclick = function(){
-mainImage.src = img;
-};
+t.onclick = function(){ mainImage.src = img; };
 thumbs.appendChild(t);
 });
 
 highlightActive(color);
 }
 
-/* COLOR MAP */
 const colorMap = {
 bebypink:"#ffb6c1",
 moonred:"#8b0000",
 teal:"#008080"
 };
 
-/* CREATE COLOR DOTS */
-Object.keys(images).forEach(color => {
+Object.keys(images).forEach(color=>{
 const dot = document.createElement("div");
 dot.classList.add("color-dot");
 dot.style.background = colorMap[color];
 dot.setAttribute("data-color", color);
-dot.onclick = function(){
-loadImages(color);
-};
+dot.onclick = function(){ loadImages(color); };
 colorIcons.appendChild(dot);
 });
 
-/* ACTIVE DOT */
 function highlightActive(activeColor){
 document.querySelectorAll(".color-dot").forEach(dot=>{
 dot.classList.remove("active");
 });
 const active = document.querySelector('.color-dot[data-color="'+activeColor+'"]');
-if(active){
-active.classList.add("active");
-}
+if(active){ active.classList.add("active"); }
 }
 
-/* INIT */
 loadImages("bebypink");
 
-/* WHATSAPP ORDER */
-<script>
+/* ===== ORDER FUNCTION ===== */
 
 function orderNow(){
 
@@ -263,18 +233,15 @@ alert("Please fill all details");
 return;
 }
 
-/* ===== CHANGE THESE 3 VALUES PER PRODUCT ===== */
 const productName = document.querySelector("h2").innerText;
-const singlePrice = document.querySelector(".price").innerText.replace("Price: ","");
-const comboPrice = document.querySelector(".combo-box p del").nextSibling.textContent.trim();
-/* ============================================= */
 
 const message =
 "🛍️ NEW ORDER 🛍️\n\n"+
 "📌 Product: " + productName + "\n"+
+"🎨 Color: " + currentColor + "\n"+
 "📏 Size: " + size + "\n"+
-"💰 Single Price: " + singlePrice + "\n"+
-"🔥 Combo Price: " + comboPrice + "\n\n"+
+"💰 Single Price: ₹90\n"+
+"🔥 Combo Price: ₹159\n\n"+
 "👤 Name: " + name + "\n"+
 "📞 Phone: " + phone + "\n"+
 "📍 Address: " + address;
@@ -282,24 +249,23 @@ const message =
 const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
 
 window.open(url, "_blank");
-
 }
 
-</script>
+/* ===== WISHLIST ===== */
 
-/* WISHLIST */
 function toggleWishlist(){
 const btn = document.getElementById("wishBtn");
 if(btn.innerHTML.includes("♡")){
-btn.innerHTML = "♥ Added to Wishlist";
-btn.style.color = "red";
+btn.innerHTML="♥ Added to Wishlist";
+btn.style.color="red";
 }else{
-btn.innerHTML = "♡ Add to Wishlist";
-btn.style.color = "black";
+btn.innerHTML="♡ Add to Wishlist";
+btn.style.color="black";
 }
 }
 
-/* STOCK RANDOM */
+/* ===== STOCK ===== */
+
 function checkStock(){
 const stock = Math.floor(Math.random()*5);
 if(stock < 1){
@@ -310,6 +276,5 @@ document.getElementById("stockStatus").style.color = "red";
 checkStock();
 
 </script>
-
 </body>
 </html>

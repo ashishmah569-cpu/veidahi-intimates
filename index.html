@@ -464,50 +464,58 @@ onclick="openArrival([
 
 <div class="products-grid">
 
-<div class="product-card">
+<div class="product-card"
+onclick="openProduct([
 <img src="p1-burgundy-1.jpg">
 <h3>Bralette</h3>
 <p class="product-price">₹130</p>
 </div>
 
-<div class="product-card">
+<div class="product-card"
+onclick="openProduct([
 <img src="p2-new-brown-1.jpg">
 <h3>Cami Set</h3>
 <p class="product-price">₹135</p>
 </div>
 
 
-<div class="product-card">
+<div class="product-card"
+onclick="openProduct([
 <img src="p3-forestgreen-1.jpg">
 <h3>High Coverage Bra</h3>
 <p class="product-price">₹150</p>
 </div>
 
-<div class="product-card">
+<div class="product-card"
+onclick="openProduct([
 <img src="p4-bebypink-1.jpg">
 <h3>UrbanBloom Brief</h3>
 <p class="product-price">₹90</p>
 </div>
 
-<div class="product-card">
+<div class="product-card"
+onclick="openProduct([
 <img src="p5-navy-1.jpg">
 <h3>UrbanBloom Brief</h3>
 <p class="product-price">₹90</p>
 </div>
 
-<div class="product-card">
+<div class="product-card"
+onclick="openProduct([
 <img src="p6-aqua-1.jpg">
 <h3>PureEase</h3>
 <p class="product-price">₹80</p>
 </div>
 
-<div class="product-card">
+<div class="product-card"
+onclick="openProduct([
 <img src="p7-chocolate-1.jpg">
 <h3>UrbanBloom Brief</h3>
 <p class="product-price">₹90</p>
 </div>
 
-<div class="product-card">
+<div class="product-card"
+onclick="openProduct([
 <img src="p8-deepsea-1.jpg">
 <h3>PureEase</h3>
 <p class="product-price">₹80</p>
@@ -522,15 +530,62 @@ onclick="openArrival([
 
 <!-- ARRIVAL POPUP HTML -->
 
-<div class="arrival-popup" id="arrivalPopup">
-<div class="arrival-popup-content">
+<!-- PRODUCT POPUP -->
 
-<span class="close-arrival" onclick="closeArrival()">✖</span>
+<div class="product-popup" id="productPopup">
+<div class="product-popup-content">
 
-<div class="arrival-popup-track" id="arrivalTrack"></div>
+<span class="close-product" onclick="closeProduct()">✖</span>
+
+<div class="product-popup-track" id="productTrack"></div>
 
 </div>
 </div>
+
+  /* ================= PRODUCT POPUP ================= */
+
+.product-popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.product-popup-content{
+background:white;
+width:90%;
+max-width:500px;
+border-radius:20px;
+padding:20px;
+position:relative;
+overflow:hidden;
+}
+
+.close-product{
+position:absolute;
+top:10px;
+right:15px;
+font-size:20px;
+cursor:pointer;
+}
+
+.product-popup-track{
+display:flex;
+overflow-x:auto;
+gap:10px;
+}
+
+.product-popup-track img{
+width:100%;
+max-width:300px;
+border-radius:15px;
+}
 
 <!-- JS YAHAN -->
 
@@ -558,6 +613,31 @@ arrivalPopup.style.display = "none";
 arrivalPopup.addEventListener("click",function(e){
 if(e.target === arrivalPopup){
 arrivalPopup.style.display = "none";
+}
+});
+
+  const productPopup = document.getElementById("productPopup");
+const productTrack = document.getElementById("productTrack");
+
+function openProduct(images){
+productTrack.innerHTML = "";
+
+images.forEach(img=>{
+const image = document.createElement("img");
+image.src = img;
+productTrack.appendChild(image);
+});
+
+productPopup.style.display = "flex";
+}
+
+function closeProduct(){
+productPopup.style.display = "none";
+}
+
+productPopup.addEventListener("click",function(e){
+if(e.target === productPopup){
+productPopup.style.display = "none";
 }
 });
 

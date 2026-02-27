@@ -293,7 +293,7 @@ height:100%;
 background:rgba(0,0,0,0.8);
 justify-content:center;
 align-items:center;
-z-index:2000;
+z-index:3000;
 }
 
 .arrival-popup-content{
@@ -303,7 +303,6 @@ max-width:500px;
 border-radius:20px;
 padding:20px;
 position:relative;
-overflow:hidden;
 }
 
 .close-arrival{
@@ -318,15 +317,13 @@ cursor:pointer;
 display:flex;
 overflow-x:auto;
 gap:10px;
-scroll-behavior:smooth;
 }
 
 .arrival-popup-track img{
 width:100%;
 max-width:300px;
 border-radius:15px;
-}
- /* ================= PRODUCT POPUP ================= */
+} /* ================= PRODUCT POPUP ================= */
 
 .product-popup{
 display:none;
@@ -373,6 +370,14 @@ border-radius:15px;
 </style>
   
 </head>
+  
+  <div class="arrival-popup" id="arrivalPopup">
+<div class="arrival-popup-content">
+<span class="close-arrival" onclick="closeArrival()">✖</span>
+<div class="arrival-popup-track" id="arrivalTrack"></div>
+</div>
+</div>
+  
 <body>
 
 <!-- NAV -->
@@ -438,61 +443,37 @@ Shop Now
 <div class="arrival-slider">
 
 <div class="arrival-card"
-onclick="openArrival([
-'na1-1.jpg',
-'na1-2.jpg',
-'na1-3.jpg'
-])">
+onclick="openArrival([na1-1.jpg','na1-2.jpg','na1-3.jpg'])">
 <img src="na1-1.jpg">
 <h3>Sports Bra</h3>
 </div>
 
 <div class="arrival-card"
-onclick="openArrival([
-'na2-1.jpg',
-'na2-2.jpg',
-'na2-3.jpg'
-])">
+onclick="openArrival(['na2-1.jpg','na2-2.jpg','na2-3.jpg'])">
 <img src="na2-1.jpg">
 <h3>Gym Bra</h3>
 </div>
 
 <div class="arrival-card"
-onclick="openArrival([
-'na3-1.jpg',
-'na3-2.jpg',
-'na3-3.jpg'
-])">
+onclick="openArrival(['na3-1.jpg','na3-2.jpg','na3-3.jpg'])">
 <img src="na3-1.jpg">
 <h3>Runing Bra</h3>
 </div>
 
 <div class="arrival-card"
-onclick="openArrival([
-'na4-1.jpg',
-'na4-2.jpg',
-'na4-3.jpg'
-])">
+onclick="openArrival(['na4-1.jpg','na4-2.jpg','na4-3.jpg'])">
 <img src="na4-1.jpg">
 <h3>Bold Classic</h3>
 </div>
 
 <div class="arrival-card"
-onclick="openArrival([
-'na5-1.jpg',
-'na5-2.jpg',
-'na5-3.jpg'
-])">
+onclick="openArrival(['na5-1.jpg','na5-2.jpg','na5-3.jpg'])">
 <img src="na5-1.jpg">
 <h3>Bold Classic</h3>
 </div>
 
 <div class="arrival-card"
-onclick="openArrival([
-'na6-1.jpg',
-'na6-2.jpg',
-'na6-3.jpg'
-])">
+onclick="openArrival(['na6-1.jpg','na6-2.jpg','na6-3.jpg'])">
 <img src="na6-1.jpg">
 <h3>Play With Naughty</h3>
 </div>

@@ -43,14 +43,8 @@ body{
   cursor:pointer;
   border-radius:6px;
   border:2px solid transparent;
-  transition:0.3s;
 }
 
-.thumbs img:hover{
-  transform:scale(1.1);
-}
-
-/* COLOR DOTS */
 .color-icons{
   display:flex;
   gap:12px;
@@ -63,7 +57,6 @@ body{
   border-radius:50%;
   cursor:pointer;
   border:2px solid #ddd;
-  transition:0.3s;
 }
 
 .color-dot.active{
@@ -74,10 +67,8 @@ body{
 .price{
   font-size:20px;
   margin:10px 0;
-  color:#444;
 }
 
-/* COMBO BOX */
 .combo-box{
   background:#fff5f8;
   padding:20px;
@@ -97,20 +88,14 @@ body{
   margin-right:8px;
 }
 
-select{
-  padding:10px;
-  margin-top:10px;
-  width:220px;
-}
-
-input{
+select,input{
   padding:10px;
   margin-top:10px;
   width:220px;
 }
 
 button{
-  margin-top:20px;
+  margin-top:15px;
   padding:12px;
   width:220px;
   background:black;
@@ -118,9 +103,7 @@ button{
   border:none;
   cursor:pointer;
   border-radius:5px;
-  font-size:16px;
 }
-button:hover{opacity:0.8;}
 </style>
 </head>
 
@@ -134,90 +117,65 @@ button:hover{opacity:0.8;}
 </div>
 
 <div class="right">
-  <h2>Premium Camisole</h2>
 
-  <p class="price"><b>Price:</b> ₹135</p>
-<!-- ⭐ Rating -->
-<div style="margin:8px 0; font-size:14px;">
-★★★★★ <span style="color:#777;">(4.8/5 • 124 Reviews)</span>
-</div>
+<h2>Premium Camisole</h2>
 
-<!-- 📦 Stock Status -->
-<p id="stockStatus" style="color:green; font-weight:bold;">
-✔ In Stock
-</p>
+<p class="price"><b>Price:</b> ₹135</p>
 
-<!-- 🚚 Delivery Info -->
-<p style="font-size:13px; color:#555;">
-🚚 Free Delivery in 3-5 Days | Easy Returns
-</p>
+<div style="margin:8px 0;">★★★★★ (4.8/5 • 124 Reviews)</div>
 
-<!-- 💖 Wishlist -->
-<button onclick="toggleWishlist()" id="wishBtn" 
-style="background:#fff; color:black; border:1px solid #ccc;">
+<p id="stockStatus" style="color:green;font-weight:bold;">✔ In Stock</p>
+
+<p style="font-size:13px;">🚚 Free Delivery in 3-5 Days | Easy Returns</p>
+
+<button onclick="toggleWishlist()" id="wishBtn"
+style="background:#fff;color:black;border:1px solid #ccc;">
 ♡ Add to Wishlist
 </button>
 
-<!-- 📝 Short Description -->
-<div style="margin-top:20px; font-size:14px; color:#444; line-height:1.6;">
+<div style="margin-top:15px;">
 <b>Product Description:</b><br>
-Elegant everyday bralette crafted for comfort and confidence.
-Lightweight stretch fabric with breathable support — perfect for daily luxury wear.
+Elegant stretch camisole for daily comfort and smooth fit.
 </div>
-  <div class="combo-box">
-    <h3>3 Set Combo Offer</h3>
-    <p><del>₹405</del> ₹299</p>
-    <p>Save ₹106</p>
-    <button onclick="orderNow()">Buy 3 Set Combo</button>
+
+<div class="combo-box">
+<h3>3 Set Combo Offer</h3>
+<p><del>₹405</del> ₹299</p>
+<p>Save ₹106</p>
+<button onclick="orderNow()">Buy 3 Set Combo</button>
 </div>
-  </div>
 
-  <label><b>Choose Color:</b></label>
-  <div class="color-icons" id="colorIcons"></div>
+<label><b>Choose Color:</b></label>
+<div class="color-icons" id="colorIcons"></div>
 
-  <br>
+<br>
 
-  <label>Select Size:</label><br>
-  <select id="sizeSelect">
-    <option>32</option>
-    <option>34</option>
-    <option>36</option>
-    <option>38</option>
-    <option>40</option>
-  </select>
+<label>Select Size:</label><br>
+<select id="sizeSelect">
+<option>32</option>
+<option>34</option>
+<option>36</option>
+<option>38</option>
+<option>40</option>
+</select>
 
-  <br>
-  <input type="text" id="custName" placeholder="Your Name">
-  <input type="text" id="custPhone" placeholder="Phone Number">
-  <input type="text" id="custAddress" placeholder="Address">
+<br>
 
-  <button onclick="orderNow()">Order on WhatsApp</button>
+<input type="text" id="custName" placeholder="Your Name">
+<input type="text" id="custPhone" placeholder="Phone Number">
+<input type="text" id="custAddress" placeholder="Address">
+
+<button onclick="orderNow()">Order on WhatsApp</button>
 
 </div>
 </div>
 
 <script>
 
-/* IMAGES */
 const images = {
-red:[
-"p2-new-red-1.jpg",
-"p2-new-red-2.jpg",
-"p2-new-red-3.jpg",
-"p2-new-red-4.jpg"
-],
-grey:[
-"p2-new-grey-1.jpg",
-"p2-new-grey-2.jpg",
-"p2-new-grey-3.jpg",
-"p2-new-grey-4.jpg"
-],
-brown:[
-"p2-new-brown-1.jpg",
-"p2-new-brown-2.jpg",
-"p2-new-brown-3.jpg",
-"p2-new-brown-4.jpg"
-]
+red:["p2-new-red-1.jpg","p2-new-red-2.jpg","p2-new-red-3.jpg","p2-new-red-4.jpg"],
+grey:["p2-new-grey-1.jpg","p2-new-grey-2.jpg","p2-new-grey-3.jpg","p2-new-grey-4.jpg"],
+brown:["p2-new-brown-1.jpg","p2-new-brown-2.jpg","p2-new-brown-3.jpg","p2-new-brown-4.jpg"]
 };
 
 const mainImage = document.getElementById("mainImage");
@@ -226,71 +184,43 @@ const colorIcons = document.getElementById("colorIcons");
 
 let currentColor = "red";
 
-/* LOAD IMAGES */
 function loadImages(color){
-
 currentColor = color;
 thumbs.innerHTML = "";
 
 images[color].forEach(function(img,index){
-
-if(index===0){
-mainImage.src = img;
-}
+if(index===0){ mainImage.src = img; }
 
 const t = document.createElement("img");
 t.src = img;
-t.onclick = function(){
-mainImage.src = img;
-};
-
+t.onclick = function(){ mainImage.src = img; };
 thumbs.appendChild(t);
-
 });
 
 highlightActive(color);
 }
 
-/* COLOR MAP */
-const colorMap = {
-red:"#d10000",
-grey:"#777",
-brown:"#5a3e2b"
-};
+const colorMap = { red:"#d10000", grey:"#777", brown:"#5a3e2b" };
 
-Object.keys(images).forEach(color => {
-
+Object.keys(images).forEach(color=>{
 const dot = document.createElement("div");
 dot.classList.add("color-dot");
 dot.style.background = colorMap[color];
 dot.setAttribute("data-color", color);
-
-dot.onclick = function(){
-loadImages(color);
-};
-
+dot.onclick = function(){ loadImages(color); };
 colorIcons.appendChild(dot);
-
 });
 
-/* ACTIVE DOT */
 function highlightActive(activeColor){
-
 document.querySelectorAll(".color-dot").forEach(dot=>{
 dot.classList.remove("active");
 });
-
-const active = document.querySelector('.color-dot[data-color="'+activeColor+'"]');
-if(active){
-active.classList.add("active");
+const active = document.querySelector('[data-color="'+activeColor+'"]');
+if(active){ active.classList.add("active"); }
 }
 
-}
-
-/* INIT */
 loadImages("red");
 
-/* WHATSAPP ORDER */
 function orderNow(){
 
 const name = document.getElementById("custName").value;
@@ -307,7 +237,6 @@ const imageURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/" + image
 
 const message =
 "🛍️ NEW ORDER RECEIVED 🛍️%0A%0A"+
-"━━━━━━━━━━━━━━%0A"+
 "📌 Product: Premium Camisole%0A"+
 "🎨 Color: "+currentColor+"%0A"+
 "📏 Size: "+size+"%0A"+
@@ -315,36 +244,22 @@ const message =
 "📞 Phone: "+phone+"%0A"+
 "🏠 Address: "+address+"%0A"+
 "💰 Price: ₹135%0A"+
-"🖼️ Image: "+imageURL+"%0A"+
-"━━━━━━━━━━━━━━%0A%0A"+
-"Please confirm 😊";
+"🖼️ Image: "+imageURL;
 
 window.open("https://wa.me/918750020203?text="+message,"_blank");
 }
-/* WISHLIST TOGGLE */
+
 function toggleWishlist(){
 const btn = document.getElementById("wishBtn");
-
 if(btn.innerHTML.includes("♡")){
-btn.innerHTML = "♥ Added to Wishlist";
-btn.style.color = "red";
-} else {
-btn.innerHTML = "♡ Add to Wishlist";
-btn.style.color = "black";
+btn.innerHTML="♥ Added to Wishlist";
+btn.style.color="red";
+}else{
+btn.innerHTML="♡ Add to Wishlist";
+btn.style.color="black";
 }
 }
 
-/* STOCK AUTO CHECK (Optional Demo) */
-function checkStock(){
-const stock = Math.floor(Math.random()*5);
-
-if(stock < 1){
-document.getElementById("stockStatus").innerHTML = "✖ Out of Stock";
-document.getElementById("stockStatus").style.color = "red";
-}
-}
-
-checkStock();
 </script>
 
 </body>

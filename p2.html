@@ -303,16 +303,18 @@ return;
 
 const imageURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/" + images[currentColor][0];
 
+function orderNow(){
+
+const size = document.getElementById("sizeSelect").value;
+
 const message =
 "🛍️ NEW ORDER RECEIVED 🛍️%0A%0A"+
-"📌 Product: Premium Stretch Camisole%0A"+
-"🎨 Color: "+currentColor+"%0A"+
+"━━━━━━━━━━━━━━%0A"+
+"📌 Product: Bralette%0A"+
 "📏 Size: "+size+"%0A"+
-"💰 Price: ₹135%0A"+
-"🖼️ Image: "+imageURL+"%0A%0A"+
-"Name: "+name+"%0A"+
-"Phone: "+phone+"%0A"+
-"Address: "+address;
+"💰 Price: ₹130%0A"+
+"━━━━━━━━━━━━━━%0A%0A"+
+"Please confirm 😊";
 
 window.open("https://wa.me/918750020203?text="+message,"_blank");
 

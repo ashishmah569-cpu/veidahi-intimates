@@ -179,7 +179,7 @@ Lightweight stretch fabric with breathable support — perfect for daily luxury 
   <input type="text" id="custPhone" placeholder="Phone Number">
   <input type="text" id="custAddress" placeholder="Address">
 
-  <button onclick="orderNow()">Order on WhatsApp</button>
+<button onclick="orderNow()">Order on WhatsApp</button>
 
 </div>
 </div>
@@ -280,6 +280,8 @@ active.classList.add("active");
 loadImages("deepsea");
 
 /* WHATSAPP ORDER */
+<script>
+
 function orderNow(){
 
 const name = document.getElementById("custName").value.trim();
@@ -287,30 +289,34 @@ const phone = document.getElementById("custPhone").value.trim();
 const address = document.getElementById("custAddress").value.trim();
 const size = document.getElementById("sizeSelect").value;
 
-if(name==="" || phone==="" || address===""){
+if(name === "" || phone === "" || address === ""){
 alert("Please fill all details");
 return;
 }
 
-const imageURL = "https://ashishmah569-cpu.github.io/veidahi-intimates/" + images[currentColor][0];
+/* ===== CHANGE THESE 3 VALUES PER PRODUCT ===== */
+const productName = document.querySelector("h2").innerText;
+const singlePrice = document.querySelector(".price").innerText.replace("Price: ","");
+const comboPrice = document.querySelector(".combo-box p del").nextSibling.textContent.trim();
+/* ============================================= */
 
 const message =
-"🛍️ NEW ORDER RECEIVED 🛍️\n\n"+
-"📌 Product: PureEase\n"+
-"🎨 Color: "+currentColor+"\n"+
-"📏 Size: "+size+"\n"+
-"💰 Single Price: ₹80\n"+
-"🔥 3 Set Combo Price: ₹130\n\n"+
-"🖼️ Image: "+imageURL+"\n\n"+
-"👤 Name: "+name+"\n"+
-"📞 Phone: "+phone+"\n"+
-"📍 Address: "+address;
+"🛍️ NEW ORDER 🛍️\n\n"+
+"📌 Product: " + productName + "\n"+
+"📏 Size: " + size + "\n"+
+"💰 Single Price: " + singlePrice + "\n"+
+"🔥 Combo Price: " + comboPrice + "\n\n"+
+"👤 Name: " + name + "\n"+
+"📞 Phone: " + phone + "\n"+
+"📍 Address: " + address;
 
-const whatsappURL = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
+const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
 
-window.open(whatsappURL,"_blank");
+window.open(url, "_blank");
 
 }
+
+</script>
 
 /* WISHLIST */
 function toggleWishlist(){

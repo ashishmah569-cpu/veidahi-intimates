@@ -155,11 +155,12 @@ style="background:#fff; color:black; border:1px solid #ccc;">
 Elegant everyday bralette crafted for comfort and confidence.
 Lightweight stretch fabric with breathable support — perfect for daily luxury wear.
 </div>
-  <div class="combo-box">
-    <h3>3 Set Combo Offer</h3>
-    <p><del>₹240</del> ₹130</p>
-    <p>Save ₹110</p>
-  </div>
+ <div class="combo-box">
+  <h3>3 Set Combo Offer</h3>
+  <p><del>₹240</del> ₹130</p>
+  <p>Save ₹110</p>
+  <button onclick="orderNow()">Buy 3 Set Combo</button>
+</div>
 
   <label><b>Choose Color:</b></label>
   <div class="color-icons" id="colorIcons"></div>
@@ -280,7 +281,6 @@ active.classList.add("active");
 loadImages("deepsea");
 
 /* WHATSAPP ORDER */
-<script>
 
 function orderNow(){
 
@@ -289,33 +289,26 @@ const phone = document.getElementById("custPhone").value.trim();
 const address = document.getElementById("custAddress").value.trim();
 const size = document.getElementById("sizeSelect").value;
 
-if(name === "" || phone === "" || address === ""){
+if(name==="" || phone==="" || address===""){
 alert("Please fill all details");
 return;
 }
 
-/* ===== CHANGE THESE 3 VALUES PER PRODUCT ===== */
 const productName = document.querySelector("h2").innerText;
-const singlePrice = document.querySelector(".price").innerText.replace("Price: ","");
-const comboPrice = document.querySelector(".combo-box p del").nextSibling.textContent.trim();
-/* ============================================= */
 
 const message =
 "🛍️ NEW ORDER 🛍️\n\n"+
-"📌 Product: " + productName + "\n"+
-"📏 Size: " + size + "\n"+
-"💰 Single Price: " + singlePrice + "\n"+
-"🔥 Combo Price: " + comboPrice + "\n\n"+
-"👤 Name: " + name + "\n"+
-"📞 Phone: " + phone + "\n"+
-"📍 Address: " + address;
+"📌 Product: "+productName+"\n"+
+"📏 Size: "+size+"\n"+
+"💰 Single Price: ₹80\n"+
+"🔥 Combo Price: ₹130\n\n"+
+"👤 Name: "+name+"\n"+
+"📞 Phone: "+phone+"\n"+
+"📍 Address: "+address;
 
 const url = "https://wa.me/918750020203?text=" + encodeURIComponent(message);
-
-window.open(url, "_blank");
-
+window.open(url,"_blank");
 }
-
 </script>
 
 /* WISHLIST */

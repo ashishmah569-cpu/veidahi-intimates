@@ -21,7 +21,7 @@ body{
   line-height:1.9;
 }
 
-/* ===== CLOUDY BACKGROUND SECTION ===== */
+/* ===== HERO SECTION ===== */
 
 .story-hero{
   position:relative;
@@ -31,7 +31,6 @@ body{
   background:linear-gradient(to bottom, #faf7f5, #ffffff);
 }
 
-/* Soft cloudy effect */
 .story-hero::before{
   content:"";
   position:absolute;
@@ -81,7 +80,7 @@ body{
   z-index:2;
 }
 
-/* ===== FOUNDER IMAGE SOFT STYLE ===== */
+/* ===== FOUNDER IMAGE ===== */
 
 .founder-image{
   text-align:center;
@@ -95,6 +94,7 @@ body{
   border-radius:20px;
   opacity:0.95;
   filter:brightness(1.05);
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
 }
 
 /* ===== STORY TEXT ===== */
@@ -118,25 +118,47 @@ body{
   color:#333;
 }
 
-/* ===== QUOTE SECTION ===== */
+/* ===== FOUNDER HIGHLIGHT ===== */
+
+.founder-highlight{
+  background:#faf7f5;
+  padding:50px 20px;
+  margin:60px auto;
+  border-radius:20px;
+  max-width:850px;
+  text-align:center;
+}
+
+.founder-highlight h3{
+  color:var(--primary);
+  margin-bottom:20px;
+}
+
+.founder-highlight p{
+  font-size:18px;
+  color:#444;
+}
+
+/* ===== QUOTE ===== */
 
 .quote{
-  margin:70px auto;
+  margin:80px auto;
   max-width:850px;
   padding:40px 20px;
   text-align:center;
   font-size:22px;
   font-weight:600;
   color:#222;
+  font-style:italic;
 }
 
-/* ===== FACTORY GALLERY ===== */
+/* ===== GALLERY ===== */
 
 .story-gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
-  padding:0 20px 80px;
+  padding:0 20px 100px;
   max-width:1100px;
   margin:auto;
 }
@@ -147,13 +169,14 @@ body{
   object-fit:cover;
   border-radius:15px;
   transition:0.4s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 .story-gallery img:hover{
-  transform:scale(1.03);
+  transform:scale(1.05);
 }
 
-/* ===== MOBILE FIX ===== */
+/* ===== MOBILE ===== */
 
 @media(max-width:768px){
 
@@ -178,63 +201,7 @@ body{
 }
 
 }
-.story-hero{
-  height:60vh;
-  background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-  url('founder.jpg');
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-}
 
-.story-hero-content h1{
-  font-size:48px;
-  margin-bottom:10px;
-}
-
-.story-hero-content p{
-  font-size:18px;
-  letter-spacing:2px;
-}
-  .story-content{
-  padding:80px 20px;
-}
-
-.story-container{
-  max-width:800px;
-  margin:auto;
-  font-size:18px;
-  line-height:1.8;
-  color:#444;
-}
-
-.founder-highlight{
-  background:#faf7f5;
-  padding:40px;
-  margin:60px auto;
-  border-radius:15px;
-  max-width:800px;
-  text-align:center;
-}
-
-.story-container{
-  animation:fadeIn 1.2s ease-in-out;
-}
-
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
 </style>
 </head>
 
@@ -257,47 +224,34 @@ body{
   <h2>The Journey of Veidahi – From Establishment to Brand</h2>
 
   <p>
-  Veidahi was established in 2019 with a simple but powerful dream  to build something of our own. 
-  We started as a company with limited resources but unlimited belief. At that time, we didn’t have everything figured out, 
-  but we had courage, dedication, and the hunger to grow.
+  Veidahi was established in 2019 with a simple but powerful dream to build something of our own.
+  We started as a company with limited resources but unlimited belief.
   </p>
 
   <p>
-  The initial years were not easy. Like every new business, we faced losses. 
-  There were moments when finances were tight, orders were uncertain, and the future looked unclear. 
-  We made mistakes, we learned hard lessons, and sometimes we questioned whether we were moving in the right direction.
+  The initial years were not easy. We faced losses, uncertainty, and financial pressure.
+  But we learned, adapted, and improved every single day.
   </p>
 
-  <p><strong>But we did not stop.</strong></p>
+  <p><strong>We did not stop.</strong></p>
 
   <p>
-  Instead of giving up, we focused on improving — improving quality, improving systems, improving ourselves. 
-  We faced every loss with patience and strategy. We controlled costs, built stronger relationships, 
-  and slowly rebuilt our stability. Every setback became a lesson. Every failure became experience.
-  </p>
-
-  <p>
-  During this journey, I was not alone. There were people who stood beside me — my family, my close supporters, 
-  and my team who believed in the vision even during the difficult days. Their trust gave me strength when my own confidence was low. 
-  I am deeply thankful to each and every person who supported Veidahi in tough times. Without them, this journey would not have been possible.
+  Instead of giving up, we focused on improving quality, systems, and relationships.
+  Every setback became a lesson. Every failure became experience.
   </p>
 
   <p>
-  Today, after 6 years of continuous struggle, learning, and growth, we have reached a new milestone. 
-  What started in 2019 as Veidahi Established has now evolved into a brand — Veidahi Intimates.
+  After years of resilience and growth, Veidahi evolved into a brand — Veidahi Intimates.
+  A brand built on confidence, quality, and strength.
   </p>
 
   <p>
-  Veidahi Intimates is not just a product line; it is the result of years of resilience, belief, and hard work. 
-  It represents quality, confidence, and strength. It represents a journey from loss to learning, 
-  from struggle to stability, and from a company to a brand.
-  </p>
-
-  <p>
-  This is just the beginning. The foundation was built with courage  and the future will be built with vision.
+  This is just the beginning.
+  The foundation was built with courage — the future will be built with vision.
   </p>
 
 </div>
+
 <div class="founder-highlight">
   <h3>Why I Started Veidahi</h3>
   <p>
@@ -305,25 +259,16 @@ body{
     without being overpriced.
   </p>
 </div>
+
 <div class="quote">
   “The foundation was built with courage — the future will be built with vision.”
 </div>
 
 <div class="story-gallery">
-  <img src="factory1.jpg">
-  <img src="factory2.jpg">
-  <img src="factory3.jpg">
+  <img src="factory1.jpg" alt="Factory">
+  <img src="factory2.jpg" alt="Factory">
+  <img src="factory3.jpg" alt="Factory">
 </div>
-<section class="story-hero">
-  <div class="story-hero-content">
-    <h1>Our Story</h1>
-    <p>Built with passion. Designed with purpose.</p>
-  </div>
-</section>
-  <section class="story-content">
-  <div class="story-container">
-    <!-- yaha apna story text paste karo -->
-  </div>
-</section>
+
 </body>
 </html>

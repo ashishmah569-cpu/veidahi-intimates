@@ -26,43 +26,42 @@ body{
 .story-hero{
   position:relative;
   width:100%;
-  height:90vh;
+  height:100vh;
   overflow:hidden;
 }
 
 .story-hero img{
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:contain;  /* full visible */
+  background:#f8f6f3;  /* luxury beige */
 }
 
-/* Dark cinematic overlay */
 .story-hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  background:linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.4));
 }
 
-/* Founder Name Overlay */
 .hero-text{
   position:absolute;
-  bottom:15%;
-  left:10%;
+  bottom:12%;
+  left:8%;
   color:white;
   z-index:2;
 }
 
 .hero-text h1{
-  font-size:50px;
+  font-size:60px;
+  letter-spacing:3px;
   margin:0;
   font-weight:800;
 }
 
-.hero-text p{
+.hero-text span{
   font-size:18px;
-  opacity:0.9;
-  letter-spacing:1px;
+  letter-spacing:4px;
 }
 
 /* ================= STORY SECTION ================= */
@@ -82,10 +81,11 @@ body{
 
 .story-image img{
   width:100%;
-  height:520px;
-  object-fit:cover;
+  height:auto;        /* IMPORTANT */
+  object-fit:contain; /* IMPORTANT */
   border-radius:20px;
   box-shadow:0 20px 50px rgba(0,0,0,0.2);
+  background:#f5f5f5;
 }
 
 .story-text h2{
@@ -165,8 +165,8 @@ body{
   <img src="founder-hero.jpg" alt="Founder">
 
   <div class="hero-text">
-    <h1>Ashish Kohli</h1>
-    <p>Founder • Veidahi Intimates</p>
+    <h1>ASHISH KOHLI</h1>
+    <span>FOUNDER & CREATIVE DIRECTOR</span>
   </div>
 </section>
 

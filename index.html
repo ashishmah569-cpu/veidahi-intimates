@@ -77,33 +77,48 @@ color:var(--primary);
 }
 
 /* ================= HERO ================= */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 90vh;
-  overflow: hidden;
+.hero-image{
+  position:relative;
+  width:100%;
 }
 
-.hero picture img {
-  width: 100%;
-  height: 100vh;  /* ✅ Full screen height */
-  object-fit: cover; /* ✅ Image cut nahi hogi */
-  display: block;
+.hero-image img{
+  width:100%;
+  height:100vh;
+  object-fit:cover;
+  display:block;
 }
 
+/* TEXT OVER IMAGE */
 .hero-content{
   position:absolute;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
   text-align:center;
+  color:white;
   width:90%;
 }
 
-.hero-content h1 {
-  font-size: 50px;
-  font-weight: 900;
-  letter-spacing: 3px;
+.hero-content h1{
+  font-size:48px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.hero-content p{
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+/* BUTTON STYLE */
+.hero-content button{
+  padding:12px 25px;
+  background:black;
+  color:white;
+  border:none;
+  cursor:pointer;
+  font-size:16px;
 }
 
 .hero-content p {
@@ -151,15 +166,20 @@ color:var(--primary);
 
 /* ✅ Mobile Fix */
 @media(max-width:768px){
-  .hero {
-    height: 70vh;
-  }
 
-  .hero-content h1 {
-    font-size: 28px;
-  }
+.hero-image img{
+  height:70vh;
 }
 
+.hero-content h1{
+  font-size:28px;
+}
+
+.hero-content p{
+  font-size:14px;
+}
+
+}
 /* ================= SECTION ================= */
 
 section{
@@ -427,19 +447,24 @@ border-radius:15px;
 </div>
 
 <section class="hero">
+  <div class="hero-image">
+    <picture>
+      <source media="(max-width:768px)" srcset="hero-mobile.jpg">
+      <source media="(min-width:769px)" srcset="hero-desktop.jpg">
+      <img src="hero-desktop.jpg" alt="Hero Image">
+    </picture>
 
-<picture>
-  <source media="(max-width: 768px)" srcset="hero-mobile.jpg">
-  <source media="(min-width: 769px)" srcset="hero-desktop.jpg">
-  <img src="hero-desktop.jpg">
-</picture>
+    <div class="hero-content">
+      <h1>VEIDAHI INTIMATES</h1>
+      <p>Designed for Confidence. Styled for Every Occasion.</p>
 
-<div class="hero-content">
-
-  <h1>VEIDAHI INTIMATES</h1>
-
-  <p>Designed for Confidence. Styled for Every Occasion.</p>
-
+      <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+        Shop Now
+      </button>
+    </div>
+  </div>
+</section>
+    
   <div class="running-text">
     <span>
       Luxury Lingerie ✦ New Arrivals ✦ Premium Quality ✦ Exclusive Designs ✦ Made for You

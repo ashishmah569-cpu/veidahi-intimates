@@ -87,11 +87,6 @@ gap:15px;
 .navbar.shrink .logo img{
   height:65px;
 }
-  width:auto;
-object-fit:contain;
-transition:0.4s ease;
-filter:brightness(1.1) contrast(1.1);
-}
 
 /* LOGO SMALL ON SCROLL */
 
@@ -205,6 +200,8 @@ font-weight:600;
   font-size: 18px;
   margin-top: 10px;
 }
+/* ================= HERO ================= */
+
 .hero-wrapper{
   position:relative;
   width:100%;
@@ -217,7 +214,13 @@ font-weight:600;
   display:block;
 }
 
-/* TEXT CENTER OVER IMAGE */
+.hero-wrapper::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+}
+
 .hero-overlay{
   position:absolute;
   top:50%;
@@ -226,6 +229,7 @@ font-weight:600;
   text-align:center;
   color:white;
   width:90%;
+  z-index:2;
 }
 
 .hero-overlay h1{
@@ -238,24 +242,23 @@ font-weight:600;
   margin-bottom:20px;
 }
 
-.hero-overlay button{
-  padding:12px 28px;
-  border:none;
-button{
-
-font-weight:600;
-}
+.hero-btn{
+  padding:14px 30px;
   font-size:16px;
+  font-weight:600;
+  background:var(--primary);
+  color:black;
+  border:none;
   cursor:pointer;
+  border-radius:30px;
+  transition:0.3s;
 }
-.hero-wrapper::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(to bottom, rgba(216,181,166,0.2), rgba(0,0,0,0.6));
+
+.hero-btn:hover{
+  background:black;
+  color:white;
 }
-  
-/* MOBILE FIX */
+
 @media(max-width:768px){
 
 .hero-img{
@@ -605,18 +608,10 @@ border-radius:15px;
       <h1>VEIDAHI INTIMATES</h1>
       <p>Designed for Confidence. Styled for Every Occasion.</p>
 
-      <button onclick="scrollToProducts()">Shop Now</button>
-  button{
-      
+      <button class="hero-btn" onclick="scrollToProducts()">Shop Now</button>
     </div>
 
   </div>
-</section>
-    
-  </div>
-
-</div>
-
 </section>
   
 <!-- NAV -->
@@ -900,7 +895,6 @@ function scrollToProducts(){
 document.getElementById("products").scrollIntoView({behavior:"smooth"});
 }
 </script>
-  <script>
 
 <script>
 

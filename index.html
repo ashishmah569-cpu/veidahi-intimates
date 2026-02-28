@@ -77,9 +77,15 @@ gap:15px;
 }
 
 .navbar .logo img{
-height:80px;
-width:auto;
-filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.2));
+  height:85px;
+  width:auto;
+  object-fit:contain;
+  transition:0.4s ease;
+  filter: drop-shadow(0px 6px 15px rgba(0,0,0,0.2));
+}
+
+.navbar.shrink .logo img{
+  height:65px;
 }
   width:auto;
 object-fit:contain;
@@ -88,13 +94,6 @@ filter:brightness(1.1) contrast(1.1);
 }
 
 /* LOGO SMALL ON SCROLL */
-
-.navbar .logo img{
-height:80px;
-width:auto;
-filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.2));
-}
-/* LOGO GLASS BACK EFFECT */
 
 .logo{
 padding:8px 15px;
@@ -193,10 +192,6 @@ font-size:13px;
 .hero-content button{
   padding:12px 25px;
 button{
-background:var(--primary);
-color:black;
-font-weight:600;
-}
 font-weight:600;
 }
 font-weight:600;
@@ -247,10 +242,7 @@ font-weight:600;
   padding:12px 28px;
   border:none;
 button{
-background:var(--primary);
-color:black;
-font-weight:600;
-}
+
 font-weight:600;
 }
   font-size:16px;
@@ -299,25 +291,23 @@ background:linear-gradient(to bottom, rgba(216,181,166,0.2), rgba(0,0,0,0.6));
 }
 
 /* ✅ Button Styling */
-.hero-btn {
-  margin-top: 25px;
-  padding: 14px 30px;
-  font-size: 16px;
-  font-weight: bold;
-button{
-background:var(--primary);
-color:black;
-font-weight:600;
-}
-  border: none;
-  cursor: pointer;
-  border-radius: 30px;
-  transition: 0.3s;
+..hero-btn{
+  margin-top:25px;
+  padding:14px 30px;
+  font-size:16px;
+  font-weight:600;
+  background:var(--primary);
+  color:black;
+  border:none;
+  cursor:pointer;
+  border-radius:30px;
+  transition:0.3s;
 }
 
-.hero-btn:hover {
-  background: black;
-  color: white;
+.hero-btn:hover{
+  background:black;
+  color:white;
+}
 }
 
 /* ✅ Mobile Fix */
@@ -617,14 +607,7 @@ border-radius:15px;
 
       <button onclick="scrollToProducts()">Shop Now</button>
   button{
-background:var(--primary);
-color:black;
-font-weight:600;
-}
-font-weight:600;
-}
-font-weight:600;
-}
+      
     </div>
 
   </div>
@@ -918,15 +901,7 @@ document.getElementById("products").scrollIntoView({behavior:"smooth"});
 }
 </script>
   <script>
-window.addEventListener("scroll",function(){
-const navbar = document.querySelector(".navbar");
-if(window.scrollY > 40){
-navbar.classList.add("shrink");
-}else{
-navbar.classList.remove("shrink");
-}
-});
-</script>
+
 <script>
 
 /* PREMIUM NAV SCROLL EFFECT */

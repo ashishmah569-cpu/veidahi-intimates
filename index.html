@@ -700,6 +700,27 @@ border-radius:15px;
   background:var(--primary);
   color:white;
 }
+  .instagram-grid a{
+  text-decoration:none;
+}
+
+.insta-placeholder{
+  height:250px;
+  border-radius:15px;
+  background:linear-gradient(135deg,#f3e8ec,#faf7f5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+  color:var(--primary);
+  transition:0.4s;
+}
+
+.insta-placeholder:hover{
+  transform:scale(1.05);
+  background:var(--primary);
+  color:white;
+}
 </style>
   </head>
   
@@ -1086,14 +1107,22 @@ productPopup.style.display = "none";
   <h2>Follow Our Journey</h2>
   <p>@veidahiintimates</p>
 
-  <div class="instagram-grid">
-    <img src="insta1.jpg" alt="Instagram Post">
-    <img src="insta2.jpg" alt="Instagram Post">
-    <img src="insta3.jpg" alt="Instagram Post">
-    <img src="insta4.jpg" alt="Instagram Post">
-  </div>
+<div class="instagram-grid">
+  <a href="https://instagram.com/veidahiintimates" target="_blank">
+    <div class="insta-placeholder">View Post</div>
+  </a>
+  <a href="https://instagram.com/veidahiintimates" target="_blank">
+    <div class="insta-placeholder">View Post</div>
+  </a>
+  <a href="https://instagram.com/veidahiintimates" target="_blank">
+    <div class="insta-placeholder">View Post</div>
+  </a>
+  <a href="https://instagram.com/veidahiintimates" target="_blank">
+    <div class="insta-placeholder">View Post</div>
+  </a>
+</div>
 
-  <a href="https://instagram.com/" target="_blank" class="insta-btn">
+ <a href="https://instagram.com/veidahiintimates" target="_blank" class="insta-btn">
     Follow on Instagram
   </a>
 </section>

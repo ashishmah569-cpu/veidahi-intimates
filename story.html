@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +21,12 @@ body{
   background:#fff;
 }
 
-/* ================= HERO IMAGE ================= */
+/* ================= HERO SECTION ================= */
 
 .story-hero{
   position:relative;
   width:100%;
-  height:80vh;
+  height:90vh;
   overflow:hidden;
 }
 
@@ -33,22 +34,42 @@ body{
   width:100%;
   height:100%;
   object-fit:cover;
-  filter:brightness(0.8);
 }
 
-/* Cloud Overlay */
+/* Dark cinematic overlay */
 .story-hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.4));
+  background:linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
 }
 
-/* ================= MAIN STORY SECTION ================= */
+/* Founder Name Overlay */
+.hero-text{
+  position:absolute;
+  bottom:15%;
+  left:10%;
+  color:white;
+  z-index:2;
+}
+
+.hero-text h1{
+  font-size:50px;
+  margin:0;
+  font-weight:800;
+}
+
+.hero-text p{
+  font-size:18px;
+  opacity:0.9;
+  letter-spacing:1px;
+}
+
+/* ================= STORY SECTION ================= */
 
 .story-container{
   max-width:1200px;
-  margin:80px auto;
+  margin:100px auto;
   padding:0 20px;
 }
 
@@ -61,28 +82,39 @@ body{
 
 .story-image img{
   width:100%;
-  height:500px;
+  height:520px;
   object-fit:cover;
   border-radius:20px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  box-shadow:0 20px 50px rgba(0,0,0,0.2);
 }
 
 .story-text h2{
-  font-size:40px;
+  font-size:42px;
   color:var(--primary);
   margin-bottom:20px;
 }
 
 .story-text p{
-  font-size:17px;
-  line-height:1.8;
+  font-size:18px;
+  line-height:1.9;
   margin-bottom:18px;
 }
 
-/* ================= FACTORY GALLERY ================= */
+/* Signature Quote */
+.founder-quote{
+  margin-top:40px;
+  padding:40px;
+  background:#f9f9f9;
+  border-left:5px solid var(--primary);
+  font-size:22px;
+  font-weight:600;
+  line-height:1.6;
+}
+
+/* ================= GALLERY ================= */
 
 .story-gallery{
-  margin-top:80px;
+  margin-top:100px;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:25px;
@@ -90,15 +122,15 @@ body{
 
 .story-gallery img{
   width:100%;
-  height:250px;
+  height:280px;
   object-fit:cover;
   border-radius:15px;
   box-shadow:0 10px 25px rgba(0,0,0,0.12);
-  transition:0.3s;
+  transition:0.4s;
 }
 
 .story-gallery img:hover{
-  transform:scale(1.03);
+  transform:scale(1.05);
 }
 
 /* ================= MOBILE ================= */
@@ -106,7 +138,11 @@ body{
 @media(max-width:768px){
 
 .story-hero{
-  height:60vh;
+  height:70vh;
+}
+
+.hero-text h1{
+  font-size:28px;
 }
 
 .story-grid{
@@ -124,12 +160,17 @@ body{
 
 <body>
 
-<!-- BIG HERO IMAGE -->
+<!-- HERO -->
 <section class="story-hero">
   <img src="founder-hero.jpg" alt="Founder">
+
+  <div class="hero-text">
+    <h1>Ashish Kohli</h1>
+    <p>Founder • Veidahi Intimates</p>
+  </div>
 </section>
 
-<!-- STORY CONTENT -->
+<!-- STORY -->
 <div class="story-container">
 
   <div class="story-grid">
@@ -139,35 +180,36 @@ body{
     </div>
 
     <div class="story-text">
-      <h2>OUR JOURNEY</h2>
+      <h2>The Beginning</h2>
 
       <p>
-      Veidahi Intimates was not built overnight. It was built over 5 years of patience, struggle and belief.
+      Veidahi Intimates was built over 5 years of resilience, courage and belief.
+      What started as a vision slowly became a mission.
       </p>
 
       <p>
-      There were challenges — financial pressure, slow growth, doubts — but the vision never stopped.
+      There were moments of doubt, financial struggle, and uncertainty.
+      But quitting was never an option.
       </p>
 
       <p>
-      This brand is more than lingerie. It is confidence. It is elegance. It is strength.
+      Every product today carries a piece of that journey —
+      from struggle to strength.
       </p>
 
-      <p>
-      Every stitch carries effort. Every design carries a story.
-      </p>
+      <div class="founder-quote">
+        “Veidahi is not just a brand. It is proof that belief creates legacy.”
+      </div>
 
     </div>
 
   </div>
 
-  <!-- FACTORY / EXTRA IMAGES -->
+  <!-- FACTORY GALLERY -->
   <div class="story-gallery">
-
-    <img src="factory1.jpg" alt="Factory 1">
-    <img src="factory2.jpg" alt="Factory 2">
-    <img src="factory3.jpg" alt="Factory 3">
-
+    <img src="factory1.jpg">
+    <img src="factory2.jpg">
+    <img src="factory3.jpg">
   </div>
 
 </div>

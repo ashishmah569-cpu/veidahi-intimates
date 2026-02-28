@@ -178,7 +178,63 @@ body{
 }
 
 }
+.story-hero{
+  height:60vh;
+  background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+  url('founder.jpg');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+}
 
+.story-hero-content h1{
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+.story-hero-content p{
+  font-size:18px;
+  letter-spacing:2px;
+}
+  .story-content{
+  padding:80px 20px;
+}
+
+.story-container{
+  max-width:800px;
+  margin:auto;
+  font-size:18px;
+  line-height:1.8;
+  color:#444;
+}
+
+.founder-highlight{
+  background:#faf7f5;
+  padding:40px;
+  margin:60px auto;
+  border-radius:15px;
+  max-width:800px;
+  text-align:center;
+}
+
+.story-container{
+  animation:fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 </style>
 </head>
 
@@ -242,7 +298,13 @@ body{
   </p>
 
 </div>
-
+<div class="founder-highlight">
+  <h3>Why I Started Veidahi</h3>
+  <p>
+    I wanted to create lingerie that feels elegant, comfortable, and empowering —
+    without being overpriced.
+  </p>
+</div>
 <div class="quote">
   “The foundation was built with courage — the future will be built with vision.”
 </div>
@@ -252,6 +314,16 @@ body{
   <img src="factory2.jpg">
   <img src="factory3.jpg">
 </div>
-
+<section class="story-hero">
+  <div class="story-hero-content">
+    <h1>Our Story</h1>
+    <p>Built with passion. Designed with purpose.</p>
+  </div>
+</section>
+  <section class="story-content">
+  <div class="story-container">
+    <!-- yaha apna story text paste karo -->
+  </div>
+</section>
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Story | Veidahi Intimates</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,139 +17,119 @@ body{
   margin:0;
   font-family:'Poppins',sans-serif;
   color:#111;
-  background:#fff;
+  background:#ffffff;
+  line-height:1.8;
 }
 
-/* ================= HERO SECTION ================= */
+/* ===== SIMPLE HERO ===== */
 
 .story-hero{
-  position:relative;
-  width:100%;
-  height:100vh;
-  overflow:hidden;
+  padding:120px 20px 80px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
 }
 
-.story-hero img{
-  width:100%;
-  height:100%;
-  object-fit:contain;  /* full visible */
-  background:#f8f6f3;  /* luxury beige */
-}
-
-.story-hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.4));
-}
-
-.hero-text{
-  position:absolute;
-  bottom:12%;
-  left:8%;
-  color:white;
-  z-index:2;
-}
-
-.hero-text h1{
-  font-size:60px;
-  letter-spacing:3px;
-  margin:0;
+.story-hero h1{
+  font-size:42px;
   font-weight:800;
+  margin-bottom:10px;
 }
 
-.hero-text span{
+.story-hero span{
+  color:var(--primary);
+  font-weight:600;
+  letter-spacing:2px;
+}
+
+.story-hero p{
+  margin-top:25px;
   font-size:18px;
-  letter-spacing:4px;
+  color:#555;
 }
 
-/* ================= STORY SECTION ================= */
+/* ===== FOUNDER IMAGE ===== */
 
-.story-container{
-  max-width:1200px;
-  margin:100px auto;
+.founder-image{
+  text-align:center;
+  margin:50px 0;
+}
+
+.founder-image img{
+  width:100%;
+  max-width:420px;
+  height:auto;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* ===== STORY TEXT ===== */
+
+.story-content{
+  max-width:800px;
+  margin:0 auto 80px;
   padding:0 20px;
 }
 
-.story-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-}
-
-.story-image img{
-  width:100%;
-  height:auto;        /* IMPORTANT */
-  object-fit:contain; /* IMPORTANT */
-  border-radius:20px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.2);
-  background:#f5f5f5;
-}
-
-.story-text h2{
-  font-size:42px;
-  color:var(--primary);
+.story-content p{
   margin-bottom:20px;
-}
-
-.story-text p{
   font-size:18px;
-  line-height:1.9;
-  margin-bottom:18px;
 }
 
-/* Signature Quote */
-.founder-quote{
-  margin-top:40px;
+/* ===== QUOTE BLOCK ===== */
+
+.quote{
+  margin:60px auto;
+  max-width:800px;
   padding:40px;
-  background:#f9f9f9;
-  border-left:5px solid var(--primary);
+  text-align:center;
   font-size:22px;
   font-weight:600;
-  line-height:1.6;
+  border-top:2px solid var(--primary);
+  border-bottom:2px solid var(--primary);
 }
 
-/* ================= GALLERY ================= */
+/* ===== GALLERY ===== */
 
 .story-gallery{
-  margin-top:100px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:0 20px 80px;
+  max-width:1100px;
+  margin:auto;
 }
 
 .story-gallery img{
   width:100%;
-  height:280px;
+  height:250px;
   object-fit:cover;
   border-radius:15px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.12);
-  transition:0.4s;
 }
 
-.story-gallery img:hover{
-  transform:scale(1.05);
-}
-
-/* ================= MOBILE ================= */
+/* ===== MOBILE FIX ===== */
 
 @media(max-width:768px){
 
 .story-hero{
-  height:70vh;
+  padding:90px 20px 50px;
 }
 
-.hero-text h1{
+.story-hero h1{
   font-size:28px;
 }
 
-.story-grid{
-  grid-template-columns:1fr;
+.story-hero p{
+  font-size:16px;
 }
 
-.story-image img{
-  height:auto;
+.story-content p{
+  font-size:16px;
+}
+
+.quote{
+  font-size:18px;
+  padding:25px;
 }
 
 }
@@ -160,58 +139,45 @@ body{
 
 <body>
 
-<!-- HERO -->
-<section class="story-hero">
-  <img src="founder-hero.jpg" alt="Founder">
+<div class="story-hero">
+  <h1>Ashish Kohli</h1>
+  <span>Founder, Veidahi Intimates</span>
+  <p>
+    A journey built on patience, resilience and belief.
+  </p>
+</div>
 
-  <div class="hero-text">
-    <h1>ASHISH KOHLI</h1>
-    <span>FOUNDER & CREATIVE DIRECTOR</span>
-  </div>
-</section>
+<div class="founder-image">
+  <img src="founder.jpg" alt="Founder">
+</div>
 
-<!-- STORY -->
-<div class="story-container">
+<div class="story-content">
 
-  <div class="story-grid">
+  <p>
+  I started Veidahi Intimates with a simple belief — confidence begins within.
+  </p>
 
-    <div class="story-image">
-      <img src="founder.jpg" alt="Founder Portrait">
-    </div>
+  <p>
+  The last five years were not easy. There were delays, struggles,
+  limited resources and moments of doubt.
+  </p>
 
-    <div class="story-text">
-      <h2>The Beginning</h2>
+  <p>
+  But growth does not happen in comfort.
+  It happens when you refuse to stop.
+  </p>
 
-      <p>
-      Veidahi Intimates was built over 5 years of resilience, courage and belief.
-      What started as a vision slowly became a mission.
-      </p>
+</div>
 
-      <p>
-      There were moments of doubt, financial struggle, and uncertainty.
-      But quitting was never an option.
-      </p>
+<div class="quote">
+  “This brand is not just about products.
+  It is about building belief.”
+</div>
 
-      <p>
-      Every product today carries a piece of that journey —
-      from struggle to strength.
-      </p>
-
-      <div class="founder-quote">
-        “Veidahi is not just a brand. It is proof that belief creates legacy.”
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- FACTORY GALLERY -->
-  <div class="story-gallery">
-    <img src="factory1.jpg">
-    <img src="factory2.jpg">
-    <img src="factory3.jpg">
-  </div>
-
+<div class="story-gallery">
+  <img src="factory1.jpg">
+  <img src="factory2.jpg">
+  <img src="factory3.jpg">
 </div>
 
 </body>

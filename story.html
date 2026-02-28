@@ -29,10 +29,47 @@ font-size:42px;
 }
 
 .story-container{
-max-width:900px;
-margin:60px auto;
+max-width:1100px;
+margin:80px auto;
 padding:0 20px;
-text-align:center;
+}
+
+.story-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.story-image img{
+width:100%;
+height:500px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.story-text h2{
+font-size:36px;
+margin-bottom:20px;
+color:#7A1F3D;
+}
+
+.story-text p{
+margin-bottom:18px;
+font-size:16px;
+line-height:1.8;
+}
+
+/* Mobile Fix */
+@media(max-width:768px){
+.story-grid{
+grid-template-columns:1fr;
+}
+
+.story-image img{
+height:auto;
+}
 }
 
 .story-container img{
@@ -70,24 +107,35 @@ font-weight:600;
 
 <div class="story-container">
 
-<img src="founder.jpg" alt="Founder">
+  <div class="story-grid">
 
-<p>
-Veidahi Intimates was not built in a day...
-It was built from struggle, belief, rejection and courage.
-</p>
+    <div class="story-image">
+      <img src="founder.jpg" alt="Founder">
+    </div>
 
-<p>
-For the last 5 years, I faced challenges that tested my patience,
-my confidence and my dreams. There were times when I doubted myself,
-when resources were limited and when support was low.
-</p>
+    <div class="story-text">
+      <h2>From Struggle To Strength</h2>
 
-<p>
-But one thing never stopped — the vision to create something
-premium, something meaningful, something powerful.
-</p>
+      <p>
+      Veidahi Intimates was not built in a day.
+      It was built through patience, rejection and belief.
+      </p>
 
+      <p>
+      For the last 5 years, I faced challenges that shaped this brand.
+      Limited resources, slow growth, doubts — but never a broken vision.
+      </p>
+
+      <p>
+      Veidahi is not just lingerie.
+      It is confidence, elegance and inner power.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
 <p>
 Veidahi Intimates is not just lingerie.
 It is confidence.

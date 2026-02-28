@@ -8,142 +8,167 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
-body{
-font-family:'Poppins',sans-serif;
-margin:0;
-padding:0;
-background:#fff;
-color:#111;
-line-height:1.7;
+
+:root{
+  --primary:#7A1F3D;
 }
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  color:#111;
+  background:#fff;
+}
+
+/* ================= HERO IMAGE ================= */
 
 .story-hero{
-background:#7A1F3D;
-color:white;
-padding:80px 20px;
-text-align:center;
+  position:relative;
+  width:100%;
+  height:80vh;
+  overflow:hidden;
 }
 
-.story-hero h1{
-font-size:42px;
+.story-hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(0.8);
 }
+
+/* Cloud Overlay */
+.story-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.4));
+}
+
+/* ================= MAIN STORY SECTION ================= */
 
 .story-container{
-max-width:1100px;
-margin:80px auto;
-padding:0 20px;
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
 }
 
 .story-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
 }
 
 .story-image img{
-width:100%;
-height:500px;
-object-fit:cover;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  width:100%;
+  height:500px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
 }
 
 .story-text h2{
-font-size:36px;
-margin-bottom:20px;
-color:#7A1F3D;
+  font-size:40px;
+  color:var(--primary);
+  margin-bottom:20px;
 }
 
 .story-text p{
-margin-bottom:18px;
-font-size:16px;
-line-height:1.8;
+  font-size:17px;
+  line-height:1.8;
+  margin-bottom:18px;
 }
 
-/* Mobile Fix */
+/* ================= FACTORY GALLERY ================= */
+
+.story-gallery{
+  margin-top:80px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.story-gallery img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  transition:0.3s;
+}
+
+.story-gallery img:hover{
+  transform:scale(1.03);
+}
+
+/* ================= MOBILE ================= */
+
 @media(max-width:768px){
+
+.story-hero{
+  height:60vh;
+}
+
 .story-grid{
-grid-template-columns:1fr;
+  grid-template-columns:1fr;
 }
 
 .story-image img{
-height:auto;
-}
-}
-
-.story-container img{
-width:250px;
-height:250px;
-border-radius:50%;
-object-fit:cover;
-margin-bottom:30px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  height:auto;
 }
 
-.story-container p{
-margin-bottom:20px;
-font-size:17px;
 }
 
-.back-btn{
-display:inline-block;
-margin-top:30px;
-padding:12px 25px;
-background:#7A1F3D;
-color:white;
-text-decoration:none;
-border-radius:30px;
-font-weight:600;
-}
 </style>
 </head>
 
 <body>
 
-<div class="story-hero">
-<h1>Read Our Story</h1>
-</div>
+<!-- BIG HERO IMAGE -->
+<section class="story-hero">
+  <img src="founder-hero.jpg" alt="Founder">
+</section>
 
+<!-- STORY CONTENT -->
 <div class="story-container">
 
   <div class="story-grid">
 
     <div class="story-image">
-      <img src="founder.jpg" alt="Founder">
+      <img src="founder.jpg" alt="Founder Portrait">
     </div>
 
     <div class="story-text">
-      <h2>From Struggle To Strength</h2>
+      <h2>OUR JOURNEY</h2>
 
       <p>
-      Veidahi Intimates was not built in a day.
-      It was built through patience, rejection and belief.
+      Veidahi Intimates was not built overnight. It was built over 5 years of patience, struggle and belief.
       </p>
 
       <p>
-      For the last 5 years, I faced challenges that shaped this brand.
-      Limited resources, slow growth, doubts — but never a broken vision.
+      There were challenges — financial pressure, slow growth, doubts — but the vision never stopped.
       </p>
 
       <p>
-      Veidahi is not just lingerie.
-      It is confidence, elegance and inner power.
+      This brand is more than lingerie. It is confidence. It is elegance. It is strength.
+      </p>
+
+      <p>
+      Every stitch carries effort. Every design carries a story.
       </p>
 
     </div>
 
   </div>
 
-</div>
-<p>
-Veidahi Intimates is not just lingerie.
-It is confidence.
-It is strength.
-It is a journey of turning pain into power.
-</p>
+  <!-- FACTORY / EXTRA IMAGES -->
+  <div class="story-gallery">
 
-<a href="index.html" class="back-btn">Back To Home</a>
+    <img src="factory1.jpg" alt="Factory 1">
+    <img src="factory2.jpg" alt="Factory 2">
+    <img src="factory3.jpg" alt="Factory 3">
+
+  </div>
 
 </div>
 

@@ -220,88 +220,102 @@ margin-bottom:40px;
 .soft{
 background:var(--soft);
 }
-/* ================= CLEAN HERO SLIDER ================= */
+/* ===== HERO FINAL CLEAN VERSION ===== */
 
-.hero {
-  position: relative;
-  height: 85vh;
-  width: 100%;
-  overflow: hidden;
+body{
+  margin:0;
+  padding:0;
 }
 
-.hero-slider {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
 }
 
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-background-size: cover;
-background-position: center;
-  background-repeat: no-repeat;
-  background-color: #000;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+.hero-slider{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
 }
 
-.slide.active {
-  opacity: 1;
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.35);
-  top: 0;
-  left: 0;
+.slide.active{
+  opacity:1;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: #fff;
-  top: 55%;
-  transform: translateY(-50%);
-  padding: 0 20px;
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,0.35);
 }
 
-.hero-content h1 {
-  font-size: 50px;
-  font-weight: 800;
+.hero-content{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:#fff;
+  text-align:center;
+  z-index:2;
+  width:90%;
 }
 
-.hero-content p {
-  font-size: 18px;
-  margin-top: 10px;
+.hero-content h1{
+  font-size:55px;
+  font-weight:800;
+  letter-spacing:2px;
 }
 
-.hero-content .btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 28px;
-  background: #7A1F3D;
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
+.hero-content p{
+  font-size:18px;
+  margin-top:10px;
 }
+
+.hero-content .btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 30px;
+  background:#7A1F3D;
+  color:#fff;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:600;
+}
+
+/* ===== MOBILE ===== */
 
 @media(max-width:768px){
-  .hero {
-    height: 65vh;
+
+  .hero{
+    height:75vh;
   }
 
-  .hero-content h1 {
-    font-size: 26px;
+  .hero-content h1{
+    font-size:26px;
   }
 
-  .hero-content p {
-    font-size: 14px;
+  .hero-content p{
+    font-size:14px;
   }
 }
 /* ================= CATEGORY ================= */

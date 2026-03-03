@@ -7,7 +7,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
-  
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"> 
 <style>
   
 /* ================= ROOT ================= */
@@ -28,7 +28,13 @@ font-family:'Poppins',sans-serif;
 color:#111;
 padding-top:80px;
 }
+body{
+  font-family:'Poppins', sans-serif;
+}
 
+h1,h2,h3{
+  font-family:'Playfair Display', serif;
+}
 /* ================= ANIMATION ================= */
 
 @keyframes fadeUp {
@@ -532,6 +538,7 @@ border-radius:15px;
   font-size:15px;
   color:#555;
 }
+
  .testimonial-section{
   width:100vw;
   margin-left:calc(-50vw + 50%);
@@ -871,7 +878,107 @@ border-radius:15px;
   }
 
 } 
+
+  .why-section{
+  width:100vw;
+  margin-left:calc(-50vw + 50%);
+  background:#f8f8f8;
+  padding:140px 20px;
+}
+
+.why-container{
+  max-width:1000px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.why-heading{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.divider{
+  width:60px;
+  height:2px;
+  background:#000;
+  margin:20px auto 40px;
+}
+
+.why-text{
+  font-size:19px;
+  line-height:2;
+  color:#555;
+  margin-bottom:60px;
+}
+
+.why-points{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.point{
+  background:#fff;
+  padding:20px 30px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.point:hover{
+  transform:translateY(-6px);
+}
+  
 </style>
+<style>
+
+/* NUMBERS SECTION */
+.numbers-section{
+  padding:120px 20px;
+  background:#ffffff;
+  text-align:center;
+}
+
+.numbers-container{
+  display:flex;
+  justify-content:center;
+  gap:100px;
+  flex-wrap:wrap;
+}
+
+.numbers-container h2{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+/* PROMISE SECTION */
+.promise-section{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:120px 20px;
+}
+
+.promise-section h2{
+  font-size:36px;
+}
+
+.divider-white{
+  width:60px;
+  height:2px;
+  background:#fff;
+  margin:20px auto 40px;
+}
+
+.promise-section p{
+  max-width:700px;
+  margin:auto;
+  line-height:2;
+}
+
+</style>
+  
   </head>
   
   <body>
@@ -1068,19 +1175,85 @@ onclick="window.location.href='p8.html'">
 </div>
 </section>
 
- <!-- FOUNDER STORY SECTION -->
-<section style="padding:80px 20px; background:#f9f9f9;">
-  
-  <div style="max-width:1100px; margin:auto; display:grid; 
-              grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); 
-              gap:50px; align-items:center;">
-    
-
-    <!--CENTER CONTENT -->
-    <div>
-      <h2 style="font-size:30px; margin-bottom:20px;">
-<!-- WHY WOMEN TRUST VEIDAHI -->
+<!-- WHY WOMEN TRUST -->
 <section class="why-section">
+
+  <div class="why-container">
+    <h2 class="why-heading">Why Women Trust Veidahi Intimates</h2>
+    <div class="divider"></div>
+
+    <p class="why-text">
+      Veidahi Intimates is a Delhi-based premium lingerie and western wear brand
+      committed to refined elegance and everyday comfort.
+
+      Our collections are crafted with precision fitting,
+      premium fabrics and modern silhouettes that enhance confidence
+      while ensuring effortless comfort throughout the day.
+
+      We believe luxury should be accessible,
+      empowering women with style, support and sophistication.
+    </p>
+
+    <div class="why-points">
+      <div class="point">✔ Precision Fit</div>
+      <div class="point">✔ Premium Craftsmanship</div>
+      <div class="point">✔ Accessible Luxury</div>
+    </div>
+  </div>
+
+</section>
+
+
+
+<!-- NUMBERS SECTION -->
+<section class="numbers-section">
+
+  <div class="numbers-container">
+    <div>
+      <h2>10,000+</h2>
+      <p>Happy Customers</p>
+    </div>
+
+    <div>
+      <h2>4.8★</h2>
+      <p>Customer Rating</p>
+    </div>
+
+    <div>
+      <h2>50+</h2>
+      <p>Premium Designs</p>
+    </div>
+  </div>
+
+</section>
+
+
+
+<!-- PROMISE SECTION -->
+<section class="promise-section">
+
+  <h2>Our Promise</h2>
+  <div class="divider-white"></div>
+
+  <p>
+    We are committed to delivering premium quality,
+    exceptional comfort and a seamless shopping experience
+    for every woman who chooses Veidahi.
+  </p>
+
+</section>
+<section class="promise-section">
+
+  <h2>Our Promise</h2>
+
+  <div class="divider-white"></div>
+
+  <p>
+    We are committed to delivering premium quality, exceptional comfort,
+    and a seamless shopping experience for every woman who chooses Veidahi.
+  </p>
+
+  
 
   <div class="why-container">
 
@@ -1088,29 +1261,47 @@ onclick="window.location.href='p8.html'">
       Why Women Trust Veidahi Intimates
     </h2>
 
+    <div class="divider"></div>
+
     <p class="why-text">
       Veidahi Intimates is a premium lingerie and western wear brand based in Delhi,
-      dedicated to delivering refined elegance with exceptional comfort.
+      delivering refined elegance with exceptional comfort.
 
-      Our collections are crafted with precision fitting, premium fabrics,
-      and thoughtful detailing that enhance confidence in every wear.
-
-      We believe luxury should feel effortless and accessible,
-      allowing modern women to experience style, support,
-      and sophistication every single day.
+      Our collections combine precision fitting, premium fabrics,
+      and thoughtful craftsmanship that enhance confidence in every wear.
     </p>
 
     <div class="why-points">
       <div class="point">✔ Precision Fit & Support</div>
       <div class="point">✔ Premium Breathable Fabrics</div>
-      <div class="point">✔ Elegant Yet Affordable Luxury</div>
+      <div class="point">✔ Elegant Yet Accessible Luxury</div>
     </div>
 
   </div>
 
 </section>
+<section class="numbers-section">
 
+  <div class="numbers-container">
 
+    <div>
+      <h2>10,000+</h2>
+      <p>Happy Customers</p>
+    </div>
+
+    <div>
+      <h2>4.8★</h2>
+      <p>Customer Rating</p>
+    </div>
+
+    <div>
+      <h2>50+</h2>
+      <p>Premium Designs</p>
+    </div>
+
+  </div>
+
+</section>
 
 <!-- ABOUT VEIDAHI -->
 <section style="padding:120px 20px; background:#ffffff;">

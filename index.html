@@ -657,9 +657,9 @@ border-radius:15px;
   position: absolute;
   width: 100%;
   height: 100%;
-background-size: contain;
-background-color: #000;
+  background-size: cover;   /* IMPORTANT */
   background-position: center;
+  background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
@@ -918,242 +918,17 @@ onclick="window.location.href='p8.html'">
 </div>
 </section>
 
-<footer>
-© 2026 Veidahi Intimates | Delhi
-  <!-- ARRIVAL POPUP HTML -->
-
-<!-- PRODUCT POPUP -->
-
-<div class="product-popup" id="productPopup">
-<div class="product-popup-content">
-
-<span class="close-product" onclick="closeProduct()">✖</span>
-
-<div class="product-popup-track" id="productTrack"></div>
-
-</div>
-</div>
+<!-- FOOTER -->
+<footer style="text-align:center; padding:40px 20px; background:#111; color:white;">
+  © 2026 Veidahi Intimates | Delhi | All Rights Reserved
 </footer>
-  
-<!-- JS YAHAN -->
+
+<!-- ALL SCRIPTS CLEANED -->
 
 <script>
-
-const arrivalPopup = document.getElementById("arrivalPopup");
-const arrivalTrack = document.getElementById("arrivalTrack");
-
-function openArrival(images){
-arrivalTrack.innerHTML = "";
-
-images.forEach(img=>{
-const image = document.createElement("img");
-image.src = img;
-arrivalTrack.appendChild(image);
-});
-
-arrivalPopup.style.display = "flex";
-}
-
-function closeArrival(){
-arrivalPopup.style.display = "none";
-}
-
-arrivalPopup.addEventListener("click",function(e){
-if(e.target === arrivalPopup){
-arrivalPopup.style.display = "none";
-}
-});
-
-  const productPopup = document.getElementById("productPopup");
-const productTrack = document.getElementById("productTrack");
-
-function openProduct(images){
-productTrack.innerHTML = "";
-
-images.forEach(img=>{
-const image = document.createElement("img");
-image.src = img;
-productTrack.appendChild(image);
-});
-
-productPopup.style.display = "flex";
-}
-
-function closeProduct(){
-productPopup.style.display = "none";
-}
-
-productPopup.addEventListener("click",function(e){
-if(e.target === productPopup){
-productPopup.style.display = "none";
-}
-});
-</script>
-<!-- READ OUR STORY CTA -->
-<div class="story-cta">
-  <a href="story.html">Read Our Story</a>
-</div>
-
-<!-- ABOUT US SECTION -->
-<section class="about-section" id="about">
-  <h2>About Us</h2>
-  <p>
-    Welcome to <b>Veidahi Intimates</b> 💖  
-    We bring you stylish, comfortable and premium quality lingerie 
-    at affordable prices. Our mission is to make every woman feel 
-    confident, elegant and beautiful every day.
-  </p>
-</section>
-
-<!-- WHY CHOOSE US -->
-<section class="why-section">
-  <h2>Why Choose Veidahi?</h2>
-  <div class="why-grid">
-    <div class="why-box">
-      <h4>✨ Premium Quality</h4>
-      <p>Soft fabric, skin-friendly & long lasting comfort.</p>
-    </div>
-    <div class="why-box">
-      <h4>💰 Affordable Prices</h4>
-      <p>Luxury designs without high price tags.</p>
-    </div>
-    <div class="why-box">
-      <h4>🚚 Fast Delivery</h4>
-      <p>Quick & safe delivery at your doorstep.</p>
-    </div>
-    <div class="why-box">
-      <h4>📞 Easy WhatsApp Order</h4>
-      <p>Simple and direct ordering process.</p>
-    </div>
-  </div>
-</section>
-    <!-- OUR PROMISE SECTION -->
-<section class="promise-section">
-  <h2>Our Promise</h2>
-
-  <div class="promise-grid">
-
-    <div class="promise-box">
-      <h4>Comfort First</h4>
-      <p>Every design is made to feel light, breathable and skin-friendly.</p>
-    </div>
-
-    <div class="promise-box">
-      <h4>Elegant Designs</h4>
-      <p>Timeless styles that make you feel confident every day.</p>
-    </div>
-
-    <div class="promise-box">
-      <h4>Affordable Luxury</h4>
-      <p>Premium quality without premium pricing.</p>
-    </div>
-
-  </div>
-</section>
-<!-- TESTIMONIAL SECTION -->
-<section class="testimonial-section">
-  <h2>What Our Customers Say</h2>
-
-  <div class="testimonial-grid">
-
-    <div class="testimonial-box">
-      <p>
-        “The quality is amazing and so comfortable. I didn’t expect this level at this price.”
-      </p>
-      <h4>— Riya Sharma, Delhi</h4>
-    </div>
-
-    <div class="testimonial-box">
-      <p>
-        “Fast delivery and beautiful designs. Definitely ordering again.”
-      </p>
-      <h4>— Neha Verma, Jaipur</h4>
-    </div>
-
-    <div class="testimonial-box">
-      <p>
-        “Feels premium and fits perfectly. Highly recommended!”
-      </p>
-      <h4>— Aarti Singh, Mumbai</h4>
-    </div>
-
-  </div>
-</section>
-    <!-- INSTAGRAM SECTION -->
-<section class="instagram-section">
-  <h2>Follow Our Journey</h2>
-  <p>@veidahiintimates</p>
-
-<div class="instagram-grid">
-  <a href="https://instagram.com/veidahiintimates" target="_blank">
-    <div class="insta-placeholder">View Post</div>
-  </a>
-  <a href="https://instagram.com/veidahiintimates" target="_blank">
-    <div class="insta-placeholder">View Post</div>
-  </a>
-  <a href="https://instagram.com/veidahiintimates" target="_blank">
-    <div class="insta-placeholder">View Post</div>
-  </a>
-  <a href="https://instagram.com/veidahiintimates" target="_blank">
-    <div class="insta-placeholder">View Post</div>
-  </a>
-</div>
-
- <a href="https://instagram.com/veidahiintimates" target="_blank" class="insta-btn">
-    Follow on Instagram
-  </a>
-</section>
-<!-- CONTACT SECTION -->
-<section class="contact-section" id="contact">
-  <h2>Contact Us</h2>
-  <p>📱 WhatsApp: +91 8750020203</p>
-  <p>📩 Email: veidahiintimates@gmail.com</p>
-</section>
- <script>
-function scrollToProducts(){
-document.getElementById("products").scrollIntoView({behavior:"smooth"});
-}
-</script>
-
-<script>
-
-/* PREMIUM NAV SCROLL EFFECT */
-
-<script>
-window.addEventListener("scroll", function() {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("shrink");
-  } else {
-    navbar.classList.remove("shrink");
-  }
-});
-</script>
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-function changeSlide() {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}
-
-setInterval(changeSlide, 3000);
-
-  <script>
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 3000);
-</script>
-  
-</script>
-    <script>
 document.addEventListener("DOMContentLoaded", function(){
+
+  /* HERO SLIDER */
   const slides = document.querySelectorAll(".slide");
   let index = 0;
 
@@ -1162,7 +937,43 @@ document.addEventListener("DOMContentLoaded", function(){
     index = (index + 1) % slides.length;
     slides[index].classList.add("active");
   }, 3000);
+
+  /* NAVBAR SCROLL EFFECT */
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.add("shrink");
+    } else {
+      navbar.classList.remove("shrink");
+    }
+  });
+
+});
+
+/* PRODUCT POPUP */
+const productPopup = document.getElementById("productPopup");
+const productTrack = document.getElementById("productTrack");
+
+function openProduct(images){
+  productTrack.innerHTML = "";
+  images.forEach(img=>{
+    const image = document.createElement("img");
+    image.src = img;
+    productTrack.appendChild(image);
+  });
+  productPopup.style.display = "flex";
+}
+
+function closeProduct(){
+  productPopup.style.display = "none";
+}
+
+productPopup.addEventListener("click",function(e){
+  if(e.target === productPopup){
+    productPopup.style.display = "none";
+  }
 });
 </script>
+
 </body>
 </html>

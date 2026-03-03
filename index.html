@@ -730,12 +730,40 @@ border-radius:15px;
   position: relative;
 }
 
-.testimonial-track {
-  display: flex;
-  width: calc(320px * 12);
-  animation: scrollTestimonials 35s linear infinite;
+.testimonial-wrapper {
+  width: 100%;
+  overflow: hidden;
 }
 
+.testimonial-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.testimonial-box {
+  min-width: 320px;
+  margin: 0 20px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+  .testimonial-box{
+    min-width: 260px;
+  }
+}
+  
 .testimonial-box {
   min-width: 300px;
   margin: 0 20px;
@@ -1023,84 +1051,39 @@ onclick="window.location.href='p8.html'">
 
 
 
-<!-- TESTIMONIAL SLIDER -->
-<section style="padding:120px 20px; background:#f4f4f4; overflow:hidden;">
+<!-- TESTIMONIAL SLIDER FULL WIDTH -->
+<section style="padding:120px 0; background:#f4f4f4; overflow:hidden;">
 
-  <div style="max-width:1100px; margin:0 auto; text-align:center;">
+  <h2 style="text-align:center; font-size:36px; margin-bottom:70px; font-weight:600;">
+    What Our Customers Say About Veidahi
+  </h2>
 
-    <h2 style="font-size:36px; margin-bottom:70px; font-weight:600; letter-spacing:1px;">
-      What Our Customers Say About Veidahi
-    </h2>
+  <div class="testimonial-wrapper">
+    <div class="testimonial-track">
 
-    <div class="testimonial-wrapper">
-      <div class="testimonial-track">
+      <!-- Repeat reviews twice for smooth loop -->
 
-        <div class="testimonial-box">
-          “The quality feels truly premium and the fitting is exceptional.”
-          <br><strong>— Riya Sharma, Delhi</strong>
-        </div>
+      <div class="testimonial-box">“The quality feels truly premium.”<br><strong>— Riya, Delhi</strong></div>
+      <div class="testimonial-box">“Elegant and comfortable.”<br><strong>— Neha, Jaipur</strong></div>
+      <div class="testimonial-box">“Beautiful packaging.”<br><strong>— Aarti, Mumbai</strong></div>
+      <div class="testimonial-box">“Perfect daily wear.”<br><strong>— Simran, Amritsar</strong></div>
+      <div class="testimonial-box">“Affordable luxury.”<br><strong>— Kavita, Pune</strong></div>
+      <div class="testimonial-box">“Soft and premium fabric.”<br><strong>— Meera, Bangalore</strong></div>
+      <div class="testimonial-box">“Highly recommended.”<br><strong>— Sneha, Gurgaon</strong></div>
 
-        <div class="testimonial-box">
-          “Elegant designs with unmatched comfort.”
-          <br><strong>— Neha Verma, Jaipur</strong>
-        </div>
+      <!-- DUPLICATE FOR SMOOTH LOOP -->
+      <div class="testimonial-box">“The quality feels truly premium.”<br><strong>— Riya, Delhi</strong></div>
+      <div class="testimonial-box">“Elegant and comfortable.”<br><strong>— Neha, Jaipur</strong></div>
+      <div class="testimonial-box">“Beautiful packaging.”<br><strong>— Aarti, Mumbai</strong></div>
+      <div class="testimonial-box">“Perfect daily wear.”<br><strong>— Simran, Amritsar</strong></div>
+      <div class="testimonial-box">“Affordable luxury.”<br><strong>— Kavita, Pune</strong></div>
+      <div class="testimonial-box">“Soft and premium fabric.”<br><strong>— Meera, Bangalore</strong></div>
+      <div class="testimonial-box">“Highly recommended.”<br><strong>— Sneha, Gurgaon</strong></div>
 
-        <div class="testimonial-box">
-          “Beautiful packaging and quick delivery.”
-          <br><strong>— Aarti Singh, Mumbai</strong>
-        </div>
-
-        <div class="testimonial-box">
-          “Perfect fitting and soft fabric.”
-          <br><strong>— Pooja Mehta, Chandigarh</strong>
-        </div>
-
-        <div class="testimonial-box">
-          “Feels luxurious yet affordable.”
-          <br><strong>— Kavita Rao, Pune</strong>
-        </div>
-
-        <div class="testimonial-box">
-          “My everyday comfort brand now.”
-          <br><strong>— Simran Kaur, Amritsar</strong>
-        </div>
-
-        <div class="testimonial-box">
-          “Highly recommend for daily wear.”
-          <br><strong>— Tanya Gupta, Noida</strong>
-        </div>
-
-        <div class="testimonial-box">
-          “Stylish and very comfortable.”
-          <br><strong>— Anjali Sharma, Lucknow</strong>
-        </div>
-
-        <div class="testimonial-box">
-          “Fabric quality is amazing.”
-          <br><strong>— Meera Iyer, Bangalore</strong>
-        </div>
-
-        <div class="testimonial-box">
-          “Support and shape both perfect.”
-          <br><strong>— Shreya Kapoor, Delhi</strong>
-        </div>
-
-        <div class="testimonial-box">
-          “Affordable luxury at its best.”
-          <br><strong>— Radhika Jain, Indore</strong>
-        </div>
-
-        <div class="testimonial-box">
-          “Customer service is very helpful.”
-          <br><strong>— Sneha Arora, Gurgaon</strong>
-        </div>
-
-      </div>
     </div>
-
   </div>
-</section>
 
+</section>
 
 
 <!-- INSTAGRAM SECTION -->

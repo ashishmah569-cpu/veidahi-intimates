@@ -181,10 +181,12 @@ font-size:13px;
 /* ✅ Mobile Fix */
 @media(max-width:768px){
 
-.hero-image img{
-  height:70vh;
+.slide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: contain;
+  background: #fff;
 }
-
 .hero-content h1{
   font-size:28px;
 }
@@ -934,26 +936,40 @@ onclick="window.location.href='p8.html'">
     <!-- RIGHT SIDE CONTENT -->
     <div>
       <h2 style="font-size:30px; margin-bottom:20px;">
-        Why Women Trust Veidahi Intimates
-      </h2>
+      <!-- WHY WOMEN TRUST VEIDAHI -->
+<section style="padding:80px 20px; background:#f9f9f9; text-align:center;">
+  
+  <div style="max-width:900px; margin:auto;">
+    
+    <h2 style="font-size:30px; margin-bottom:20px;">
+      Why Women Trust Veidahi Intimates
+    </h2>
 
-      <p style="font-size:16px; line-height:1.8; color:#555;">
-        Welcome to <b>Veidahi Intimates</b> 💖  
-        We bring you stylish, comfortable and premium quality lingerie 
-        at affordable prices. Our mission is to make every woman feel 
-        confident, elegant and beautiful every day.
-      </p>
+    <p style="font-size:16px; line-height:1.8; color:#555;">
+      Welcome to <b>Veidahi Intimates</b> 💖  
+      We bring you stylish, comfortable and premium quality lingerie 
+      at affordable prices. Our mission is to make every woman feel 
+      confident, elegant and beautiful every day.
+    </p>
 
-      <div style="margin-top:30px;">
-        <h4>✔ Perfect Fit</h4>
+    <div style="margin-top:40px; display:grid; gap:25px; 
+                grid-template-columns:repeat(auto-fit,minmax(250px,1fr));">
+      
+      <div>
+        <h4>Perfect Fit</h4>
         <p style="color:#666;">Designed to enhance confidence and comfort.</p>
+      </div>
 
-        <h4>✔ Premium Quality</h4>
+      <div>
+        <h4>Premium Quality</h4>
         <p style="color:#666;">Soft, breathable and skin-friendly fabrics.</p>
+      </div>
 
-        <h4>✔ Affordable Luxury</h4>
+      <div>
+        <h4>Affordable Luxury</h4>
         <p style="color:#666;">Luxury designs without high price tags.</p>
       </div>
+
     </div>
 
   </div>

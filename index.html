@@ -973,7 +973,42 @@ border:none;
 margin-left:10px;
 cursor:pointer;
 }
- 
+
+.hover-lift{
+transition:all 0.3s ease;
+}
+
+.hover-lift:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+html{
+scroll-behavior:smooth;
+}
+ .hero-btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 38px;
+background:#111;
+color:#fff;
+text-decoration:none;
+letter-spacing:1px;
+border-radius:6px;
+transition:0.3s;
+}
+
+.hero-btn:hover{
+background:#333;
+}
+
+ .trust-line{
+text-align:center;
+font-size:15px;
+color:#777;
+margin-top:25px;
+letter-spacing:1px;
+}
 </style>
 <style>
 
@@ -1107,7 +1142,12 @@ font-size:18px;
     <a href="#products" class="btn">Shop Collection</a>
   </div>
 </section>
-
+   <div class="trust-line">
+Trusted by Women Across India
+</div>
+<a href="#collection" class="hero-btn">
+Shop Collection
+</a>
 <!-- FEATURED COLLECTION -->
 
 <section class="featured-section">

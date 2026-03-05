@@ -929,7 +929,51 @@ border-radius:15px;
 .point:hover{
   transform:translateY(-6px);
 }
-  
+ .featured-section{
+padding:120px 20px;
+text-align:center;
+}
+
+.featured-section h2{
+font-size:36px;
+margin-bottom:50px;
+}
+
+.featured-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.featured-grid img{
+width:100%;
+border-radius:10px;
+} 
+
+.newsletter{
+padding:120px 20px;
+background:#111;
+color:#fff;
+text-align:center;
+}
+
+.newsletter input{
+padding:12px;
+width:260px;
+margin-top:20px;
+border:none;
+}
+
+.newsletter button{
+padding:12px 25px;
+background:#fff;
+border:none;
+margin-left:10px;
+cursor:pointer;
+}
+ 
 </style>
 <style>
 
@@ -1004,8 +1048,41 @@ border-radius:15px;
   line-height:2;
   color:#444;
 }
+ .trust-badges{
+padding:80px 20px;
+text-align:center;
+background:#fafafa;
+}
+
+.trust-badges h3{
+font-size:30px;
+margin-bottom:40px;
+}
+
+.badges{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+font-size:18px;
+}
 </style>
-  
+ <!-- TRUST BADGES -->
+
+<section class="trust-badges">
+
+<h3>Trusted Shopping Experience</h3>
+
+<div class="badges">
+
+<div>✔ Secure Payments</div>
+<div>✔ Quality Checked Products</div>
+<div>✔ Easy Returns</div>
+<div>✔ Fast Delivery</div>
+
+</div>
+
+</section> 
   </head>
   
   <body>
@@ -1030,6 +1107,24 @@ border-radius:15px;
     <a href="#products" class="btn">Shop Collection</a>
   </div>
 </section>
+
+<!-- FEATURED COLLECTION -->
+
+<section class="featured-section">
+
+<h2>Featured Collection</h2>
+
+<div class="featured-grid">
+
+<img src="product1.jpg">
+<img src="product2.jpg">
+<img src="product3.jpg">
+<img src="product4.jpg">
+
+</div>
+
+</section>
+   
 <section class="seo-text">
   <div class="container">
     <h2>Luxury Lingerie & Western Wear in Delhi</h2>
@@ -1374,7 +1469,19 @@ Read Our Story
   </div>
 
 </section>
+<!-- NEWSLETTER -->
 
+<section class="newsletter">
+
+<h2>Join Veidahi</h2>
+
+<p>Get updates on new arrivals and exclusive collections.</p>
+
+<input type="email" placeholder="Enter your email">
+
+<button>Subscribe</button>
+
+</section>
 <!-- FOOTER -->
 <footer style="text-align:center; padding:40px 20px; background:#111; color:white;">
   © 2026 Veidahi Intimates | Delhi | All Rights Reserved

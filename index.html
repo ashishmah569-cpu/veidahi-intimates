@@ -1272,6 +1272,19 @@ section{
   max-width:1200px;
   margin:auto;
 }
+
+.featured-scroll{
+display:flex;
+justify-content:center;   /* 🔥 IMPORTANT */
+gap:20px;
+overflow-x:auto;
+flex-wrap:nowrap;
+}
+
+.featured-card{
+flex:0 0 auto;
+}
+ 
 </style>
   </head>
   
@@ -1331,7 +1344,7 @@ Trusted by Women Across India
 
 <!-- PRODUCT 1 -->
 <div class="featured-card"
-onclick="openProduct(['veidahi-lace-bra-set.jpg'])">
+onclick="openProduct('veidahi-lace-bra-set.jpg')">
 
 <img src="veidahi-lace-bra-set.jpg">
 <p>Lace Bra Set</p>
@@ -1340,7 +1353,7 @@ onclick="openProduct(['veidahi-lace-bra-set.jpg'])">
 
 <!-- PRODUCT 2 -->
 <div class="featured-card"
-onclick="openProduct(['veidahi-cotton-panty-pack.jpg'])">
+onclick="openProduct('veidahi-cotton-panty-pack.jpg')">
 
 <img src="veidahi-cotton-panty-pack.jpg">
 <p>Cotton Panty Pack</p>
@@ -1349,7 +1362,7 @@ onclick="openProduct(['veidahi-cotton-panty-pack.jpg'])">
 
 <!-- PRODUCT 3 -->
 <div class="featured-card"
-onclick="openProduct(['veidahi-sports-bra.jpg'])">
+onclick="openProduct('veidahi-sports-bra.jpg')">
 
 <img src="veidahi-sports-bra.jpg">
 <p>Sports Bra</p>
@@ -1358,7 +1371,7 @@ onclick="openProduct(['veidahi-sports-bra.jpg'])">
 
 <!-- PRODUCT 4 -->
 <div class="featured-card"
-onclick="openProduct(['veidahi-premium-tshirt.jpg'])">
+onclick="openProduct('veidahi-premium-tshirt.jpg')">
 
 <img src="veidahi-premium-tshirt.jpg">
 <p>Premium T-Shirt</p>
@@ -1833,59 +1846,42 @@ document.addEventListener("DOMContentLoaded", function(){
 <!-- PRODUCT POPUP SCRIPT -->
 <script>
 
+<script>
+
 /* PRODUCT POPUP FIX */
 
-function openProduct(images){
+function openProduct(image){
 
   const popup = document.getElementById("productPopup");
   const track = document.getElementById("productTrack");
 
   track.innerHTML = "";
 
-  images.forEach(img=>{
-    const image = document.createElement("img");
-    image.src = img;
-    track.appendChild(image);
-  });
+  const img = document.createElement("img");
+  img.src = image;
+  img.style.width = "100%";
+  img.style.borderRadius = "15px";
 
-  popup.style.display="flex";
+  track.appendChild(img);
+
+  popup.style.display = "flex";
 }
 
-function closeProduct(){
-  document.getElementById("productPopup").style.display="none";
-}
-
-document.addEventListener("click",function(e){
-
-  const popup = document.getElementById("productPopup");
-
-  if(popup && e.target === popup){
-    popup.style.display="none";
-  }
-
-});
-
-/* ===== CLOSE POPUP ===== */
 function closeProduct(){
   document.getElementById("productPopup").style.display = "none";
 }
 
-
-/* ===== CLICK OUTSIDE TO CLOSE ===== */
-document.addEventListener("DOMContentLoaded", function(){
-
-  const popup = document.getElementById("productPopup");
-
-  if(popup){
-    popup.addEventListener("click", function(e){
-      if(e.target === popup){
-        popup.style.display = "none";
-      }
-    });
+document.getElementById("productPopup")?.addEventListener("click",function(e){
+  if(e.target.id === "productPopup"){
+    this.style.display="none";
   }
-
 });
-
+<div class="product-popup" id="productPopup">
+  <div class="product-popup-content">
+    <span class="close-product" onclick="closeProduct()">✖</span>
+    <div class="product-popup-track" id="productTrack"></div>
+  </div>
+</div>
 </script>
 
 </body>

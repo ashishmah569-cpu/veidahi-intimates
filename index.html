@@ -217,29 +217,86 @@ margin-bottom:40px;
 .soft{
 background:var(--soft);
 }
-/* ===== HERO FINAL CLEAN VERSION ===== */
+/* ================= HERO CLEAN FIX ================= */
 
-body{
-  margin:0;
-  padding:0;
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
+
+/* Slides */
+
+.slide {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background-size:contain; 
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+  background-color:#fff;
+}
+
+.slide.active{
+  opacity:1;
+}
+
+/* Dark overlay clean */
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,0.35);
+}
+
+/* Hero Text Center Proper */
 
 .hero-content{
   position:relative;
   z-index:2;
-  color:#fff;
-  width:90%;
-  max-width:800px;
+  color:white;
+  padding:20px;
+  max-width:90%;
 }
 
 .hero-content h1{
-  font-size:48px;
-  margin-bottom:10px;
+  font-size:42px;
 }
 
 .hero-content p{
   font-size:18px;
-  margin-bottom:20px;
+  margin:15px 0;
+}
+
+/* Mobile Fix */
+
+@media(max-width:768px){
+
+  .hero{
+    height:80vh;
+  }
+
+  .hero-content h1{
+    font-size:26px;
+  }
+
+  .hero-content p{
+    font-size:14px;
+  }
+
 }
 
 .btn{
@@ -1154,20 +1211,20 @@ font-size:18px;
 </div>
 
 <section class="hero">
-  <div class="slide active" style="background-image: url('panty.jpg');"></div>
-  <div class="slide" style="background-image: url('bra.jpg');"></div>
-  <div class="slide" style="background-image: url('tshirt.jpg');"></div>
-  <div class="slide" style="background-image: url('jeggings.jpg');"></div>
-  <div class="slide" style="background-image: url('sportsbra.jpg');"></div>
+
+  <div class="slide active" style="background-image:url('panty.jpg')"></div>
+  <div class="slide" style="background-image:url('bra.jpg')"></div>
+  <div class="slide" style="background-image:url('tshirt.jpg')"></div>
+  <div class="slide" style="background-image:url('jeggings.jpg')"></div>
+  <div class="slide" style="background-image:url('sportsbra.jpg')"></div>
 
   <div class="hero-content">
     <h1>Veidahi Intimates</h1>
     <p>Luxury Lingerie & Everyday Western Wear</p>
-   <a href="#collection" class="hero-btn">
-Shop Collection
-</a>
-</section>
+    <a href="#products" class="hero-btn">Shop Collection</a>
+  </div>
 
+</section>
  <!-- TRUST BADGES -->
 
 <section class="trust-badges">

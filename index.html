@@ -217,12 +217,12 @@ margin-bottom:40px;
 .soft{
 background:var(--soft);
 }
-/* ================= CLEAN HERO ================= */
+/* ================= CLEAN HERO FIX ================= */
 
 .hero{
   position:relative;
   width:100%;
-  height:100vh;
+  height:90vh;
   overflow:hidden;
   display:flex;
   align-items:center;
@@ -231,28 +231,25 @@ background:var(--soft);
 }
 
 /* Slides */
-
 .slide{
   position:absolute;
-  width:100%;
-  height:100%;
   top:0;
   left:0;
- .slide {
-  background-size: contain;
+  width:100%;
+  height:100%;
+  background-size:cover; /* ✅ COVER use karo */
   background-position:center;
   background-repeat:no-repeat;
-}
   opacity:0;
   transition:opacity 1s ease-in-out;
 }
 
+/* Active Slide */
 .slide.active{
   opacity:1;
 }
 
 /* Dark Overlay */
-
 .hero::after{
   content:"";
   position:absolute;
@@ -263,12 +260,11 @@ background:var(--soft);
   background:rgba(0,0,0,0.35);
 }
 
-/* Text Layer */
-
+/* Hero Text */
 .hero-content{
   position:relative;
   z-index:2;
-  color:#fff;
+  color:white;
   max-width:90%;
 }
 
@@ -281,22 +277,22 @@ background:var(--soft);
   margin:15px 0;
 }
 
-/* Mobile */
-
+/* Mobile Fix */
 @media(max-width:768px){
 
 .hero{
-  height:80vh;
+  height:75vh;
 }
 
 .hero-content h1{
-  font-size:28px;
+  font-size:26px;
 }
 
 .hero-content p{
-  font-size:15px;
+  font-size:14px;
 }
 
+}
 }
 .btn{
   padding:10px 25px;
@@ -1258,10 +1254,16 @@ min-width:80%;
 }
 
 }
- /* FORCE FULL WIDTH FIX */
+ /* ✅ FORCE PERFECT FULL WIDTH */
 
 html, body{
+  margin:0;
+  padding:0;
+  width:100%;
   overflow-x:hidden;
+}
+
+section{
   width:100%;
 }
 
@@ -1327,24 +1329,40 @@ Trusted by Women Across India
 
 <div class="featured-scroll">
 
-<div class="featured-card" onclick="openProduct(['veidahi-lace-bra-set.jpg'])">
+<!-- PRODUCT 1 -->
+<div class="featured-card"
+onclick="openProduct(['veidahi-lace-bra-set.jpg'])">
+
 <img src="veidahi-lace-bra-set.jpg">
 <p>Lace Bra Set</p>
+
 </div>
 
-<div class="featured-card" onclick="openProduct(['veidahi-cotton-panty-pack.jpg'])">
+<!-- PRODUCT 2 -->
+<div class="featured-card"
+onclick="openProduct(['veidahi-cotton-panty-pack.jpg'])">
+
 <img src="veidahi-cotton-panty-pack.jpg">
 <p>Cotton Panty Pack</p>
+
 </div>
 
-<div class="featured-card" onclick="openProduct(['veidahi-sports-bra.jpg'])">
+<!-- PRODUCT 3 -->
+<div class="featured-card"
+onclick="openProduct(['veidahi-sports-bra.jpg'])">
+
 <img src="veidahi-sports-bra.jpg">
 <p>Sports Bra</p>
+
 </div>
 
-<div class="featured-card" onclick="openProduct(['veidahi-premium-tshirt.jpg'])">
+<!-- PRODUCT 4 -->
+<div class="featured-card"
+onclick="openProduct(['veidahi-premium-tshirt.jpg'])">
+
 <img src="veidahi-premium-tshirt.jpg">
 <p>Premium T-Shirt</p>
+
 </div>
 
 </div>
@@ -1815,30 +1833,37 @@ document.addEventListener("DOMContentLoaded", function(){
 <!-- PRODUCT POPUP SCRIPT -->
 <script>
 
-/* ===== OPEN POPUP ===== */
+/* PRODUCT POPUP FIX */
+
 function openProduct(images){
 
   const popup = document.getElementById("productPopup");
   const track = document.getElementById("productTrack");
-
-  if(!popup || !track){
-    console.log("Popup elements not found");
-    return;
-  }
 
   track.innerHTML = "";
 
   images.forEach(img=>{
     const image = document.createElement("img");
     image.src = img;
-    image.style.width = "100%";
-    image.style.borderRadius = "15px";
     track.appendChild(image);
   });
 
-  popup.style.display = "flex";
+  popup.style.display="flex";
 }
 
+function closeProduct(){
+  document.getElementById("productPopup").style.display="none";
+}
+
+document.addEventListener("click",function(e){
+
+  const popup = document.getElementById("productPopup");
+
+  if(popup && e.target === popup){
+    popup.style.display="none";
+  }
+
+});
 
 /* ===== CLOSE POPUP ===== */
 function closeProduct(){

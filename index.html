@@ -1258,7 +1258,18 @@ min-width:80%;
 }
 
 }
- 
+ /* FORCE FULL WIDTH FIX */
+
+html, body{
+  overflow-x:hidden;
+  width:100%;
+}
+
+.container{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+}
 </style>
   </head>
   
@@ -1804,13 +1815,16 @@ document.addEventListener("DOMContentLoaded", function(){
 <!-- PRODUCT POPUP SCRIPT -->
 <script>
 
-/* OPEN PRODUCT POPUP */
+/* ===== OPEN POPUP ===== */
 function openProduct(images){
 
   const popup = document.getElementById("productPopup");
   const track = document.getElementById("productTrack");
 
-  if(!popup || !track) return;
+  if(!popup || !track){
+    console.log("Popup elements not found");
+    return;
+  }
 
   track.innerHTML = "";
 
@@ -1826,16 +1840,13 @@ function openProduct(images){
 }
 
 
-/* CLOSE FUNCTION */
+/* ===== CLOSE POPUP ===== */
 function closeProduct(){
-  const popup = document.getElementById("productPopup");
-  if(popup){
-    popup.style.display = "none";
-  }
+  document.getElementById("productPopup").style.display = "none";
 }
 
 
-/* CLICK OUTSIDE TO CLOSE */
+/* ===== CLICK OUTSIDE TO CLOSE ===== */
 document.addEventListener("DOMContentLoaded", function(){
 
   const popup = document.getElementById("productPopup");

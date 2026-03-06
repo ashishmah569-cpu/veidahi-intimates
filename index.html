@@ -1123,13 +1123,56 @@ flex-wrap:wrap;
   font-size:40px;
   margin-bottom:10px;
 }
-</style>
 
-/* PROMISE SECTION */
-.promise-section{
-  background:#111;
-  color:#fff;
-  text-align:center;
+/* ================= MOBILE RESPONSIVE FIX ================= */
+
+@media (max-width:768px){
+
+  /* Force Proper Width */
+  html, body{
+    width:100%;
+    overflow-x:hidden;
+  }
+
+  /* Reduce Section Padding */
+  section{
+    padding:50px 15px;
+  }
+
+  /* Hero Fix */
+  .hero{
+    height:75vh;
+  }
+
+  .hero-content h1{
+    font-size:26px;
+  }
+
+  .hero-content p{
+    font-size:14px;
+  }
+
+  /* Featured Grid Mobile */
+  .featured-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* Product Grid Mobile */
+  .products-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* Category Mobile */
+  .category-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* Numbers Spacing Mobile */
+  .numbers-container{
+    gap:30px;
+  }
+
+}
  
 </style>
   </head>

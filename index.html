@@ -1205,15 +1205,21 @@ transform:translateY(-5px);
 }
 
 
- /* ✅ FORCE PERFECT FULL WIDTH */
+/* ✅ FORCE FULL WIDTH SECTIONS (MOBILE + SYSTEM FIX) */
 
-html, body{
-  margin:0;
-  padding:0;
+.full-width-section{
   width:100%;
-  overflow-x:hidden;
 }
 
+/* 🔥 Mobile Full Screen Force */
+@media(max-width:768px){
+
+  .full-width-section{
+    width:100vw;
+    margin-left:calc(-50vw + 50%);
+  }
+
+}
 section{
   width:100%;
 }
@@ -1238,6 +1244,7 @@ flex:0 0 auto;
 /* ===== WHY WOMEN TRUST FULL WIDTH FIX ===== */
 
 .why-section{
+
   width:100%;
   background:#f8f8f8;
   padding:140px 20px;
@@ -1417,7 +1424,7 @@ flex:0 0 auto;
    
  <!-- TRUST BADGES -->
 
-<section class="trust-badges">
+<section class="trust-badges full-width-section">
 
 <h3>Trusted Shopping Experience</h3>
 
@@ -1438,7 +1445,7 @@ Trusted by Women Across India
 
 <!-- FEATURED COLLECTION -->
 
-<section class="featured-section" id="collection">
+<section class="featured-section full-width-section" id="collection">
 
 <h2>Featured Collection</h2>
 
@@ -1484,7 +1491,7 @@ onclick="openProduct('veidahi-premium-tshirt.jpg')">
 
 </section>
    
-<section class="seo-text">
+<section class="seo-text full-width-section">
   <div class="container">
     <h2>Luxury Lingerie & Western Wear in Delhi</h2>
     <p>
@@ -1511,7 +1518,7 @@ onclick="openProduct('veidahi-premium-tshirt.jpg')">
 </div>
 
 <!-- CATEGORY -->
-<section class="soft">
+<section class="soft full-width-section">
 <h2>Shop By Category</h2>
 
 <div class="category-grid">
@@ -1545,7 +1552,7 @@ onclick="openProduct('veidahi-premium-tshirt.jpg')">
  
 <!-- NEW ARRIVALS -->
 
-<section class="soft">
+<section class="soft full-width-section">
 <h2 id="new">New Arrivals</h2>
 
 <div class="arrival-slider">
@@ -1657,7 +1664,7 @@ onclick="window.location.href='p8.html'">
 </section>
 
 <!-- PROMISE SECTION -->
-<section class="promise-section">
+<section class="promise-section full-width-section">
 
   <h2>Our Promise</h2>
   <div class="divider-white"></div>
@@ -1688,7 +1695,7 @@ border-radius:6px;
 transition:0.3s;
 ">
 
-<section class="brand-quote">
+<section class="brand-quote full-width-section">
 
 <p>
 "Lingerie is not just clothing.  
@@ -1703,10 +1710,10 @@ Read Our Story
 
 </div>
      
-    <section class="promise-section">
+    <section class="promise-section full-width-section">
 
 <!-- WHY WOMEN TRUST SECTION -->
-<section class="why-clean">
+<section class="why-clean full-width-section">
 
   <div class="why-wrapper">
 
@@ -1732,7 +1739,7 @@ Read Our Story
   </div>
 
 </section>
-  <section class="seen-on">
+  <section class="seen-on full-width-section">
 
 <h2>Available On</h2>
 
@@ -1746,7 +1753,7 @@ Read Our Story
 </div>
 
 </section>
-<section class="numbers-section">
+<section class="numbers-section full-width-section">
 
   <div class="numbers-container">
 
@@ -1794,7 +1801,7 @@ Read Our Story
 <a href="story.html" class="hero-btn">Read My Story</a>
 
 <!-- FULL WIDTH TESTIMONIAL SECTION -->
-<section class="testimonial-section">
+<section class="testimonial-section full-width-section">
 
   <h2 class="testimonial-heading">
     What Our Customers Say About Veidahi
@@ -1892,7 +1899,7 @@ Read Our Story
 </section>
 <!-- NEWSLETTER -->
 
-<section class="newsletter">
+<section class="newsletter full-width-section">
 
 <h2>Join Veidahi</h2>
 

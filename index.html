@@ -1173,7 +1173,41 @@ flex-wrap:wrap;
   }
 
 }
- 
+ /* FEATURED MOBILE ROW STYLE */
+
+.featured-scroll{
+display:flex;
+gap:15px;
+overflow-x:auto;
+padding:10px 0;
+scroll-behavior:smooth;
+}
+
+.featured-scroll::-webkit-scrollbar{
+display:none;
+}
+
+.featured-card{
+min-width:220px;
+background:white;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+padding:10px;
+text-align:center;
+cursor:pointer;
+transition:0.3s;
+}
+
+.featured-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.featured-card:hover{
+transform:translateY(-5px);
+}
 </style>
   </head>
   
@@ -1229,24 +1263,24 @@ Trusted by Women Across India
 
 <h2>Featured Collection</h2>
 
-<div class="featured-grid">
+<div class="featured-scroll">
 
-<div>
+<div class="featured-card" onclick="openProduct(['veidahi-lace-bra-set.jpg'])">
 <img src="veidahi-lace-bra-set.jpg">
 <p>Lace Bra Set</p>
 </div>
 
-<div>
+<div class="featured-card" onclick="openProduct(['veidahi-cotton-panty-pack.jpg'])">
 <img src="veidahi-cotton-panty-pack.jpg">
 <p>Cotton Panty Pack</p>
 </div>
 
-<div>
+<div class="featured-card" onclick="openProduct(['veidahi-sports-bra.jpg'])">
 <img src="veidahi-sports-bra.jpg">
 <p>Sports Bra</p>
 </div>
 
-<div>
+<div class="featured-card" onclick="openProduct(['veidahi-premium-tshirt.jpg'])">
 <img src="veidahi-premium-tshirt.jpg">
 <p>Premium T-Shirt</p>
 </div>
@@ -1717,17 +1751,19 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 /* PRODUCT POPUP */
-const productPopup = document.getElementById("productPopup");
-const productTrack = document.getElementById("productTrack");
-
 function openProduct(images){
-  productTrack.innerHTML = "";
+  const popup = document.getElementById("productPopup");
+  const track = document.getElementById("productTrack");
+
+  track.innerHTML = "";
+
   images.forEach(img=>{
     const image = document.createElement("img");
     image.src = img;
-    productTrack.appendChild(image);
+    track.appendChild(image);
   });
-  productPopup.style.display = "flex";
+
+  popup.style.display = "flex";
 }
 
 function closeProduct(){

@@ -1348,19 +1348,22 @@ flex:0 0 auto;
 
 }
 
-/* ===== FEATURED MOBILE GRID SAME AS DESKTOP ===== */
+/* ===== FEATURED MOBILE PERFECT GRID ===== */
 
 @media(max-width:768px){
 
   .featured-scroll{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(2,1fr); /* 🔥 2 column better look */
     gap:15px;
-    overflow:visible;
   }
 
   .featured-card{
-    min-width:100%;
+    min-width:0;
+  }
+
+  .featured-card img{
+    height:180px; /* 🔥 image height reduce karo */
   }
 
 }

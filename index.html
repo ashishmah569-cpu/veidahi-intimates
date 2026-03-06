@@ -60,12 +60,12 @@ max-width:800px;
 }
 
 
-/* PROMISE SECTION */
+/* ===== FINAL PROMISE FIX ===== */
 
 .promise-section{
 width:100%;
 padding:80px 20px;
-background:#fff;
+background:#faf7f5;
 text-align:center;
 }
 
@@ -78,13 +78,49 @@ margin:auto;
 }
 
 .promise-box{
-background:#fff;
+background:white;
 padding:25px;
-border-radius:8px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
+/* WHY WOMEN TRUST */
 
+.why-section{
+width:100%;
+padding:80px 20px;
+background:#fff;
+text-align:center;
+}
+
+.why-container{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.why-box{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* MOBILE FIX */
+
+@media(max-width:768px){
+
+.promise-container{
+grid-template-columns:repeat(2,1fr);
+}
+
+.why-container{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
 /* WHY WOMEN TRUST */
 
 .why-section{

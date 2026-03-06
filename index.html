@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,7 @@ box-sizing:border-box;
 body{
 font-family:Poppins;
 overflow-x:hidden;
+background:#fff;
 }
 
 /* NAVBAR */
@@ -29,14 +31,14 @@ justify-content:space-between;
 align-items:center;
 padding:15px 8%;
 background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
 position:fixed;
 width:100%;
 z-index:999;
 }
 
 .logo img{
-height:70px;
+height:60px;
 }
 
 .nav-links a{
@@ -52,6 +54,7 @@ font-weight:500;
 position:relative;
 height:90vh;
 overflow:hidden;
+margin-top:80px;
 }
 
 .slide{
@@ -83,19 +86,30 @@ content:"";
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.4);
+background:rgba(0,0,0,0.35);
+}
+
+.hero h1{
+font-family:Playfair Display;
+font-size:48px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
 }
 
 /* SECTION */
 
 section{
-padding:80px 8%;
+padding:90px 8%;
 text-align:center;
 }
 
 h2{
 font-family:Playfair Display;
 margin-bottom:40px;
+font-size:34px;
 }
 
 /* TRUST */
@@ -108,9 +122,10 @@ gap:25px;
 
 .trust-box{
 background:#fff;
-padding:25px;
+padding:30px;
 border-radius:10px;
 box-shadow:0 5px 15px rgba(0,0,0,0.08);
+font-weight:500;
 }
 
 /* FEATURED */
@@ -125,18 +140,29 @@ gap:25px;
 background:white;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+cursor:pointer;
 }
 
 .product img{
 width:100%;
-height:280px;
+height:250px;
 object-fit:cover;
 }
 
 .product p{
 padding:15px;
 font-weight:500;
+}
+
+/* ABOUT */
+
+.about p{
+max-width:750px;
+margin:auto;
+font-size:17px;
+line-height:1.8;
+color:#555;
 }
 
 /* CATEGORY */
@@ -148,10 +174,9 @@ gap:25px;
 }
 
 .category{
-background:white;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
 .category img{
@@ -164,30 +189,24 @@ object-fit:cover;
 padding:15px;
 }
 
-/* NEW ARRIVALS */
+/* ARRIVALS */
 
 .arrival-slider{
 display:flex;
 gap:20px;
 overflow-x:auto;
-scroll-behavior:smooth;
-}
-
-.arrival-slider::-webkit-scrollbar{
-display:none;
 }
 
 .arrival{
-min-width:250px;
-background:white;
+min-width:230px;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
 .arrival img{
 width:100%;
-height:280px;
+height:260px;
 object-fit:cover;
 }
 
@@ -198,6 +217,10 @@ padding:15px;
 /* MOBILE */
 
 @media(max-width:768px){
+
+.hero h1{
+font-size:32px;
+}
 
 .trust-grid{
 grid-template-columns:repeat(2,1fr);
@@ -213,6 +236,170 @@ grid-template-columns:repeat(2,1fr);
 
 }
 
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">
+<img src="logo.jpg">
+</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#collection">Collection</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div class="slide active" style="background-image:url(panty.jpg)"></div>
+<div class="slide" style="background-image:url(bra.jpg)"></div>
+<div class="slide" style="background-image:url(tshirt.jpg)"></div>
+<div class="slide" style="background-image:url(jeggings.jpg)"></div>
+<div class="slide" style="background-image:url(sportsbra.jpg)"></div>
+
+<div class="hero-content">
+<h1>Veidahi Intimates</h1>
+<p>Luxury Lingerie & Everyday Western Wear</p>
+</div>
+
+</div>
+
+<!-- TRUST -->
+
+<section>
+
+<h2>Trusted Shopping Experience</h2>
+
+<div class="trust-grid">
+
+<div class="trust-box">Premium Quality</div>
+<div class="trust-box">Secure Payments</div>
+<div class="trust-box">Fast Delivery</div>
+<div class="trust-box">Trusted Brand</div>
+
+</div>
+
+</section>
+
+<!-- FEATURED -->
+
+<section id="collection">
+
+<h2>Featured Collection</h2>
+
+<div class="featured-grid">
+
+<div class="product">
+<img src="veidahi-lace-bra-set.jpg">
+<p>Lace Bra Set</p>
+</div>
+
+<div class="product">
+<img src="veidahi-cotton-panty-pack.jpg">
+<p>Cotton Panty Pack</p>
+</div>
+
+<div class="product">
+<img src="veidahi-sports-bra.jpg">
+<p>Sports Bra</p>
+</div>
+
+<div class="product">
+<img src="veidahi-premium-tshirt.jpg">
+<p>Premium T-Shirt</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<h2>Luxury Lingerie & Western Wear in Delhi</h2>
+
+<p>
+Veidahi Intimates is a premium lingerie and western wear brand based in Delhi.
+We create elegant innerwear and everyday fashion designed for comfort,
+confidence and modern lifestyle.
+</p>
+
+</section>
+
+<!-- CATEGORY -->
+
+<section>
+
+<h2>Shop By Category</h2>
+
+<div class="category-grid">
+
+<div class="category">
+<img src="cat-lingerie.jpg">
+<p>Lingerie</p>
+</div>
+
+<div class="category">
+<img src="cat-nightwear.jpg">
+<p>Nightwear</p>
+</div>
+
+<div class="category">
+<img src="cat-western.jpg">
+<p>Western Wear</p>
+</div>
+
+<div class="category">
+<img src="cat-innerwear.jpg">
+<p>Innerwear</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- NEW ARRIVALS -->
+
+<section>
+
+<h2>New Arrivals</h2>
+
+<div class="arrival-slider">
+
+<div class="arrival">
+<img src="na1-1.jpg">
+<p>Sports Bra</p>
+</div>
+
+<div class="arrival">
+<img src="na2-1.jpg">
+<p>Gym Bra</p>
+</div>
+
+<div class="arrival">
+<img src="na3-1.jpg">
+<p>Running Bra</p>
+</div>
+
+<div class="arrival">
+<img src="na4-1.jpg">
+<p>Bold Classic</p>
+</div>
+
+</div>
+
+</section>
 </style>
 </head>
 

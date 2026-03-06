@@ -1204,14 +1204,7 @@ border-radius:12px;
 transform:translateY(-5px);
 }
 
-/* Mobile Fix */
-@media(max-width:768px){
 
-.featured-card{
-min-width:80%;
-}
-
-}
  /* ✅ FORCE PERFECT FULL WIDTH */
 
 html, body{
@@ -1351,6 +1344,23 @@ flex:0 0 auto;
 
   .why-wrapper p{
     font-size:15px;
+  }
+
+}
+
+/* ===== FEATURED MOBILE GRID SAME AS DESKTOP ===== */
+
+@media(max-width:768px){
+
+  .featured-scroll{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    overflow:visible;
+  }
+
+  .featured-card{
+    min-width:100%;
   }
 
 }

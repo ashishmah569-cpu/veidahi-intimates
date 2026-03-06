@@ -1208,6 +1208,57 @@ border-radius:12px;
 .featured-card:hover{
 transform:translateY(-5px);
 }
+
+ /* ===== FEATURED CLEAN FIX ===== */
+
+.featured-section{
+padding:100px 20px;
+text-align:center;
+}
+
+.featured-scroll{
+display:flex;
+gap:20px;
+overflow-x:auto;
+justify-content:flex-start;
+scroll-behavior:smooth;
+}
+
+.featured-scroll::-webkit-scrollbar{
+display:none;
+}
+
+.featured-card{
+min-width:240px;
+background:#fff;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+padding:15px;
+cursor:pointer;
+transition:0.3s;
+flex-shrink:0;
+}
+
+.featured-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.featured-card:hover{
+transform:translateY(-5px);
+}
+
+/* Mobile Fix */
+@media(max-width:768px){
+
+.featured-card{
+min-width:80%;
+}
+
+}
+ 
 </style>
   </head>
   
@@ -1259,7 +1310,7 @@ Trusted by Women Across India
 
 <!-- FEATURED COLLECTION -->
 
-<section class="featured-section">
+<section class="featured-section" id="collection">
 
 <h2>Featured Collection</h2>
 
@@ -1750,31 +1801,55 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
-/* PRODUCT POPUP */
+<!-- PRODUCT POPUP SCRIPT -->
+<script>
+
+/* OPEN PRODUCT POPUP */
 function openProduct(images){
+
   const popup = document.getElementById("productPopup");
   const track = document.getElementById("productTrack");
+
+  if(!popup || !track) return;
 
   track.innerHTML = "";
 
   images.forEach(img=>{
     const image = document.createElement("img");
     image.src = img;
+    image.style.width = "100%";
+    image.style.borderRadius = "15px";
     track.appendChild(image);
   });
 
   popup.style.display = "flex";
 }
 
+
+/* CLOSE FUNCTION */
 function closeProduct(){
-  productPopup.style.display = "none";
+  const popup = document.getElementById("productPopup");
+  if(popup){
+    popup.style.display = "none";
+  }
 }
 
-productPopup.addEventListener("click",function(e){
-  if(e.target === productPopup){
-    productPopup.style.display = "none";
+
+/* CLICK OUTSIDE TO CLOSE */
+document.addEventListener("DOMContentLoaded", function(){
+
+  const popup = document.getElementById("productPopup");
+
+  if(popup){
+    popup.addEventListener("click", function(e){
+      if(e.target === popup){
+        popup.style.display = "none";
+      }
+    });
   }
+
 });
+
 </script>
 
 </body>

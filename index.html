@@ -15,7 +15,7 @@
 :root{
   --primary:#7A1F3D;
 }
-/* ================= GLOBAL ================= */
+/* GLOBAL FIX */
 
 *{
 margin:0;
@@ -23,12 +23,122 @@ padding:0;
 box-sizing:border-box;
 }
 
-body{
-font-family:'Poppins',sans-serif;
-color:#111;
-padding-top:80px;
+html,body{
+width:100%;
+overflow-x:hidden;
+font-family:Arial, sans-serif;
 }
-body{
+
+
+/* CONTAINER */
+
+.container{
+width:100%;
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+
+/* ABOUT VEIDAHI */
+
+.about{
+width:100%;
+padding:80px 20px;
+text-align:left;
+}
+
+.about h2{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.about p{
+font-size:16px;
+line-height:1.7;
+max-width:800px;
+}
+
+
+/* PROMISE SECTION */
+
+.promise-section{
+width:100%;
+padding:80px 20px;
+background:#fff;
+text-align:center;
+}
+
+.promise-container{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.promise-box{
+background:#fff;
+padding:25px;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+/* WHY WOMEN TRUST */
+
+.why-section{
+width:100%;
+padding:80px 20px;
+background:#fff;
+text-align:center;
+}
+
+.why-container{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.why-box{
+background:#fff;
+padding:25px;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+cursor:default;
+}
+
+
+/* REMOVE CLICK */
+
+.why-box a{
+pointer-events:none;
+text-decoration:none;
+color:inherit;
+}
+
+
+/* MOBILE FIX */
+
+@media(max-width:768px){
+
+.promise-container{
+grid-template-columns:repeat(2,1fr);
+}
+
+.why-container{
+grid-template-columns:repeat(2,1fr);
+}
+
+.about{
+text-align:left;
+}
+
+}
+body
+ {
   font-family:'Poppins', sans-serif;
 }
 

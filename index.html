@@ -1235,11 +1235,12 @@ flex-wrap:nowrap;
 .featured-card{
 flex:0 0 auto;
 }
- /* WHY SECTION FULL WIDTH FIX */
+/* ===== WHY WOMEN TRUST FULL WIDTH FIX ===== */
+
 .why-section{
   width:100%;
   background:#f8f8f8;
-  padding:120px 20px;
+  padding:140px 20px;
   text-align:center;
 }
 
@@ -1248,6 +1249,24 @@ flex:0 0 auto;
   margin:auto;
 }
 
+/* 🔥 Mobile Full Screen Fix */
+@media(max-width:768px){
+
+  .why-section{
+    width:100vw;
+    margin-left:calc(-50vw + 50%);
+    padding:90px 20px;
+  }
+
+  .why-heading{
+    font-size:26px;
+  }
+
+  .why-points{
+    gap:20px;
+  }
+
+}
 .why-heading{
   font-size:38px;
   margin-bottom:20px;

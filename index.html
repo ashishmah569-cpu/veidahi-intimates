@@ -1284,7 +1284,52 @@ flex-wrap:nowrap;
 .featured-card{
 flex:0 0 auto;
 }
- 
+ /* WHY SECTION FULL WIDTH FIX */
+.why-section{
+  width:100%;
+  background:#f8f8f8;
+  padding:120px 20px;
+  text-align:center;
+}
+
+.why-container{
+  max-width:1100px;
+  margin:auto;
+}
+
+.why-heading{
+  font-size:38px;
+  margin-bottom:20px;
+}
+
+.divider{
+  width:60px;
+  height:3px;
+  background:#000;
+  margin:20px auto 40px;
+}
+
+.why-text{
+  font-size:18px;
+  line-height:1.9;
+  color:#555;
+  margin-bottom:60px;
+}
+
+.why-points{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.point{
+  background:white;
+  padding:18px 25px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  font-weight:500;
+}
 </style>
   </head>
   
@@ -1603,41 +1648,48 @@ Read Our Story
      
     <section class="promise-section">
 
-<h2>Why Women Trust Veidahi</h2>
+<!-- WHY WOMEN TRUST SECTION -->
+<section class="why-section">
 
-<div class="promise-grid">
+  <div class="why-container">
 
-<div class="promise-box">
-<h4>Premium Quality</h4>
-<p>Carefully selected fabrics designed for comfort and durability.</p>
-</div>
+    <h2 class="why-heading">
+      Why Women Trust Veidahi
+    </h2>
 
-<div class="promise-box">
-<h4>Elegant Designs</h4>
-<p>Modern styles crafted to enhance confidence and beauty.</p>
-</div>
+    <div class="divider"></div>
 
-<div class="promise-box">
-<h4>Comfort Fit</h4>
-<p>Perfect fitting innerwear made for everyday ease.</p>
-</div>
+    <p class="why-text">
+      Veidahi Intimates delivers premium quality lingerie with perfect fitting,
+      soft fabrics and modern designs made for confidence and comfort.
+      We focus on transparency, trust and customer satisfaction.
+    </p>
 
-<div class="promise-box">
-<h4>Skin Friendly Fabric</h4>
-<p>Soft materials designed to feel gentle and breathable on skin.</p>
-</div>
+    <div class="why-points">
 
-<div class="promise-box">
-<h4>Quality Checked</h4>
-<p>Every product goes through careful quality inspection.</p>
-</div>
+      <div class="point">
+        ✔ Premium Fabric
+      </div>
 
-<div class="promise-box">
-<h4>Trusted Across India</h4>
-<p>Loved by a growing community of happy women customers.</p>
-</div>
+      <div class="point">
+        ✔ Perfect Fit Design
+      </div>
 
-</div>
+      <div class="point">
+        ✔ Affordable Luxury
+      </div>
+
+      <div class="point">
+        ✔ Trusted By Customers
+      </div>
+
+      <div class="point">
+        ✔ Easy Returns
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
   <section class="seen-on">

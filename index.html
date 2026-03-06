@@ -871,48 +871,6 @@ border-radius:15px;
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
- /* FULL WIDTH SECTION FIX */
-.why-section{
-  width:100vw;
-  margin-left:calc(-50vw + 50%);
-  background:#f8f8f8;
-  padding:140px 20px;
-}
-
-.why-container{
-  max-width:1000px;
-  margin:0 auto;
-  text-align:center;
-}
-
-.why-heading{
-  font-size:42px;
-  font-weight:600;
-  margin-bottom:40px;
-  letter-spacing:1px;
-}
-
-.why-text{
-  font-size:19px;
-  line-height:2.1;
-  color:#555;
-  margin-bottom:60px;
-}
-
-.why-points{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  flex-wrap:wrap;
-}
-
-.point{
-  font-size:18px;
-  background:#ffffff;
-  padding:20px 30px;
-  border-radius:12px;
-  box-shadow:0 15px 35px rgba(0,0,0,0.05);
-}
 
 /* MOBILE RESPONSIVE */
 @media(max-width:768px){
@@ -1330,6 +1288,73 @@ flex:0 0 auto;
   box-shadow:0 10px 25px rgba(0,0,0,0.05);
   font-weight:500;
 }
+
+/* ================= WHY SECTION CLEAN FIX ================= */
+
+.why-clean{
+  width:100%;
+  background:#f8f8f8;
+  padding:120px 20px;
+  text-align:center;
+}
+
+.why-wrapper{
+  max-width:1100px;
+  margin:auto;
+}
+
+.why-wrapper h2{
+  font-size:36px;
+  margin-bottom:20px;
+}
+
+.why-divider{
+  width:60px;
+  height:3px;
+  background:#000;
+  margin:20px auto 40px;
+}
+
+.why-wrapper p{
+  font-size:18px;
+  line-height:1.9;
+  color:#555;
+  margin-bottom:60px;
+}
+
+.why-grid{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.why-box{
+  background:white;
+  padding:18px 25px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  font-weight:500;
+  transition:0.3s;
+}
+
+.why-box:hover{
+  transform:translateY(-5px);
+}
+
+/* Mobile Fix */
+@media(max-width:768px){
+
+  .why-wrapper h2{
+    font-size:26px;
+  }
+
+  .why-wrapper p{
+    font-size:15px;
+  }
+
+}
+ 
 </style>
   </head>
   
@@ -1649,43 +1674,26 @@ Read Our Story
     <section class="promise-section">
 
 <!-- WHY WOMEN TRUST SECTION -->
-<section class="why-section">
+<section class="why-clean">
 
-  <div class="why-container">
+  <div class="why-wrapper">
 
-    <h2 class="why-heading">
-      Why Women Trust Veidahi
-    </h2>
+    <h2>Why Women Trust Veidahi</h2>
 
-    <div class="divider"></div>
+    <div class="why-divider"></div>
 
-    <p class="why-text">
-      Veidahi Intimates delivers premium quality lingerie with perfect fitting,
-      soft fabrics and modern designs made for confidence and comfort.
-      We focus on transparency, trust and customer satisfaction.
+    <p>
+      Premium quality fabrics • Perfect fitting design • Modern style  
+      Trusted by thousands of happy customers across India.
     </p>
 
-    <div class="why-points">
+    <div class="why-grid">
 
-      <div class="point">
-        ✔ Premium Fabric
-      </div>
-
-      <div class="point">
-        ✔ Perfect Fit Design
-      </div>
-
-      <div class="point">
-        ✔ Affordable Luxury
-      </div>
-
-      <div class="point">
-        ✔ Trusted By Customers
-      </div>
-
-      <div class="point">
-        ✔ Easy Returns
-      </div>
+      <div class="why-box">✔ Premium Fabric</div>
+      <div class="why-box">✔ Perfect Fit</div>
+      <div class="why-box">✔ Affordable Luxury</div>
+      <div class="why-box">✔ Easy Returns</div>
+      <div class="why-box">✔ Trusted Brand</div>
 
     </div>
 

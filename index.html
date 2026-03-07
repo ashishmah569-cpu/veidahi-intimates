@@ -267,7 +267,7 @@ font-size:13px;
   margin-top: 20px;
   font-size: 16px;
   white-space: nowrap;
-  overflow: hidden;
+ overflow-x:hidden;
 }
 
 .running-text span {
@@ -333,7 +333,7 @@ background:var(--soft);
   position:relative;
   width:100%;
   height:90vh;
-  overflow:hidden;
+ overflow-x:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -436,7 +436,7 @@ margin:auto;
 .category-card{
 background:white;
 border-radius:18px;
-overflow:hidden;
+overflow-x:hidden;
 box-shadow:0 8px 25px rgba(0,0,0,0.08);
 cursor:pointer;
 transition:0.3s;
@@ -474,7 +474,7 @@ margin:auto;
 .product-card{
 background:white;
 border-radius:18px;
-overflow:hidden;
+overflow-x:hidden;
 box-shadow:0 8px 25px rgba(0,0,0,0.08);
 cursor:pointer;
 transition:0.3s;
@@ -552,7 +552,7 @@ display:none;
 min-width:250px;
 background:white;
 border-radius:18px;
-overflow:hidden;
+overflow-x:hidden;
 box-shadow:0 8px 25px rgba(0,0,0,0.08);
 cursor:pointer;
 transition:0.3s;
@@ -639,7 +639,7 @@ max-width:500px;
 border-radius:20px;
 padding:20px;
 position:relative;
-overflow:hidden;
+overflow-x:hidden;
 }
 
 .close-product{
@@ -706,7 +706,7 @@ grid-template-columns:repeat(2,1fr);
   margin-left:calc(-50vw + 50%);
   background:#f4f4f4;
   padding:120px 0;
-  overflow:hidden;
+overflow-x:hidden;
 }
 
 .testimonial-heading{
@@ -1429,7 +1429,15 @@ padding-right:20px;
 }
 
 }
- 
+ section{
+width:100%;
+display:block;
+clear:both;
+}
+
+html,body{
+overflow-x:hidden;
+}
 </style>
   </head>
   
@@ -1700,11 +1708,21 @@ onclick="window.location.href='p8.html'">
 </section>
 
 <!-- PROMISE SECTION -->
-<section class="promise-section full-width-section">
+<section class="promise">
 
-  <h2>Our Promise</h2>
-  <div class="divider-white"></div>
+<h2>Our Promise</h2>
 
+<div class="promise-grid">
+
+<div class="promise-box">Premium Quality</div>
+<div class="promise-box">Comfort Fit</div>
+<div class="promise-box">Trusted Brand</div>
+<div class="promise-box">Easy Returns</div>
+
+</div>
+
+</section>
+   
   <p>
     We are committed to delivering premium quality,
     exceptional comfort and a seamless shopping experience

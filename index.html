@@ -1022,13 +1022,12 @@ border-radius:10px;
 
 @media(max-width:768px){
 
-.featured-grid{
-grid-template-columns:repeat(2,1fr);
-gap:15px;
+  .featured-scroll{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+  }
+
 }
-
-} 
-
 .newsletter{
 padding:120px 20px;
 background:#111;
@@ -1331,6 +1330,25 @@ font-size:28px;
 
 .hero-content p{
 font-size:15px;
+}
+
+}
+ .promise-section{
+display:block;
+}
+
+.why-section{
+display:block;
+}
+
+@media(max-width:768px){
+
+.promise-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.why-container{
+grid-template-columns:repeat(2,1fr);
 }
 
 }

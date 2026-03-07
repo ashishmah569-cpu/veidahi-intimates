@@ -1,311 +1,2011 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Veidahi Intimates | Luxury Lingerie</title>
 
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"> 
+<style>
+  
+/* ================= ROOT ================= */
 
-</head>
+:root{
+  --primary:#7A1F3D;
+}
+/* GLOBAL FIX */
 
-<body>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-<!-- NAVBAR -->
+html,body{
+width:100%;
+overflow-x:hidden;
+font-family:Arial, sans-serif;
+}
 
-<header class="navbar">
 
-<div class="logo">
-<img src="veidahi-logo.png">
+/* CONTAINER */
+
+.container{
+width:100%;
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+
+/* ABOUT VEIDAHI */
+
+.about{
+width:100%;
+padding:80px 20px;
+text-align:center;
+}
+
+.about h2{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.about p{
+font-size:16px;
+line-height:1.7;
+max-width:800px;
+}
+
+
+/* PROMISE SECTION */
+
+.promise-section{
+width:100%;
+padding:80px 20px;
+background:#fff;
+text-align:center;
+}
+
+.promise-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+max-width:1100px;
+margin:auto;
+}
+
+.promise-box{
+background:#fff;
+padding:25px;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+/* WHY WOMEN TRUST */
+
+.why-section{
+width:100%;
+padding:80px 20px;
+background:#fff;
+text-align:center;
+}
+
+.why-container{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.why-box{
+background:#fff;
+padding:25px;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+cursor:default;
+}
+
+
+/* REMOVE CLICK */
+
+.why-box a{
+pointer-events:none;
+text-decoration:none;
+color:inherit;
+}
+
+
+/* MOBILE FIX */
+
+@media(max-width:768px){
+
+.promise-container{
+grid-template-columns:repeat(2,1fr);
+}
+
+.why-container{
+grid-template-columns:repeat(2,1fr);
+}
+
+.about{
+text-align:center;
+}
+
+}
+body
+ {
+  font-family:'Poppins', sans-serif;
+}
+
+h1,h2,h3{
+  font-family:'Playfair Display', serif;
+}
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp {
+from { opacity:0; transform:translateY(30px); }
+to { opacity:1; transform:translateY(0); }
+}
+
+.product-card,
+.category-card,
+.arrival-card {
+animation: fadeUp 0.8s ease-in-out;
+}
+
+/* ================= ULTRA PREMIUM NAVBAR ================= */
+
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(10px);
+  box-shadow:0 2px 15px rgba(0,0,0,0.08);
+  z-index:1000;
+}
+
+/* SCROLL EFFECT */
+
+.navbar.shrink{
+padding:10px 10%;
+box-shadow:0 5px 25px rgba(0,0,0,0.15);
+}
+
+/* LOGO AREA */
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.navbar .logo img{
+  height:85px;
+  width:auto;
+  object-fit:contain;
+  transition:0.4s ease;
+  filter: drop-shadow(0px 6px 15px rgba(0,0,0,0.2));
+}
+
+.navbar.shrink .logo img{
+  height:65px;
+}
+
+/* LOGO SMALL ON SCROLL */
+
+.logo{
+padding:8px 15px;
+border-radius:20px;
+background:linear-gradient(135deg,#ffffff,#f8f8f8);
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* NAV LINKS */
+
+.nav-links a{
+margin-left:30px;
+text-decoration:none;
+color:#111;
+font-weight:600;
+letter-spacing:0.5px;
+position:relative;
+transition:0.3s ease;
+}
+
+/* PREMIUM HOVER LINE */
+
+.nav-links a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:2px;
+background:black;
+transition:0.3s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+.nav-links a:hover{
+transform:translateY(-2px);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.navbar{
+padding:12px 5%;
+}
+
+.logo img{
+height:60px;
+}
+
+.nav-links a{
+margin-left:12px;
+font-size:13px;
+}
+
+}
+
+/* ✅ Slow Running Text */
+.running-text {
+  margin-top: 20px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.running-text span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: runSlow 18s linear infinite; /* ✅ SLOW KAR DIYA */
+}
+
+@keyframes runSlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ✅ Button Styling */
+.hero-btn{
+  margin-top:25px;
+  padding:14px 30px;
+  font-size:16px;
+  font-weight:600;
+  background:#7A1F3D;
+  color:white;
+  border:none;
+  cursor:pointer;
+  border-radius:30px;
+  transition:0.3s;
+}
+/* ✅ Mobile Fix */
+@media(max-width:768px){
+
+.slide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: contain;
+  background: #fff;
+}
+.hero-content h1{
+  font-size:28px;
+}
+
+.hero-content p{
+  font-size:14px;
+}
+
+}
+/* ================= SECTION ================= */
+
+section{
+padding:80px 20px;
+text-align:center;
+}
+
+section h2{
+font-size:30px;
+margin-bottom:40px;
+}
+
+.soft{
+background:var(--soft);
+}
+/* ================= CLEAN HERO FIX ================= */
+
+.hero{
+  position:relative;
+  width:100%;
+  height:90vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+/* Slides */
+.slide{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-size:cover; /* ✅ COVER use karo */
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+
+/* Active Slide */
+.slide.active{
+  opacity:1;
+}
+
+/* Dark Overlay */
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,0.35);
+}
+
+/* Hero Text */
+.hero-content{
+  position:relative;
+  z-index:2;
+  color:white;
+  max-width:90%;
+}
+
+.hero-content h1{
+  font-size:48px;
+}
+
+.hero-content p{
+  font-size:20px;
+  margin:15px 0;
+}
+
+/* Mobile Fix */
+@media(max-width:768px){
+
+.hero{
+  height:75vh;
+}
+
+.hero-content h1{
+  font-size:26px;
+}
+
+.hero-content p{
+  font-size:14px;
+}
+
+}
+  padding:10px 25px;
+  background:#fff;
+  color:#000;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:5px;
+}
+
+/* Mobile Fix */
+@media(max-width:768px){
+  .hero-content h1{
+    font-size:28px;
+  }
+
+  .hero-content p{
+    font-size:14px;
+  }
+}
+
+/* ================= CATEGORY ================= */
+
+.category-grid{
+.category-grid{
+grid-template-columns:repeat(2,1fr);
+}
+gap:25px;
+max-width:1100px;
+margin:auto;
+}
+
+.category-card{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:0.3s;
+}
+
+.category-card:hover{
+transform:translateY(-6px);
+}
+
+.category-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.category-card h3{
+padding:15px;
+font-size:16px;
+}
+
+/* ================= PRODUCTS ================= */
+
+#products{
+scroll-margin-top:100px;
+}
+
+.products-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1200px;
+margin:auto;
+}
+
+.product-card{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:0.3s;
+}
+
+.product-card:hover{
+transform:translateY(-6px);
+}
+
+.product-card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.product-card h3{
+padding:15px 10px 5px;
+}
+
+.product-price{
+padding-bottom:15px;
+font-weight:600;
+color:var(--primary);
+}
+
+/* ================= FEATURES ================= */
+
+.feature-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1000px;
+margin:auto;
+}
+
+.feature{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
+
+/* ================= REVIEWS ================= */
+
+.review-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1000px;
+margin:auto;
+}
+
+.review{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
+
+/* ================= ARRIVAL SLIDER ================= */
+
+.arrival-slider{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px 20px;
+scroll-behavior:smooth;
+}
+
+.arrival-slider::-webkit-scrollbar{
+display:none;
+}
+
+.arrival-card{
+min-width:250px;
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:0.3s;
+}
+
+.arrival-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.arrival-card h3{
+padding:15px;
+font-size:15px;
+}
+
+/* MOBILE FIX */
+@media(max-width:768px){
+.arrival-card{
+min-width:85%;
+}
+}
+/* ================= ARRIVAL POPUP ================= */
+
+.arrival-popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+z-index:3000;
+}
+
+.arrival-popup-content{
+background:white;
+width:90%;
+max-width:500px;
+border-radius:20px;
+padding:20px;
+position:relative;
+}
+
+.close-arrival{
+position:absolute;
+top:10px;
+right:15px;
+font-size:20px;
+cursor:pointer;
+}
+
+.arrival-popup-track{
+display:flex;
+overflow-x:auto;
+gap:10px;
+}
+
+.arrival-popup-track img{
+width:100%;
+max-width:300px;
+border-radius:15px;
+} /* ================= PRODUCT POPUP ================= */
+
+.product-popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.product-popup-content{
+background:white;
+width:90%;
+max-width:500px;
+border-radius:20px;
+padding:20px;
+position:relative;
+overflow:hidden;
+}
+
+.close-product{
+position:absolute;
+top:10px;
+right:15px;
+font-size:20px;
+cursor:pointer;
+}
+
+.product-popup-track{
+display:flex;
+overflow-x:auto;
+gap:10px;
+}
+
+.product-popup-track img{
+width:100%;
+max-width:300px;
+border-radius:15px;
+} 
+  h2{
+  color:#7A1F3D;
+}
+  .promise-section{
+  padding:80px 20px;
+  background:#faf7f5;
+  text-align:center;
+}
+
+.promise-section h2{
+  font-size:30px;
+  margin-bottom:50px;
+  color:var(--primary);
+}
+
+.promise-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.promise-box{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.promise-box h4{
+  margin-bottom:15px;
+}
+
+.promise-box p{
+  font-size:15px;
+  color:#555;
+}
+
+ .testimonial-section{
+  width:100vw;
+  margin-left:calc(-50vw + 50%);
+  background:#f4f4f4;
+  padding:120px 0;
+  overflow:hidden;
+}
+
+.testimonial-heading{
+  text-align:center;
+  font-size:38px;
+  margin-bottom:40px;
+  font-weight:600;
+}
+
+/* LOCATION TICKER */
+.location-ticker{
+  overflow:hidden;
+  white-space:nowrap;
+  margin-bottom:60px;
+}
+
+.location-track{
+  display:inline-block;
+  padding-left:100%;
+  animation: ticker 20s linear infinite;
+  font-size:14px;
+  letter-spacing:2px;
+  color:#888;
+}
+
+@keyframes ticker{
+  from { transform:translateX(0); }
+  to { transform:translateX(-100%); }
+}
+
+/* REVIEW SLIDER */
+.testimonial-wrapper{
+  width:100%;
+  overflow:hidden;
+}
+
+.testimonial-track{
+  display:flex;
+  width:max-content;
+  animation: scroll 35s linear infinite;
+}
+
+.testimonial-box{
+  min-width:340px;
+  margin:0 25px;
+  background:#ffffff;
+  padding:35px;
+  border-radius:16px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.06);
+  font-size:17px;
+  line-height:1.8;
+}
+
+@keyframes scroll{
+  from { transform:translateX(0); }
+  to { transform:translateX(-50%); }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .testimonial-box{
+    min-width:260px;
+  }
+}
+  .instagram-section{
+  padding:80px 20px;
+  background:#faf7f5;
+  text-align:center;
+}
+
+.instagram-section h2{
+  font-size:28px;
+  margin-bottom:10px;
+  color:var(--primary);
+}
+
+.instagram-section p{
+  margin-bottom:40px;
+  color:#777;
+  letter-spacing:1px;
+}
+
+.instagram-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  max-width:1000px;
+  margin:0 auto 40px;
+}
+
+.instagram-grid img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:15px;
+  transition:0.4s;
+}
+
+.instagram-grid img:hover{
+  transform:scale(1.05);
+}
+
+.insta-btn{
+  display:inline-block;
+  padding:12px 35px;
+  border:2px solid var(--primary);
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.insta-btn:hover{
+  background:var(--primary);
+  color:white;
+}
+  .instagram-grid a{
+  text-decoration:none;
+}
+
+.insta-placeholder{
+  height:250px;
+  border-radius:15px;
+  background:linear-gradient(135deg,#f3e8ec,#faf7f5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+  color:var(--primary);
+  transition:0.4s;
+}
+
+.insta-placeholder:hover{
+  transform:scale(1.05);
+  background:var(--primary);
+  color:white;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size:cover;   /* NO ZOOM */
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background-color: #ffffff;  /* blank area clean lage */
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  top: 0;
+  left: 0;
+}
+ .seo-text {
+  padding: 70px 20px;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.seo-text h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.seo-text p {
+  font-size: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #666;
+}
+
+/* Mobile Optimization */
+@media (max-width:768px){
+  .seo-text {
+    padding: 50px 15px;
+  }
+
+  .seo-text h2 {
+    font-size: 22px;
+  }
+
+  .seo-text p {
+    font-size: 14px;
+  }
+}
+
+.testimonial-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.testimonial-box {
+  min-width: 320px;
+  margin: 0 20px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+  .testimonial-box{
+    min-width: 260px;
+  }
+}
+  
+.testimonial-box {
+  min-width: 300px;
+  margin: 0 20px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+@keyframes scrollTestimonials {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+
+  .why-heading{
+    font-size:30px;
+  }
+
+  .why-text{
+    font-size:17px;
+  }
+
+  .why-section{
+    padding:100px 20px;
+  }
+
+}
+
+.why-heading{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.divider{
+  width:60px;
+  height:2px;
+  background:#000;
+  margin:20px auto 40px;
+}
+
+.why-text{
+  font-size:19px;
+  line-height:2;
+  color:#555;
+  margin-bottom:60px;
+}
+
+.why-points{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.point{
+  background:#fff;
+  padding:20px 30px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.point:hover{
+  transform:translateY(-6px);
+}
+ .featured-section{
+padding:120px 20px;
+text-align:center;
+}
+
+.featured-section h2{
+font-size:36px;
+margin-bottom:50px;
+}
+
+.featured-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.featured-grid img{
+width:100%;
+border-radius:10px;
+}
+
+@media(max-width:768px){
+
+.featured-grid{
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+} 
+
+.newsletter{
+padding:120px 20px;
+background:#111;
+color:#fff;
+text-align:center;
+}
+
+.newsletter input{
+padding:12px;
+width:260px;
+margin-top:20px;
+border:none;
+}
+
+.newsletter button{
+padding:12px 25px;
+background:#fff;
+border:none;
+margin-left:10px;
+cursor:pointer;
+}
+
+.hover-lift{
+transition:all 0.3s ease;
+}
+
+.hover-lift:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+html{
+scroll-behavior:smooth;
+}
+ .hero-btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 38px;
+background:#111;
+color:#fff;
+text-decoration:none;
+letter-spacing:1px;
+border-radius:6px;
+transition:0.3s;
+}
+
+.hero-btn:hover{
+background:#333;
+}
+
+ .trust-line{
+text-align:center;
+font-size:15px;
+color:#777;
+margin-top:25px;
+letter-spacing:1px;
+}
+
+.seen-on{
+padding:90px 20px;
+background:#f7f7f7;
+text-align:center;
+}
+
+.seen-logos{
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+font-size:18px;
+color:#555;
+}
+
+.brand-quote{
+padding:120px 20px;
+background:#111;
+color:#fff;
+text-align:center;
+}
+
+.brand-quote p{
+max-width:700px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
+letter-spacing:1px;
+}
+
+.review-locations{
+display:flex;
+justify-content:center;
+gap:40px;
+font-size:14px;
+color:#777;
+padding:20px;
+flex-wrap:wrap;
+}
+ /* NUMBERS SECTION */
+.numbers-section{
+  padding:120px 20px;
+  background:#ffffff;
+  text-align:center;
+}
+
+.numbers-container{
+  display:flex;
+  justify-content:center;
+  gap:100px;
+  flex-wrap:wrap;
+}
+
+.numbers-container h2{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+/* ================= MOBILE RESPONSIVE FIX ================= */
+
+@media (max-width:768px){
+
+  /* Force Proper Width */
+  html, body{
+    width:100%;
+    overflow-x:hidden;
+  }
+
+  /* Reduce Section Padding */
+  section{
+    padding:50px 15px;
+  }
+
+  /* Hero Fix */
+  .hero{
+    height:75vh;
+  }
+
+  .hero-content h1{
+    font-size:26px;
+  }
+
+  .hero-content p{
+    font-size:14px;
+  }
+
+  /* Featured Grid Mobile */
+  .featured-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* Product Grid Mobile */
+  .products-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* Category Mobile */
+  .category-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* Numbers Spacing Mobile */
+  .numbers-container{
+    gap:30px;
+  }
+
+}
+ /* FEATURED MOBILE ROW STYLE */
+
+.featured-scroll{
+display:flex;
+gap:15px;
+overflow-x:auto;
+padding:10px 0;
+scroll-behavior:smooth;
+}
+
+.featured-scroll::-webkit-scrollbar{
+display:none;
+}
+
+.featured-card{
+min-width:220px;
+background:white;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+padding:10px;
+text-align:center;
+cursor:pointer;
+transition:0.3s;
+}
+
+.featured-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.featured-card:hover{
+transform:translateY(-5px);
+}
+
+ /* ===== FEATURED CLEAN FIX ===== */
+
+.featured-section{
+padding:100px 20px;
+text-align:center;
+}
+
+.featured-scroll{
+display:flex;
+gap:20px;
+overflow-x:auto;
+justify-content:flex-start;
+scroll-behavior:smooth;
+}
+
+.featured-scroll::-webkit-scrollbar{
+display:none;
+}
+
+.featured-card{
+min-width:240px;
+background:#fff;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+padding:15px;
+cursor:pointer;
+transition:0.3s;
+flex-shrink:0;
+}
+
+.featured-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.featured-card:hover{
+transform:translateY(-5px);
+}
+
+
+/* ✅ FORCE FULL WIDTH SECTIONS (MOBILE + SYSTEM FIX) */
+
+.full-width-section{
+  width:100%;
+}
+
+/* 🔥 Mobile Full Screen Force */
+@media(max-width:768px){
+
+.full-width-section{
+width:100%;
+margin:0 auto;
+text-align:center;
+}
+
+.full-width-section .container{
+max-width:1100px;
+margin:auto;
+padding:0 20px;
+}
+
+}
+section{
+  width:100%;
+}
+
+.container{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+}
+
+@media(max-width:768px){
+
+section{
+padding:60px 15px;
+}
+
+}
+  
+</style>
+ 
+.featured-scroll{
+display:flex;
+justify-content:center;   /* 🔥 IMPORTANT */
+gap:20px;
+overflow-x:auto;
+flex-wrap:nowrap;
+}
+
+.featured-card{
+flex:0 0 auto;
+}
+ 
+.why-wrapper h2{
+  font-size:36px;
+  margin-bottom:20px;
+}
+
+.why-divider{
+  width:60px;
+  height:3px;
+  background:#000;
+  margin:20px auto 40px;
+}
+
+.why-wrapper p{
+  font-size:18px;
+  line-height:1.9;
+  color:#555;
+  margin-bottom:60px;
+}
+
+.why-grid{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.why-box{
+  background:white;
+  padding:18px 25px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  font-weight:500;
+  transition:0.3s;
+}
+
+.why-box:hover{
+  transform:translateY(-5px);
+}
+
+/* Mobile Fix */
+@media(max-width:768px){
+
+  .why-wrapper h2{
+    font-size:26px;
+  }
+
+  .why-wrapper p{
+    font-size:15px;
+  }
+
+}
+
+/* ===== FEATURED MOBILE PERFECT GRID ===== */
+
+@media(max-width:768px){
+
+  .featured-scroll{
+    display:grid;
+    grid-template-columns:repeat(2,1fr); /* 🔥 2 column better look */
+    gap:15px;
+  }
+
+  .featured-card{
+    min-width:0;
+  }
+
+  .featured-card img{
+    height:180px; /* 🔥 image height reduce karo */
+  }
+
+}
+
+@media(max-width:768px){
+
+.full-width-section{
+width:100%;
+margin:0;
+padding-left:20px;
+padding-right:20px;
+}
+
+}
+ 
+</style>
+  </head>
+  
+  <body>
+  
+  <div class="arrival-popup" id="arrivalPopup">
+<div class="arrival-popup-content">
+<span class="close-arrival" onclick="closeArrival()">✖</span>
+<div class="arrival-popup-track" id="arrivalTrack"></div>
 </div>
-
-<nav>
-<a href="#featured">Featured</a>
-<a href="#category">Category</a>
-<a href="#arrivals">New Arrivals</a>
-<a href="#about">About</a>
-</nav>
-
-</header>
-
-<!-- HERO -->
+</div>
 
 <section class="hero">
 
-<div class="slide active" style="background-image:url('sportsbra.jpg')"></div>
-<div class="slide" style="background-image:url('tshirt.jpg')"></div>
-<div class="slide" style="background-image:url('panty.jpg')"></div>
-<div class="slide" style="background-image:url('bra.jpg')"></div>
+  <div class="slide active" style="background-image:url('panty.jpg')"></div>
+  <div class="slide" style="background-image:url('bra.jpg')"></div>
+  <div class="slide" style="background-image:url('tshirt.jpg')"></div>
+  <div class="slide" style="background-image:url('jeggings.jpg')"></div>
+  <div class="slide" style="background-image:url('sportsbra.jpg')"></div>
 
-<div class="hero-text">
-
-<h1>Luxury Lingerie For Confident Women</h1>
-
-<p>Designed for comfort. Styled for confidence.</p>
-
-<a href="#featured" class="btn">Explore Collection</a>
-
-</div>
+  <div class="hero-content">
+    <h1>Veidahi Intimates</h1>
+    <p>Luxury Lingerie & Everyday Western Wear</p>
+    <a href="#products" class="hero-btn">Shop Collection</a>
+  </div>
 
 </section>
+   
+ <!-- TRUST BADGES -->
 
-<!-- TRUST -->
+<section class="trust-badges full-width-section">
 
-<section class="trust">
+<h3>Trusted Shopping Experience</h3>
 
-<h2>Trusted Shopping Experience</h2>
-
-<div class="trust-grid">
+<div class="badges">
 
 <div>✔ Secure Payments</div>
-<div>✔ Premium Fabric</div>
-<div>✔ Discreet Packaging</div>
+<div>✔ Quality Checked Products</div>
 <div>✔ Easy Returns</div>
+<div>✔ Fast Delivery</div>
 
 </div>
 
-</section>
+</section> 
+   
+   <div class="trust-line">
+Trusted by Women Across India
+</div>
 
-<!-- FEATURED -->
+<!-- FEATURED COLLECTION -->
 
-<section id="featured" class="featured">
+<section class="featured-section full-width-section" id="collection">
 
 <h2>Featured Collection</h2>
 
-<div class="products">
+<div class="featured-scroll">
 
-<div class="product">
-<img src="veidahi-sports-bra.jpg">
-<h3>Sports Bra</h3>
-</div>
+<!-- PRODUCT 1 -->
+<div class="featured-card"
+onclick="openProduct('veidahi-lace-bra-set.jpg')">
 
-<div class="product">
-<img src="veidahi-premium-tshirt.jpg">
-<h3>Premium T-Shirt</h3>
-</div>
-
-<div class="product">
 <img src="veidahi-lace-bra-set.jpg">
-<h3>Lace Bra Set</h3>
+<p>Lace Bra Set</p>
+
 </div>
 
-<div class="product">
+<!-- PRODUCT 2 -->
+<div class="featured-card"
+onclick="openProduct('veidahi-cotton-panty-pack.jpg')">
+
 <img src="veidahi-cotton-panty-pack.jpg">
-<h3>Cotton Panty Pack</h3>
+<p>Cotton Panty Pack</p>
+
+</div>
+
+<!-- PRODUCT 3 -->
+<div class="featured-card"
+onclick="openProduct('veidahi-sports-bra.jpg')">
+
+<img src="veidahi-sports-bra.jpg">
+<p>Sports Bra</p>
+
+</div>
+
+<!-- PRODUCT 4 -->
+<div class="featured-card"
+onclick="openProduct('veidahi-premium-tshirt.jpg')">
+
+<img src="veidahi-premium-tshirt.jpg">
+<p>Premium T-Shirt</p>
+
 </div>
 
 </div>
 
 </section>
-
-<!-- LUXURY TEXT -->
-
-<section class="luxury">
-
-<h2>Luxury Lingerie & Western Wear in Delhi</h2>
-
-<p>
-
-At Veidahi Intimates, we believe lingerie is more than clothing.  
-It is confidence, elegance, and comfort combined together.
-
-Our collections are crafted with premium fabrics designed to support modern women in their everyday lifestyle. From delicate lace bras to comfortable cotton essentials and stylish nightwear, every product is made to celebrate confidence and femininity.
-
-Women across India trust Veidahi for quality, comfort, and timeless style.
-
-</p>
-
+   
+<section class="seo-text full-width-section">
+  <div class="container">
+    <h2>Luxury Lingerie & Western Wear in Delhi</h2>
+    <p>
+      Veidahi Intimates is a premium lingerie and western wear brand based in Delhi.
+      We offer high-quality innerwear, stylish bras, panties, and comfortable daily wear for modern women.
+      Shop luxury lingerie online with elegant designs and perfect fitting.
+    </p>
+  </div>
 </section>
+    
+<!-- NAV -->
+<div class="navbar">
+
+<div class="logo">
+<img src="logo.jpg" alt="Logo">
+</div>
+
+<div class="nav-links">
+<a href="#products">Products</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
 
 <!-- CATEGORY -->
-
-<section id="category">
-
+<section class="soft full-width-section">
 <h2>Shop By Category</h2>
 
-<div class="categories">
+<div class="category-grid">
 
-<div class="cat">
+<div class="category-card">
+<img src="cat-lingerie.jpg">
+<h3>Lingerie</h3>
+</div>
 
+<div class="category-card">
 <img src="cat-nightwear.jpg">
-
 <h3>Nightwear</h3>
-
 </div>
 
-<div class="cat">
-
-<img src="cat-nightwear.jpg">
-
-<h3>Bras</h3>
-
+<div class="category-card">
+<img src="cat-western.jpg">
+<h3>Western Wear</h3>
 </div>
 
-<div class="cat">
-
-<img src="cat-nightwear.jpg">
-
-<h3>Panties</h3>
-
+<div class="category-card">
+<img src="cat-innerwear.jpg">
+<h3>Innerwear</h3>
 </div>
 
-<div class="cat">
-
-<img src="cat-nightwear.jpg">
-
-<h3>Sports Bra</h3>
-
+<div class="category-card">
+<img src="cat-bottomwear.jpg">
+<h3>Bottomwear</h3>
+  </div>
 </div>
-
-<div class="cat">
-
-<img src="cat-nightwear.jpg">
-
-<h3>T-Shirts</h3>
-
-</div>
-
-</div>
-
 </section>
-
+ 
 <!-- NEW ARRIVALS -->
 
-<section id="arrivals">
-
-<h2>New Arrivals</h2>
+<section class="soft full-width-section">
+<h2 id="new">New Arrivals</h2>
 
 <div class="arrival-slider">
 
+<div class="arrival-card"
+onclick="openArrival(['na1-1.jpg','na1-2.jpg','na1-3.jpg'])">
 <img src="na1-1.jpg">
+<h3>Sports Bra</h3>
+</div>
+
+<div class="arrival-card"
+onclick="openArrival(['na2-1.jpg','na2-2.jpg','na2-3.jpg'])">
 <img src="na2-1.jpg">
+<h3>Gym Bra</h3>
+</div>
+
+<div class="arrival-card"
+onclick="openArrival(['na3-1.jpg','na3-2.jpg','na3-3.jpg'])">
 <img src="na3-1.jpg">
+<h3>Runing Bra</h3>
+</div>
+
+<div class="arrival-card"
+onclick="openArrival(['na4-1.jpg','na4-2.jpg','na4-3.jpg'])">
 <img src="na4-1.jpg">
+<h3>Bold Classic</h3>
+</div>
+
+<div class="arrival-card"
+onclick="openArrival(['na5-1.jpg','na5-2.jpg','na5-3.jpg'])">
 <img src="na5-1.jpg">
+<h3>Bold Classic</h3>
+</div>
+
+<div class="arrival-card"
+onclick="openArrival(['na6-1.jpg','na6-2.jpg','na6-3.jpg'])">
 <img src="na6-1.jpg">
+<h3>Play With Naughty</h3>
+</div>
+
+</div>
+</section>
+
+<!-- PRODUCTS -->
+
+<!-- PRODUCTS SECTION (✅ ID ADDED) -->
+<section id="products">
+<h2>Our Products</h2>
+
+<div class="products-grid">
+
+<div class="product-card"
+onclick="window.location.href='p1.html'">
+<img src="p1-burgundy-1.jpg">
+<h3>Bralette</h3>
+<p class="product-price">₹130</p>
+</div>
+
+<div class="product-card"
+onclick="window.location.href='p2.html'">
+<img src="p2-new-brown-1.jpg">
+<h3>Cami Set</h3>
+<p class="product-price">₹135</p>
+</div>
+
+<div class="product-card"
+onclick="window.location.href='p3.html'">
+<img src="p3-forestgreen-1.jpg">
+<h3>High Coverage Bra</h3>
+<p class="product-price">₹150</p>
+</div>
+
+<div class="product-card"
+onclick="window.location.href='p4.html'">
+<img src="p4-bebypink-1.jpg">
+<h3>UrbanBloom Brief</h3>
+<p class="product-price">₹90</p>
+</div>
+
+<div class="product-card"
+onclick="window.location.href='p5.html'">
+<img src="p5-navy-1.jpg">
+<h3>UrbanBloom Brief</h3>
+<p class="product-price">₹90</p>
+</div>
+
+<div class="product-card"
+onclick="window.location.href='p6.html'">
+<img src="p6-aqua-1.jpg">
+<h3>PureEase</h3>
+<p class="product-price">₹80</p>
+</div>
+
+<div class="product-card"
+onclick="window.location.href='p7.html'">
+<img src="p7-chocolate-1.jpg">
+<h3>UrbanBloom Brief</h3>
+<p class="product-price">₹90</p>
+</div>
+
+<div class="product-card"
+onclick="window.location.href='p8.html'">
+<img src="p8-deepsea-1.jpg">
+<h3>PureEase</h3>
+<p class="product-price">₹80</p>
+</div>
+
+</div>
+</section>
+
+<!-- PROMISE SECTION -->
+<section class="promise-section full-width-section">
+
+  <h2>Our Promise</h2>
+  <div class="divider-white"></div>
+
+  <p>
+    We are committed to delivering premium quality,
+    exceptional comfort and a seamless shopping experience
+    for every woman who chooses Veidahi.
+  </p>
+  
+
+  <div class="why-container">
+
+    <h2 class="why-heading">
+
+<div style="text-align:center; margin:60px 0;">
+
+<a href="story.html" 
+style="
+display:inline-block;
+padding:14px 40px;
+background:#111;
+color:#fff;
+text-decoration:none;
+font-size:16px;
+letter-spacing:1px;
+border-radius:6px;
+transition:0.3s;
+">
+
+<section class="brand-quote full-width-section">
+
+<p>
+"Lingerie is not just clothing.  
+It is confidence a woman carries with her every day."
+</p>
+
+</section
+ 
+Read Our Story
+
+</a>
+
+</div>
+     
+    <section class="promise-section full-width-section">
+
+<!-- WHY WOMEN TRUST SECTION -->
+<section class="why-clean full-width-section">
+
+  <div class="why-wrapper">
+
+    <h2>Why Women Trust Veidahi</h2>
+
+    <div class="why-divider"></div>
+
+    <p>
+      Premium quality fabrics • Perfect fitting design • Modern style  
+      Trusted by thousands of happy customers across India.
+    </p>
+
+    <div class="why-grid">
+
+      <div class="why-box">✔ Premium Fabric</div>
+      <div class="why-box">✔ Perfect Fit</div>
+      <div class="why-box">✔ Affordable Luxury</div>
+      <div class="why-box">✔ Easy Returns</div>
+      <div class="why-box">✔ Trusted Brand</div>
+
+    </div>
+
+  </div>
+
+</section>
+  <section class="seen-on full-width-section">
+
+<h2>Available On</h2>
+
+<div class="seen-logos">
+
+<span>Amazon</span>
+<span>Flipkart</span>
+<span>Google</span>
+<span>Across India</span>
 
 </div>
 
 </section>
+<section class="numbers-section full-width-section">
 
-<!-- PROMISE -->
+  <div class="numbers-container">
 
-<section class="promise">
+    <div>
+      <h2>3500+</h2>
+      <p>Happy Customers</p>
+    </div>
 
-<h2>Our Promise</h2>
+    <div>
+      <h2>4.8★</h2>
+      <p>Customer Rating</p>
+    </div>
 
-<p>
+    <div>
+      <h2>15+</h2>
+      <p>Premium Designs</p>
+    </div>
 
-Every Veidahi product is crafted with attention to detail and premium quality fabrics.  
-We promise comfort, elegance, and confidence with every piece you wear.
-
-</p>
+  </div>
 
 </section>
 
-<!-- WHY TRUST -->
+<!-- ABOUT VEIDAHI -->
+<section style="padding:120px 20px; background:#ffffff;">
 
-<section class="why">
+  <div style="max-width:950px; margin:0 auto; text-align:center;">
+    
+    <h2 style="font-size:36px; margin-bottom:30px; font-weight:600; letter-spacing:1px;">
+      About Veidahi Intimates
+    </h2>
 
-<h2>Why Women Trust Veidahi</h2>
+    <p style="font-size:18px; line-height:2; color:#555;">
+      Veidahi Intimates blends timeless elegance with modern comfort.
+      We design innerwear and western daily wear that enhances confidence,
+      celebrates femininity, and ensures lasting quality.
 
-<p>
+      Every piece reflects sophisticated styling, refined craftsmanship,
+      and comfort designed for the modern woman.
+    </p>
 
-Thousands of women choose Veidahi for its perfect balance of comfort, style, and quality.
+  </div>
 
-</p>
+</section>
 
-<div class="trust-grid">
+<a href="story.html" class="hero-btn">Read My Story</a>
 
-<div>Premium Quality</div>
-<div>Comfort Fit</div>
-<div>Modern Designs</div>
-<div>Trusted Brand</div>
+<!-- FULL WIDTH TESTIMONIAL SECTION -->
+<section class="testimonial-section full-width-section">
+
+  <h2 class="testimonial-heading">
+    What Our Customers Say About Veidahi
+  </h2>
+
+  <!-- SMALL LOCATION HEADING -->
+  <div class="location-ticker">
+    <div class="location-track">
+      Delhi • Mumbai • Jaipur • Bangalore • Pune • Chandigarh • 
+      Gurgaon • Noida • Lucknow • Amritsar • Indore • Surat •
+      Delhi • Mumbai • Jaipur • Bangalore • Pune • Chandigarh • 
+      Gurgaon • Noida • Lucknow • Amritsar • Indore • Surat •
+    </div>
+  </div>
+<div class="review-locations">
+
+<span>Delhi</span>
+<span>Mumbai</span>
+<span>Bangalore</span>
+<span>Pune</span>
+<span>Jaipur</span>
+<span>Chandigarh</span>
+<span>Hyderabad</span>
 
 </div>
+  <!-- REVIEW SLIDER -->
+  <div class="testimonial-wrapper">
+    <div class="testimonial-track">
+
+      <div class="testimonial-box">“The quality feels truly premium.”<br><strong>— Riya, Delhi</strong></div>
+      <div class="testimonial-box">“Elegant and comfortable.”<br><strong>— Neha, Jaipur</strong></div>
+      <div class="testimonial-box">“Beautiful packaging.”<br><strong>— Aarti, Mumbai</strong></div>
+      <div class="testimonial-box">“Perfect daily wear.”<br><strong>— Simran, Amritsar</strong></div>
+      <div class="testimonial-box">“Affordable luxury.”<br><strong>— Kavita, Pune</strong></div>
+      <div class="testimonial-box">“Soft and premium fabric.”<br><strong>— Meera, Bangalore</strong></div>
+
+    
+    </div>
+  </div>
 
 </section>
 
-<!-- AVAILABLE -->
 
-<section class="available">
+<!-- INSTAGRAM SECTION -->
+<section style="padding:120px 20px; background:#ffffff;">
 
-<h2>Available Across India</h2>
+  <div style="max-width:1100px; margin:0 auto; text-align:center;">
 
-<p>Amazon • Flipkart • Google</p>
+    <h2 style="font-size:36px; margin-bottom:25px; font-weight:600; letter-spacing:1px;">
+      Follow Us on Instagram
+    </h2>
 
-</section>
+    <p style="font-size:18px; color:#666; margin-bottom:60px;">
+      Discover our latest collections and styling inspirations.
+    </p>
 
-<!-- RATING -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px;">
 
-<section class="rating">
+      <a href="https://instagram.com/veidahiintimates" target="_blank">
+        <div style="background:#eaeaea; height:200px; border-radius:12px;"></div>
+      </a>
 
-<h2>4.8 ★ Customer Rating</h2>
+      <a href="https://instagram.com/veidahiintimates" target="_blank">
+        <div style="background:#eaeaea; height:200px; border-radius:12px;"></div>
+      </a>
 
-</section>
+      <a href="https://instagram.com/veidahiintimates" target="_blank">
+        <div style="background:#eaeaea; height:200px; border-radius:12px;"></div>
+      </a>
 
-<!-- ABOUT -->
+      <a href="https://instagram.com/veidahiintimates" target="_blank">
+        <div style="background:#eaeaea; height:200px; border-radius:12px;"></div>
+      </a>
 
-<section id="about">
+    </div>
 
-<h2>About Veidahi</h2>
+    <!-- INSTAGRAM BUTTON -->
 
-<p>
+    <div style="margin-top:50px;">
+      <a href="https://instagram.com/veidahiintimates" target="_blank"
+      style="display:inline-block;
+      padding:14px 40px;
+      background:#111;
+      color:#fff;
+      text-decoration:none;
+      border-radius:6px;
+      font-size:16px;
+      letter-spacing:1px;">
+      Visit Our Instagram
+      </a>
+    </div>
 
-Veidahi Intimates was created with a vision to bring confidence and comfort to women through premium lingerie and western wear. Our designs combine elegance, comfort, and quality for modern lifestyles.
-
-</p>
-
-<a href="story.html" class="btn">Read My Story</a>
-
-</section>
-
-<!-- REVIEWS -->
-
-<section class="reviews">
-
-<h2>What Customers Say About Veidahi</h2>
-
-<div class="review-track">
-
-<div>“Amazing quality!” – Delhi</div>
-<div>“Perfect fitting bra.” – Mumbai</div>
-<div>“Very comfortable.” – Bangalore</div>
-<div>“Beautiful design.” – Jaipur</div>
-<div>“Loved the fabric.” – Pune</div>
-<div>“Great nightwear.” – Kolkata</div>
-
-</div>
-
-</section>
-
-<!-- SOCIAL -->
-
-<section class="social">
-
-<h2>Follow Us</h2>
-
-<a href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2">Instagram</a>
-
-<a href="https://www.linkedin.com/in/veidahi-established-1469243a8">LinkedIn</a>
+  </div>
 
 </section>
-
 <!-- NEWSLETTER -->
 
-<section class="newsletter">
+<section class="newsletter full-width-section">
 
 <h2>Join Veidahi</h2>
 
-<p>veidahiintimates@gmail.com</p>
+<p>Get updates on new arrivals and exclusive collections.</p>
+
+<input type="email" placeholder="Enter your email">
+
+<button>Subscribe</button>
 
 </section>
+<!-- FOOTER -->
+<footer style="text-align:center; padding:40px 20px; background:#111; color:white;">
+  © 2026 Veidahi Intimates | Delhi | All Rights Reserved
+</footer>
 
-<script src="script.js"></script>
+<!-- ALL SCRIPTS CLEANED -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  /* HERO SLIDER */
+  const slides = document.querySelectorAll(".slide");
+  let index = 0;
+
+  setInterval(function(){
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 3000);
+
+  /* NAVBAR SCROLL EFFECT */
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.add("shrink");
+    } else {
+      navbar.classList.remove("shrink");
+    }
+  });
+
+});
+
+<!-- PRODUCT POPUP SCRIPT -->
+<script>
+
+<script>
+
+/* PRODUCT POPUP FIX */
+
+function openProduct(image){
+
+  const popup = document.getElementById("productPopup");
+  const track = document.getElementById("productTrack");
+
+  track.innerHTML = "";
+
+  const img = document.createElement("img");
+  img.src = image;
+  img.style.width = "100%";
+  img.style.borderRadius = "15px";
+
+  track.appendChild(img);
+
+  popup.style.display = "flex";
+}
+
+function closeProduct(){
+  document.getElementById("productPopup").style.display = "none";
+}
+
+document.getElementById("productPopup")?.addEventListener("click",function(e){
+  if(e.target.id === "productPopup"){
+    this.style.display="none";
+  }
+});
+<div class="product-popup" id="productPopup">
+  <div class="product-popup-content">
+    <span class="close-product" onclick="closeProduct()">✖</span>
+    <div class="product-popup-track" id="productTrack"></div>
+  </div>
+</div>
+</script>
 
 </body>
 </html>

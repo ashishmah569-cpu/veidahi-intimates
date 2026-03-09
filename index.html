@@ -7,7 +7,118 @@
 
 <title>Veidahi</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+}
+
+header{
+text-align:center;
+padding:20px;
+}
+
+.logo{
+height:60px;
+}
+
+/* HERO */
+
+.hero{
+width:100%;
+overflow:hidden;
+}
+
+.hero-slider{
+display:flex;
+animation:slide 12s infinite;
+}
+
+.hero-slider img{
+width:100%;
+height:500px;
+object-fit:cover;
+}
+
+@keyframes slide{
+0%{transform:translateX(0);}
+25%{transform:translateX(-100%);}
+50%{transform:translateX(-200%);}
+75%{transform:translateX(-300%);}
+}
+
+/* SECTION */
+
+.section{
+padding:50px 20px;
+text-align:center;
+}
+
+/* FEATURED */
+
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.products img{
+width:100%;
+border-radius:10px;
+}
+
+/* NEW ARRIVALS */
+
+.slider-row{
+display:flex;
+overflow-x:auto;
+gap:20px;
+}
+
+.slider-row img{
+width:220px;
+border-radius:10px;
+}
+
+/* ABOUT */
+
+.about{
+padding:50px 20px;
+text-align:center;
+max-width:800px;
+margin:auto;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+footer a{
+color:white;
+text-decoration:none;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-slider img{
+height:300px;
+}
+
+.products{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+</style>
 
 </head>
 
@@ -19,8 +130,7 @@
 
 </header>
 
-
-<!-- HERO SECTION -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -35,8 +145,7 @@
 
 </section>
 
-
-<!-- FEATURED PRODUCTS -->
+<!-- FEATURED -->
 
 <section class="section">
 
@@ -52,7 +161,6 @@
 </div>
 
 </section>
-
 
 <!-- NEW ARRIVALS -->
 
@@ -73,7 +181,6 @@
 
 </section>
 
-
 <!-- ABOUT -->
 
 <section class="about">
@@ -89,6 +196,7 @@ Our mission is to deliver premium quality intimatewear and western wear designed
 
 </section>
 
+<!-- FOOTER -->
 
 <footer>
 
@@ -101,9 +209,6 @@ Our mission is to deliver premium quality intimatewear and western wear designed
 <a href="https://www.linkedin.com/in/veidahi-established-1469243a8">LinkedIn</a>
 
 </footer>
-
-
-<script src="script.js"></script>
 
 </body>
 

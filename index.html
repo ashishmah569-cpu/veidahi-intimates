@@ -461,6 +461,86 @@ transform:translateX(-50%);
 }
 
 }
+
+/* INSTAGRAM SECTION */
+
+.instagram{
+padding:80px 20px;
+background:#111;
+text-align:center;
+color:white;
+}
+
+.instagram h2{
+font-size:32px;
+letter-spacing:2px;
+}
+
+.insta-sub{
+color:#bbb;
+margin-bottom:40px;
+}
+
+.insta-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+max-width:1000px;
+margin:auto;
+}
+
+.insta-grid a{
+position:relative;
+display:block;
+overflow:hidden;
+}
+
+.insta-grid img{
+width:100%;
+height:220px;
+object-fit:cover;
+transition:0.4s;
+}
+
+.insta-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:18px;
+opacity:0;
+transition:0.4s;
+}
+
+.insta-grid a:hover img{
+transform:scale(1.1);
+}
+
+.insta-grid a:hover .insta-overlay{
+opacity:1;
+}
+
+.insta-btn{
+margin-top:40px;
+padding:14px 36px;
+border:none;
+background:white;
+color:black;
+font-weight:600;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.insta-btn:hover{
+background:#ddd;
+}
   
 </style>
 
@@ -866,6 +946,54 @@ Our mission is to deliver premium quality intimatewear and western wear designed
 
 <a href="https://www.linkedin.com/in/veidahi-established-1469243a8">LinkedIn</a>
 
+<!-- INSTAGRAM -->
+
+<section class="instagram">
+
+<h2>Follow Veidahi</h2>
+
+<p class="insta-sub">See our latest styles on Instagram</p>
+
+<div class="insta-grid">
+
+<a href="https://www.instagram.com/veidahiintimates" target="_blank">
+<img src="insta1.jpg">
+<div class="insta-overlay">View</div>
+</a>
+
+<a href="https://www.instagram.com/veidahiintimates" target="_blank">
+<img src="insta2.jpg">
+<div class="insta-overlay">View</div>
+</a>
+
+<a href="https://www.instagram.com/veidahiintimates" target="_blank">
+<img src="insta3.jpg">
+<div class="insta-overlay">View</div>
+</a>
+
+<a href="https://www.instagram.com/veidahiintimates" target="_blank">
+<img src="insta4.jpg">
+<div class="insta-overlay">View</div>
+</a>
+
+<a href="https://www.instagram.com/veidahiintimates" target="_blank">
+<img src="insta5.jpg">
+<div class="insta-overlay">View</div>
+</a>
+
+<a href="https://www.instagram.com/veidahiintimates" target="_blank">
+<img src="insta6.jpg">
+<div class="insta-overlay">View</div>
+</a>
+
+</div>
+
+<a href="https://www.instagram.com/veidahiintimates" target="_blank">
+<button class="insta-btn">Follow on Instagram</button>
+</a>
+
+</section>
+  
 </footer>
 
 <script>

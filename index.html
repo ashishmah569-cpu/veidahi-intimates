@@ -221,6 +221,27 @@ transition:transform 0.3s;
 .products img:hover{
 transform:scale(1.05);
 }
+
+.product-card p{
+margin-top:8px;
+font-weight:600;
+color:#333;
+}
+
+.new-card{
+min-width:220px;
+text-align:center;
+}
+
+.new-card img{
+width:100%;
+border-radius:10px;
+}
+
+.new-card p{
+margin-top:6px;
+font-size:14px;
+}
   
 </style>
 
@@ -276,10 +297,26 @@ transform:scale(1.05);
 
 <div class="products">
 
-<a href="p1.html"><img src="veidahi-cotton-panty-pack.jpg"></a>
-<a href="p2.html"><img src="veidahi-lace-bra-set.jpg"></a>
-<a href="p3.html"><img src="veidahi-premium-tshirt.jpg"></a>
-<a href="p4.html"><img src="veidahi-sports-bra.jpg"></a>
+<a href="p1.html" class="product-card">
+<img src="veidahi-cotton-panty-pack.jpg">
+<p>Cotton Panty Pack</p>
+</a>
+
+<a href="p2.html" class="product-card">
+<img src="veidahi-lace-bra-set.jpg">
+<p>Lace Bra Set</p>
+</a>
+
+<a href="p3.html" class="product-card">
+<img src="veidahi-premium-tshirt.jpg">
+<p>Premium T-Shirt</p>
+</a>
+
+<a href="p4.html" class="product-card">
+<img src="veidahi-sports-bra.jpg">
+<p>Sports Bra</p>
+</a>
+
 </div>
 </section>
 
@@ -291,12 +328,35 @@ transform:scale(1.05);
 
 <div class="slider-row">
 
+<div class="new-card">
 <img src="na1-1.jpg">
+<p>Nightwear Set</p>
+</div>
+
+<div class="new-card">
 <img src="na2-1.jpg">
+<p>Soft Cotton Bra</p>
+</div>
+
+<div class="new-card">
 <img src="na3-1.jpg">
+<p>Luxury Lace Bra</p>
+</div>
+
+<div class="new-card">
 <img src="na4-1.jpg">
+<p>Comfort Panty</p>
+</div>
+
+<div class="new-card">
 <img src="na5-1.jpg">
+<p>Premium Lounge Wear</p>
+</div>
+
+<div class="new-card">
 <img src="na6-1.jpg">
+<p>Sports Active Bra</p>
+</div>
 
 </div>
 
@@ -330,23 +390,6 @@ Our mission is to deliver premium quality intimatewear and western wear designed
 <a href="https://www.linkedin.com/in/veidahi-established-1469243a8">LinkedIn</a>
 
 </footer>
-
-<script>
-
-let track=document.getElementById("heroTrack");
-let index=0;
-
-setInterval(()=>{
-
-index++;
-
-if(index>3){
-index=0;
-}
-
-track.style.transform="translateX(-"+index*100+"%)";
-
-},5000);
 
 
 function openProducts(){

@@ -25,9 +25,9 @@ overflow:hidden;
 
 .hero-track{
 display:flex;
-width:100%;
+width:400%;
 height:100%;
-transition:transform 1.2s ease;
+transition:transform 1.5s ease;
 }
 
 .hero-track img{
@@ -207,6 +207,21 @@ grid-template-columns:repeat(2,1fr);
 
 }
 
+.products a{
+display:block;
+}
+
+.products img{
+width:100%;
+border-radius:10px;
+cursor:pointer;
+transition:transform 0.3s;
+}
+
+.products img:hover{
+transform:scale(1.05);
+}
+  
 </style>
 
 </head>
@@ -261,13 +276,39 @@ grid-template-columns:repeat(2,1fr);
 
 <div class="products">
 
+<a href="p1.html">
 <img src="veidahi-cotton-panty-pack.jpg">
+</a>
+
+<a href="p2.html">
 <img src="veidahi-lace-bra-set.jpg">
+</a>
+
+<a href="p3.html">
 <img src="veidahi-premium-tshirt.jpg">
+</a>
+
+<a href="p4.html">
 <img src="veidahi-sports-bra.jpg">
+</a>
+
+<a href="p5.html">
+<img src="na1-1.jpg">
+</a>
+
+<a href="p6.html">
+<img src="na2-1.jpg">
+</a>
+
+<a href="p7.html">
+<img src="na3-1.jpg">
+</a>
+
+<a href="p8.html">
+<img src="na4-1.jpg">
+</a>
 
 </div>
-
 </section>
 
 <!-- NEW ARRIVALS -->
@@ -318,7 +359,7 @@ Our mission is to deliver premium quality intimatewear and western wear designed
 
 </footer>
 
-  <script>
+<script>
 
 let track=document.getElementById("heroTrack");
 let index=0;
@@ -333,10 +374,9 @@ index=0;
 
 track.style.transform="translateX(-"+index*100+"%)";
 
-},4000);
+},5000);
 
-<script>
-
+</script>
 function openProducts(){
 alert("Products page coming soon");
 }

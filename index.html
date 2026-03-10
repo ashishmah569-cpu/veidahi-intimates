@@ -23,29 +23,91 @@ padding:20px;
 height:60px;
 }
 
-/* HERO */
+/* HERO PREMIUM */
 
 .hero{
+position:relative;
 width:100%;
+height:80vh;
 overflow:hidden;
 }
 
 .hero-slider{
+position:absolute;
+width:400%;
+height:100%;
 display:flex;
-animation:slide 12s infinite;
+animation:heroSlide 16s infinite;
 }
 
 .hero-slider img{
 width:100%;
-height:500px;
+height:100%;
 object-fit:cover;
 }
 
-@keyframes slide{
+/* DARK OVERLAY */
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+}
+
+/* HERO TEXT */
+
+.hero-text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+text-align:center;
+z-index:2;
+}
+
+.hero-text h1{
+font-size:42px;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+
+.hero-text p{
+font-size:18px;
+}
+
+/* SLIDER ANIMATION */
+
+@keyframes heroSlide{
+
 0%{transform:translateX(0);}
 25%{transform:translateX(-100%);}
 50%{transform:translateX(-200%);}
 75%{transform:translateX(-300%);}
+100%{transform:translateX(0);}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+height:60vh;
+}
+
+.hero-text h1{
+font-size:26px;
+}
+
+.hero-text p{
+font-size:14px;
+}
+
 }
 
 /* SECTION */
@@ -143,8 +205,15 @@ grid-template-columns:repeat(2,1fr);
 
 </div>
 
-</section>
+<div class="hero-text">
 
+<h1>VEIDAHI</h1>
+
+<p>Luxury Lingerie & Western Wear</p>
+
+</div>
+
+</section>
 <!-- FEATURED -->
 
 <section class="section">

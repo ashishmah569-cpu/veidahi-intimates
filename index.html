@@ -14,14 +14,23 @@ margin:0;
 font-family:Arial;
 }
 
-header{
-text-align:center;
-padding:20px;
-}
+<header class="header">
 
-.logo{
-height:60px;
-}
+<div class="logo-area">
+<img src="veidahi-logo.png" class="logo">
+</div>
+
+<div class="menu">
+
+<button onclick="openProducts()">Products</button>
+
+<button onclick="openContact()">Contact</button>
+
+<button onclick="openSearch()">Search</button>
+
+</div>
+
+</header>
 
 /* HERO PREMIUM SLIDER */
 
@@ -138,6 +147,56 @@ max-width:800px;
 margin:auto;
 }
 
+/* HEADER */
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo{
+height:50px;
+}
+
+/* MENU BUTTONS */
+
+.menu button{
+margin-left:15px;
+padding:8px 16px;
+border:none;
+background:black;
+color:white;
+cursor:pointer;
+border-radius:5px;
+font-size:14px;
+}
+
+.menu button:hover{
+background:#333;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.header{
+padding:15px;
+}
+
+.menu button{
+font-size:12px;
+padding:6px 10px;
+}
+
+}
+  
 /* FOOTER */
 
 footer{
@@ -306,6 +365,25 @@ track.style.transform="translateX(-"+index*100+"%)";
 
 },4000);
 
+<script>
+
+function openProducts(){
+alert("Products page coming soon");
+}
+
+function openContact(){
+alert("Contact us at veidahiintimates@gmail.com");
+}
+
+function openSearch(){
+let item=prompt("Search product");
+if(item){
+alert("Searching for "+item);
+}
+}
+
+</script>
+    
 </script>
 </body>
 

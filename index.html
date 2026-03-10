@@ -14,24 +14,6 @@ margin:0;
 font-family:Arial;
 }
 
-<header class="header">
-
-<div class="logo-area">
-<img src="veidahi-logo.png" class="logo">
-</div>
-
-<div class="menu">
-
-<button onclick="openProducts()">Products</button>
-
-<button onclick="openContact()">Contact</button>
-
-<button onclick="openSearch()">Search</button>
-
-</div>
-
-</header>
-
 /* HERO PREMIUM SLIDER */
 
 .hero{
@@ -231,12 +213,24 @@ grid-template-columns:repeat(2,1fr);
 
 <body>
 
-<header>
+<header class="header">
 
+<div class="logo-area">
 <img src="veidahi-logo.png" class="logo">
+</div>
+
+<div class="menu">
+
+<button onclick="openProducts()">Products</button>
+
+<button onclick="openContact()">Contact</button>
+
+<button onclick="openSearch()">Search</button>
+
+</div>
 
 </header>
-
+  
 <!-- HERO -->
 
 <section class="hero">
@@ -323,30 +317,6 @@ Our mission is to deliver premium quality intimatewear and western wear designed
 <a href="https://www.linkedin.com/in/veidahi-established-1469243a8">LinkedIn</a>
 
 </footer>
-<script>
-
-let images=[
-"bra.jpg",
-"panty.jpg",
-"sportsbra.jpg",
-"tshirt.jpg"
-];
-
-let i=0;
-
-setInterval(function(){
-
-i++;
-
-if(i>=images.length){
-i=0;
-}
-
-document.getElementById("heroImage").src=images[i];
-
-},5000);
-
-</script>
 
   <script>
 
@@ -384,7 +354,6 @@ alert("Searching for "+item);
 
 </script>
     
-</script>
 </body>
 
 </html>

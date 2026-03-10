@@ -376,7 +376,7 @@ track.style.transform="translateX(-"+index*100+"%)";
 
 },5000);
 
-</script>
+
 function openProducts(){
 alert("Products page coming soon");
 }
@@ -393,6 +393,24 @@ alert("Searching for "+item);
 }
 
 </script>
+  
+<script>
+
+let track=document.getElementById("heroTrack");
+let index=0;
+
+setInterval(()=>{
+
+index++;
+
+if(index>3){
+index=0;
+}
+
+track.style.transform="translateX(-"+index*100+"%)";
+
+},5000);
+
     
 </body>
 

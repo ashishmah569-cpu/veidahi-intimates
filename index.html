@@ -7,11 +7,14 @@
 
 <title>Veidahi</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
 <style>
 
 body{
 margin:0;
-font-family:Arial;
+font-family:'Poppins',sans-serif;
+background:#fafafa;
 }
 
 /* HERO PREMIUM SLIDER */
@@ -93,6 +96,13 @@ padding:50px 20px;
 text-align:center;
 }
 
+  .section h2{
+font-size:32px;
+font-weight:600;
+margin-bottom:40px;
+letter-spacing:1px;
+}
+  
 /* FEATURED */
 
 .products{
@@ -244,19 +254,46 @@ font-size:14px;
 
 .product-card{
 text-align:center;
+background:white;
+padding:10px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
 .product-card img{
 width:100%;
 border-radius:10px;
-cursor:pointer;
 }
 
 .product-card p{
-margin-top:8px;
-font-weight:600;
+margin-top:10px;
+font-weight:500;
 }
-  
+
+.shop-btn{
+margin-top:20px;
+padding:12px 28px;
+background:white;
+color:black;
+border:none;
+font-weight:600;
+letter-spacing:1px;
+cursor:pointer;
+border-radius:30px;
+transition:0.3s;
+}
+
+.shop-btn:hover{
+background:black;
+color:white;
+}
+
 </style>
 
 </head>
@@ -299,8 +336,9 @@ font-weight:600;
 <h1>VEIDAHI</h1>
 <p>Luxury Lingerie & Western Wear</p>
 
-</div>
+<button class="shop-btn">Shop Collection</button>
 
+</div>
 </section>
   
   <!-- FEATURED -->

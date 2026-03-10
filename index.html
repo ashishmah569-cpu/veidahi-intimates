@@ -421,6 +421,46 @@ display:block;
 margin-top:10px;
 color:#333;
 }
+
+/* TICKER */
+
+.ticker{
+overflow:hidden;
+white-space:nowrap;
+background:white;
+margin:20px 0;
+padding:12px 0;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.ticker-track{
+display:inline-block;
+animation:scroll 25s linear infinite;
+}
+
+.ticker-track span{
+display:inline-block;
+margin:0 40px;
+font-weight:500;
+color:#333;
+}
+
+.review-ticker span{
+color:#444;
+}
+
+@keyframes scroll{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
   
 </style>
 
@@ -741,96 +781,73 @@ Our mission is to deliver premium quality intimatewear and western wear designed
 
 <h2>What Our Customers Say</h2>
 
-<div class="testimonials">
+<!-- CUSTOMER REVIEWS -->
 
-<div class="review">
-<p>★★★★★</p>
-<p>"Very soft fabric and perfect fitting. Veidahi lingerie feels premium and comfortable."</p>
-<b>Priya S.</b>
+<section class="section">
+
+<h2>Customer Reviews</h2>
+
+<!-- CUSTOMER LOCATION TICKER -->
+
+<div class="ticker">
+
+<div class="ticker-track">
+
+<span>Priya • Delhi</span>
+<span>Ananya • Mumbai</span>
+<span>Riya • Pune</span>
+<span>Neha • Bangalore</span>
+<span>Sakshi • Jaipur</span>
+<span>Pooja • Chandigarh</span>
+<span>Simran • Ludhiana</span>
+<span>Megha • Kolkata</span>
+<span>Kritika • Hyderabad</span>
+<span>Tanvi • Ahmedabad</span>
+
+<span>Priya • Delhi</span>
+<span>Ananya • Mumbai</span>
+<span>Riya • Pune</span>
+<span>Neha • Bangalore</span>
+<span>Sakshi • Jaipur</span>
+<span>Pooja • Chandigarh</span>
+<span>Simran • Ludhiana</span>
+<span>Megha • Kolkata</span>
+<span>Kritika • Hyderabad</span>
+<span>Tanvi • Ahmedabad</span>
+
 </div>
 
-<div class="review">
-<p>★★★★★</p>
-<p>"The quality is amazing. It feels luxurious and stylish at the same time."</p>
-<b>Ananya R.</b>
 </div>
 
-<div class="review">
-<p>★★★★★</p>
-<p>"Finally found lingerie that looks beautiful and feels comfortable all day."</p>
-<b>Riya K.</b>
-</div>
 
-<div class="review">
-<p>★★★★★</p>
-<p>"Elegant design and great fabric quality. Definitely worth it."</p>
-<b>Neha P.</b>
-</div>
+<!-- REVIEW TICKER -->
 
-<div class="review">
-<p>★★★★★</p>
-<p>"Very comfortable and stylish. I really love the fabric."</p>
-<b>Sakshi M.</b>
-</div>
+<div class="ticker review-ticker">
 
-<div class="review">
-<p>★★★★★</p>
-<p>"The stitching and finishing are excellent. Feels like a premium brand."</p>
-<b>Pooja T.</b>
-</div>
+<div class="ticker-track">
 
-<div class="review">
-<p>★★★★★</p>
-<p>"Super comfortable for everyday wear. Highly recommended."</p>
-<b>Megha D.</b>
-</div>
+<span>⭐⭐⭐⭐⭐ Very comfortable and premium fabric.</span>
+<span>⭐⭐⭐⭐ Perfect fitting and soft material.</span>
+<span>⭐⭐⭐⭐⭐ Looks stylish and elegant.</span>
+<span>⭐⭐⭐⭐ Good quality for everyday wear.</span>
+<span>⭐⭐⭐⭐⭐ Loved the design and comfort.</span>
+<span>⭐⭐⭐⭐ Nice fabric and smooth feel.</span>
+<span>⭐⭐⭐⭐⭐ Very soft and breathable.</span>
+<span>⭐⭐⭐ Good but delivery took time.</span>
+<span>⭐⭐⭐⭐ Stylish and comfortable.</span>
+<span>⭐⭐⭐⭐⭐ Premium quality lingerie.</span>
 
-<div class="review">
-<p>★★★★★</p>
-<p>"Soft material and elegant style. Veidahi impressed me."</p>
-<b>Simran K.</b>
-</div>
+<span>⭐⭐⭐⭐⭐ Very comfortable and premium fabric.</span>
+<span>⭐⭐⭐⭐ Perfect fitting and soft material.</span>
+<span>⭐⭐⭐⭐⭐ Looks stylish and elegant.</span>
+<span>⭐⭐⭐⭐ Good quality for everyday wear.</span>
+<span>⭐⭐⭐⭐⭐ Loved the design and comfort.</span>
+<span>⭐⭐⭐⭐ Nice fabric and smooth feel.</span>
+<span>⭐⭐⭐⭐⭐ Very soft and breathable.</span>
+<span>⭐⭐⭐ Good but delivery took time.</span>
+<span>⭐⭐⭐⭐ Stylish and comfortable.</span>
+<span>⭐⭐⭐⭐⭐ Premium quality lingerie.</span>
 
-<div class="review">
-<p>★★★★★</p>
-<p>"Very smooth fabric and beautiful design."</p>
-<b>Tanvi S.</b>
-</div>
-
-<div class="review">
-<p>★★★★★</p>
-<p>"Fits perfectly and looks amazing."</p>
-<b>Radhika J.</b>
-</div>
-
-<div class="review">
-<p>★★★★★</p>
-<p>"The comfort level is incredible."</p>
-<b>Kritika V.</b>
-</div>
-
-<div class="review">
-<p>★★★★★</p>
-<p>"One of the best lingerie brands I have tried."</p>
-<b>Shreya N.</b>
-</div>
-
-<div class="review">
-<p>★★★★★</p>
-<p>"Great quality and very comfortable."</p>
-<b>Nisha G.</b>
-</div>
-
-<div class="review">
-<p>★★★★★</p>
-<p>"Beautiful designs and soft fabrics."</p>
-<b>Alisha B.</b>
-</div>
-
-<div class="review">
-<p>★★★★★</p>
-<p>"Looks stylish and feels amazing."</p>
-<b>Kavya L.</b>
 </div>
 
 </div>

@@ -23,7 +23,7 @@ padding:20px;
 height:60px;
 }
 
-/* PREMIUM HERO */
+/* HERO PREMIUM SLIDER */
 
 .hero{
 position:relative;
@@ -32,11 +32,18 @@ height:90vh;
 overflow:hidden;
 }
 
-.hero img{
+.hero-track{
+display:flex;
+width:100%;
+height:100%;
+transition:transform 1.2s ease;
+}
+
+.hero-track img{
 width:100%;
 height:100%;
 object-fit:cover;
-transition:opacity 1.5s ease;
+flex-shrink:0;
 }
 
 /* overlay */
@@ -48,8 +55,10 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.35);
+background:rgba(0,0,0,0.3);
 }
+
+/* text */
 
 .hero-text{
 position:absolute;
@@ -64,7 +73,6 @@ z-index:2;
 .hero-text h1{
 font-size:50px;
 letter-spacing:4px;
-margin-bottom:10px;
 }
 
 .hero-text p{
@@ -174,7 +182,14 @@ grid-template-columns:repeat(2,1fr);
 
 <section class="hero">
 
-<img id="heroImage" src="bra.jpg">
+<div class="hero-track" id="heroTrack">
+
+<img src="bra.jpg">
+<img src="panty.jpg">
+<img src="sportsbra.jpg">
+<img src="tshirt.jpg">
+
+</div>
 
 <div class="hero-text">
 
@@ -271,6 +286,25 @@ i=0;
 document.getElementById("heroImage").src=images[i];
 
 },5000);
+
+</script>
+
+  <script>
+
+let track=document.getElementById("heroTrack");
+let index=0;
+
+setInterval(()=>{
+
+index++;
+
+if(index>3){
+index=0;
+}
+
+track.style.transform="translateX(-"+index*100+"%)";
+
+},4000);
 
 </script>
 </body>

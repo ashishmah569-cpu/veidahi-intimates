@@ -104,7 +104,17 @@ font-weight:600;
 margin-bottom:40px;
 letter-spacing:1px;
 }
-  
+
+  .section{
+opacity:0;
+transform:translateY(40px);
+transition:0.6s;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
 /* FEATURED */
 
 .products{
@@ -701,6 +711,68 @@ padding:8px;
 font-size:14px;
 letter-spacing:1px;
 }
+
+.parallax{
+background-image:url("banner.jpg");
+height:350px;
+background-attachment:fixed;
+background-position:center;
+background-size:cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.parallax-text h2{
+font-size:36px;
+letter-spacing:3px;
+}
+
+.parallax-text p{
+margin-top:10px;
+font-size:18px;
+}
+
+.category-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.category img{
+width:100%;
+border-radius:10px;
+}
+
+.category p{
+margin-top:8px;
+font-weight:600;
+}
+
+footer{
+background:#111;
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+.footer-links{
+margin-top:10px;
+}
+
+.footer-links a{
+margin:0 10px;
+color:white;
+text-decoration:none;
+}
+
+.copy{
+margin-top:20px;
+font-size:14px;
+color:#aaa;
+}
   
 </style>
 
@@ -718,6 +790,8 @@ letter-spacing:1px;
 
 <div class="menu">
 
+  <button onclick="openSize()">Size Guide</button>
+  
 <button onclick="openProducts()">Products</button>
 
 <button onclick="openContact()">Contact</button>
@@ -840,6 +914,36 @@ Our designs celebrate modern women who want to feel beautiful, powerful and comf
 
 </section>
 <div class="divider"></div>
+
+<section class="section">
+
+<h2>Shop By Category</h2>
+
+<div class="category-grid">
+
+<div class="category">
+<img src="bra.jpg">
+<p>Bras</p>
+</div>
+
+<div class="category">
+<img src="panty.jpg">
+<p>Panties</p>
+</div>
+
+<div class="category">
+<img src="sportsbra.jpg">
+<p>Sports Bras</p>
+</div>
+
+<div class="category">
+<img src="tshirt.jpg">
+<p>Western Wear</p>
+</div>
+
+</div>
+
+</section>
   
 <!-- PRODUCTS -->
 
@@ -1142,16 +1246,24 @@ From daily comfort wear to stylish intimatewear, Veidahi continues to receive ap
 </section>
   <div class="divider"></div>
 
+<footer>
+
+<h3>VEIDAHI</h3>
+
+<p>Luxury Lingerie & Western Wear</p>
+
 <p>Email : veidahiintimates@gmail.com</p>
 
-<a href="https://www.instagram.com/veidahiintimates?igsh=YmZ3eW1mbnk1ZDN2">Instagram</a>
+<div class="footer-links">
 
-<br><br>
-
+<a href="https://www.instagram.com/veidahiintimates">Instagram</a>
 <a href="https://www.linkedin.com/in/veidahi-established-1469243a8">LinkedIn</a>
 
-<section class="section">
+</div>
 
+<p class="copy">© 2026 Veidahi Intimates</p>
+
+</footer>
 <h2>As Seen On</h2>
 
 <div class="seen-on">
@@ -1161,6 +1273,15 @@ From daily comfort wear to stylish intimatewear, Veidahi continues to receive ap
 <div>Google</div>
 <div>Instagram</div>
 
+</div>
+
+</section>
+
+<section class="parallax">
+
+<div class="parallax-text">
+<h2>Confidence Begins With Comfort</h2>
+<p>Designed for modern women who value elegance and comfort.</p>
 </div>
 
 </section>
@@ -1262,8 +1383,26 @@ track.style.transform="translateX(-"+index*100+"%)";
 
 },4000);
 
+function openSize(){
+alert("Size guide coming soon");
+}
+  
 </script>
-    
+  let sections=document.querySelectorAll(".section");
+
+window.addEventListener("scroll",function(){
+
+sections.forEach(sec=>{
+let top=sec.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+sec.classList.add("show");
+}
+
+});
+
+});
+  
 </body>
 <div class="top-banner">
 Free Shipping • Premium Quality • Comfortable Fit

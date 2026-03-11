@@ -818,6 +818,93 @@ color:#ccc;
 font-size:13px;
 color:#aaa;
 }
+
+/* INSTAGRAM + AS SEEN ON */
+
+.insta-wrapper{
+display:grid;
+grid-template-columns:1fr 1fr;
+width:100%;
+overflow:hidden;
+}
+
+.insta-left{
+background:black;
+color:white;
+padding:60px 40px;
+text-align:center;
+}
+
+.insta-left h2{
+letter-spacing:2px;
+margin-bottom:10px;
+}
+
+.insta-gallery{
+display:flex;
+justify-content:center;
+gap:10px;
+margin:25px 0;
+}
+
+.insta-gallery img{
+width:40px;
+height:40px;
+object-fit:cover;
+border-radius:5px;
+}
+
+.insta-btn{
+display:inline-block;
+padding:10px 25px;
+background:white;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-size:14px;
+}
+
+.insta-right{
+background:#f6f6f6;
+padding:60px;
+text-align:center;
+}
+
+.brand-row{
+display:flex;
+justify-content:center;
+gap:30px;
+margin:20px 0;
+font-weight:500;
+}
+
+.quote-box{
+background:black;
+color:white;
+padding:50px;
+width:250px;
+margin:auto;
+margin-top:30px;
+}
+
+/* MOBILE FIX */
+
+@media(max-width:768px){
+
+.insta-wrapper{
+grid-template-columns:1fr;
+}
+
+.insta-right{
+padding:40px 20px;
+}
+
+}
+
+body{
+margin:0;
+overflow-x:hidden;
+}
   
 </style>
 
@@ -1450,6 +1537,52 @@ sec.classList.add("show");
 <div class="top-banner">
 Free Shipping • Premium Quality • Comfortable Fit
 </div>
+
+<section class="insta-wrapper">
+
+<div class="insta-left">
+
+<h2>Follow Us On Instagram</h2>
+
+<p>See how women style Veidahi every day.</p>
+
+<div class="insta-gallery">
+<img src="na1-1.jpg">
+<img src="na2-1.jpg">
+<img src="na3-1.jpg">
+<img src="na4-1.jpg">
+<img src="na5-1.jpg">
+</div>
+
+<a href="https://www.instagram.com/veidahiintimates" class="insta-btn">
+Follow On Instagram
+</a>
+
+</div>
+
+
+<div class="insta-right">
+
+<h2>As Seen On</h2>
+
+<div class="brand-row">
+
+<span>Amazon</span>
+<span>Flipkart</span>
+<span>Google</span>
+<span>Instagram</span>
+
+</div>
+
+<div class="quote-box">
+
+<p>Confidence begins with comfort.</p>
+
+</div>
+
+</div>
+
+</section>
   
 </footer>
 

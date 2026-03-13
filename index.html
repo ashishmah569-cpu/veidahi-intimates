@@ -14,8 +14,7 @@
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
-background:#fafafa;
-overflow-x:hidden;
+background:linear-gradient(180deg,#ffffff,#f7f7f7,#f1f1f1);
 }
 
 html,body{
@@ -123,13 +122,35 @@ text-align:center;
 background:#fafafa;
 }
 
-  .section h2{
-font-size:32px;
+.section h2{
+
+font-size:34px;
+
 font-weight:600;
+
 margin-bottom:40px;
-letter-spacing:1px;
+
+letter-spacing:2px;
+
+position:relative;
+
 }
 
+.section h2:after{
+
+content:"";
+
+width:60px;
+
+height:3px;
+
+background:black;
+
+display:block;
+
+margin:10px auto;
+
+}
 /* FEATURED */
 
 .products{
@@ -163,7 +184,8 @@ background:white;
 position:sticky;
 top:0;
 z-index:100;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+box-shadow:0 5px 30px rgba(0,0,0,0.08);
+backdrop-filter:blur(10px);
 }
 
 .logo{
@@ -205,10 +227,15 @@ padding:6px 10px;
 /* FOOTER */
 
 footer{
-background:#111;
+
+background:linear-gradient(180deg,#111,#000);
+
 color:white;
+
 text-align:center;
-padding:30px;
+
+padding:40px;
+
 }
 
 footer a{
@@ -294,9 +321,31 @@ font-size:14px;
   /* NEW ARRIVALS */
 
 .slider-row{
+
 display:flex;
+
 overflow-x:auto;
+
 gap:20px;
+
+padding-bottom:10px;
+
+scroll-behavior:smooth;
+
+}
+
+.slider-row::-webkit-scrollbar{
+
+height:6px;
+
+}
+
+.slider-row::-webkit-scrollbar-thumb{
+
+background:#bbb;
+
+border-radius:10px;
+
 }
 
 .slider-row img{
@@ -309,19 +358,19 @@ text-decoration:none;
 color:black;
 text-align:center;
 background:white;
-padding:10px;
-border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-transition:0.3s;
+padding:12px;
+border-radius:16px;
+box-shadow:0 8px 30px rgba(0,0,0,0.08);
+transition:0.4s;
 }
 
 .product-card:hover{
 
-transform:translateY(-8px) scale(1.02);
-box-shadow:0 20px 40px rgba(0,0,0,0.18);
+transform:translateY(-10px) scale(1.03);
+
+box-shadow:0 20px 50px rgba(0,0,0,0.18);
 
 }
-
 .product-card img{
 width:100%;
 border-radius:10px;
@@ -334,23 +383,30 @@ font-weight:500;
 .shop-btn{
 
 margin-top:20px;
+
 padding:14px 34px;
-background:white;
-color:black;
+
+background:linear-gradient(45deg,#000,#444);
+
+color:white;
+
 border:none;
+
 font-weight:600;
-letter-spacing:2px;
+
+letter-spacing:1px;
+
 cursor:pointer;
+
 border-radius:40px;
+
 transition:0.4s;
 
 }
 
 .shop-btn:hover{
 
-background:black;
-color:white;
-transform:scale(1.08);
+transform:scale(1.1);
 
 }
 
@@ -378,9 +434,13 @@ letter-spacing:3px;
 
 }
 .hero-text h1{
-font-size:60px;
-letter-spacing:6px;
-font-weight:600;
+
+font-size:52px;
+
+letter-spacing:4px;
+
+text-shadow:0 10px 40px rgba(0,0,0,0.4);
+
 }
 
 /* PROMISE GRID */
@@ -902,6 +962,14 @@ letter-spacing:6px;
 z-index:9999;
 
 }
+
+.instagram{
+
+background:linear-gradient(45deg,#fdf0ff,#fff5f8,#f7f7ff);
+
+padding:60px 20px;
+
+}
   
 </style>
 
@@ -986,7 +1054,7 @@ Our designs celebrate modern women who want to feel beautiful, powerful and comf
 
 <a href="veidahi-lace-bra.jpg" target="_blank" class="product-card">
 <img src="veidahi-lace-bra.jpg">
-<p>Lace Bra</p>
+<p>lace bra</p>
 </a>
 
 <a href="veidahi-premium-tshirt.jpg" target="_blank" class="product-card">

@@ -261,6 +261,31 @@ width:100%;
 border-radius:10px;
 }
 
+.new-card{
+position:relative;
+}
+
+.new-card img{
+width:220px;
+border-radius:10px;
+transition:0.4s;
+}
+
+.img2{
+position:absolute;
+top:0;
+left:0;
+opacity:0;
+}
+
+.new-card:hover .img2{
+opacity:1;
+}
+
+.new-card:hover .img1{
+opacity:0;
+}
+  
 .new-card p{
 margin-top:6px;
 font-size:14px;
@@ -307,16 +332,26 @@ margin-top:10px;
 font-weight:500;
 }
 .shop-btn{
+
 margin-top:20px;
-padding:12px 28px;
+padding:14px 34px;
 background:white;
 color:black;
 border:none;
 font-weight:600;
-letter-spacing:1px;
+letter-spacing:2px;
 cursor:pointer;
-border-radius:30px;
-transition:0.3s;
+border-radius:40px;
+transition:0.4s;
+
+}
+
+.shop-btn:hover{
+
+background:black;
+color:white;
+transform:scale(1.08);
+
 }
 
 .shop-btn:hover{
@@ -873,8 +908,7 @@ z-index:9999;
 </head>
   
  <body> 
-<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp" target="_blank">💬</a>
-
+<a href="https://wa.me/918750020203" class="whatsapp" target="_blank">💬</a>
 
 <header class="header">
 
@@ -918,8 +952,10 @@ Free Shipping Across India | Premium Comfort | Trusted By Women
 <h1>VEIDAHI</h1>
 <p>Luxury Lingerie & Western Wear</p>
 
+<a href="#products">
 <button class="shop-btn">Shop Collection</button>
-
+</a>
+  
 </div>
 </section>
   <div class="divider"></div>
@@ -943,26 +979,27 @@ Our designs celebrate modern women who want to feel beautiful, powerful and comf
   
 <div class="products">
 
-<div class="product-card">
+<a href="veidahi-cotton-panty-pack.jpg" target="_blank" class="product-card">
 <img src="veidahi-cotton-panty-pack.jpg">
 <p>Cotton Panty Pack</p>
-</div>
+</a>
 
-<div class="product-card">
-<img src="veidahi-lace-bra-set.jpg">
-<p>Lace Bra Set</p>
-</div>
+<a href="veidahi-lace-bra.jpg" target="_blank" class="product-card">
+<img src="veidahi-lace-bra.jpg">
+<p>Lace Bra</p>
+</a>
 
-<div class="product-card">
+<a href="veidahi-premium-tshirt.jpg" target="_blank" class="product-card">
 <img src="veidahi-premium-tshirt.jpg">
 <p>Premium T-Shirt</p>
-</div>
+</a>
 
-<div class="product-card">
+<a href="veidahi-sports-bra.jpg" target="_blank" class="product-card">
 <img src="veidahi-sports-bra.jpg">
 <p>Sports Bra</p>
-</div>
+</a>
 
+</div>
 </div>
 </section>
 <div class="divider"></div>
@@ -976,37 +1013,42 @@ Our designs celebrate modern women who want to feel beautiful, powerful and comf
 <div class="slider-row">
 
 <div class="new-card">
-<img src="na1-1.jpg">
+<img src="na1-1.jpg" class="img1">
+<img src="na1-2.jpg" class="img2">
 <p>Sports Bra</p>
 </div>
 
 <div class="new-card">
-<img src="na2-1.jpg">
+<img src="na2-1.jpg" class="img1">
+<img src="na2-2.jpg" class="img2">
 <p>Gym Bra</p>
 </div>
 
 <div class="new-card">
-<img src="na3-1.jpg">
+<img src="na3-1.jpg" class="img1">
+<img src="na3-2.jpg" class="img2">
 <p>Active Bra</p>
 </div>
 
 <div class="new-card">
-<img src="na4-1.jpg">
-<p>Bold Classic </p>
+<img src="na4-1.jpg" class="img1">
+<img src="na4-2.jpg" class="img2">
+<p>Bold Classic</p>
 </div>
 
 <div class="new-card">
-<img src="na5-1.jpg">
+<img src="na5-1.jpg" class="img1">
+<img src="na5-2.jpg" class="img2">
 <p>Premium Bold Classic</p>
 </div>
 
 <div class="new-card">
-<img src="na6-1.jpg">
-<p>Naught With Play</p>
+<img src="na6-1.jpg" class="img1">
+<img src="na6-2.jpg" class="img2">
+<p>Naughty With Play</p>
 </div>
 
 </div>
-
 </section>
 <div class="divider"></div>
 
@@ -1041,8 +1083,7 @@ Our designs celebrate modern women who want to feel beautiful, powerful and comf
   
 <!-- PRODUCTS -->
 
-<section class="section reveal">
-
+<section class="section" id="products">
 <h2>Our Products</h2>
 
 <div class="products">
@@ -1191,12 +1232,18 @@ Our goal is simple to create intimatewear that women truly love to wear.
 
 <div class="platforms">
 
+<a href="#" target="_blank">
 <div class="platform">Amazon</div>
+</a>
 
+<a href="#" target="_blank">
 <div class="platform">Flipkart</div>
+</a>
+<a href="https://www.google.com/search?sca_esv=288d0459570a6d4e&sxsrf=ANbL-n7oPzNR0qulHMLEUDJkcXTF24rPxA:1773392064882&q=veidahi+intemates&nfpr=1&sa=X&ved=2ahUKEwijmsygwJyTAxXG7TgGHSmoOZ0QvgUoAXoECBkQAg&biw=1745&bih=866&dpr=1.1" target="_blank">
 
 <div class="platform">Google</div>
 
+</a>
 </div>
 
 </section>

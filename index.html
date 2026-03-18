@@ -164,13 +164,14 @@ border-radius:10px;
 .products{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:20px;
+gap:25px;
+padding-top:20px;
 }
 
 .product-card{
-position:relative;
 text-decoration:none;
 color:black;
+transition:0.3s;
 }
 
 .product-card img{
@@ -180,34 +181,13 @@ transition:0.4s;
 }
 
 .product-card:hover img{
-transform:scale(1.08);
+transform:scale(1.05);
 }
 
 .product-card p{
 margin-top:10px;
-font-weight:500;
-}
-
-.tag{
-position:absolute;
-top:10px;
-left:10px;
-background:black;
-color:white;
-padding:5px 10px;
-font-size:12px;
-border-radius:5px;
-}
-
-.stock{
-position:absolute;
-top:10px;
-right:10px;
-background:#ff4d4d;
-color:white;
-padding:5px 10px;
-font-size:12px;
-border-radius:5px;
+font-size:15px;
+letter-spacing:0.5px;
 }
 
 /* MOBILE */
@@ -1320,6 +1300,19 @@ box-shadow:0 5px 20px rgba(0,0,0,0.3);
 z-index:999;
 
 }
+
+.product-card{
+opacity:0;
+transform:translateY(30px);
+animation:fadeUp 0.8s forwards;
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
   
 </style>
 
@@ -1508,92 +1501,44 @@ Our designs celebrate modern women who want to feel beautiful, powerful and comf
 
 <div class="products">
 
-<!-- PRODUCT 1 -->
 <a href="p1.html" class="product-card">
-
-<span class="tag">Best Seller</span>
-<span class="stock">Only 5 left</span>
-
 <img src="veidahi-cotton-panty-pack.jpg">
 <p>Cotton Panty Pack</p>
-
 </a>
 
-<!-- PRODUCT 2 -->
 <a href="p2.html" class="product-card">
-
-<span class="tag">Trending</span>
-<span class="stock">Only 7 left</span>
-
 <img src="veidahi-lace-bra-set.jpg">
 <p>Lace Bra Set</p>
-
 </a>
 
-<!-- PRODUCT 3 -->
 <a href="p3.html" class="product-card">
-
-<span class="tag">New</span>
-<span class="stock">Only 6 left</span>
-
 <img src="veidahi-premium-tshirt.jpg">
 <p>Premium T-Shirt</p>
-
 </a>
 
-<!-- PRODUCT 4 -->
 <a href="p4.html" class="product-card">
-
-<span class="tag">Hot</span>
-<span class="stock">Only 4 left</span>
-
 <img src="veidahi-sports-bra.jpg">
 <p>Sports Bra</p>
-
 </a>
 
-<!-- PRODUCT 5 -->
 <a href="p5.html" class="product-card">
-
-<span class="tag">New</span>
-<span class="stock">Only 8 left</span>
-
 <img src="na1-1.jpg">
 <p>Nightwear Set</p>
-
 </a>
 
-<!-- PRODUCT 6 -->
 <a href="p6.html" class="product-card">
-
-<span class="tag">Popular</span>
-<span class="stock">Only 5 left</span>
-
 <img src="na2-1.jpg">
 <p>Soft Cotton Bra</p>
-
 </a>
 
-<!-- PRODUCT 7 -->
 <a href="p7.html" class="product-card">
-
-<span class="tag">Luxury</span>
-<span class="stock">Only 3 left</span>
-
 <img src="na3-1.jpg">
 <p>Luxury Lace Bra</p>
-
 </a>
 
-<!-- PRODUCT 8 -->
 <a href="p8.html" class="product-card">
-
-<span class="tag">Comfort</span>
-<span class="stock">Only 9 left</span>
-
 <img src="na4-1.jpg">
 <p>Comfort Panty</p>
-
 </a>
 
 </div>

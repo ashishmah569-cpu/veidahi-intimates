@@ -163,13 +163,58 @@ border-radius:10px;
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(4,1fr);
 gap:20px;
 }
 
-.products img{
+.product-card{
+position:relative;
+text-decoration:none;
+color:black;
+}
+
+.product-card img{
 width:100%;
-border-radius:10px;
+border-radius:12px;
+transition:0.4s;
+}
+
+.product-card:hover img{
+transform:scale(1.08);
+}
+
+.product-card p{
+margin-top:10px;
+font-weight:500;
+}
+
+.tag{
+position:absolute;
+top:10px;
+left:10px;
+background:black;
+color:white;
+padding:5px 10px;
+font-size:12px;
+border-radius:5px;
+}
+
+.stock{
+position:absolute;
+top:10px;
+right:10px;
+background:#ff4d4d;
+color:white;
+padding:5px 10px;
+font-size:12px;
+border-radius:5px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.products{
+grid-template-columns:repeat(2,1fr);
+}
 }
   
 /* ABOUT */
@@ -1223,6 +1268,58 @@ line-height:2;
 font-size:16px;
 
 }
+
+.product-card{
+position:relative;
+}
+
+.tag{
+position:absolute;
+top:10px;
+left:10px;
+background:black;
+color:white;
+padding:5px 10px;
+font-size:12px;
+border-radius:5px;
+}
+
+.stock{
+position:absolute;
+top:10px;
+right:10px;
+background:#ff4d4d;
+color:white;
+padding:5px 10px;
+font-size:12px;
+border-radius:5px;
+}
+
+.whatsapp-float{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+background:#25D366;
+
+color:white;
+
+font-size:22px;
+
+padding:15px;
+
+border-radius:50%;
+
+text-align:center;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+
+z-index:999;
+
+}
   
 </style>
 
@@ -1406,54 +1503,103 @@ Our designs celebrate modern women who want to feel beautiful, powerful and comf
 <!-- PRODUCTS -->
 
 <section class="section" id="products">
+
 <h2>Our Products</h2>
 
 <div class="products">
 
+<!-- PRODUCT 1 -->
 <a href="p1.html" class="product-card">
-<img src="p1-burgundy-1.jpg">
-<p>Bralette</p>
+
+<span class="tag">Best Seller</span>
+<span class="stock">Only 5 left</span>
+
+<img src="veidahi-cotton-panty-pack.jpg">
+<p>Cotton Panty Pack</p>
+
 </a>
 
+<!-- PRODUCT 2 -->
 <a href="p2.html" class="product-card">
-<img src="p2-new-brown-1.jpg">
-<p>Camisole</p>
+
+<span class="tag">Trending</span>
+<span class="stock">Only 7 left</span>
+
+<img src="veidahi-lace-bra-set.jpg">
+<p>Lace Bra Set</p>
+
 </a>
 
+<!-- PRODUCT 3 -->
 <a href="p3.html" class="product-card">
-<img src="p3-forestgreen-1.jpg">
-<p>Designer Lace Panty</p>
+
+<span class="tag">New</span>
+<span class="stock">Only 6 left</span>
+
+<img src="veidahi-premium-tshirt.jpg">
+<p>Premium T-Shirt</p>
+
 </a>
 
+<!-- PRODUCT 4 -->
 <a href="p4.html" class="product-card">
-<img src="p4-teal-1.jpg">
-<p>UrbanBloom Brief</p>
+
+<span class="tag">Hot</span>
+<span class="stock">Only 4 left</span>
+
+<img src="veidahi-sports-bra.jpg">
+<p>Sports Bra</p>
+
 </a>
 
+<!-- PRODUCT 5 -->
 <a href="p5.html" class="product-card">
-<img src="p5-navy-1.jpg">
-<p>UrbanBloom Brief</p>
+
+<span class="tag">New</span>
+<span class="stock">Only 8 left</span>
+
+<img src="na1-1.jpg">
+<p>Nightwear Set</p>
+
 </a>
 
+<!-- PRODUCT 6 -->
 <a href="p6.html" class="product-card">
-<img src="p6-aqua-1.jpg">
+
+<span class="tag">Popular</span>
+<span class="stock">Only 5 left</span>
+
+<img src="na2-1.jpg">
 <p>Soft Cotton Bra</p>
+
 </a>
 
+<!-- PRODUCT 7 -->
 <a href="p7.html" class="product-card">
-<img src="p7-chocolate-1.jpg">
-<p>UrbanBloom Brief
-</p>
+
+<span class="tag">Luxury</span>
+<span class="stock">Only 3 left</span>
+
+<img src="na3-1.jpg">
+<p>Luxury Lace Bra</p>
+
 </a>
 
+<!-- PRODUCT 8 -->
 <a href="p8.html" class="product-card">
-<img src="p8-deepsea-1.jpg">
-<p>PureEase</p>
+
+<span class="tag">Comfort</span>
+<span class="stock">Only 9 left</span>
+
+<img src="na4-1.jpg">
+<p>Comfort Panty</p>
+
 </a>
 
 </div>
 
 </section>
+   
 <div class="divider"></div>
   
 <!-- OUR PROMISE -->
@@ -1874,6 +2020,25 @@ reveals[i].classList.add("active");
 <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">Chat</a>
 
 <a href="https://www.instagram.com/veidahiintimates" class="insta-float" target="_blank">Instagram</a>
+
+<a href="https://wa.me/918750020203" target="_blank" class="whatsapp-float">
+
+💬
+
+</a>
+
+<script>
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({
+behavior: 'smooth'
+});
+});
+});
+
+</script>
   
 </body>
 <div id="loader">

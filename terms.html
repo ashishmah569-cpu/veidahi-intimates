@@ -1,55 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms & Conditions - Veidahi</title>
+<title>Terms & Conditions | Veidahi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 body{
+margin:0;
 font-family:Poppins,sans-serif;
-padding:30px;
-line-height:1.7;
-background:#fafafa;
+background:linear-gradient(135deg,#fdf0ff,#f7f7ff);
 }
 
-h1{
-text-align:center;
+.hero{
+height:40vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:black;
+color:white;
 }
 
 .container{
-max-width:800px;
-margin:auto;
+max-width:900px;
+margin:-60px auto 50px;
 background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+padding:40px;
+border-radius:20px;
+box-shadow:0 20px 60px rgba(0,0,0,0.1);
+animation:fadeUp 1s ease;
 }
+
+h2{margin-top:20px;}
+p{color:#555; line-height:1.8;}
+
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.back{
+display:inline-block;
+margin-top:30px;
+background:black;
+color:white;
+padding:10px 25px;
+border-radius:30px;
+text-decoration:none;
+}
+
 </style>
 
 </head>
 
 <body>
 
+<div class="hero">
+<h1>Terms & Conditions</h1>
+</div>
+
 <div class="container">
 
-<h1>Terms & Conditions</h1>
+<p>By using Veidahi Intimates, you agree to our terms and conditions.</p>
 
-<p>Welcome to Veidahi Intimates. By using our website, you agree to the following terms.</p>
-
-<h3>Use of Website</h3>
+<h2>Use of Website</h2>
 <p>You agree to use this website only for lawful purposes.</p>
 
-<h3>Products</h3>
-<p>We strive to display product details accurately. However, slight variations may occur.</p>
+<h2>Products</h2>
+<p>We strive to display accurate product details, but slight variations may occur.</p>
 
-<h3>Pricing</h3>
-<p>Prices are subject to change without notice.</p>
+<h2>Pricing</h2>
+<p>Prices may change without notice.</p>
 
-<h3>Orders</h3>
-<p>We reserve the right to cancel any order if required.</p>
+<h2>Orders</h2>
+<p>We reserve the right to cancel orders if necessary.</p>
 
-<h3>Contact</h3>
-<p>For any queries, email us at veidahiintimates@gmail.com</p>
+<h2>Liability</h2>
+<p>Veidahi is not responsible for misuse of products.</p>
+
+<a href="index.html" class="back">← Back to Home</a>
 
 </div>
 

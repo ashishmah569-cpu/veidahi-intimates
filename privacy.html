@@ -1,55 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy - Veidahi</title>
+<title>Privacy Policy | Veidahi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 body{
+margin:0;
 font-family:Poppins,sans-serif;
-padding:30px;
-line-height:1.7;
-background:#fafafa;
+background:linear-gradient(135deg,#fff0f6,#f7f7ff);
 }
 
-h1{
+/* HERO */
+.hero{
+height:40vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
+background:black;
+color:white;
 }
 
-.container{
-max-width:800px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+.hero h1{
+font-size:40px;
+letter-spacing:3px;
 }
+
+/* CONTENT */
+.container{
+max-width:900px;
+margin:-60px auto 50px;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 20px 60px rgba(0,0,0,0.1);
+animation:fadeUp 1s ease;
+}
+
+h2{
+margin-top:25px;
+}
+
+p{
+color:#555;
+line-height:1.8;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* BACK BUTTON */
+.back{
+display:inline-block;
+margin-top:30px;
+text-decoration:none;
+color:white;
+background:black;
+padding:10px 25px;
+border-radius:30px;
+}
+
 </style>
 
 </head>
 
 <body>
 
+<div class="hero">
+<h1>Privacy Policy</h1>
+</div>
+
 <div class="container">
 
-<h1>Privacy Policy</h1>
+<p>At Veidahi Intimates, your privacy is our priority. We are committed to protecting your personal information and ensuring a safe experience.</p>
 
-<p>At Veidahi Intimates, we respect your privacy and are committed to protecting your personal information.</p>
+<h2>Information We Collect</h2>
+<p>We may collect your name, phone number, email and shipping address when you place an order or contact us.</p>
 
-<h3>Information We Collect</h3>
-<p>We may collect your name, phone number, email address and shipping details when you contact us or place an order.</p>
+<h2>How We Use Information</h2>
+<p>Your data is used to process orders, improve services and communicate important updates.</p>
 
-<h3>How We Use Your Information</h3>
-<p>Your information is used to process orders, improve our services and communicate with you.</p>
+<h2>Data Protection</h2>
+<p>We ensure your data is secure and never sold to third parties.</p>
 
-<h3>Data Protection</h3>
-<p>We do not sell or share your personal information with third parties.</p>
+<h2>Cookies</h2>
+<p>We may use cookies to enhance your browsing experience.</p>
 
-<h3>Cookies</h3>
-<p>Our website may use cookies to enhance user experience.</p>
+<h2>Your Rights</h2>
+<p>You have the right to access or request deletion of your data anytime.</p>
 
-<h3>Contact Us</h3>
-<p>If you have any questions, contact us at: veidahiintimates@gmail.com</p>
+<a href="index.html" class="back">← Back to Home</a>
 
 </div>
 

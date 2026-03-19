@@ -1392,6 +1392,31 @@ right:20px;
 cursor:pointer;
 font-size:20px;
 }
+
+/* FIX FLOATING BUTTONS */
+
+.whatsapp{
+bottom:20px;
+right:20px;
+}
+
+.insta-float{
+bottom:90px; /* upar shift */
+right:20px;
+}
+
+.whatsapp-float{
+bottom:160px; /* aur upar shift */
+right:20px;
+}
+
+.whatsapp, .insta-float, .whatsapp-float{
+transition:0.3s;
+}
+
+.whatsapp:hover, .insta-float:hover, .whatsapp-float:hover{
+transform:scale(1.15);
+}
   
 </style>
 
@@ -2094,8 +2119,13 @@ document.getElementById("popup").style.display="none";
 // send to WhatsApp
 function sendToWhatsapp(){
 
-let name=document.querySelectorAll(".popup-box input")[0].value;
-let number=document.querySelectorAll(".popup-box input")[1].value;
+let name = document.querySelector(".popup-box input[type='text']").value;
+let number = document.querySelector(".popup-box input[type='tel']").value;
+
+if(name === "" || number === ""){
+alert("Please fill all details");
+return;
+}
 
 let msg = New Customer\nName: ${name}\nNumber: ${number};
 

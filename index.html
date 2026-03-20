@@ -2143,11 +2143,13 @@ alert("Please fill all details");
 return;
 }
 
-let msg = "New Customer\nName: " + name + "\nNumber: " + number;
+let msg = `New Customer
+Name: ${name}
+Number: ${number}`;
 
-let url = "https://wa.me/918750020203?text=" + encodeURIComponent(msg);
+let phone = "918750020203"; // 👈 apna number yahan daal
 
-window.open(url, "_blank");
+window.open(https://wa.me/${phone}?text=${encodeURIComponent(msg)},"_blank");
 
 }
 </script>

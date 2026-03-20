@@ -1417,6 +1417,20 @@ transition:0.3s;
 .whatsapp:hover, .insta-float:hover, .whatsapp-float:hover{
 transform:scale(1.15);
 }
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:999;
+}
+
+.insta-float{
+position:fixed;
+bottom:80px;
+right:20px;
+z-index:999;
+}
   
 </style>
 
@@ -2066,8 +2080,6 @@ reveals[i].classList.add("active");
 
 </script>
 
-<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">Chat</a>
-
 <a href="https://www.instagram.com/veidahiintimates" class="insta-float" target="_blank">Instagram</a>
 
 <a href="https://wa.me/918750020203" target="_blank" class="whatsapp-float">
@@ -2108,15 +2120,19 @@ reveals[i].classList.add("active");
 <script>
 
 // auto open after 1.5 sec
+<script>
+
+// popup open
 setTimeout(()=>{
 document.getElementById("popup").style.display="flex";
 },1500);
 
+// close
 function closePopup(){
 document.getElementById("popup").style.display="none";
 }
 
-// send to WhatsApp
+// SEND TO WHATSAPP (FINAL WORKING)
 function sendToWhatsapp(){
 
 let name = document.querySelector(".popup-box input[type='text']").value;
@@ -2127,15 +2143,20 @@ alert("Please fill all details");
 return;
 }
 
-let msg = New Customer\nName: ${name}\nNumber: ${number};
+let msg = "New Customer\nName: " + name + "\nNumber: " + number;
 
-window.open(https://wa.me/918750020203?text=${encodeURIComponent(msg)},"_blank");
+let url = "https://wa.me/918750020203?text=" + encodeURIComponent(msg);
+
+window.open(url, "_blank");
 
 }
 </script>
   
 </body>
+
 <div class="popup-overlay" id="popup">
+...
+</div>
 
 <div class="popup-box">
 

@@ -1611,6 +1611,65 @@ right:20px;
 cursor:pointer;
 font-size:20px;
 }
+
+/* DISCOUNT POPUP */
+
+.popup-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:rgba(0,0,0,0.6);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+backdrop-filter:blur(6px);
+}
+
+.popup-box{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+max-width:320px;
+width:90%;
+animation:popupFade 0.5s ease;
+}
+
+.popup-box h2{
+color:#ff4da6;
+margin-bottom:10px;
+}
+
+.popup-box input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+.popup-btn{
+width:100%;
+padding:12px;
+background:linear-gradient(45deg,#ff4da6,#ff7ab8);
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-weight:600;
+margin-top:10px;
+}
+
+.close-popup{
+position:absolute;
+top:10px;
+right:15px;
+cursor:pointer;
+font-size:18px;
+}
   
 </style>
 
@@ -2504,7 +2563,69 @@ window.open(https://wa.me/918750020203?text=${encodeURIComponent(msg)},"_blank")
 
 }
 </script>
+<script>
+
+// show popup after 2 sec
+setTimeout(()=>{
+document.getElementById("popup").style.display="flex";
+},2000);
+
+// close popup
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+
+// send to WhatsApp
+function sendToWhatsapp(){
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+
+if(name=="" || phone==""){
+alert("Please fill details");
+return;
+}
+
+let msg = `New Customer (Discount)
+Name: ${name}
+Phone: ${phone}`;
+
+window.open(https://wa.me/918750020203?text=${encodeURIComponent(msg)},"_blank");
+
+}
+
+// EXIT POPUP (jab banda back kare)
+let shown = false;
+
+document.addEventListener("mouseout", function(e){
+if(e.clientY < 10 && !shown){
+document.getElementById("popup").style.display="flex";
+shown = true;
+}
+});
+
+</script>
+  
   </body>
+<div class="popup-overlay" id="popup">
+
+<div class="popup-box">
+
+<span class="close-popup" onclick="closePopup()">✖</span>
+
+<h2>🎁 Flat ₹50 OFF</h2>
+
+<p>Join Veidahi & get instant discount on your first order</p>
+
+<input type="text" id="name" placeholder="Enter your name">
+<input type="tel" id="phone" placeholder="Enter your number">
+
+<button class="popup-btn" onclick="sendToWhatsapp()">Get Discount</button>
+
+</div>
+
+</div>
+  
   <div class="discount-popup" id="discountPopup">
 
 <div class="discount-box">

@@ -1541,6 +1541,76 @@ border-radius:30px;
 cursor:pointer;
 font-weight:600;
 }
+
+/* DISCOUNT POPUP */
+
+.discount-popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:rgba(0,0,0,0.6);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+backdrop-filter:blur(6px);
+}
+
+.discount-box{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+max-width:320px;
+width:90%;
+animation:zoomIn 0.5s ease;
+box-shadow:0 10px 40px rgba(0,0,0,0.2);
+}
+
+@keyframes zoomIn{
+from{transform:scale(0.6);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+.discount-box h2{
+color:#ff4da6;
+margin-bottom:10px;
+}
+
+.discount-box p{
+font-size:14px;
+color:#555;
+margin-bottom:20px;
+}
+
+.discount-box input{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+.discount-btn{
+width:100%;
+padding:12px;
+background:linear-gradient(45deg,#ff4da6,#ff7ab8);
+color:white;
+border:none;
+border-radius:30px;
+font-weight:600;
+cursor:pointer;
+}
+
+.close-discount{
+position:absolute;
+top:15px;
+right:20px;
+cursor:pointer;
+font-size:20px;
+}
   
 </style>
 
@@ -2396,5 +2466,61 @@ window.open("https://wa.me/918750020203?text="+encodeURIComponent(msg),"_blank")
 </div>
 
 </div>
+  <script>
+
+// show only once
+window.onload = function(){
+
+if(!localStorage.getItem("discountShown")){
+
+setTimeout(()=>{
+document.getElementById("discountPopup").style.display="flex";
+localStorage.setItem("discountShown","yes");
+},2000);
+
+}
+
+}
+
+function closeDiscount(){
+document.getElementById("discountPopup").style.display="none";
+}
+
+function claimOffer(){
+
+let name = document.getElementById("dname").value;
+let number = document.getElementById("dnumber").value;
+
+if(name === "" || number === ""){
+alert("Please fill all details");
+return;
+}
+
+let msg = `₹100 OFF CLAIMED 🎁
+Name: ${name}
+Number: ${number}`;
+
+window.open(https://wa.me/918750020203?text=${encodeURIComponent(msg)},"_blank");
+
+}
+</script>
   </body>
+  <div class="discount-popup" id="discountPopup">
+
+<div class="discount-box">
+
+<span class="close-discount" onclick="closeDiscount()">✖</span>
+
+<h2>₹100 OFF 🎁</h2>
+
+<p>Join Veidahi & get exclusive discount on your first order</p>
+
+<input type="text" id="dname" placeholder="Enter your name">
+<input type="tel" id="dnumber" placeholder="Enter your number">
+
+<button class="discount-btn" onclick="claimOffer()">Claim Now</button>
+
+</div>
+
+</div>
 </html>

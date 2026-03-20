@@ -330,30 +330,46 @@ border-radius:10px;
 
 .new-card{
 position:relative;
+width:220px;
 min-width:220px;
 text-align:center;
+overflow:hidden;
+border-radius:12px;
 }
 
 .new-card img{
-width:220px;
+width:100%;
+display:block;
 border-radius:12px;
-transition:0.6s ease;
+transition:0.4s;
 }
 
-.new-card:hover .img1{
-transform:scale(1.1);
+/* second image hidden */
+.new-card .img2{
+position:absolute;
+top:0;
+left:0;
 opacity:0;
 }
 
+/* hover effect */
 .new-card:hover .img2{
 opacity:1;
-transform:scale(1.1);
-}
-.new-card p{
-margin-top:6px;
-font-size:14px;
 }
 
+.new-card:hover .img1{
+opacity:0;
+}
+
+/* mobile fix (tap effect) */
+@media(max-width:768px){
+.new-card:active .img2{
+opacity:1;
+}
+.new-card:active .img1{
+opacity:0;
+}
+}
   /* NEW ARRIVALS */
 
 .slider-row{
@@ -1699,6 +1715,38 @@ transition:0.3s;
 color:#ff4da6;
 letter-spacing:1px;
 }
+
+.new-card{
+position:relative;
+text-decoration:none;
+color:black;
+}
+
+.img-box{
+position:relative;
+width:220px;
+}
+
+.img-box img{
+width:100%;
+border-radius:10px;
+transition:0.4s;
+}
+
+.img2{
+position:absolute;
+top:0;
+left:0;
+opacity:0;
+}
+
+.new-card:hover .img2{
+opacity:1;
+}
+
+.new-card:hover .img1{
+opacity:0;
+}
   
 </style>
 
@@ -1822,92 +1870,116 @@ Our designs celebrate modern women who want to feel beautiful, powerful and comf
 
 <!-- 1 -->
 <a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Sports%20Bra" target="_blank" class="new-card">
+<div class="img-box">
 <img src="na1-1.jpg" class="img1">
 <img src="na1-2.jpg" class="img2">
+</div>
 <p>Sports Bra</p>
 </a>
 
 <!-- 2 -->
 <a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Gym%20Bra" target="_blank" class="new-card">
+<div class="img-box">
 <img src="na2-1.jpg" class="img1">
 <img src="na2-2.jpg" class="img2">
+</div>
 <p>Gym Bra</p>
 </a>
 
 <!-- 3 -->
 <a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Active%20Bra" target="_blank" class="new-card">
+<div class="img-box">
 <img src="na3-1.jpg" class="img1">
 <img src="na3-2.jpg" class="img2">
+</div>
 <p>Active Bra</p>
 </a>
 
 <!-- 4 -->
 <a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Bold%20Classic" target="_blank" class="new-card">
+<div class="img-box">
 <img src="na4-1.jpg" class="img1">
 <img src="na4-2.jpg" class="img2">
+</div>
 <p>Bold Classic</p>
 </a>
 
 <!-- 5 -->
 <a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Premium%20Bold%20Classic" target="_blank" class="new-card">
+<div class="img-box">
 <img src="na5-1.jpg" class="img1">
 <img src="na5-2.jpg" class="img2">
+</div>
 <p>Premium Bold Classic</p>
 </a>
 
 <!-- 6 -->
 <a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Naughty%20With%20Play" target="_blank" class="new-card">
+<div class="img-box">
 <img src="na6-1.jpg" class="img1">
 <img src="na6-2.jpg" class="img2">
+</div>
 <p>Naughty With Play</p>
 </a>
 
 <!-- 7 -->
-<a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Soft%20Comfort%20Bra" target="_blank" class="new-card">
+<a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Everyday%20Bra" target="_blank" class="new-card">
+<div class="img-box">
 <img src="na7-1.jpg" class="img1">
 <img src="na7-2.jpg" class="img2">
-<p>Everyday bra</p>
+</div>
+<p>Everyday Bra</p>
 </a>
 
 <!-- 8 -->
 <a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Everyday%20Essential" target="_blank" class="new-card">
+<div class="img-box">
 <img src="na8-1.jpg" class="img1">
 <img src="na8-2.jpg" class="img2">
+</div>
 <p>Everyday Essential</p>
 </a>
 
 <!-- 9 -->
 <a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Classic%20Fit" target="_blank" class="new-card">
+<div class="img-box">
 <img src="na9-1.jpg" class="img1">
 <img src="na9-2.jpg" class="img2">
+</div>
 <p>Classic Fit</p>
 </a>
 
 <!-- 10 -->
 <a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Luxury%20Lace" target="_blank" class="new-card">
+<div class="img-box">
 <img src="na10-1.jpg" class="img1">
 <img src="na10-2.jpg" class="img2">
-<p>Luxury Look bra</p>
+</div>
+<p>Luxury Look Bra</p>
 </a>
 
 <!-- 11 -->
-<a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Modern%20Shape" target="_blank" class="new-card">
+<a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Modern%20Wings%20Bra" target="_blank" class="new-card">
+<div class="img-box">
 <img src="na11-1.jpg" class="img1">
 <img src="na11-2.jpg" class="img2">
+</div>
 <p>Modern Wings Bra</p>
 </a>
 
 <!-- 12 -->
-<a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Elite%20Comfort" target="_blank" class="new-card">
+<a href="https://wa.me/918750020203?text=I%20am%20interested%20in%20Elite%20Wings%20Comfort" target="_blank" class="new-card">
+<div class="img-box">
 <img src="na12-1.jpg" class="img1">
 <img src="na12-2.jpg" class="img2">
+</div>
 <p>Elite Wings Comfort</p>
 </a>
 
 </div>
-</div>
-  
+
 </section>
+   
 <div class="divider"></div>
 
 <section class="section reveal">

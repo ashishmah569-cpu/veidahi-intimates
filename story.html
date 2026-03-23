@@ -10,7 +10,6 @@
 <style>
 
 :root{
---gold:#d4af37;
 --pink:#ff6aa7;
 --dark:#111;
 }
@@ -18,99 +17,78 @@
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
-background:#0a0a0a;
+background:#000;
 color:white;
 overflow-x:hidden;
 }
 
-/* BACKGROUND GLOW */
-
-body::before{
-content:"";
-position:fixed;
-width:600px;
-height:600px;
-background:radial-gradient(circle,rgba(255,100,170,0.2),transparent);
-top:-150px;
-left:-150px;
-filter:blur(100px);
-z-index:-1;
-}
-
-/* HERO */
+/* VIDEO HERO */
 
 .story-hero{
+position:relative;
 height:100vh;
 display:flex;
-flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
-position:relative;
+overflow:hidden;
 }
 
-/* TEXT ANIMATION */
-
-.story-hero h1{
-font-size:60px;
-letter-spacing:6px;
-background:linear-gradient(45deg,#d4af37,#fff,#ff6aa7,#d4af37);
-background-size:300% 300%;
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:shine 6s infinite linear;
+.story-hero video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
 }
 
-@keyframes shine{
-0%{background-position:0%}
-100%{background-position:200%}
+/* DARK OVERLAY */
+
+.story-hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
 }
 
-.story-hero span{
-margin-top:10px;
-color:#aaa;
-letter-spacing:3px;
+/* TEXT */
+
+.hero-text{
+z-index:2;
 animation:fadeUp 2s ease;
 }
 
-.story-hero p{
-margin-top:20px;
+.hero-text h1{
+font-size:60px;
+letter-spacing:6px;
+background:linear-gradient(45deg,#fff,#ff6aa7,#fff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+color:#ddd;
 max-width:600px;
-color:#bbb;
-line-height:1.7;
-animation:fadeUp 2.5s ease;
+margin:auto;
+margin-top:15px;
 }
 
-/* FLOAT TEXT */
+/* BUTTON */
 
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-100%{transform:translateY(0)}
-}
-
-.story-hero{
-animation:float 6s ease-in-out infinite;
-}
-
-/* IMAGE FIX (FULL IMAGE SHOW) */
-
-.founder-image{
-text-align:center;
-margin-top:-60px;
-}
-
-.founder-image img{
-width:280px;
-height:auto; /* FIX */
-object-fit:contain; /* FIX */
-border-radius:20px;
-box-shadow:0 20px 60px rgba(0,0,0,0.7);
-transition:0.5s;
-}
-
-.founder-image img:hover{
-transform:scale(1.08) rotate(1deg);
+.play-btn{
+margin-top:25px;
+padding:12px 30px;
+background:linear-gradient(45deg,#ff6aa7,#ff3d8d);
+border:none;
+color:white;
+border-radius:30px;
+cursor:pointer;
+font-weight:600;
 }
 
 /* CONTENT */
@@ -125,9 +103,7 @@ text-align:center;
 .story-content h2{
 font-size:34px;
 margin-bottom:30px;
-background:linear-gradient(45deg,#ff6aa7,#ffd6eb);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+color:#ff6aa7;
 }
 
 .story-content p{
@@ -139,42 +115,9 @@ transform:translateY(40px);
 transition:0.8s;
 }
 
-/* SCROLL ANIMATION */
-
 .story-content p.show{
 opacity:1;
 transform:translateY(0);
-}
-
-/* HIGHLIGHT */
-
-.highlight{
-background:linear-gradient(45deg,#111,#1a1a1a);
-padding:50px 20px;
-border-radius:20px;
-margin:50px auto;
-max-width:800px;
-box-shadow:0 10px 40px rgba(0,0,0,0.5);
-transition:0.4s;
-}
-
-.highlight:hover{
-transform:scale(1.03);
-}
-
-.highlight h3{
-color:var(--pink);
-}
-
-/* QUOTE */
-
-.quote{
-text-align:center;
-font-size:26px;
-font-style:italic;
-color:#ddd;
-margin:80px 20px;
-animation:fadeUp 2s ease;
 }
 
 /* GALLERY */
@@ -192,34 +135,23 @@ height:260px;
 object-fit:cover;
 border-radius:15px;
 transition:0.6s;
-filter:brightness(0.8);
 }
 
 .story-gallery img:hover{
-transform:scale(1.12);
-filter:brightness(1.2);
+transform:scale(1.1);
 }
 
-/* BUTTON */
+/* BACK BUTTON */
 
 .back-btn{
 display:inline-block;
 margin:50px auto;
 padding:14px 36px;
-background:linear-gradient(45deg,#ff6aa7,#ff3d8d);
+background:#ff6aa7;
 color:white;
 text-decoration:none;
 border-radius:30px;
-font-weight:600;
-transition:0.4s;
-box-shadow:0 10px 30px rgba(255,80,150,0.5);
 }
-
-.back-btn:hover{
-transform:scale(1.1);
-}
-
-/* FADE */
 
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(40px);}
@@ -230,12 +162,8 @@ to{opacity:1;transform:translateY(0);}
 
 @media(max-width:768px){
 
-.story-hero h1{
+.hero-text h1{
 font-size:32px;
-}
-
-.story-content h2{
-font-size:24px;
 }
 
 }
@@ -245,37 +173,37 @@ font-size:24px;
 
 <body>
 
+<!-- HERO VIDEO -->
+
 <div class="story-hero">
+
+<video id="bgVideo" autoplay muted loop>
+<source src="factory.mp4" type="video/mp4">
+</video>
+
+<div class="hero-text">
 <h1>VEIDAHI</h1>
-<span>Founded by Ashish Kohli</span>
-<p>
-From struggle to strength — a journey built on passion, resilience and vision.
-</p>
+<p>Real people. Real work. Real passion behind every product.</p>
+
+<button class="play-btn" onclick="toggleVideo()">Pause Video</button>
 </div>
 
-<div class="founder-image">
-<img src="founder.jpg">
 </div>
+
+<!-- STORY -->
 
 <div class="story-content">
 
-<h2>From Establishment to Brand</h2>
+<h2>Our Journey</h2>
 
-<p>Veidahi began in 2019 with a vision to create something meaningful.</p>
-<p>The journey was not easy. Challenges and setbacks made us stronger.</p>
-<p>We focused on quality, trust and comfort.</p>
-<p>Today Veidahi stands for confidence and elegance.</p>
+<p>Veidahi started with a simple dream — to build something meaningful.</p>
+<p>Behind every product, there is a team, a story and a lot of hard work.</p>
+<p>Our factory is not just a workplace, it's where passion meets creation.</p>
+<p>We believe in quality, trust and building a brand people connect with.</p>
 
 </div>
 
-<div class="highlight">
-<h3>Why Veidahi Exists</h3>
-<p>To create lingerie that feels as good as it looks.</p>
-</div>
-
-<div class="quote">
-The foundation was built with courage — the future will be built with vision.
-</div>
+<!-- GALLERY -->
 
 <div class="story-gallery">
 <img src="factory1.jpg">
@@ -289,7 +217,7 @@ The foundation was built with courage — the future will be built with vision.
 
 <script>
 
-// SCROLL TEXT ANIMATION
+// TEXT ANIMATION
 let texts = document.querySelectorAll(".story-content p");
 
 window.addEventListener("scroll",()=>{
@@ -300,6 +228,17 @@ el.classList.add("show");
 }
 });
 });
+
+// VIDEO CONTROL
+function toggleVideo(){
+let video = document.getElementById("bgVideo");
+
+if(video.paused){
+video.play();
+}else{
+video.pause();
+}
+}
 
 </script>
 

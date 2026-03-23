@@ -5,23 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Story | Veidahi Intimates</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" r<div class="story-video">
-
-<video autoplay muted loop playsinline id="brandVideo">
-<source src="video.mp4" type="video/mp4">
-Your browser does not support video.
-</video>
-
-<button class="video-btn" onclick="toggleVideo()">Pause</button>
-
-</div>viel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-
-:root{
---pink:#ff6aa7;
---dark:#111;
-}
 
 body{
 margin:0;
@@ -31,7 +17,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* VIDEO HERO */
+/* HERO VIDEO */
 
 .story-hero{
 position:relative;
@@ -53,28 +39,22 @@ object-fit:cover;
 z-index:-1;
 }
 
-/* DARK OVERLAY */
-
 .story-hero::after{
 content:"";
 position:absolute;
-top:0;
-left:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.5);
 }
 
-/* TEXT */
-
 .hero-text{
 z-index:2;
-animation:fadeUp 2s ease;
+animation:fadeUp 1.5s ease;
 }
 
 .hero-text h1{
-font-size:60px;
-letter-spacing:6px;
+font-size:55px;
+letter-spacing:5px;
 background:linear-gradient(45deg,#fff,#ff6aa7,#fff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
@@ -82,43 +62,38 @@ background:linear-gradient(45deg,#fff,#ff6aa7,#fff);
 
 .hero-text p{
 color:#ddd;
-max-width:600px;
-margin:auto;
-margin-top:15px;
+margin-top:10px;
 }
 
 /* BUTTON */
 
-.play-btn{
-margin-top:25px;
-padding:12px 30px;
-background:linear-gradient(45deg,#ff6aa7,#ff3d8d);
+.video-btn{
+margin-top:20px;
+padding:12px 28px;
 border:none;
+background:linear-gradient(45deg,#ff6aa7,#ff3d8d);
 color:white;
 border-radius:30px;
 cursor:pointer;
-font-weight:600;
 }
 
 /* CONTENT */
 
 .story-content{
-max-width:850px;
+max-width:800px;
 margin:auto;
 padding:80px 20px;
 text-align:center;
 }
 
 .story-content h2{
-font-size:34px;
-margin-bottom:30px;
 color:#ff6aa7;
+margin-bottom:30px;
 }
 
 .story-content p{
 color:#ccc;
 margin-bottom:20px;
-line-height:1.8;
 opacity:0;
 transform:translateY(40px);
 transition:0.8s;
@@ -140,109 +115,68 @@ padding:20px;
 
 .story-gallery img{
 width:100%;
-height:260px;
+height:250px;
 object-fit:cover;
-border-radius:15px;
-transition:0.6s;
+border-radius:12px;
+transition:0.5s;
 }
 
 .story-gallery img:hover{
-transform:scale(1.1);
+transform:scale(1.08);
 }
 
 /* BACK BUTTON */
 
 .back-btn{
 display:inline-block;
-margin:50px auto;
-padding:14px 36px;
+margin:40px;
+padding:12px 30px;
 background:#ff6aa7;
 color:white;
 text-decoration:none;
 border-radius:30px;
 }
 
+/* ANIMATION */
+
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(40px);}
 to{opacity:1;transform:translateY(0);}
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero-text h1{
-font-size:32px;
-}
-
-}
-
-#bgVideo{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-1;
-}
-
-.story-video{
-position:relative;
-max-width:900px;
-margin:40px auto;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 10px 40px rgba(0,0,0,0.2);
-}
-
-.story-video video{
-width:100%;
-display:block;
-}
-
-.video-btn{
-position:absolute;
-bottom:15px;
-right:15px;
-padding:10px 20px;
-border:none;
-background:rgba(0,0,0,0.6);
-color:white;
-border-radius:30px;
-cursor:pointer;
-}
-  
 </style>
+
 </head>
 
 <body>
 
 <!-- HERO VIDEO -->
 
-<div class="story-video">
+<div class="story-hero">
 
 <video autoplay muted loop playsinline id="brandVideo">
 <source src="video.mp4" type="video/mp4">
-Your browser does not support video.
 </video>
 
+<div class="hero-text">
+<h1>OUR STORY</h1>
+<p>Crafting confidence, comfort & elegance</p>
+
 <button class="video-btn" onclick="toggleVideo()">Pause</button>
+</div>
 
 </div>
-  
-</section>
-  
-<!-- STORY -->
+
+<!-- STORY CONTENT -->
 
 <div class="story-content">
 
 <h2>Our Journey</h2>
 
 <p>Veidahi started with a simple dream — to build something meaningful.</p>
-<p>Behind every product, there is a team, a story and a lot of hard work.</p>
-<p>Our factory is not just a workplace, it's where passion meets creation.</p>
-<p>We believe in quality, trust and building a brand people connect with.</p>
+<p>Behind every product, there is passion, dedication and craftsmanship.</p>
+<p>Our journey is about creating comfort, confidence and elegance.</p>
+<p>We are building not just products, but a brand women trust.</p>
 
 </div>
 
@@ -274,35 +208,16 @@ el.classList.add("show");
 
 // VIDEO CONTROL
 function toggleVideo(){
-let video = document.getElementById("bgVideo");
-
-if(video.paused){
-video.play();
-}else{
-video.pause();
-}
-}
-
-</script>
-
-<script>
-
-function toggleVideo(){
-
 let video = document.getElementById("brandVideo");
-let btn = document.querySelector(".video-btn");
 
 if(video.paused){
 video.play();
-btn.innerText = "Pause";
 }else{
 video.pause();
-btn.innerText = "Play";
 }
-
 }
 
 </script>
-  
+
 </body>
 </html>

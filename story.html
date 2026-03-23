@@ -5,7 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Story | Veidahi Intimates</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" r<div class="story-video">
+
+<video autoplay muted loop playsinline id="brandVideo">
+<source src="video.mp4" type="video/mp4">
+Your browser does not support video.
+</video>
+
+<button class="video-btn" onclick="toggleVideo()">Pause</button>
+
+</div>viel="stylesheet">
 
 <style>
 
@@ -177,6 +186,32 @@ height:100%;
 object-fit:cover;
 z-index:-1;
 }
+
+.story-video{
+position:relative;
+max-width:900px;
+margin:40px auto;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 40px rgba(0,0,0,0.2);
+}
+
+.story-video video{
+width:100%;
+display:block;
+}
+
+.video-btn{
+position:absolute;
+bottom:15px;
+right:15px;
+padding:10px 20px;
+border:none;
+background:rgba(0,0,0,0.6);
+color:white;
+border-radius:30px;
+cursor:pointer;
+}
   
 </style>
 </head>
@@ -185,19 +220,17 @@ z-index:-1;
 
 <!-- HERO VIDEO -->
 
-<section class="story-hero">
+<div class="story-video">
 
-<video autoplay muted loop playsinline id="bgVideo">
-<source src="factory.mp4" type="video/mp4">
+<video autoplay muted loop playsinline id="brandVideo">
+<source src="video.mp4" type="video/mp4">
+Your browser does not support video.
 </video>
 
-<div class="hero-text">
-<h1>VEIDAHI</h1>
-<p>Real people. Real work. Real passion behind every product.</p>
+<button class="video-btn" onclick="toggleVideo()">Pause</button>
 
-<button class="play-btn" onclick="toggleVideo()">Pause Video</button>
 </div>
-
+  
 </section>
   
 <!-- STORY -->
@@ -252,5 +285,24 @@ video.pause();
 
 </script>
 
+<script>
+
+function toggleVideo(){
+
+let video = document.getElementById("brandVideo");
+let btn = document.querySelector(".video-btn");
+
+if(video.paused){
+video.play();
+btn.innerText = "Pause";
+}else{
+video.pause();
+btn.innerText = "Play";
+}
+
+}
+
+</script>
+  
 </body>
 </html>

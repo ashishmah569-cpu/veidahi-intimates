@@ -36,7 +36,29 @@ overflow-x:hidden;
 position:relative;
 width:100%;
 height:90vh;
+min-height:500px;
 overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* MOBILE FIX */
+@media(max-width:768px){
+
+.hero{
+height:auto;
+min-height:70vh;
+padding:60px 20px;
+}
+
+.hero-text{
+position:relative;
+transform:none;
+top:auto;
+left:auto;
+}
+
 }
 
 .hero-track{
@@ -76,12 +98,12 @@ text-align:center;
 z-index:2;
 }
 
-.hero-text h1{
+-text h1{
 font-size:50px;
 letter-spacing:4px;
 }
 
-.hero-text{
+-text{
 animation:floatText 4s ease-in-out infinite;
 }
 
@@ -101,7 +123,7 @@ transform:translate(-50%,-50%) translateY(0px);
 
 }
   
-.hero-text p{
+-text p{
 font-size:20px;
 }
 
@@ -109,15 +131,15 @@ font-size:20px;
 
 @media(max-width:768px){
 
-.hero{
+{
 height:60vh;
 }
 
-.hero-text h1{
+-text h1{
 font-size:28px;
 }
 
-.hero-text p{
+-text p{
 font-size:14px;
 }
 
@@ -289,7 +311,7 @@ text-decoration:none;
 
 @media(max-width:768px){
 
-.hero-slider img{
+-slider img{
 height:300px;
 }
 
@@ -501,7 +523,7 @@ background:black;
 color:white;
 }
 
-.hero-text p{
+-text p{
 font-size:20px;
 animation:fadeText 3s infinite alternate;
 }
@@ -519,7 +541,7 @@ letter-spacing:3px;
 }
 
 }
-.hero-text h1{
+-text h1{
 
 font-size:52px;
 
@@ -1115,7 +1137,7 @@ transform:translateY(0);
 
 }
 
-.hero::before{
+::before{
 
 content:"";
 
@@ -1208,7 +1230,7 @@ font-weight:600;
 
 }
 
-.hero-text h1{
+-text h1{
 
 background:linear-gradient(45deg,#ff4da6,#ff7ab8);
 
@@ -1843,9 +1865,13 @@ right:20px;
 transition: transform 1.2s ease-in-out;
 
 @media(max-width:768px){
-.hero{
+{
 height:70vh;
 }
+}
+
+.top-banner{
+display:none;
 }
   
 </style>
@@ -1860,22 +1886,6 @@ height:70vh;
 
 <div class="logo-area">
 <img src="veidahi-logo.png" class="logo">
-</div>
-
-<div class="menu">
-
-  <button onclick="openSize()">Size Guide</button>
-  
-<button onclick="openProducts()">Products</button>
-
-<button onclick="openContact()">Contact</button>
-
-<button onclick="openSearch()">Search</button>
-
-</div>
-
-<div class="top-banner">
-Free Shipping Across India | Premium Comfort | Trusted By Women
 </div>
   
 </header>
@@ -2600,7 +2610,7 @@ Designed with love in India ❤️
 
 let heroIndex = 0
 const track = document.getElementById("heroTrack")
-const slides = document.querySelectorAll(".hero-track img")
+const slides = document.querySelectorAll("-track img")
 
 function slideHero(){
 

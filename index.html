@@ -1845,6 +1845,23 @@ height:70vh;
 .top-banner{
 display:none;
 }
+
+/* FIX ALL HEADINGS CENTER */
+
+h1, h2, h3{
+text-align:center;
+margin-left:auto;
+margin-right:auto;
+}
+
+.section{
+text-align:center !important;
+}
+
+.section h2{
+width:100%;
+display:block;
+}
   
 </style>
 
@@ -2580,24 +2597,27 @@ Designed with love in India ❤️
 
 <script>
 
-let heroIndex = 0
-const track = document.getElementById("heroTrack")
-const slides = document.querySelectorAll("-track img")
+let heroIndex = 0;
 
 function slideHero(){
 
-heroIndex++
+const track = document.getElementById("heroTrack");
+const slides = document.querySelectorAll(".hero-track img");
+
+if(!track || slides.length === 0) return;
+
+heroIndex++;
 
 if(heroIndex >= slides.length){
-heroIndex = 0
+heroIndex = 0;
 }
 
-track.style.transform = "translateX(-"+heroIndex*100+"vw)"
+track.style.transform = "translateX(-"+heroIndex*100+"vw)";
 
 }
 
-setInterval(slideHero,4000)
-  
+setInterval(slideHero,4000);
+
 </script>
 
 <script>

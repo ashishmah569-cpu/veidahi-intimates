@@ -97,7 +97,7 @@ text-align:center;
 z-index:2;
 }
 
--text h1{
+.hero-text h1
 font-size:50px;
 letter-spacing:4px;
 }
@@ -1872,6 +1872,72 @@ height:70vh;
 
 .top-banner{
 display:none;
+}
+
+/* ===== FINAL PREMIUM COLOR FIX ===== */
+
+:root{
+--primary:#000;
+--accent:#d4af37; /* gold */
+--light:#f5f5f5;
+}
+
+/* remove pink everywhere */
+*{
+box-shadow:none !important;
+}
+
+/* buttons */
+.shop-btn,
+.buy-btn,
+.popup-btn,
+.discount-btn{
+background:linear-gradient(45deg,#000,#333) !important;
+color:white;
+}
+
+/* hover gold */
+.shop-btn:hover,
+.buy-btn:hover{
+background:#d4af37 !important;
+color:black;
+}
+
+/* headings underline */
+.section h2:after{
+background:linear-gradient(45deg,#000,#d4af37) !important;
+}
+
+/* borders */
+.product-card:hover img{
+border:2px solid #d4af37 !important;
+}
+
+/* remove pink text */
+.rating-star{
+color:#d4af37 !important;
+}
+
+/* selection */
+::selection{
+background:#000 !important;
+color:#fff;
+}
+
+/* popup button */
+.popup-btn{
+background:black !important;
+}
+
+/* exit popup */
+.exit-box h2,
+.discount-box h2{
+color:#000 !important;
+}
+
+/* remove all pink glow */
+.shop-btn:hover{
+box-shadow:0 10px 30px rgba(0,0,0,0.3) !important;
 }
   
 </style>

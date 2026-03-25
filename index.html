@@ -2013,6 +2013,51 @@ cursor:pointer;
 }
 
 background:rgba(0,0,0,0.7);
+
+/* PREMIUM HEADING HIGHLIGHT */
+
+.section h2{
+font-size:34px;
+font-weight:700;
+letter-spacing:2px;
+position:relative;
+display:inline-block;
+padding-bottom:10px;
+background:linear-gradient(45deg,#ff4da6,#ff7ab8,#ffd6eb);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:shine 3s infinite alternate;
+}
+
+/* underline glow */
+
+.section h2::after{
+content:"";
+position:absolute;
+left:50%;
+bottom:0;
+transform:translateX(-50%);
+width:60%;
+height:3px;
+background:linear-gradient(90deg,#ff4da6,#ff7ab8);
+border-radius:10px;
+animation:lineGlow 2s infinite alternate;
+}
+
+@keyframes shine{
+0%{letter-spacing:2px; opacity:0.8;}
+100%{letter-spacing:4px; opacity:1;}
+}
+
+@keyframes lineGlow{
+0%{width:40%; opacity:0.6;}
+100%{width:80%; opacity:1;}
+}
+
+.section h2:hover{
+transform:scale(1.05);
+transition:0.3s;
+}
   
 </style>
 
@@ -2074,7 +2119,7 @@ background:rgba(0,0,0,0.7);
 <section class="section reveal">
 
 <h2>Featured Collection</h2>
-<h3>The Veidahi Experience</h3>
+<h2>The Veidahi Experience</h3>
 
 <p style="max-width:700px;margin:auto;color:#555;line-height:1.7;">
 
@@ -2373,22 +2418,22 @@ Our designs celebrate modern women who want to feel beautiful, powerful and comf
 <div class="promise-grid">
 
 <div class="promise-box">
-<h3>Premium Quality</h3>
+<h2>Premium Quality</h3>
 <p>Every Veidahi product is crafted with carefully selected fabrics to ensure lasting comfort and elegance.</p>
 </div>
 
 <div class="promise-box">
-<h3>Comfort First</h3>
+<h2>Comfort First</h3>
 <p>Designed for everyday confidence with soft materials and perfect fitting for modern women.</p>
 </div>
 
 <div class="promise-box">
-<h3>Elegant Designs</h3>
+<h2>Elegant Designs</h3>
 <p>Minimal, stylish and timeless designs that make you feel confident and beautiful.</p>
 </div>
 
 <div class="promise-box">
-<h3>Trusted Brand</h3>
+<h2>Trusted Brand</h3>
 <p>Veidahi focuses on quality, trust and creating products that women truly love.</p>
 </div>
 
@@ -2713,7 +2758,7 @@ From daily comfort wear to stylish intimatewear, Veidahi continues to receive ap
   
 <footer>
 
-<h3>VEIDAHI</h3>
+<h2>VEIDAHI</h3>
 
 <p>Luxury Lingerie & Western Wear</p>
 

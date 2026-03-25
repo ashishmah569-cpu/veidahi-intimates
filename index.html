@@ -42,7 +42,87 @@ align-items:center;
 justify-content:center;
 }
 
+/* HERO IMAGES */
+
+.hero-track{
+display:flex;
+width:100%;
+height:100%;
+transition:transform 1s ease;
+}
+
+.hero-track img{
+width:100vw;
+height:100%;
+object-fit:cover;
+flex-shrink:0;
+}
+
+/* OVERLAY */
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+}
+
+/* TEXT */
+
+.hero-text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+text-align:center;
+z-index:2;
+animation:floatText 4s ease-in-out infinite;
+}
+
+/* HEADING */
+
+.hero-text h1{
+font-size:56px;
+letter-spacing:5px;
+font-weight:600;
+background:linear-gradient(45deg,#d4af37,#fff,#d4af37);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:luxuryFade 3s infinite alternate;
+}
+
+/* SUBTEXT */
+
+.hero-text p{
+font-size:20px;
+margin-top:10px;
+animation:fadeText 3s infinite alternate;
+}
+
+/* ANIMATIONS */
+
+@keyframes floatText{
+0%{transform:translate(-50%,-50%) translateY(0);}
+50%{transform:translate(-50%,-50%) translateY(-10px);}
+100%{transform:translate(-50%,-50%) translateY(0);}
+}
+
+@keyframes fadeText{
+0%{opacity:0.5; letter-spacing:1px;}
+100%{opacity:1; letter-spacing:3px;}
+}
+
+@keyframes luxuryFade{
+0%{letter-spacing:5px; opacity:0.8;}
+100%{letter-spacing:8px; opacity:1;}
+}
+
 /* MOBILE FIX */
+
 @media(max-width:768px){
 
 .hero{
@@ -58,83 +138,12 @@ top:auto;
 left:auto;
 }
 
-}
-
-.hero-track{
-display:flex;
-width:100%;
-height:100%;
-transition:transform 1s ease;
-}
-
-.hero-track img{
-width:100vw;
-height:100%;
-object-fit:cover;
-flex-shrink:0;
-}
-/* overlay */
-
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.3);
-}
-
-/* text */
-
-.hero-text{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-color:white;
-text-align:center;
-z-index:2;
-}
-
 .hero-text h1{
-font-size:50px;
-letter-spacing:4px;
-}
-  
-.hero-text{
-animation:floatText 4s ease-in-out infinite;
+font-size:30px;
+letter-spacing:2px;
 }
 
 .hero-text p{
-font-size:20px;
-}
-
-@keyframes floatText{
-
-0%{
-transform:translate(-50%,-50%) translateY(0px);
-}
-
-50%{
-transform:translate(-50%,-50%) translateY(-10px);
-}
-
-100%{
-transform:translate(-50%,-50%) translateY(0px);
-}
-
-}
-  
-.hero-text p{
-font-size:20px;
-}
-
--text h1{
-font-size:28px;
-}
-
--text p{
 font-size:14px;
 }
 

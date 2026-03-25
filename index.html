@@ -86,15 +86,17 @@ animation:floatText 4s ease-in-out infinite;
 /* HEADING */
 
 .hero-text h1{
-font-size:56px;
-letter-spacing:5px;
-font-weight:600;
-background:linear-gradient(45deg,#d4af37,#fff,#d4af37);
+font-size:52px;
+background:linear-gradient(45deg,#ff4da6,#ff9ecf,#ffd6eb);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-animation:luxuryFade 3s infinite alternate;
+animation:shine 3s infinite linear;
 }
 
+@keyframes shine{
+0%{background-position:0%;}
+100%{background-position:200%;}
+}
 /* SUBTEXT */
 
 .hero-text p{
@@ -207,8 +209,9 @@ border-radius:12px;
 transition:0.4s;
 }
 
-.product-card:hover img{
-transform:scale(1.05);
+.product-card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 20px 50px rgba(255, 105, 180, 0.4);
 }
 
 .product-card p{
@@ -1893,6 +1896,38 @@ margin:auto;
 position:relative;
 left:0;
 right:0;
+}
+
+.product-card img{
+transition:0.5s;
+}
+
+.product-card:hover img{
+transform:scale(1.08);
+filter:brightness(1.1);
+}
+
+.product-card{
+animation:floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-6px);}
+100%{transform:translateY(0px);}
+}
+
+body{
+cursor:default;
+}
+
+a:hover, button:hover{
+cursor:pointer;
+box-shadow:0 0 10px rgba(255,105,180,0.6);
+}
+
+.section:nth-child(even){
+background:linear-gradient(180deg,#fff0f6,#fff);
 }
   
 </style>

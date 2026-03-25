@@ -22,7 +22,8 @@
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
-background:#ffffff;
+background:linear-gradient(180deg,#0a0a0a,#111,#1a1a1a);
+color:#eee;
 }
 html,body{
 max-width:100%;
@@ -1928,6 +1929,78 @@ box-shadow:0 0 10px rgba(255,105,180,0.6);
 
 .section:nth-child(even){
 background:linear-gradient(180deg,#fff0f6,#fff);
+}
+
+:root{
+--main-color:#ff4da6;
+--accent-color:#ff8cc6;
+--gold:#d4af37;
+}
+
+h1, h2{
+background:linear-gradient(45deg,var(--gold),#fff,var(--gold));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+button, .shop-btn{
+background:linear-gradient(45deg,#ff4da6,#ff7ab8);
+box-shadow:0 0 20px rgba(255,80,150,0.5);
+border:none;
+color:white;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 30px rgba(255,80,150,0.8);
+}
+
+.product-card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+color:white;
+}
+
+.product-card p{
+color:#eee;
+}
+
+.product-card img{
+transition:0.5s;
+}
+
+.product-card:hover img{
+transform:scale(1.08);
+filter:brightness(1.1);
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,rgba(255,0,120,0.3),transparent);
+top:-150px;
+left:-150px;
+filter:blur(100px);
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+.section:nth-child(even){
+background:#111;
+}
+
+.section:nth-child(odd){
+background:#0d0d0d;
+}
+
+body:hover{
+cursor:pointer;
 }
   
 </style>

@@ -80,7 +80,7 @@ cursor:pointer;
 /* CONTENT */
 
 .story-content{
-max-width:800px;
+max-width:900px;
 margin:auto;
 padding:80px 20px;
 text-align:center;
@@ -91,15 +91,17 @@ color:#ff6aa7;
 margin-bottom:30px;
 }
 
-.story-content p{
-color:#ccc;
-margin-bottom:20px;
+.story-lines p{
 opacity:0;
 transform:translateY(40px);
 transition:0.8s;
+font-size:18px;
+line-height:1.8;
+color:#ccc;
+margin-bottom:20px;
 }
 
-.story-content p.show{
+.story-lines p.show{
 opacity:1;
 transform:translateY(0);
 }
@@ -113,16 +115,21 @@ gap:20px;
 padding:20px;
 }
 
-.story-gallery img{
+.img-box{
+overflow:hidden;
+border-radius:15px;
+}
+
+.img-box img{
 width:100%;
 height:250px;
 object-fit:cover;
-border-radius:12px;
-transition:0.5s;
+transition:0.6s;
 }
 
-.story-gallery img:hover{
-transform:scale(1.08);
+.img-box:hover img{
+transform:scale(1.12) rotate(1deg);
+filter:brightness(1.1);
 }
 
 /* BACK BUTTON */
@@ -144,37 +151,7 @@ from{opacity:0;transform:translateY(40px);}
 to{opacity:1;transform:translateY(0);}
 }
 
-.story-lines p{
-opacity:0;
-transform:translateY(50px);
-transition:0.8s;
-font-size:18px;
-line-height:1.8;
-color:#ddd;
-margin-bottom:15px;
-}
-
-.story-lines p.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.img-box{
-overflow:hidden;
-border-radius:15px;
-}
-
-.img-box img{
-width:100%;
-height:250px;
-object-fit:cover;
-transition:0.6s;
-}
-
-.img-box:hover img{
-transform:scale(1.12) rotate(1deg);
-filter:brightness(1.1);
-}
+/* GLOW EFFECT */
 
 .story-hero::before{
 content:"";
@@ -186,9 +163,8 @@ top:-100px;
 left:-100px;
 filter:blur(80px);
 }
-  
-</style>
 
+</style>
 </head>
 
 <body>
@@ -205,15 +181,7 @@ filter:blur(80px);
 <h1>OUR STORY</h1>
 <p>Crafting confidence, comfort & elegance</p>
 
-<button class="video-btn" onclick="toggleVideo()">Pause</button>
-</div>
-
-</div>
-  
-<h1>OUR STORY</h1>
-<p>Crafting confidence, comfort & elegance</p>
-
-<button class="video-btn" onclick="toggleVideo()">Pause</button>
+<button class="video-btn" onclick="toggleVideo()">Pause / Play</button>
 </div>
 
 </div>
@@ -222,43 +190,23 @@ filter:blur(80px);
 
 <div class="story-content">
 
-<section class="section">
-
-<h2>Our Story</h2>
-
-<div class="story-content">
-
 <h2>Our Story</h2>
 
 <div class="story-lines">
 
-<p>
-Our journey began in 2019, when I and my partner took a small but meaningful step...
-</p>
+<p>Our journey began in 2019, when I and my partner took a small but meaningful step and started this company with the name VEIDAHI ESTABLISHED19. At that time, we didn’t have everything figured out, but what we did have was a strong belief in ourselves and a dream to build something of our own....</p>
 
-<p>
-The last 6 years have been full of ups and downs...
-</p>
+<p>The last 6 years have been full of ups and downs. There were moments of doubt, challenges that tested our patience, and times when things didn’t go as planned. But no matter how difficult the journey became, we never gave up. We stood by each other, kept learning, kept improving, and continued moving forward with determination....</p>
 
-<p>
-We worked day and night, putting in consistent effort...
-</p>
+<p>We worked day and night, putting in consistent effort, making sacrifices, and believing that one day our hard work would turn into something meaningful. Slowly and steadily, that dream started taking shape....</p>
 
-<p>
-Today, we are proud to present our brand as <b>VEIDAHI INTIMATES</b>...
-</p>
+<p>Today, we are proud to present our brand as VEIDAHI INTEMATES not just a name, but a result of years of dedication, passion, and trust in our vision. This achievement is not just about success, but about the journey, the struggles, and the belief that kept us going....</p>
 
-<p>
-What truly helped us reach here was our positive thinking...
-</p>
+<p>What truly helped us reach here was our positive thinking and strong self confidence. We always believed that if we stayed committed and worked honestly, we would make it — and today, we have proved that to ourselves....</p>
 
-<p>
-Now, Veidahi Intimates is here for all of you...
-</p>
+<p>Now, Veidahi Intimates is here for all of you. Our goal is to provide the best to our customers the best prices, the best quality, premium materials, and a comfortable, reliable experience that you can trust every day....</p>
 
-<p>
-<b>This is just the beginning of our journey…</b>
-</p>
+<p><b>This is just the beginning of our journey, and we promise to keep growing, improving, and delivering the best for you.…</b></p>
 
 </div>
 
@@ -268,29 +216,12 @@ Now, Veidahi Intimates is here for all of you...
 
 <div class="story-gallery">
 
-<div class="img-box">
-<img src="factory1.jpg">
-</div>
-
-<div class="img-box">
-<img src="factory2.jpg">
-</div>
-
-<div class="img-box">
-<img src="factory3.jpg">
-</div>
-
-<div class="img-box">
-<img src="factory4.jpg">
-</div>
-
-<div class="img-box">
-<img src="factory5.jpg">
-</div>
-
-<div class="img-box">
-<img src="factory6.jpg">
-</div>
+<div class="img-box"><img src="factory1.jpg"></div>
+<div class="img-box"><img src="factory2.jpg"></div>
+<div class="img-box"><img src="factory3.jpg"></div>
+<div class="img-box"><img src="factory4.jpg"></div>
+<div class="img-box"><img src="factory5.jpg"></div>
+<div class="img-box"><img src="factory6.jpg"></div>
 
 </div>
 
@@ -298,7 +229,7 @@ Now, Veidahi Intimates is here for all of you...
 <a href="index.html" class="back-btn">Back to Home</a>
 </div>
 
-<script>
+<!-- SCRIPT -->
 
 <script>
 
@@ -328,21 +259,6 @@ video.pause();
 }
 }
 
-</script>
-let texts = document.querySelectorAll(".story-lines p");
-
-window.addEventListener("scroll",()=>{
-texts.forEach((el,i)=>{
-let top = el.getBoundingClientRect().top;
-
-if(top < window.innerHeight - 100){
-setTimeout(()=>{
-el.classList.add("show");
-}, i * 200);
-}
-});
-});
-  
 </script>
 
 </body>

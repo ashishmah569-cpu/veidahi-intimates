@@ -154,8 +154,9 @@ to{opacity:1;transform:translateY(0);}
 
 <div class="story-hero">
 
-<video id="brandVideo" autoplay muted loop playsinline>
+<video id="brandVideo" autoplay muted loop playsinline preload="auto">
 <source src="story-video.mp4" type="video/mp4">
+</video>
 Your browser does not support video
 </video>
 
@@ -178,25 +179,19 @@ Your browser does not support video
 
 <p style="max-width:800px;margin:auto;line-height:1.8;color:#555;font-size:16px;">
 
-Veidahi was not created as just another lingerie brand.  
-It was born from a simple idea — every woman deserves to feel confident, comfortable and beautiful in her own skin.
+Our journey began in 2019, when I and my partner took a small but meaningful step and started this company with the name VEIDAHI ESTABLISHED 19. At that time, we didn’t have everything figured out, but what we did have was a strong belief in ourselves and a dream to build something of our own.
 
-We noticed that most products in the market either focus on style or comfort, but rarely both.  
-That’s where Veidahi began — to bridge this gap and create intimatewear that feels as good as it looks.
+The last 6 years have been full of ups and downs. There were moments of doubt, challenges that tested our patience, and times when things didn’t go as planned. But no matter how difficult the journey became, we never gave up. We stood by each other, kept learning, kept improving, and continued moving forward with determination.
 
-Every design at Veidahi is thoughtfully crafted with attention to fabric, fit and detail.  
-We choose soft, breathable materials that support your body while enhancing your natural confidence.
+We worked day and night, putting in consistent effort, making sacrifices, and believing that one day our hard work would turn into something meaningful. Slowly and steadily, that dream started taking shape.
 
-Our journey started with a vision to build a brand that women can trust — not just for fashion, but for everyday comfort.  
-From daily essentials to elegant styles, every piece is made to celebrate modern women who live confidently and express themselves freely.
+Today, we are proud to present our brand as VEIDAHI INTEMATES not just a name, but a result of years of dedication, passion, and trust in our vision. This achievement is not just about success, but about the journey, the struggles, and the belief that kept us going.
 
-Veidahi is more than a product.  
-It is a feeling of comfort, confidence and quiet luxury that stays with you throughout your day.
+What truly helped us reach here was our positive thinking and strong self confidence. We always believed that if we stayed committed and worked honestly, we would make it and today, we have proved that to ourselves.
 
-We are proud to be a growing Indian brand, loved by women across the country, and we continue to evolve with the same passion we started with.
+Now, Veidahi Intimates is here for all of you. Our goal is to provide the best to our customers the best prices, the best quality, premium materials, and a comfortable, reliable experience that you can trust every day.
 
-</p>
-
+This is just the beginning of our journey, and we promise to keep growing, improving, and delivering the best for you.
 </section>
 
 <!-- GALLERY -->
@@ -228,7 +223,10 @@ el.classList.add("show");
 // VIDEO CONTROL
 function toggleVideo(){
 let video = document.getElementById("brandVideo");
-
+window.addEventListener("load", function(){
+let video = document.getElementById("brandVideo");
+video.play().catch(()=>{});
+});
 if(video.paused){
 video.play();
 }else{
@@ -236,6 +234,8 @@ video.pause();
 }
 }
 
+
+  
 </script>
 
 </body>

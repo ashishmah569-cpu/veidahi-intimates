@@ -195,16 +195,21 @@ filter:blur(80px);
 
 <!-- HERO VIDEO -->
 
-<div class="story-video">
+<div class="story-hero">
 
-<video autoplay muted loop playsinline controls width="100%">
+<video id="brandVideo" autoplay muted loop playsinline>
 <source src="story-video.mp4" type="video/mp4">
-Your browser does not support the video tag.
 </video>
 
+<div class="hero-text">
+<h1>OUR STORY</h1>
+<p>Crafting confidence, comfort & elegance</p>
+
+<button class="video-btn" onclick="toggleVideo()">Pause</button>
 </div>
 
-<div class="hero-text">
+</div>
+  
 <h1>OUR STORY</h1>
 <p>Crafting confidence, comfort & elegance</p>
 
@@ -221,46 +226,43 @@ Your browser does not support the video tag.
 
 <h2>Our Story</h2>
 
-<p style="max-width:800px;margin:auto;line-height:1.8;color:#555;font-size:16px;">
+<div class="story-content">
+
+<h2>Our Story</h2>
 
 <div class="story-lines">
 
-<div class="story-content">
-
 <p>
-Our journey began in 2019, when I and my partner took a small but meaningful step and started this company with the name <b>VEIDAHI ESTABLISHED 19</b>.
-At that time, we didn’t have everything figured out, but what we did have was a strong belief in ourselves and a dream to build something of our own.
+Our journey began in 2019, when I and my partner took a small but meaningful step...
 </p>
 
 <p>
-The last 6 years have been full of ups and downs. There were moments of doubt, challenges that tested our patience, and times when things didn’t go as planned.
-But no matter how difficult the journey became, we never gave up. We stood by each other, kept learning, kept improving, and continued moving forward with determination.
+The last 6 years have been full of ups and downs...
 </p>
 
 <p>
-We worked day and night, putting in consistent effort, making sacrifices, and believing that one day our hard work would turn into something meaningful.
-Slowly and steadily, that dream started taking shape.
+We worked day and night, putting in consistent effort...
 </p>
 
 <p>
-Today, we are proud to present our brand as <b>VEIDAHI INTIMATES</b> not just a name, but a result of years of dedication, passion, and trust in our vision.
-This achievement is not just about success, but about the journey, the struggles, and the belief that kept us going.
+Today, we are proud to present our brand as <b>VEIDAHI INTIMATES</b>...
 </p>
 
 <p>
-What truly helped us reach here was our positive thinking and strong self-confidence.
-We always believed that if we stayed committed and worked honestly, we would make it and today, we have proved that to ourselves.
+What truly helped us reach here was our positive thinking...
 </p>
 
 <p>
-Now, Veidahi Intimates is here for all of you. Our goal is to provide the best to our customers the best prices, the best quality, premium materials, and a comfortable, reliable experience that you can trust every day.
+Now, Veidahi Intimates is here for all of you...
 </p>
 
 <p>
 <b>This is just the beginning of our journey…</b>
 </p>
 
-</section>
+</div>
+
+</div>
 
 <!-- GALLERY -->
 
@@ -298,14 +300,19 @@ Now, Veidahi Intimates is here for all of you. Our goal is to provide the best t
 
 <script>
 
+<script>
+
 // TEXT ANIMATION
-let texts = document.querySelectorAll(".story-content p");
+let texts = document.querySelectorAll(".story-lines p");
 
 window.addEventListener("scroll",()=>{
-texts.forEach(el=>{
+texts.forEach((el,i)=>{
 let top = el.getBoundingClientRect().top;
+
 if(top < window.innerHeight - 100){
+setTimeout(()=>{
 el.classList.add("show");
+}, i * 200);
 }
 });
 });
@@ -321,6 +328,7 @@ video.pause();
 }
 }
 
+</script>
 let texts = document.querySelectorAll(".story-lines p");
 
 window.addEventListener("scroll",()=>{
